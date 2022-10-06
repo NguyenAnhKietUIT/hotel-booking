@@ -3,6 +3,7 @@
     --black-color: #000;
     --text-color: #333;
     --navbar-height: 100px;
+    --text-color: rgba(255, 255, 255, 0.7);
 }
 
 * {
@@ -11,4 +12,5 @@
 
 html {
     font-family: Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/grid.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
@@ -13,11 +14,9 @@
 <body>
     <div id="app">
         <header class="app__header">
-            <img src="../assets/img/home_page/home_page.png" alt="Home page" class="app__header-img">
-
             <nav class="app__nav">
                 <a href="#" class="app__nav-name-link">
-                    <img src="../assets/img/home_page/beach.png" alt="" class="app__nav-name-icon">
+                    <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                 </a>
 
                 <ul class="app__nav-list">
@@ -37,120 +36,178 @@
             </nav>
 
             <div class="app__selection">
-                <div class="app__tittle">
-                    <h1>Dive yourself into Viet soul.</h1>
-                    <h2>Plan your next trip from now!</h2>
-                </div>
-
-                <div class="app__search">
-                    <ul class="app__search-list">
-                        <li class="app__search-item">
+                <div class="grid wide">
+                    <div class="app__tittle">
+                        <h1>Dive yourself into Viet soul.</h1>
+                        <h2>Plan your next trip from now!</h2>
+                    </div>
+    
+                    <div class="app__search row">
+                        <div class="app__search-item col l-4">
                             <a href="#" class="app__search-icon-link">
                                 <i class="app__search-icon fa-solid fa-magnifying-glass"></i>
                             </a>
-                            <input type="text" class="app__search-input" placeholder="Search destinations, hotels">
-                        </li>
-                        <li class="app__search-item">
+                            <input type="text" placeholder="Search destinations, hotels">
+                        </div>
+                        <div class="app__search-item col l-2">
                             <a href="#" class="app__search-icon-link">
-                                <i class="fa-solid fa-plane-departure"></i>
+                                <i class="app__search-icon fa-solid fa-plane-departure"></i>
                                 Check in
                             </a>
-                        </li>
-                        <li class="app__search-item">
+                        </div>
+                        <div class="app__search-item col l-2">
                             <a href="#" class="app__search-icon-link">
-                                <i class="fa-solid fa-money-check"></i>
+                                <i class="app__search-icon fa-solid fa-money-check"></i>
                                 Check out
                             </a>
-                        </li>
-                        <li class="app__search-item">
+                        </div>
+                        <div class="app__search-item col l-2">
                             <a href="#" class="app__search-icon-link">
-                                <i class="fa-solid fa-people-group"></i>
-                                1 room, 2 adults
+                                <i class="app__search-icon fa-solid fa-people-group"></i>
                             </a>
-                        </li>
-                        <li class="app__search-item">
+                            <select name="chooses" id="chooses">
+                                <option value="1">1 room, 2 adults</option>
+                                <option value="2">1 room</option>
+                                <option value="3">1 room</option>
+                                <option value="4">1 room</option>
+                            </select>
+                        </div>
+                        <div class="app__search-item col l-2">
                             <button class="app__search-btn">
                                 Search
                             </button>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="app_categories">
-                    <h3 class="app_categories-tittle">Top Categories</h3>
-
-                    <ul class="app__category-list">
-                        <li class="app__category-item">
-                            <a href="#" class="app__category-item-link">
-                                <img src="../assets/img/home_page/beach.png" alt="Beaches" class="app__category-item-icon">
-                                <figcaption>Beaches</figcaption>
-                            </a>
-                        </li>
-                        <li class="app__category-item">
-                            <a href="#" class="app__category-item-link">
-                                <img src="../assets/img/home_page/mountain.png" alt="Mountains" class="app__category-item-icon">
-                                <figcaption>Mountains</figcaption>
-                            </a>
-                        </li>
-                        <li class="app__category-item">
-                            <a href="#" class="app__category-item-link">
-                                <img src="../assets/img/home_page/iconic_city.png" alt="Iconic Cities" class="app__category-item-icon">
-                                <figcaption>Iconic Cities</figcaption>
-                            </a>
-                        </li>
-                        <li class="app__category-item">
-                            <a href="#" class="app__category-item-link">
-                                <img src="../assets/img/home_page/countryside.png" alt="Countryside" class="app__category-item-icon">
-                                <figcaption>Countryside</figcaption>
-                            </a>
-                        </li>
-                        <li class="app__category-item">
-                            <a href="#" class="app__category-item-link">
-                                <img src="../assets/img/home_page/camping.png" alt="Camping" class="app__category-item-icon">
-                                <figcaption>Camping</figcaption>
-                            </a>
-                        </li>
-                        <li class="app__category-item">
-                            <a href="#" class="app__category-item-link">
-                                <img src="../assets/img/home_page/tropical.png" alt="Tropical" class="app__category-item-icon">
-                                <figcaption>Tropical</figcaption>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="app__destinations">
-                    <h3 class="app__destinations-tittle">Top categories</h3>
-
-                    <ul class="app__destination-list">
-                        <li class="app__destination-item">
-                            <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An" class="app__destination-item-img">
-                            <span class="app__destination-item-desc">Hoi An</span>
-                        </li>
-                        <li class="app__destination-item">
-                            <img src="../assets/img/home_page/hoi_an.png" alt="Ha Giang" class="app__destination-item-img">
-                            <span class="app__destination-item-desc">Ha Giang</span>
-                        </li>
-                        <li class="app__destination-item">
-                            <img src="../assets/img/home_page/nha_trang.png" alt="Nha Trang" class="app__destination-item-img">
-                            <span class="app__destination-item-desc">Nha Trang</span>
-                        </li>
-                        <li class="app__destination-item">
-                            <img src="../assets/img/home_page/nha_trang.png" alt="Ho Chi Minh" class="app__destination-item-img">
-                            <span class="app__destination-item-desc">Ho Chi Minh</span>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+    
+                    <div class="app__categories">
+                        <h3 class="app__categories-tittle">Top Categories</h3>
+    
+                        <div class="app__category-list row">
+                            <div class="app__category-item col l-2">
+                                <a href="#" class="app__category-item-link">
+                                    <i class="app__category-item-icon fa-sharp fa-solid fa-umbrella-beach"></i>
+                                    <figcaption>Beaches</figcaption>
+                                </a>
+                            </div>
+                            <div class="app__category-item col l-2">
+                                <a href="#" class="app__category-item-link">
+                                    <i class="app__category-item-icon fa-solid fa-mountain-sun"></i>
+                                    <figcaption>Mountains</figcaption>
+                                </a>
+                            </div>
+                            <div class="app__category-item col l-2">
+                                <a href="#" class="app__category-item-link">
+                                    <i class="app__category-item-icon fa-solid fa-city"></i>
+                                    <figcaption>Iconic Cities</figcaption>
+                                </a>
+                            </div>
+                            <div class="app__category-item col l-2">
+                                <a href="#" class="app__category-item-link">
+                                    <i class="app__category-item-icon fa-solid fa-seedling"></i>
+                                    <figcaption>Countryside</figcaption>
+                                </a>
+                            </div>
+                            <div class="app__category-item col l-2">
+                                <a href="#" class="app__category-item-link">
+                                    <i class="app__category-item-icon fa-solid fa-fire-flame-curved"></i>
+                                    <figcaption>Camping</figcaption>
+                                </a>
+                            </div>
+                            <div class="app__category-item col l-2">
+                                <a href="#" class="app__category-item-link">
+                                    <i class="app__category-item-icon fa-solid fa-cloud-sun-rain"></i>
+                                    <figcaption>Tropical</figcaption>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="app__destinations">
+                        <h3 class="app__destinations-tittle">Top Destinations</h3>
+    
+                        <div class="app__destination-list row">
+                            <div class="app__destination-item col l-3">
+                                <a href="#" class="app__destination-item-link">
+                                    <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An" class="app__destination-item-img">
+                                    <span class="app__destination-item-desc">Hoi An</span>
+                                </a>
+                            </div>
+                            <div class="app__destination-item col l-3">
+                                <a href="#" class="app__destination-item-link">
+                                    <img src="../assets/img/home_page/ha_giang.png" alt="Ha Giang" class="app__destination-item-img">
+                                    <span class="app__destination-item-desc">Ha Giang</span>
+                                </a>
+                            </div>
+                            <div class="app__destination-item col l-3">
+                                <a href="#" class="app__destination-item-link">
+                                    <img src="../assets/img/home_page/nha_trang.png" alt="Nha Trang" class="app__destination-item-img">
+                                    <span class="app__destination-item-desc">Nha Trang</span>
+                                </a>
+                            </div>
+                            <div class="app__destination-item col l-3">
+                                <a href="#" class="app__destination-item-link">
+                                    <img src="../assets/img/home_page/ho_chi_minh.png" alt="Ho Chi Minh" class="app__destination-item-img">
+                                <span class="app__destination-item-desc">Ho Chi Minh</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <div class="app__content">
+        <div class="app__content grid wide">
+            <div class="app__browse">
+                <h3 class="app__browse-tittle">Browse by property type</h3>
 
+                <div class="app__browse-list row">
+                    <div class="app__browse-item col l-3">
+                        <a href="#" class="app__browse-item-link">
+                            <img src="../assets/img/home_page/hotels.png" alt="Hotels" class="app__browse-item-img">
+                            <span class="app__browse-item-desc">Hotels</span>
+                        </a>
+                    </div>
+                    <div class="app__browse-item col l-3">
+                        <a href="#" class="app__browse-item-link">
+                            <img src="../assets/img/home_page/apartments.png" alt="Apartments" class="app__browse-item-img">
+                            <span class="app__browse-item-desc">Apartments</span>
+                        </a>
+                    </div>
+                    <div class="app__browse-item col l-3">
+                        <a href="#" class="app__browse-item-link">
+                            <img src="../assets/img/home_page/resorts.png" alt="Resorts" class="app__browse-item-img">
+                            <span class="app__browse-item-desc">Resorts</span>
+                        </a>
+                    </div>
+                    <div class="app__browse-item col l-3">
+                        <a href="#" class="app__browse-item-link">
+                            <img src="../assets/img/home_page/homestay.png" alt="Homestay" class="app__browse-item-img">
+                            <span class="app__browse-item-desc">Homestay</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app__background-theme">
+                <a href="#" class="app__background-theme-link">
+                    <img src="../assets/img/home_page/backgroud_theme.png" alt="" class="app__background-theme-img">
+                    <div class="app__background-theme-desc">
+                        <h3 class="app__background-theme-title">Plan your trip with</br> travel expert</h3>
+                        <span class="app__background-theme-detail">Our professional advisors can craft your perfect itinerary</span>
+                    </div>
+                </a>
+            </div>
         </div>
 
         <footer class="app__footer">
 
         </footer>
+
+        <div id="app__go-home">
+            <a href="#" class="app__go-home-link">
+                <i class="app__go-home-icon fa-solid fa-circle-up"></i>
+            </a>
+        </div>
     </div>
 </body>
 </html>
