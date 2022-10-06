@@ -1,5 +1,12 @@
 :root {
-    
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --navbar-height: 100px;
+}
+
+* {
+    box-sizing: inherit;
 }
 
 html {

@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app__header {
+    display: block;
+    position: relative;
+}
+
+.app__header-img {
+
+}
+
+.app__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: var(--navbar-height);
+}
+
+.app__nav-name-link {
+
+}
+
+.app__nav-name-icon {
+
+}
+
+.app__nav-list {
+    float: right;
+    display: flex;
+    list-style: none;
+    margin: 20px auto;
+    position: relative;
+}
+
+.app__nav-item {
+    
+}
+
+.app__nav-item-link {
+    font-size: 20px;
+    line-height: 20px;
+    text-decoration: none;
+    color: var(--white-color);
+    opacity: 0.7;
+    padding-bottom: 2px;
+}
+
+.app__nav-item + .app__nav-item {
+    margin-left: 20px;
+}
+
+.app__nav-item:last-child {
+    font-weight: 600;
+}
+
+.app__selection {
+    position: absolute;
+    top: 0;
+    max-width: 1400px;
+    margin: var(--navbar-height) auto 0;
+}
+
+.app__tittle {
+}
+
+.app__search {
+
+}
+
+.app__search-list {
+
+}
+
+.app__search-item {
+
+}
+
+.app__search-icon-link {
+
+}
+
+.app__search-icon {
+
+}
+
+.app__search-input {
+
+}
+
+.app__search-item {
+
+}
+
+.app__search-btn {
+
+}
+
+.app__category-list {
+
+}
+
+.app__category-item {
+
+}
+
+.app__category-item-link {
+
+}
+
+.app__category-item-icon {
+
+}
+
+.app__destinations {
+
+}
+
+.app__destinations-tittle {
+
+}
+
+.app__destination-list {
+
+}
+
+.app__destination-item {
+
+}
+
+.app__destination-item-img {
+
+}
+
+.app__destination-item-desc {
+
+}
+
+.app__content {
+
+}
+
+.app__footer {
+
+}
