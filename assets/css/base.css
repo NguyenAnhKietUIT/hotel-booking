@@ -14,3 +14,34 @@ html {
     font-family: Helvetica, sans-serif;
     scroll-behavior: smooth;
 }
+
+.app__selection,
+.app__selection-list {
+    margin-top: 48px;
+}
+
+.app__selection-item {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease-in;
+}
+
+.app__selection-item:hover {
+    transform: scale(1.03);
+}
+
+.app__selection-item-link {
+    text-decoration: none;
+}
+
+.app__selection-item-img {
+    width: 280px;
+    border-radius: 8px;
+}
+
+.app__selection-item-desc {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    color: var(--white-color);
+}

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/grid.css">
-    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
     <title>Trivia</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
                     <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                 </a>
 
-                <ul class="app__nav-list">
+                <ul class="app__nav-list hide-on-mobile-tablet">
                     <li class="app__nav-item">
                         <a href="#" class="app__nav-item-link">Home</a>
                     </li>
@@ -33,6 +34,35 @@
                         <a href="#" class="app__nav-item-link">Sign Up</a>
                     </li>
                 </ul>
+
+                <label for="app__nav-mobile-input" class="app__nav-bars-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+
+                <input type="checkbox" hidden name="" id="app__nav-mobile-input" class="app__nav-mobile-input">
+
+                <label for="app__nav-mobile-input" class="app__nav-overlay"></label>
+
+                <div class="app__nav-mobile">
+                    <label for="app__nav-mobile-input" class="app__nav-mobile-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+
+                    <ul class="app__nav-mobile-list">
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
             </nav>
 
             <div class="app__selection">
@@ -122,32 +152,32 @@
                         </div>
                     </div>
     
-                    <div class="app__destinations">
+                    <div class="app__selection">
                         <h3 class="app__destinations-tittle">Top Destinations</h3>
     
-                        <div class="app__destination-list row">
-                            <div class="app__destination-item col l-3">
-                                <a href="#" class="app__destination-item-link">
-                                    <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An" class="app__destination-item-img">
-                                    <span class="app__destination-item-desc">Hoi An</span>
+                        <div class="app__selection-list row">
+                            <div class="app__selection-item col l-3">
+                                <a href="#" class="app__selection-item-link">
+                                    <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An" class="app__selection-item-img">
+                                    <span class="app__selection-item-desc">Hoi An</span>
                                 </a>
                             </div>
-                            <div class="app__destination-item col l-3">
-                                <a href="#" class="app__destination-item-link">
-                                    <img src="../assets/img/home_page/ha_giang.png" alt="Ha Giang" class="app__destination-item-img">
-                                    <span class="app__destination-item-desc">Ha Giang</span>
+                            <div class="app__selection-item col l-3">
+                                <a href="#" class="app__selection-item-link">
+                                    <img src="../assets/img/home_page/ha_giang.png" alt="Ha Giang" class="app__selection-item-img">
+                                    <span class="app__selection-item-desc">Ha Giang</span>
                                 </a>
                             </div>
-                            <div class="app__destination-item col l-3">
-                                <a href="#" class="app__destination-item-link">
-                                    <img src="../assets/img/home_page/nha_trang.png" alt="Nha Trang" class="app__destination-item-img">
-                                    <span class="app__destination-item-desc">Nha Trang</span>
+                            <div class="app__selection-item col l-3">
+                                <a href="#" class="app__selection-item-link">
+                                    <img src="../assets/img/home_page/nha_trang.png" alt="Nha Trang" class="app__selection-item-img">
+                                    <span class="app__selection-item-desc">Nha Trang</span>
                                 </a>
                             </div>
-                            <div class="app__destination-item col l-3">
-                                <a href="#" class="app__destination-item-link">
-                                    <img src="../assets/img/home_page/ho_chi_minh.png" alt="Ho Chi Minh" class="app__destination-item-img">
-                                <span class="app__destination-item-desc">Ho Chi Minh</span>
+                            <div class="app__selection-item col l-3">
+                                <a href="#" class="app__selection-item-link">
+                                    <img src="../assets/img/home_page/ho_chi_minh.png" alt="Ho Chi Minh" class="app__selection-item-img">
+                                <span class="app__selection-item-desc">Ho Chi Minh</span>
                                 </a>
                             </div>
                         </div>
@@ -157,32 +187,32 @@
         </header>
 
         <div class="app__content grid wide">
-            <div class="app__browse">
-                <h3 class="app__browse-tittle">Browse by property type</h3>
+            <div class="app__selection">
+                <h3 class="app__selection-tittle">Browse by property type</h3>
 
-                <div class="app__browse-list row">
-                    <div class="app__browse-item col l-3">
-                        <a href="#" class="app__browse-item-link">
-                            <img src="../assets/img/home_page/hotels.png" alt="Hotels" class="app__browse-item-img">
-                            <span class="app__browse-item-desc">Hotels</span>
+                <div class="app__selection-list row">
+                    <div class="app__selection-item col l-3">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/hotels.png" alt="Hotels" class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Hotels</span>
                         </a>
                     </div>
-                    <div class="app__browse-item col l-3">
-                        <a href="#" class="app__browse-item-link">
-                            <img src="../assets/img/home_page/apartments.png" alt="Apartments" class="app__browse-item-img">
-                            <span class="app__browse-item-desc">Apartments</span>
+                    <div class="app__selection-item col l-3">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/apartments.png" alt="Apartments" class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Apartments</span>
                         </a>
                     </div>
-                    <div class="app__browse-item col l-3">
-                        <a href="#" class="app__browse-item-link">
-                            <img src="../assets/img/home_page/resorts.png" alt="Resorts" class="app__browse-item-img">
-                            <span class="app__browse-item-desc">Resorts</span>
+                    <div class="app__selection-item col l-3">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/resorts.png" alt="Resorts" class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Resorts</span>
                         </a>
                     </div>
-                    <div class="app__browse-item col l-3">
-                        <a href="#" class="app__browse-item-link">
-                            <img src="../assets/img/home_page/homestay.png" alt="Homestay" class="app__browse-item-img">
-                            <span class="app__browse-item-desc">Homestay</span>
+                    <div class="app__selection-item col l-3">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/homestay.png" alt="Homestay" class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Homestay</span>
                         </a>
                     </div>
                 </div>
@@ -208,6 +238,8 @@
                 <i class="app__go-home-icon fa-solid fa-circle-up"></i>
             </a>
         </div>
+
+        <script src="./scrollToTop.js"></script>
     </div>
 </body>
 </html>
