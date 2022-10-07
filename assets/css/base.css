@@ -15,9 +15,21 @@ html {
     scroll-behavior: smooth;
 }
 
-.app__selection,
-.app__selection-list {
+.app__content-tittle {
+    color: var(--black-color);
+    font-size: 24px;
+}
+
+.app__margin-top-48 {
     margin-top: 48px;
+}
+
+.app__margin-top-28 {
+    margin-top: 28px;
+}
+
+.app__margin-top-16 {
+    margin-top: 16px;
 }
 
 .app__selection-item {
@@ -44,4 +56,30 @@ html {
     bottom: 20px;
     left: 28px;
     color: var(--white-color);
+}
+
+#app__go-home {
+    display: none;
+}
+
+.app__go-home-link {
+    text-decoration: none;
+    position: fixed;
+    bottom: 36px;
+    right: 28px;
+    z-index: 999;
+}
+
+.app__go-home-icon {
+    font-size: 48px;
+    color: rgba(115, 244, 130, 0.4);
+    padding: 8px;
+}
+
+.app__go-home-icon:hover {
+    color: rgba(0, 136, 16, 0.7);
+}
+
+.app__footer {
+
 }

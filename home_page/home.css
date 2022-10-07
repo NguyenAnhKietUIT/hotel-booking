@@ -8,11 +8,13 @@
     position: relative;
 }
 
+/* Header */
 .app__header {
     background: url(../assets/img/home_page/home_page.png) top center / cover no-repeat;
     display: block;
 }
 
+/* Navigation */
 .app__nav {
     height: var(--navbar-height);
     position: relative;
@@ -62,6 +64,7 @@
     color: var(--white-color);
 }
 
+/* Header tittle */
 .app__tittle {
     color: var(--white-color);
     margin-top: 48px;
@@ -78,6 +81,7 @@
     font-weight: 550;
 }
 
+/* Header search */
 .app__search {
     margin: 60px auto;
     height: 50px;
@@ -156,6 +160,7 @@
     border-radius: 24px;
 }
 
+/* Header category */
 .app__categories-tittle,
 .app__destinations-tittle {
     color: var(--white-color);
@@ -184,11 +189,7 @@
     padding-bottom: 12px;
 }
 
-.app__browse-tittle {
-    color: var(--black-color);
-    font-size: 24px;
-}
-
+/* Content background theme */
 .app__background-theme {
     margin-top: 48px;
     position: relative;
@@ -222,31 +223,59 @@
     font-weight: 300;
 }
 
-#app__go-home {
-    display: none;
+/* Content inspiration */
+.app__inspiration-margin {
+    margin: 48px auto 80px;
 }
 
-.app__go-home-link {
+.app__inspiration-item {
+    border-radius: 16px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 25%);
+    transition: all 0.3s linear;
+}
+
+.app__inspiration-item:hover {
+    transform: scale(1.02);
+}
+
+.app__inspiration-item-link {
+    height: 100%;
     text-decoration: none;
-    position: fixed;
-    bottom: 36px;
-    right: 28px;
-    z-index: 999;
+    display: flex;
+    flex-direction: column;
 }
 
-.app__go-home-icon {
-    font-size: 48px;
-    color: rgba(115, 244, 130, 0.7);
+.app__inspiration-photo{
+    flex: 1;
+}
+
+.app__inspiration-item__img {
+    width: 100%;
+    height: 100%;
     padding: 8px;
+    border-radius: 24px;
 }
 
-.app__go-home-icon:hover {
-    color: rgba(0, 136, 16, 0.7);
+.app__inspiration-item--rowspan {
+    height: 100%;
 }
 
-.app__footer {
-
+.app__inspiration-item__info {
+    padding: 0 16px 16px;
+    line-height: 1.5;
 }
+
+.app__inspiration-item__info-tittle {
+    color: var(--black-color);
+    font-size: 20px;
+    display: block;
+}
+
+.app__inspiration-item__info-desc {
+    color: rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
 
 /* Responsive */
 .app__nav-bars-btn {
