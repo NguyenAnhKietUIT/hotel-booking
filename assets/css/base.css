@@ -1,0 +1,47 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --navbar-height: 100px;
+    --text-color: rgba(255, 255, 255, 0.7);
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-family: Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+.app__selection,
+.app__selection-list {
+    margin-top: 48px;
+}
+
+.app__selection-item {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease-in;
+}
+
+.app__selection-item:hover {
+    transform: scale(1.03);
+}
+
+.app__selection-item-link {
+    text-decoration: none;
+}
+
+.app__selection-item-img {
+    width: 280px;
+    border-radius: 8px;
+}
+
+.app__selection-item-desc {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    color: var(--white-color);
+}
