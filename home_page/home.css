@@ -276,6 +276,11 @@
     display: block;
 }
 
+/* Footer */
+.app__footer {
+    background: url(../assets/img/background/Frame_98.png) top center / cover no-repeat;
+}
+
 
 /* Responsive */
 .app__nav-bars-btn {
