@@ -240,6 +240,10 @@
     padding: 8px;
 }
 
+.app__go-home-icon:hover {
+    color: rgba(0, 136, 16, 0.7);
+}
+
 .app__footer {
 
 }
