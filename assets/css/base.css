@@ -136,6 +136,10 @@ html {
     margin-right: 32px;
 }
 
+.app__footer-list-item-link:hover {
+    color: rgb(46, 179, 189);
+}
+
 .app__footer-socials-item {
     font-size: 24px;
     padding: 12px;

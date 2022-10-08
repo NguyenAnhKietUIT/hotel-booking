@@ -23,6 +23,59 @@
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
+    .app__margin-top-28 {
+        text-align: center;
+    }
+
+    .app__selection-item:nth-child(3),
+    .app__selection-item:nth-child(4) {
+        margin-top: 16px;
+    }
+
+    .app__background-theme-desc {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        transform: translateY(-50%);
+        color: var(--white-color);
+        line-height: 1.5;
+    }
+    
+    .app__background-theme-title {
+        font-size: 32px;
+    }
+    
+    .app__background-theme-detail {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .app__inspiration-item__img {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .app__inspiration-item__info {
+        padding: 0 8px 8px;
+        line-height: 1.5;
+    }
+    
+    .app__inspiration-item__info-tittle {
+        color: var(--black-color);
+        font-size: 16px;
+        display: block;
+    }
+    
+    .app__inspiration-item__info-desc {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 12px;
+        display: block;
+    }
 }
 
 /* Mobile*/
