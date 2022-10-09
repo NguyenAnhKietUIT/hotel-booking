@@ -102,6 +102,10 @@
         display: block;
     }
 
+    .app__footer--offset-4 {
+        margin-left: 33.33333%;
+    }
+
     .app__footer-list-item:nth-child(4),
     .app__footer-list-item:nth-child(5) {
         margin-top: 20px;
