@@ -81,18 +81,18 @@ html {
     color: var(--white-color);
 }
 
-/* Header tittle */
-.app__tittle {
+/* Header title */
+.app__title {
     color: var(--white-color);
     line-height: 1.5;
 }
 
-.app__tittle > h1 {
+.app__title > h1 {
     font-size: 48px;
     font-weight: 600;
 }
 
-.app__tittle > h2 {
+.app__title > h2 {
     font-size: 36px;
     font-weight: 550;
 }
@@ -176,8 +176,8 @@ html {
 }
 
 /* Header category */
-.app__categories-tittle,
-.app__destinations-tittle {
+.app__categories-title,
+.app__destinations-title {
     text-align: center;
     color: var(--white-color);
     font-size: 24px;
@@ -209,7 +209,7 @@ html {
     padding-bottom: 12px;
 }
 
-.app__content-tittle {
+.app__content-title {
     text-align: center;
     color: var(--black-color);
     font-size: 24px;
@@ -268,7 +268,7 @@ html {
     padding-top: 48px;
 }
 
-.app__footer-contact-tittle {
+.app__footer-contact-title {
     font-size: 24px;
     color: var(--white-color);
 }

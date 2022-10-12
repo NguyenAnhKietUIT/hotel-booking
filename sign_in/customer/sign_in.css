@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login__content {
+    background: url(../../assets/img/background/image_33.png) top center / cover no-repeat;
+    display: block;
+}
+
+.app__nav-mobile {
+    display: none;
+}

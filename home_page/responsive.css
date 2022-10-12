@@ -84,7 +84,7 @@
         line-height: 1.5;
     }
     
-    .app__inspiration-item__info-tittle {
+    .app__inspiration-item__info-title {
         color: var(--black-color);
         font-size: 16px;
         display: block;
@@ -112,15 +112,15 @@
         margin-right: 0;
     }
 
-    .app__tittle {
+    .app__title {
         padding: 0 16px;
     }
 
-    .app__tittle > h1 {
+    .app__title > h1 {
         font-size: 28px;
     }
 
-    .app__tittle > h2 {
+    .app__title > h2 {
         font-size: 20px;
     }
 
@@ -160,7 +160,7 @@
         justify-content: space-around;
     }
 
-    .app__footer-contact-tittle {
+    .app__footer-contact-title {
         font-size: 20px;
     }
 

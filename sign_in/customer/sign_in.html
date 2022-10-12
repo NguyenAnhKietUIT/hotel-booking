@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="sign_in.css">
+    <link rel="stylesheet" href="../../assets/css/grid.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
+    <title>Sign in</title>
+</head>
+<body>
+    <div id="login">
+        <div class="login__content">
+            <nav class="app__nav">
+                <a href="#" class="app__nav-name-link">
+                    <img src="../../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                </a>
+
+                <ul class="app__nav-list hide-on-mobile-tablet">
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Home</a>
+                    </li>
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Manage Your Stay</a>
+                    </li>
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Contacts</a>
+                    </li>
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Sign Up</a>
+                    </li>
+                </ul>
+
+                <label for="app__nav-mobile-input" class="app__nav-bars-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+
+                <input type="checkbox" hidden name="" id="app__nav-mobile-input" class="app__nav-mobile-input">
+
+                <label for="app__nav-mobile-input" class="app__nav-overlay"></label>
+
+                <div class="app__nav-mobile">
+                    <label for="app__nav-mobile-input" class="app__nav-mobile-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+
+                    <ul class="app__nav-mobile-list">
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="grid wide">
+                <div class="login__plan">
+                    <h3 class="login__plan-title">VIETNAM</h3>
+
+                    <div class="login__plan-desc">
+                        <span class="login__plan-text">Discover the most of Vietnam with</span>
+                        <img src="../../assets/img/logo.png" alt="Trivia" class="login__plan-img">
+                    </div>
+
+                    <button class="login__plan-btn">
+                        PLAN YOUR TRIP NOW &rarr;
+                    </button>
+                </div>
+
+                <div class="login__main">
+                    <form action="" method="post" class="login__form" id="login__form">
+                        <h3 class="login__form-title">
+                            Sign Into </br> Your Account
+                        </h3>
+
+                        <div class="login__form-group">
+                            <input id="login__email" name="login__email" type="email" placeholder="Email Address" class="login__form-control">
+                            <span class="login__form-message"></span>
+                        </div>
+
+                        <div class="login__form-group">
+                            <input id="login__password" name="login__password" type="password" placeholder="Password" class="login__form-control">
+                            <span class="login__form-message"></span>
+                        </div>
+
+                        <input type="checkbox" name="login__form-remember" id="login__form-remember" class="login__input-control">
+                        <label for="login__form-remember" class="login__form-remember-text">Remember Me</label>
+
+                        <button class="login__form-btn">
+                            Sign in
+                        </button>
+                    </form>
+
+                    <div class="login__main-property">
+                        <b>Sign in</b> for Properties
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
