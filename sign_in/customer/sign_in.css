@@ -7,6 +7,132 @@
 .login__content {
     background: url(../../assets/img/background/image_33.png) top center / cover no-repeat;
     display: block;
+    height: 100vh;
+}
+
+.login_main-content {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login__plan-title {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: var(--white-color);
+    font-size: 100px;
+}
+
+.login__plan-desc {
+    display: flex;
+    align-items: center;
+}
+
+.login__plan-text {
+    color: var(--white-color);
+}
+
+.login__plan-img {
+    width: 80px;
+    height: 48px;
+}
+
+.login__plan-btn {
+    outline: none;
+    border: none;
+    background-color: #6c94b9;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: var(--white-color);
+}
+
+.login__main-property {
+    color: var(--white-color);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.login__property-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.login__form {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 60px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.15);;
+}
+
+.login__form-title {
+    color: var(--white-color);
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.login__form-group {
+    display: flex;
+    margin-top: 16px;
+    flex-direction: column;
+}
+
+.login__form-group + .login__form-group {
+    margin-bottom: 16px;
+}
+
+.login__form-control {
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--white-color);
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+}
+
+.login__form-control::placeholder {
+    color: var(--white-color);
+}
+
+.login__form-message {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 0 0;
+}
+
+.login__remember {
+    display: flex;
+    padding: 0 0 16px;
+}
+
+.login__form-remember-text {
+    color: var(--white-color);
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.login__form-btn {
+    display: block;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    background-color: #597B9B;
+}
+
+.login__form-group.invalid .login__form-control {
+    border-color: #f33a58;
+}
+
+.login__form-group.invalid .login__form-message {
+    color: #f33a58;
 }
 
 .app__nav-mobile {
