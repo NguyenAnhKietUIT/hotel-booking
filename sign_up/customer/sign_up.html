@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/base.css">
+    <link rel="stylesheet" href="./sign_up.css">
+    <link rel="stylesheet" href="../../assets/css/grid.css">
+    <link rel="stylesheet" href="./responsive.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <div id="register">
+        <div class="register__content">
+            <nav class="app__nav">
+                <a href="#" class="app__nav-name-link">
+                    <img src="../../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                </a>
+
+                <ul class="app__nav-list hide-on-mobile-tablet">
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Home</a>
+                    </li>
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Manage Your Stay</a>
+                    </li>
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Contacts</a>
+                    </li>
+                    <li class="app__nav-item">
+                        <a href="#" class="app__nav-item-link">Sign Up</a>
+                    </li>
+                </ul>
+
+                <label for="app__nav-mobile-input" class="app__nav-bars-btn">
+                    <i class="fa-solid fa-bars"></i>
+                </label>
+
+                <input type="checkbox" hidden name="" id="app__nav-mobile-input" class="app__nav-mobile-input">
+
+                <label for="app__nav-mobile-input" class="app__nav-overlay"></label>
+
+                <div class="app__nav-mobile">
+                    <label for="app__nav-mobile-input" class="app__nav-mobile-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+
+                    <ul class="app__nav-mobile-list">
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-mobile-item">
+                            <a href="#" class="app__nav-mobile-item-link">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="grid wide">
+                <div class="register_main-content">
+                    <div class="register__plan">
+                        <h3 class="register__plan-title">VIETNAM</h3>
+    
+                        <div class="register__plan-desc">
+                            <span class="register__plan-text">Discover the most of Vietnam with</span>
+                            <a href="#" class="register__plan-link">
+                                <img src="../../assets/img/logo.png" alt="Trivia" class="register__plan-img">
+                            </a>
+                        </div>
+    
+                        <a href="#" class="register__plan-btn">
+                            PLAN YOUR TRIP NOW &rarr;
+                        </a>
+                    </div>
+    
+                    <div class="register__main">
+                        <form action="" method="post" class="register__form" id="register__form">
+                            <h3 class="register__form-title">
+                                Create An Account
+                            </h3>
+
+                            <div class="register__form-group">
+                                <input id="register__full-name" name="register__full-name" type="text" placeholder="Full Name" class="register__form-control">
+                                <span class="register__form-message"></span>
+                            </div>
+    
+                            <div class="register__form-group">
+                                <input id="register__email" name="register__email" type="email" placeholder="Email Address" class="register__form-control">
+                                <span class="register__form-message"></span>
+                            </div>
+    
+                            <div class="register__form-group">
+                                <input id="register__password" name="register__password" type="password" placeholder="Password" class="register__form-control">
+                                <span class="register__form-message"></span>
+                            </div>
+
+                            <div class="register__form-group">
+                                <input id="register__confirm-password" name="register__confirm-password" type="password" placeholder="Enter The Password" class="register__form-control">
+                                <span class="register__form-message"></span>
+                            </div>
+
+                            <div class="register__agree">
+                                <input type="checkbox" name="register__agree-checkbox" id="register__agree-checkbox" class="register__form-control">
+                                <label for="register__agree-checkbox" class="register__agree-text">
+                                    By clicking Create account, I agree that I have read and accepted the 
+                                    <a href="#" class="register__agree-link">Terms of use</a>
+                                    and
+                                    <a href="#" class="register__agree-link">Privacy Policy</a>
+                                </label>
+                            </div>
+    
+                            <button class="register__form-btn">
+                                create account
+                            </button>
+
+                            <span class="register__or">
+                                -or-
+                            </span>
+
+                            <button class="register__google">
+                                <img src="../../assets/img/google_icon.png" alt="Google" class="register__google-img">
+                                <span>Sign up with Google</span>
+                            </button>
+
+                            <span class="register__already">
+                                Already have an account?
+                                <a href="#" class="register__already-link">Sign in</a> 
+                            </span>
+                        </form>
+    
+                        <div class="register__main-property">
+                            <a href="#" class="register__property-link">
+                                <b>Sign in</b>
+                            </a> for Properties
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../validator.js"></script>
+
+    <script>
+        Validator({
+            form: '#register__form',
+            formGroupSelector: '.register__form-group',
+            errorSelector: '.register__form-message',
+            rules: [
+                Validator.minLength('#register__password', 6),
+                Validator.isEmail('#register__email')
+            ],
+            onSubmit: function(data) {
+                // call API
+            }
+        });
+
+    </script>
+</body>
+</html>

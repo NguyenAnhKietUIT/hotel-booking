@@ -1,0 +1,61 @@
+/* Mobile & tablet */
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .register_main-content {
+        justify-content: center;
+    }
+
+    .register__main {
+        margin-top: 100px;
+    }
+}
+
+/* Mobile*/
+@media (max-width: 739px) {
+    .register_main-content {
+        margin-top: 0;
+    }
+    
+    .register__plan-title {
+        font-size: 60px;
+    }
+
+    .register__plan-desc {
+        margin-bottom: 0;
+    }
+
+    .register__plan-btn {
+        padding: 12px 16px;
+        font-size: 14px
+    }
+
+    .register__form-title {
+        font-size: 20px;
+    }
+
+    .register__form {
+        margin-top: 24px;
+        width: 300px;
+        padding: 12px 20px;
+    }
+
+    .register__agree {
+        font-size: 8px;
+        margin-bottom: 8px;
+    }
+
+    .register__or {
+        padding: 4px;
+    }
+
+    .register__main-property {
+        font-size: 14px;
+        margin-top: 24px;
+    }
+}

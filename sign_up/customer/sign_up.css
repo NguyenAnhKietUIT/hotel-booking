@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register__content {
+    background: url(../../assets/img/background/Sign_Up_page_for_customers.png) top center / cover no-repeat;
+    display: block;
+    height: 100vh;
+}
+
+.register_main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.register__plan {
+    text-align: center;
+}
+
+.register__plan-title {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: var(--white-color);
+    font-size: 100px;
+    font-weight: 300;
+}
+
+.register__plan-desc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.register__plan-text {
+    flex: 1;
+    color: var(--white-color);
+}
+
+.register__plan-link {
+    text-decoration: none;
+}
+
+.register__plan-img {
+    width: 80px;
+    height: 48px;
+}
+
+.register__plan-btn {
+    text-decoration: none;
+    background-color: #6c94b9;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: var(--white-color);
+}
+
+.register__main-property {
+    color: var(--white-color);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.register__property-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.register__form {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 60px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.15);;
+}
+
+.register__form-title {
+    color: var(--white-color);
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.register__form-group {
+    display: flex;
+    margin: 8px 0;
+    flex-direction: column;
+}
+
+.register__form-control {
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--white-color);
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+}
+
+.register__form-control::placeholder {
+    color: var(--white-color);
+}
+
+.register__form-message {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 0 0;
+}
+
+.register__agree {
+    display: flex;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-align: justify;
+    color: var(--white-color);
+    justify-content: space-between;
+}
+
+.register__agree-text {
+    padding-left: 8px;
+}
+
+.register__agree-link {
+    text-decoration: none;
+}
+
+.register__form-btn {
+    display: block;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    background-color: #597B9B;
+}
+
+.register__or {
+    display: block;
+    padding: 16px;
+    text-align: center;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.register__google {
+    display: flex;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.register__google-img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.register__already {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 16px;
+    color: var(--white-color);
+}
+
+.register__already-link {
+    text-decoration: none;
+}
+
+.register__form-group.invalid .register__form-control {
+    border-color: #f33a58;
+}
+
+.register__form-group.invalid .register__form-message {
+    color: #f33a58;
+}
+
+.app__nav-mobile {
+    display: none;
+}
