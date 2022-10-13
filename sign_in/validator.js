@@ -149,6 +149,9 @@ Validator.minLength = function (selector, min, message) {
     return {
         selector: selector,
         test: function (value) {
+            if (value === null) {
+                return message || 'Vui lòng nhập trường này'
+            }
             return value.length >= min ? undefined : message || `Vui lòng nhập tối thiểu ${min} ký tự`;
         }
     };

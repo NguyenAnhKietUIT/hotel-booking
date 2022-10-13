@@ -11,24 +11,37 @@
 }
 
 .login_main-content {
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.login__plan {
+    text-align: center;
 }
 
 .login__plan-title {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     color: var(--white-color);
     font-size: 100px;
+    font-weight: 300;
 }
 
 .login__plan-desc {
     display: flex;
+    justify-content: space-around;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .login__plan-text {
+    flex: 1;
     color: var(--white-color);
+}
+
+.login__plan-link {
+    text-decoration: none;
 }
 
 .login__plan-img {
@@ -37,8 +50,7 @@
 }
 
 .login__plan-btn {
-    outline: none;
-    border: none;
+    text-decoration: none;
     background-color: #6c94b9;
     padding: 12px 20px;
     border-radius: 8px;
@@ -121,6 +133,7 @@
     padding: 8px;
     font-size: 14px;
     font-weight: 500;
+    cursor: pointer;
     border-radius: 8px;
     color: var(--white-color);
     text-transform: uppercase;
