@@ -154,8 +154,13 @@
             formGroupSelector: '.register__form-group',
             errorSelector: '.register__form-message',
             rules: [
+                Validator.isRequired('#register__full-name'),
                 Validator.minLength('#register__password', 6),
-                Validator.isEmail('#register__email')
+                Validator.isEmail('#register__email'),
+                Validator.isRequired('#register__confirm-password'),
+                Validator.isConfirmed('#register__confirm-password', function() {
+                    return document.querySelector('#register__form #register__password').value;
+                }, 'Mật khẩu nhập lại không chính xác')
             ],
             onSubmit: function(data) {
                 // call API
