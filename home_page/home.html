@@ -17,175 +17,138 @@
 <body>
     <div id="app">
         <header class="app__header">
-            <nav class="app__nav">
-                <a href="#" class="app__nav-name-link">
-                    <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
-                </a>
-
-                <ul class="app__nav-list hide-on-mobile-tablet">
-                    <li class="app__nav-item">
-                        <a href="#" class="app__nav-item-link">Home</a>
-                    </li>
-                    <li class="app__nav-item">
-                        <a href="#" class="app__nav-item-link">Manage Your Stay</a>
-                    </li>
-                    <li class="app__nav-item">
-                        <a href="#" class="app__nav-item-link">Contacts</a>
-                    </li>
-                    <li class="app__nav-item">
-                        <a href="../sign_up/customer/sign_up.html" class="app__nav-item-link">Sign Up</a>
-                    </li>
-                </ul>
-
-                <label for="app__nav-mobile-input" class="app__nav-bars-btn">
-                    <i class="fa-solid fa-bars"></i>
-                </label>
-
-                <input type="checkbox" hidden name="" id="app__nav-mobile-input" class="app__nav-mobile-input">
-
-                <label for="app__nav-mobile-input" class="app__nav-overlay"></label>
-
-                <div class="app__nav-mobile">
-                    <label for="app__nav-mobile-input" class="app__nav-mobile-close">
-                        <i class="fa-solid fa-xmark"></i>
+            <div class="grid wide">
+                <nav class="app__nav">
+                    <a href="#" class="app__nav-name-link">
+                        <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                    </a>
+    
+                    <ul class="app__nav-list hide-on-mobile-tablet">
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="../sign_up/customer/sign_up.html" class="app__nav-item-link">Sign Up</a>
+                        </li>
+                    </ul>
+    
+                    <label for="app__nav-mobile-input" class="app__nav-bars-btn">
+                        <i class="fa-solid fa-bars"></i>
                     </label>
-
-                    <ul class="app__nav-mobile-list">
-                        <li class="app__nav-mobile-item">
-                            <a href="#" class="app__nav-mobile-item-link">Home</a>
-                        </li>
-                        <li class="app__nav-mobile-item">
-                            <a href="#" class="app__nav-mobile-item-link">Manage Your Stay</a>
-                        </li>
-                        <li class="app__nav-mobile-item">
-                            <a href="#" class="app__nav-mobile-item-link">Contacts</a>
-                        </li>
-                        <li class="app__nav-mobile-item">
-                            <a href="../sign_up/customer/sign_up.html" class="app__nav-mobile-item-link">Sign Up</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <div class="app__margin-top-28">
-                <div class="grid wide">
-                    <div class="app__title">
-                        <h1>Dive yourself into Viet soul.</h1>
-                        <h2>Plan your next trip from now!</h2>
-                    </div>
-
-                    <ul class="app__search-list">
-                        <li class="app__search-item">
-                            <a href="#" class="app__search-icon-link">
-                                <i class="app__search-icon fa-solid fa-magnifying-glass"></i>
-                            </a>
-                            <input type="text" placeholder="Search destinations, hotels">
-                        </li>
-                        <li class="app__search-item">
-                            <a href="#" class="app__search-icon-link">
-                                <i class="app__search-icon fa-solid fa-plane-departure"></i>
-                                Check in
-                            </a>
-                        </li>
-                        <li class="app__search-item">
-                            <a href="#" class="app__search-icon-link">
-                                <i class="app__search-icon fa-solid fa-money-check"></i>
-                                Check out
-                            </a>
-                        </li>
-                        <li class="app__search-item">
-                            <a href="#" class="app__search-icon-link">
-                                <i class="app__search-icon fa-solid fa-people-group"></i>
-                            </a>
-                            <select name="chooses" id="chooses">
-                                <option value="1">1 room, 2 adults</option>
-                                <option value="2">1 room</option>
-                                <option value="3">1 room</option>
-                                <option value="4">1 room</option>
-                            </select>
-                        </li>
-                        <li class="app__search-item">
-                            <button class="app__search-btn">
-                                Search
-                            </button>
-                        </li>
-                    </ul>
-
-                    <div class="app__categories">
-                        <h3 class="app__categories-title">Top Categories</h3>
-
-                        <ul class="app__category-list">
-                            <li class="app__category-item">
-                                <a href="#" class="app__category-item-link">
-                                    <i class="app__category-item-icon fa-sharp fa-solid fa-umbrella-beach"></i>
-                                    <figcaption>Beaches</figcaption>
-                                </a>
+    
+                    <input type="checkbox" hidden name="" id="app__nav-mobile-input" class="app__nav-mobile-input">
+    
+                    <label for="app__nav-mobile-input" class="app__nav-overlay"></label>
+    
+                    <div class="app__nav-mobile">
+                        <label for="app__nav-mobile-input" class="app__nav-mobile-close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </label>
+    
+                        <ul class="app__nav-mobile-list">
+                            <li class="app__nav-mobile-item">
+                                <a href="#" class="app__nav-mobile-item-link">Home</a>
                             </li>
-                            <li class="app__category-item">
-                                <a href="#" class="app__category-item-link">
-                                    <i class="app__category-item-icon fa-solid fa-mountain-sun"></i>
-                                    <figcaption>Mountains</figcaption>
-                                </a>
+                            <li class="app__nav-mobile-item">
+                                <a href="#" class="app__nav-mobile-item-link">Manage Your Stay</a>
                             </li>
-                            <li class="app__category-item">
-                                <a href="#" class="app__category-item-link">
-                                    <i class="app__category-item-icon fa-solid fa-city"></i>
-                                    <figcaption>Iconic Cities</figcaption>
-                                </a>
+                            <li class="app__nav-mobile-item">
+                                <a href="#" class="app__nav-mobile-item-link">Contacts</a>
                             </li>
-                            <li class="app__category-item">
-                                <a href="#" class="app__category-item-link">
-                                    <i class="app__category-item-icon fa-solid fa-seedling"></i>
-                                    <figcaption>Countryside</figcaption>
-                                </a>
-                            </li>
-                            <li class="app__category-item">
-                                <a href="#" class="app__category-item-link">
-                                    <i class="app__category-item-icon fa-solid fa-fire-flame-curved"></i>
-                                    <figcaption>Camping</figcaption>
-                                </a>
-                            </li>
-                            <li class="app__category-item">
-                                <a href="#" class="app__category-item-link">
-                                    <i class="app__category-item-icon fa-solid fa-cloud-sun-rain"></i>
-                                    <figcaption>Tropical</figcaption>
-                                </a>
+                            <li class="app__nav-mobile-item">
+                                <a href="../sign_up/customer/sign_up.html" class="app__nav-mobile-item-link">Sign Up</a>
                             </li>
                         </ul>
                     </div>
+                </nav>
+    
+                <div class="app__title">
+                    <h1>Dive yourself into Viet soul.</h1>
+                    <h2>Plan your next trip from now!</h2>
+                </div>
 
-                    <div class="app__margin-top-48">
-                        <h3 class="app__destinations-title">Top Destinations</h3>
+                <ul class="app__search-list">
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-magnifying-glass"></i>
+                        </a>
+                        <input type="text" placeholder="Search destinations, hotels">
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-plane-departure"></i>
+                            Check in
+                        </a>
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-money-check"></i>
+                            Check out
+                        </a>
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-people-group"></i>
+                        </a>
+                        <select name="chooses" id="chooses">
+                            <option value="1">1 room, 2 adults</option>
+                            <option value="2">1 room</option>
+                            <option value="3">1 room</option>
+                            <option value="4">1 room</option>
+                        </select>
+                    </li>
+                    <li class="app__search-item">
+                        <button class="app__search-btn">
+                            Search
+                        </button>
+                    </li>
+                </ul>
 
-                        <div class="app__margin-top-28 row">
-                            <div class="app__selection-item col l-3 m-6 c-12">
-                                <a href="#" class="app__selection-item-link">
-                                    <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An"
-                                        class="app__selection-item-img">
-                                    <span class="app__selection-item-desc">Hoi An</span>
-                                </a>
-                            </div>
-                            <div class="app__selection-item col l-3 m-6 c-12">
-                                <a href="#" class="app__selection-item-link">
-                                    <img src="../assets/img/home_page/ha_giang.png" alt="Ha Giang"
-                                        class="app__selection-item-img">
-                                    <span class="app__selection-item-desc">Ha Giang</span>
-                                </a>
-                            </div>
-                            <div class="app__selection-item col l-3 m-6 c-12">
-                                <a href="#" class="app__selection-item-link">
-                                    <img src="../assets/img/home_page/nha_trang.png" alt="Nha Trang"
-                                        class="app__selection-item-img">
-                                    <span class="app__selection-item-desc">Nha Trang</span>
-                                </a>
-                            </div>
-                            <div class="app__selection-item col l-3 m-6 c-12">
-                                <a href="#" class="app__selection-item-link">
-                                    <img src="../assets/img/home_page/ho_chi_minh.png" alt="Ho Chi Minh"
-                                        class="app__selection-item-img">
-                                    <span class="app__selection-item-desc">Ho Chi Minh</span>
-                                </a>
-                            </div>
+                <div class="app__margin-top-48">
+                    <h3 class="app__categories-title">Top Categories</h3>
+
+                    <div class="app__category-list row">
+                        <div class="app__category-item col l-2 m-6 c-12">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-sharp fa-solid fa-umbrella-beach"></i>
+                                <figcaption>Beaches</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-6 c-12">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-mountain-sun"></i>
+                                <figcaption>Mountains</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-6 c-12">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-city"></i>
+                                <figcaption>Iconic Cities</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-6 c-12">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-seedling"></i>
+                                <figcaption>Countryside</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-6 c-12">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-fire-flame-curved"></i>
+                                <figcaption>Camping</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-6 c-12">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-cloud-sun-rain"></i>
+                                <figcaption>Tropical</figcaption>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -193,6 +156,41 @@
         </header>
 
         <div class="app__content grid wide">
+            <div class="app__margin-top-48">
+                <h3 class="app__destinations-title">Top Destinations</h3>
+
+                <div class="app__margin-top-28 row">
+                    <div class="app__selection-item col l-3 m-6 c-12">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An"
+                                class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Hoi An</span>
+                        </a>
+                    </div>
+                    <div class="app__selection-item col l-3 m-6 c-12">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/ha_giang.png" alt="Ha Giang"
+                                class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Ha Giang</span>
+                        </a>
+                    </div>
+                    <div class="app__selection-item col l-3 m-6 c-12">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/nha_trang.png" alt="Nha Trang"
+                                class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Nha Trang</span>
+                        </a>
+                    </div>
+                    <div class="app__selection-item col l-3 m-6 c-12">
+                        <a href="#" class="app__selection-item-link">
+                            <img src="../assets/img/home_page/ho_chi_minh.png" alt="Ho Chi Minh"
+                                class="app__selection-item-img">
+                            <span class="app__selection-item-desc">Ho Chi Minh</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div class="app__margin-top-48">
                 <h3 class="app__content-title">Browse by property type</h3>
 
@@ -238,11 +236,11 @@
                 </a>
             </div>
 
-            <div class="app__inspiration app__margin-top-48">
+            <div class="app__margin-top-48">
                 <h3 class="app__content-title">Get inspiration for your next trip</h3>
 
                 <div class="row app__inspiration-margin">
-                    <div class="col l-6 m-6 c-6">
+                    <div class="col l-7 m-6 c-6">
                         <div class="app__inspiration-item app__inspiration-item--rowspan">
                             <a href="#" class="app__inspiration-item-link">
                                 <div class="app__inspiration-photo">
@@ -257,7 +255,7 @@
                         </div>
                     </div>
 
-                    <div class="col l-6 m-6 c-6">
+                    <div class="col l-5 m-6 c-6">
                         <div class="app__inspiration-item">
                             <a href="#" class="app__inspiration-item-link">
                                 <div class="app__inspiration-photo">
@@ -270,37 +268,17 @@
                                 </div>
                             </a>
                         </div>
-
-                        <div class="row app__margin-top-16 hide-on-mobile">
-                            <div class="col l-6 m-6 c-0">
-                                <div class="app__inspiration-item">
-                                    <a href="#" class="app__inspiration-item-link">
-                                        <div class="app__inspiration-photo">
-                                            <img src="../assets/img/home_page/resorts.png" alt="Inspiration" class="app__inspiration-item__img">
-                                        </div>
-                                        <div class="app__inspiration-item__info">
-                                            <span class="app__inspiration-item__info-title">Beach</span>
-                                            <span class="app__inspiration-item__info-desc">Travel community</span>
-                                            <span class="app__inspiration-item__info-desc">155,073 travelers</span>
-                                        </div>
-                                    </a>
+                        <div class="app__inspiration-item app__margin-top-16">
+                            <a href="#" class="app__inspiration-item-link">
+                                <div class="app__inspiration-photo">
+                                    <img src="../assets/img/home_page/resorts.png" alt="Inspiration" class="app__inspiration-item__img">
                                 </div>
-                            </div>
-
-                            <div class="col l-6 m-6 c-0">
-                                <div class="app__inspiration-item">
-                                    <a href="#" class="app__inspiration-item-link">
-                                        <div class="app__inspiration-photo">
-                                            <img src="../assets/img/home_page/resorts.png" alt="Inspiration" class="app__inspiration-item__img">
-                                        </div>
-                                        <div class="app__inspiration-item__info">
-                                            <span class="app__inspiration-item__info-title">Beach</span>
-                                            <span class="app__inspiration-item__info-desc">Travel community</span>
-                                            <span class="app__inspiration-item__info-desc">155,073 travelers</span>
-                                        </div>
-                                    </a>
+                                <div class="app__inspiration-item__info">
+                                    <span class="app__inspiration-item__info-title">Mountains</span>
+                                    <span class="app__inspiration-item__info-desc">Travel community</span>
+                                    <span class="app__inspiration-item__info-desc">155,073 travelers</span>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

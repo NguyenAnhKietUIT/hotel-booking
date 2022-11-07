@@ -48,7 +48,7 @@ html {
 .app__nav-list {
     position: absolute;
     top: 50%;
-    right: 24px;
+    right: 0;
     transform: translateY(-50%);
     display: flex;
     list-style: none;
@@ -56,6 +56,7 @@ html {
 
 .app__nav-item {
     transition: all 0.2s linear;
+    padding: 8px;
 }
 
 .app__nav-item + .app__nav-item {
@@ -64,17 +65,14 @@ html {
 
 .app__nav-item:last-child {
     font-weight: 600;
+    margin-right: -8px;
 }
 
-.app__nav-item:hover {
-    transform: scale(1.01);
-}
 
 .app__nav-item-link {
     font-size: 20px;
     text-decoration: none;
     color: var(--text-color);
-    padding: 8px 16px;
 }
 
 .app__nav-item-link:hover {
@@ -85,22 +83,22 @@ html {
 .app__title {
     color: var(--white-color);
     line-height: 1.5;
+    margin-top: 44px;
 }
 
 .app__title > h1 {
-    font-size: 48px;
-    font-weight: 600;
+    word-spacing: 8px;
+    font-size: 88px;
 }
 
 .app__title > h2 {
-    font-size: 36px;
-    font-weight: 550;
+    font-size: 52px;
 }
 
 /* Header search */
 .app__search-list {
-    height: 50px;
-    margin: 40px 0;
+    height: 60px;
+    margin-top: 40px;
     list-style: none;
     border-radius: 12px;
     display: flex;
@@ -125,6 +123,13 @@ html {
 .app__search-icon-link {
     text-decoration: none;
     color: var(--text-color);
+}
+
+input[type=date] {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--white-color);
 }
 
 .app__search-icon {
@@ -167,7 +172,7 @@ html {
     font-size: 16px;
     font-weight: 550;
     border: none;
-    padding: 8px 24px;
+    padding: 12px 40px;
     border-radius: 24px;
 }
 
@@ -176,19 +181,15 @@ html {
 }
 
 /* Header category */
-.app__categories-title,
-.app__destinations-title {
+.app__categories-title {
     text-align: center;
     color: var(--white-color);
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .app__category-list {
-    list-style: none;
-    margin-top: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 .app__category-item {
@@ -205,14 +206,19 @@ html {
 }
 
 .app__category-item-icon {
-    font-size: 24px;
-    padding-bottom: 12px;
+    font-size: 32px;
+    padding-bottom: 24px;
 }
 
-.app__content-title {
+.app__category-item-link > figcaption {
+    font-size: 20px;
+}
+
+.app__content-title,
+.app__destinations-title {
     text-align: center;
     color: var(--black-color);
-    font-size: 24px;
+    font-size: 32px;
 }
 
 .app__selection-item {
@@ -239,6 +245,7 @@ html {
     bottom: 20px;
     left: 28px;
     color: var(--white-color);
+    font-size: 24px;
 }
 
 #app__go-home {
@@ -274,23 +281,22 @@ html {
 }
 
 .app__footer-contact-input {
-    width: 400px;
-    height: 50px;
+    width: 500px;
+    height: 60px;
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 36px auto 80px; 
+    margin: 40px auto 80px; 
 }
 
 .app__footer-input > input {
-    width: 250px;
+    width: 300px;
     border: none;
     outline: none;
     font-size: 16px;
     padding-left: 24px;
-    color: var(-black-color);
     background-color: transparent;
 }
 
@@ -303,7 +309,7 @@ html {
 }
 
 .app__footer-btn > .app__search-btn {
-    padding: 8px 16px;
+    padding: 12px 24px;
 }
 
 .app__footer-list {
