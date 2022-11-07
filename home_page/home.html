@@ -83,25 +83,49 @@
                     <li class="app__search-item">
                         <a href="#" class="app__search-icon-link">
                             <i class="app__search-icon fa-solid fa-plane-departure"></i>
-                            Check in
                         </a>
+                        <div class="app__search-item__content">
+                            Check in
+                        </div>
                     </li>
                     <li class="app__search-item">
                         <a href="#" class="app__search-icon-link">
                             <i class="app__search-icon fa-solid fa-money-check"></i>
-                            Check out
                         </a>
+                        <div class="app__search-item__content">
+                            Check in
+                        </div>
                     </li>
                     <li class="app__search-item">
                         <a href="#" class="app__search-icon-link">
                             <i class="app__search-icon fa-solid fa-people-group"></i>
                         </a>
-                        <select name="chooses" id="chooses">
-                            <option value="1">1 room, 2 adults</option>
-                            <option value="2">1 room</option>
-                            <option value="3">1 room</option>
-                            <option value="4">1 room</option>
-                        </select>
+                        <div class="app__search-item__content app__search-option-number">
+                            <span class="option-number-room">1</span>
+                            room, 
+                            <span class="option-number-people">2</span>
+                            adults
+                        </div>
+
+                        <div class="app__search-item__option">
+                            <div class="option__content">
+                                <span>Room</span>
+                                <div class="app__search-number">
+                                    <button class="btn-minus-room">-</button>
+                                    <span class="amount-room">1</span>
+                                    <button class="btn-add-room">+</button>
+                                </div>
+                            </div>
+                            <div class="option__content">
+                                <span>People</span>
+                                <div class="app__search-number">
+                                    <button class="btn-minus-people">-</button>
+                                    <span class="amount-people">2</span>
+                                    <button class="btn-add-people">+</button>
+                                </div>
+                            </div>
+                            <button class="btn-selected">Xong</button>
+                        </div>
                     </li>
                     <li class="app__search-item">
                         <button class="app__search-btn">
@@ -403,6 +427,7 @@
         </div>
 
         <script src="./scrollToTop.js"></script>
+        <script src="./home.js"></script>
     </div>
 </body>
 

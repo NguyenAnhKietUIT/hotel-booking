@@ -109,27 +109,21 @@ html {
 }
 
 .app__search-item {
+    display: flex;
     font-size: 16px;
     padding: 8px 0;
     text-align: center;
 }
 
-.app__search-item:hover .app__search-icon-link,
-.app__search-item:hover .app__search-icon
+.app__search-item:hover .app__search-icon,
+.app__search-item:hover .app__search-item__content
 {
     color: var(--white-color);
 }
 
 .app__search-icon-link {
     text-decoration: none;
-    color: var(--text-color);
-}
-
-input[type=date] {
-    border: none;
-    outline: none;
-    background-color: transparent;
-    color: var(--white-color);
+    padding-right: 4px;
 }
 
 .app__search-icon {
@@ -149,21 +143,9 @@ input[type=date] {
     color: var(--text-color);
 }
 
-.app__search-item > select {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background: transparent;
+.app__search-item__content {
     color: var(--text-color);
-    font-size: 16px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: 8px;
-}
-
-.app__search-item > select > option {
-    color: var(--black-color);
+    cursor: pointer;
 }
 
 .app__search-btn {
@@ -178,6 +160,66 @@ input[type=date] {
 
 .app__search-btn:hover {
     background-color: rgb(255, 255, 255, 0.7);
+}
+
+.app__search-item:nth-child(4) {
+    position: relative;
+}
+
+.app__search-item__option {
+    position: absolute;
+    width: 140%;
+    top: 28px;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 16px;
+    border-radius: 8px;
+    background-color: var(--white-color);
+    display: none;
+}
+
+.option__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.app__search-number {
+    min-width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-minus-people, .btn-add-people,
+.btn-minus-room, .btn-add-room{
+    cursor: pointer;
+    min-width: 32px;
+    min-height: 32px;
+    outline: none;
+}
+
+.amount-people, .amount-room {
+    padding: 0 8px;
+}
+
+.btn-selected {
+    width: 100%;
+    padding: 8px;
+    color: blue;
+    cursor: pointer;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid blue;
+}
+
+.btn-selected:hover {
+    background-color: rgba(0, 0, 255, 0.1);
+}
+
+.app__search-option-input:checked ~ .app__search-item__option {
+    display: block;
 }
 
 /* Header category */
