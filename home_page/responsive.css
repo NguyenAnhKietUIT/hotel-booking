@@ -12,7 +12,7 @@
     .app__nav-bars-btn {
         position: absolute;
         top: 50%;
-        right: 24px;
+        right: 16px;
         transform: translateY(-50%);
         font-size: 32px;
         padding: 8px;
@@ -23,23 +23,34 @@
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
-    .app__footer-contact-input {
-        margin: 16px auto 24px;
+    .app__title > h1 {
+        font-size: 44px;
     }
 
-    .app__footer-input > input {
-        width: 225px;
-        font-size: 14px;    
-        padding-left: 8px;
+    .app__title > h2 {
+        font-size: 28px;
     }
 
-    .app__footer-btn {
-        padding-right: 8px;
+    .app__search-item {
+        font-size: 14px;
+    }
+
+    .app__search-item > input {
+        width: 200px;
+        font-size: 14px;
     }
 
     .app__search-btn {
-        padding: 8px;
+        padding: 12px;
         font-size: 12px;
+    }
+
+    .app__search-item__option {
+        padding: 12px;
+    }
+
+    .app__category-item {
+        margin-bottom: 28px;
     }
 
     .app__margin-top-28 {
@@ -96,6 +107,20 @@
         display: block;
     }
 
+    .app__footer-contact-input {
+        margin: 16px auto 24px;
+    }
+
+    .app__footer-input > input {
+        width: 225px;
+        font-size: 14px;    
+        padding-left: 8px;
+    }
+
+    .app__footer-btn {
+        padding-right: 8px;
+    }
+
     .app__footer-copyright {
         padding-top: 8px;
         padding-bottom: 20px;
@@ -112,20 +137,51 @@
         margin-right: 0;
     }
 
+    .app__nav-name-icon {
+        margin-left: 16px;
+    }
+
     .app__title {
         padding: 0 16px;
     }
 
     .app__title > h1 {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .app__title > h2 {
-        font-size: 20px;
+        font-size: 16px;
     }
 
-    .app__category-list {
-        justify-content: space-around;
+    .app__search-list {
+        height: 36px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .app__search-item {
+        font-size: 8px;
+    }
+
+    .app__search-item > input {
+        width: 100px;
+        font-size: 8px;
+    }
+
+    .app__search-btn {
+        font-size: 8px;
+        padding: 8px 16px;
+    }
+
+    .app__content-title, 
+    .app__categories-title,
+    .app__destinations-title {
+        font-size: 24px;
+    }
+
+    .app__category-item-icon {
+        font-size: 24px;
+        padding-bottom: 8px;
     }
 
     .app__selection-item {
