@@ -456,6 +456,10 @@ html {
     color: var(--white-color);
 }
 
+.input-control {
+    cursor: pointer;
+}
+
 .form-message {
     font-size: 12px;
     line-height: 16px;
