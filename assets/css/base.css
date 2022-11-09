@@ -433,7 +433,6 @@ html {
 
 .form-group {
     display: flex;
-    margin-top: 16px;
     flex-direction: column;
 }
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="./sign_up.css">
     <link rel="stylesheet" href="../../assets/css/grid.css">
-    <link rel="stylesheet" href="./responsive.css">
+    <link rel="stylesheet" href="../responsive_sign_up.css">
     <title>Sign up</title>
 </head>
 <body>
@@ -78,9 +78,9 @@
                             <span class="form-message"></span>
                         </div>
 
-                        <a href="./sign_up2.html" class="form-btn">
+                        <button class="form-btn">
                             Next
-                        </a>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -95,13 +95,7 @@
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#full-name'),
-                Validator.minLength('#password', 6),
-                Validator.isEmail('#email'),
-                Validator.isRequired('#confirm-password'),
-                Validator.isConfirmed('#confirm-password', function() {
-                    return document.querySelector('#form #password').value;
-                }, 'Mật khẩu nhập lại không chính xác')
+                Validator.isRequired('#phone-number'),
             ],
             onSubmit: function(data) {
                 // call API

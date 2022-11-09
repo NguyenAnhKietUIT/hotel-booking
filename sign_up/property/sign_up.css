@@ -32,17 +32,13 @@
 
 .form-desc {
     margin-top: 8px;
+    margin-bottom: 16px;
     color: var(--white-color);
     font-size: 14px;
 }
 
 .form-group {
     margin-bottom: 16px;
-}
-
-.form-btn {
-    text-decoration: none;
-    text-align: center;
 }
 
 .remember {

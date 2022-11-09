@@ -60,6 +60,10 @@
     text-decoration: none;
 }
 
+.form-group {
+    margin-top: 16px;
+}
+
 .remember {
     display: flex;
     padding: 0 0 16px;
