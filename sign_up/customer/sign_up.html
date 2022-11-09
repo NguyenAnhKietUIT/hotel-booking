@@ -75,35 +75,35 @@
                             </a>
                         </div>
     
-                        <a href="#" class="register__plan-btn">
+                        <a href="#" class="plan-btn">
                             PLAN YOUR TRIP NOW &rarr;
                         </a>
                     </div>
     
                     <div class="register__main">
-                        <form action="" method="post" class="register__form" id="register__form">
-                            <h3 class="register__form-title">
+                        <form action="" method="post" class="form" id="form">
+                            <h3 class="form-title">
                                 Create An Account
                             </h3>
 
-                            <div class="register__form-group">
-                                <input id="register__full-name" name="register__full-name" type="text" placeholder="Full Name" class="register__form-control">
-                                <span class="register__form-message"></span>
+                            <div class="form-group">
+                                <input id="full-name" name="full-name" type="text" placeholder="Full Name" class="form-control">
+                                <span class="form-message"></span>
                             </div>
     
-                            <div class="register__form-group">
-                                <input id="register__email" name="register__email" type="email" placeholder="Email Address" class="register__form-control">
-                                <span class="register__form-message"></span>
+                            <div class="form-group">
+                                <input id="email" name="email" type="email" placeholder="Email Address" class="form-control">
+                                <span class="form-message"></span>
                             </div>
     
-                            <div class="register__form-group">
-                                <input id="register__password" name="register__password" type="password" placeholder="Password" class="register__form-control">
-                                <span class="register__form-message"></span>
+                            <div class="form-group">
+                                <input id="password" name="password" type="password" placeholder="Password" class="form-control">
+                                <span class="form-message"></span>
                             </div>
 
-                            <div class="register__form-group">
-                                <input id="register__confirm-password" name="register__confirm-password" type="password" placeholder="Enter The Password" class="register__form-control">
-                                <span class="register__form-message"></span>
+                            <div class="form-group">
+                                <input id="confirm-password" name="confirm-password" type="password" placeholder="Enter The Password" class="form-control">
+                                <span class="form-message"></span>
                             </div>
 
                             <div class="register__agree">
@@ -116,7 +116,7 @@
                                 </label>
                             </div>
     
-                            <button class="register__form-btn">
+                            <button class="form-btn">
                                 create account
                             </button>
 
@@ -131,7 +131,7 @@
 
                             <span class="register__already">
                                 Already have an account?
-                                <a href="" class="register__already-link">Sign in</a> 
+                                <a href="../../sign_in/customer/sign_in.html" class="register__already-link">Sign in</a> 
                             </span>
                         </form>
     
@@ -150,16 +150,16 @@
 
     <script>
         Validator({
-            form: '#register__form',
-            formGroupSelector: '.register__form-group',
-            errorSelector: '.register__form-message',
+            form: '#form',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#register__full-name'),
-                Validator.minLength('#register__password', 6),
-                Validator.isEmail('#register__email'),
-                Validator.isRequired('#register__confirm-password'),
-                Validator.isConfirmed('#register__confirm-password', function() {
-                    return document.querySelector('#register__form #register__password').value;
+                Validator.isRequired('#full-name'),
+                Validator.minLength('#password', 6),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#confirm-password'),
+                Validator.isConfirmed('#confirm-password', function() {
+                    return document.querySelector('#form #password').value;
                 }, 'Mật khẩu nhập lại không chính xác')
             ],
             onSubmit: function(data) {

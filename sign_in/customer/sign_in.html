@@ -74,33 +74,33 @@
                             </a>
                         </div>
     
-                        <a href="#" class="login__plan-btn">
+                        <a href="#" class="plan-btn">
                             PLAN YOUR TRIP NOW &rarr;
                         </a>
                     </div>
     
                     <div class="login__main">
-                        <form action="" method="post" class="login__form" id="login__form">
-                            <h3 class="login__form-title">
+                        <form action="" method="post" class="form" id="form">
+                            <h3 class="form-title">
                                 Sign Into </br> Your Account
                             </h3>
     
-                            <div class="login__form-group">
-                                <input id="login__email" name="login__email" type="email" placeholder="Email Address" class="login__form-control">
-                                <span class="login__form-message"></span>
+                            <div class="form-group">
+                                <input id="email" name="email" type="email" placeholder="Email Address" class="form-control">
+                                <span class="form-message"></span>
                             </div>
     
-                            <div class="login__form-group">
-                                <input id="login__password" name="login__password" type="password" placeholder="Password" class="login__form-control">
-                                <span class="login__form-message"></span>
+                            <div class="form-group">
+                                <input id="password" name="password" type="password" placeholder="Password" class="form-control">
+                                <span class="form-message"></span>
                             </div>
     
-                            <div class="login__remember">
-                                <input type="checkbox" name="login__form-remember" id="login__form-remember" class="login__input-control">
-                                <label for="login__form-remember" class="login__form-remember-text">Remember Me</label>
+                            <div class="remember">
+                                <input type="checkbox" name="form-remember" id="form-remember" class="input-control">
+                                <label for="form-remember" class="form-remember-text">Remember Me</label>
                             </div>
     
-                            <button class="login__form-btn">
+                            <button class="form-btn">
                                 Sign in
                             </button>
                         </form>
@@ -120,12 +120,12 @@
 
     <script>
         Validator({
-            form: '#login__form',
-            formGroupSelector: '.login__form-group',
-            errorSelector: '.login__form-message',
+            form: '#form',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
             rules: [
-                Validator.minLength('#login__password', 6),
-                Validator.isEmail('#login__email')
+                Validator.minLength('#password', 6),
+                Validator.isEmail('#email')
             ],
             onSubmit: function(data) {
                 // call API

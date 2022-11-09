@@ -401,3 +401,89 @@ html {
     padding-top: 32px;
     padding-bottom: 32px;
 }
+
+.plan-btn {
+    text-decoration: none;
+    background-color: #6c94b9;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: var(--white-color);
+}
+
+.plan-btn:hover {
+    background-color: #1167b7;
+}
+
+/* Form */
+.form {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 60px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.15);;
+}
+
+.form-title {
+    color: var(--white-color);
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.form-group {
+    display: flex;
+    margin-top: 16px;
+    flex-direction: column;
+}
+
+.form-group + .form-group {
+    margin-bottom: 16px;
+}
+
+.form-control {
+    border: none;
+    outline: none;
+    padding: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--white-color);
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+}
+
+.form-control::placeholder {
+    color: var(--white-color);
+}
+
+.form-message {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 4px 0 0;
+}
+
+.form-btn {
+    display: block;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    background-color: #597B9B;
+}
+
+.form-btn:hover {
+    background-color: #115696;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
