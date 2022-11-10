@@ -84,23 +84,21 @@
                         <a href="#" class="app__search-icon-link">
                             <i class="app__search-icon fa-solid fa-plane-departure"></i>
                         </a>
-                        <div class="app__search-item__content">
-                            Check in
-                        </div>
+                        <div class="app__status-in">Check in</div>
+                        <input type="date" id="app__check-in" class="app__check-status" value="2022-11-11" min="2017-10-14" max="2050-12-31">
                     </li>
                     <li class="app__search-item">
                         <a href="#" class="app__search-icon-link">
                             <i class="app__search-icon fa-solid fa-money-check"></i>
                         </a>
-                        <div class="app__search-item__content">
-                            Check in
-                        </div>
+                        <div class="app__status-out">Check out</div>
+                        <input type="date" id="app__check-out" class="app__check-status" value="2022-11-11" min="2017-10-14" max="2050-12-31">
                     </li>
                     <li class="app__search-item">
                         <a href="#" class="app__search-icon-link">
                             <i class="app__search-icon fa-solid fa-people-group"></i>
                         </a>
-                        <div class="app__search-item__content app__search-option-number">
+                        <div class="app__search-option-number">
                             <span class="option-number-room">1</span>
                             room, 
                             <span class="option-number-people">2</span>
@@ -428,6 +426,7 @@
 
         <script src="./scrollToTop.js"></script>
         <script src="./set_quantity.js"></script>
+        <script src="./set_interval.js"></script>
     </div>
 </body>
 

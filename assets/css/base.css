@@ -115,7 +115,9 @@ html {
 }
 
 .app__search-item:hover .app__search-icon,
-.app__search-item:hover .app__search-item__content
+.app__search-item:hover .app__status-in,
+.app__search-item:hover .app__status-out,
+.app__search-item:hover .app__search-option-number
 {
     color: var(--white-color);
 }
@@ -142,9 +144,26 @@ html {
     color: var(--text-color);
 }
 
-.app__search-item__content {
+.app__status-in,
+.app__status-out,
+.app__search-option-number {
     color: var(--text-color);
     cursor: pointer;
+}
+
+.app__search-item > input[type=date] {
+    width: 120px;
+    padding-left: 8px;
+    font-family: Helvetica, sans-serif;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(1); 
+}
+
+.app__check-status {
+    display: none;
 }
 
 .app__search-btn {
