@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register__content {
+    background: url(../../assets/img/background/Sign_Up_page_for_customers.png) top center / cover no-repeat;
+    display: block;
+    height: 100vh;
+}
+
+.register_main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.register__plan {
+    text-align: center;
+}
+
+.register__plan-title {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: var(--white-color);
+    font-size: 100px;
+    font-weight: 300;
+}
+
+.register__plan-desc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.register__plan-text {
+    flex: 1;
+    color: var(--white-color);
+}
+
+.register__plan-link {
+    text-decoration: none;
+}
+
+.register__plan-img {
+    width: 80px;
+    height: 48px;
+}
+
+.register__plan-btn {
+    text-decoration: none;
+    background-color: #6c94b9;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: var(--white-color);
+}
+
+.register__main-property {
+    color: var(--white-color);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.register__property-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.form {
+    padding: 32px 60px;
+}
+
+.form-title {
+    margin-bottom: 16px;
+}
+
+.form-group {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+#register__agree-checkbox {
+    cursor: pointer;
+}
+
+.register__agree {
+    display: flex;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-align: justify;
+    color: var(--white-color);
+    justify-content: space-between;
+}
+
+.register__agree-text {
+    padding-left: 8px;
+}
+
+.register__agree-link {
+    text-decoration: none;
+}
+
+.register__or {
+    display: block;
+    padding: 16px;
+    text-align: center;
+    color: var(--white-color);
+    text-transform: uppercase;
+}
+
+.register__google {
+    display: flex;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.register__google:hover {
+    background-color: rgb(217, 217, 217);
+}
+
+.register__google-img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.register__already {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 16px;
+    color: var(--white-color);
+}
+
+.register__already-link {
+    text-decoration: none;
+}
+
+.register__form-group.invalid .register__form-control {
+    border-color: #f33a58;
+}
+
+.register__form-group.invalid .register__form-message {
+    color: #f33a58;
+}
+
+.app__nav-mobile {
+    display: none;
+}

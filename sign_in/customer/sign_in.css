@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login__content {
+    background: url(../../assets/img/background/image_33.png) top center / cover no-repeat;
+    display: block;
+    height: 100vh;
+}
+
+.login_main-content {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.login__plan {
+    text-align: center;
+}
+
+.login__plan-title {
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: var(--white-color);
+    font-size: 100px;
+    font-weight: 300;
+}
+
+.login__plan-desc {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.login__plan-text {
+    flex: 1;
+    color: var(--white-color);
+}
+
+.login__plan-link {
+    text-decoration: none;
+}
+
+.login__plan-img {
+    width: 80px;
+    height: 48px;
+}
+
+.login__main-property {
+    color: var(--white-color);
+    text-align: center;
+    margin-top: 40px;
+}
+
+.login__property-link {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+.form-group {
+    margin-top: 16px;
+}
+
+.remember {
+    display: flex;
+    padding: 0 0 16px;
+}
+
+.form-remember-text {
+    color: var(--white-color);
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.app__nav-mobile {
+    display: none;
+}
