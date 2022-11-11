@@ -7,6 +7,7 @@ inputSearch.addEventListener('click', () => {
     boxHistory.style.display = 'block'
 })
 
+//Sự kiện thay đổi nội dung ô tìm kiếm
 inputSearch.addEventListener('input', () => {
     let currentInput = inputSearch.value
 
@@ -19,13 +20,10 @@ inputSearch.addEventListener('input', () => {
     })
 })
 
+//Lấy địa điểm được chọn gắn vào ô tìm kiếm
 listHistory.addEventListener('click', (events) => {
     let result = events.target.innerText
 
     inputSearch.value = result
-    boxHistory.style.display = 'none'
-})
-
-boxHistory.addEventListener('mouseleave', () => {
     boxHistory.style.display = 'none'
 })
