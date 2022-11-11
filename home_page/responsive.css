@@ -35,6 +35,10 @@
         font-size: 14px;
     }
 
+    .app__search-item:nth-child(2), .app__search-item:nth-child(3) {
+        width: 88px;
+    }
+
     .app__search-item > input {
         width: 200px;
         font-size: 14px;
@@ -163,14 +167,64 @@
         font-size: 8px;
     }
 
+    .app__search-item:nth-child(2), .app__search-item:nth-child(3) {
+        width: 56px;
+    }
+
     .app__search-item > input {
         width: 100px;
         font-size: 8px;
     }
 
+    .app__search-item > input[type=date] {
+        padding-left: 0;
+    }
+
     .app__search-btn {
         font-size: 8px;
         padding: 8px 16px;
+    }
+
+    .app__search-history {
+        top: calc(100% + 8px);
+    }
+
+    .app__search-history-heading {
+        font-size: 8px;
+    }
+
+    .app__search-history-item {
+        height: 16px;
+    }    
+
+    .app__search-history-item > a {
+        font-size: 8px;
+        line-height: 16px;
+    }
+
+    .app__search-item__option {
+        padding: 8px;
+    }
+
+    .option__content {
+        margin-bottom: 8px;
+    }
+
+    .app__search-number {
+        min-width: 52px;
+    }
+
+    .btn-minus-people, 
+    .btn-add-people, 
+    .btn-minus-room, 
+    .btn-add-room {
+        min-width: 16px;
+        min-height: 16px;
+    }
+
+    .btn-selected {
+        font-size: 8px;
+        padding: 4px;
     }
 
     .app__content-title, 

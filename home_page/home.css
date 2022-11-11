@@ -157,7 +157,7 @@
 .app__nav-mobile-close {
     position: absolute;
     top: 8px;
-    right: 8px;
+    right: 24px;
     font-size: 40px;
     display: block;
     padding: 8px 16px;
