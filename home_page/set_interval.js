@@ -16,6 +16,15 @@ divCheckIn.addEventListener('click', () => {
     }
 })
 
+inputsCheckIn.addEventListener('change', () => {
+    if (inputsCheckOut.style.display === 'block') {
+        let checkIn = inputsCheckIn.value;
+
+        inputsCheckOut.value = checkIn;
+        inputsCheckOut.min = checkIn;
+    }
+})
+
 divCheckOut.addEventListener('click', () => {
     divCheckOut.remove()
 
@@ -26,5 +35,13 @@ divCheckOut.addEventListener('click', () => {
 
         inputsCheckOut.value = checkIn;
         inputsCheckOut.min = checkIn;
+    }
+})
+
+inputsCheckOut.addEventListener('change' , () => {
+    if (inputsCheckIn.style.display === 'block') {
+        let checkOut = inputsCheckOut.value;
+
+        inputsCheckIn.max = checkOut;
     }
 })
