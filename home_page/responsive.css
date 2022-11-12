@@ -5,6 +5,11 @@
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
+    .app__content-title, 
+    .app__destinations-title {
+        font-size: 24px;
+    }
+
     .app__margin-top-28 {
         text-align: center;
     }
@@ -12,6 +17,10 @@
     .app__selection-item:nth-child(3),
     .app__selection-item:nth-child(4) {
         margin-top: 16px;
+    }
+
+    .app__selection-item-desc {
+        left: 40px;
     }
 
     .app__background-theme-desc {
@@ -32,6 +41,10 @@
         font-weight: 300;
     }
 
+    .app__inspiration-item {
+        line-height: 1.5;
+    }
+
     .app__inspiration-item__img {
         width: 100%;
         height: 100%;
@@ -41,42 +54,50 @@
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
-
-    .app__inspiration-item__info {
-        padding: 0 8px 8px;
-        line-height: 1.5;
-    }
     
-    .app__inspiration-item__info-title {
+    .app__inspiration-item-title {
         color: var(--black-color);
         font-size: 16px;
+        padding-top: 4px;
         display: block;
     }
     
-    .app__inspiration-item__info-desc {
+    .app__inspiration-item-desc {
         color: rgba(0, 0, 0, 0.5);
         font-size: 12px;
         display: block;
+    }
+
+    .app__inspiration-item-view {
+        font-size: 12px;
+        padding-bottom: 4px;
     }
 }
 
 /* Mobile*/
 @media (max-width: 739px) {
-    .app__content-title,
-    .app__destinations-title {
-        font-size: 24px;
+    .row{
+        margin-left: 0;
+        margin-right: 0;
     }
 
-    .app__selection-item {
-        text-align: center;
+    .app__selection-item.col {
+        padding-left: 8px;
+    }
+
+    .app__content-title,
+    .app__destinations-title {
+        font-size: 16px;
+    }
+
+    .app__selection-item-img {
+        width: 192px;
     }
 
     .app__selection-item-desc {
-        left: 86px;
-    }
-
-    .app__selection-item + .app__selection-item {
-        margin-top: 8px;
+        font-size: 12px;
+        left: 16px;
+        bottom: 12px;
     }
 
     .app__background-theme-img {
@@ -95,8 +116,28 @@
         font-size: 16px;
     }
 
+    .app__inspiration-item__img {
+        padding: 8px;
+    }
+
     .app__inspiration-margin {
         justify-content: space-around;
+        margin: 20px auto 32px;
+    }
+
+    .app__inspiration-item-title {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .app__inspiration-item-desc,
+    .app__inspiration-item-view {
+        font-size: 8px;
+        line-height: 1.5;
+    }
+
+    .app__inspiration-item-view {
+        padding-bottom: 8px;
     }
 
     .mobile-offset-4 {
