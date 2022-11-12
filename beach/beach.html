@@ -12,6 +12,182 @@
     <title>Beaches</title>
 </head>
 <body>
-    
+    <div id="app">
+        <header class="app__header">
+            <div class="grid wide">
+                <nav class="app__nav">
+                    <a href="#" class="app__nav-name-link">
+                        <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                    </a>
+
+                    <ul class="app__nav-list hide-on-mobile-tablet">
+                        <li class="app__nav-item">
+                            <a href="../home_page/home.html" class="app__nav-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="../sign_up/customer/sign_up.html" class="app__nav-item-link">Sign Up</a>
+                        </li>
+                    </ul>
+
+                    <label for="app__nav-mobile-input" class="app__nav-bars-btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
+
+                    <input type="checkbox" hidden name="" id="app__nav-mobile-input" class="app__nav-mobile-input">
+
+                    <label for="app__nav-mobile-input" class="app__nav-overlay"></label>
+
+                    <div class="app__nav-mobile">
+                        <label for="app__nav-mobile-input" class="app__nav-mobile-close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </label>
+
+                        <ul class="app__nav-mobile-list">
+                            <li class="app__nav-mobile-item">
+                                <a href="#" class="app__nav-mobile-item-link">Home</a>
+                            </li>
+                            <li class="app__nav-mobile-item">
+                                <a href="#" class="app__nav-mobile-item-link">Manage Your Stay</a>
+                            </li>
+                            <li class="app__nav-mobile-item">
+                                <a href="#" class="app__nav-mobile-item-link">Contacts</a>
+                            </li>
+                            <li class="app__nav-mobile-item">
+                                <a href="../sign_up/customer/sign_up.html" class="app__nav-mobile-item-link">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="app__title">
+                    <h1>Dive yourself into Viet soul.</h1>
+                    <h2>Plan your next trip from now!</h2>
+                </div>
+
+                <ul class="app__search-list">
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-magnifying-glass"></i>
+                        </a>
+                        <input type="text" name="app__search-input" placeholder="Search destinations, hotels">
+
+                        <div class="app__search-history">
+                            <h3 class="app__search-history-heading">Search history</h3>
+                            <ul class="app__search-history-list">
+                                <li class="app__search-history-item"><a href="#">Ho Chi Minh</a></li>
+                                <li class="app__search-history-item"><a href="#">Ha Noi</a></li>
+                                <li class="app__search-history-item"><a href="#">Da Nang</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-plane-departure"></i>
+                        </a>
+                        <div class="app__status-in">Check in</div>
+                        <input type="date" id="app__check-in" class="app__check-status" value="2022-11-11"
+                            min="2017-10-14" max="2050-12-31">
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-money-check"></i>
+                        </a>
+                        <div class="app__status-out">Check out</div>
+                        <input type="date" id="app__check-out" class="app__check-status" value="2022-11-11"
+                            min="2017-10-14" max="2050-12-31">
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-people-group"></i>
+                        </a>
+                        <div class="app__search-quantity">
+                            <span class="room-quantity">1</span>
+                            room,
+                            <span class="people-quantity">2</span>
+                            adults
+                        </div>
+
+                        <div class="box-quantity">
+                            <div class="box-quantity__item">
+                                <span>Room</span>
+                                <div>
+                                    <button class="btn-minus-room">-</button>
+                                    <span class="amount-room">1</span>
+                                    <button class="btn-add-room">+</button>
+                                </div>
+                            </div>
+                            <div class="box-quantity__item">
+                                <span>People</span>
+                                <div>
+                                    <button class="btn-minus-people">-</button>
+                                    <span class="amount-people">2</span>
+                                    <button class="btn-add-people">+</button>
+                                </div>
+                            </div>
+                            <button class="btn-quantity">Xong</button>
+                        </div>
+                    </li>
+                    <li class="app__search-item">
+                        <button class="app__search-btn">
+                            Search
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="app__margin-top-48">
+                    <h3 class="app__categories-title">Top Categories</h3>
+
+                    <div class="app__category-list row">
+                        <div class="app__category-item col l-2 m-4 c-4">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-sharp fa-solid fa-umbrella-beach"></i>
+                                <figcaption>Beaches</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-4 c-4">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-mountain-sun"></i>
+                                <figcaption>Mountains</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-4 c-4">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-city"></i>
+                                <figcaption>Iconic Cities</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-4 c-4">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-seedling"></i>
+                                <figcaption>Countryside</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-4 c-4">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-fire-flame-curved"></i>
+                                <figcaption>Camping</figcaption>
+                            </a>
+                        </div>
+                        <div class="app__category-item col l-2 m-4 c-4">
+                            <a href="#" class="app__category-item-link">
+                                <i class="app__category-item-icon fa-solid fa-cloud-sun-rain"></i>
+                                <figcaption>Tropical</figcaption>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <script src="../home_page/search_history.js"></script>
+    <script src="../home_page/set_interval.js"></script>
+    <script src="../home_page/set_quantity.js"></script>
 </body>
 </html>

@@ -1,62 +1,10 @@
 /* Mobile & tablet */
 @media (max-width: 1023px) {
-    .hide-on-mobile-tablet {
-        display: none;
-    }
-
-    .app__nav,
-    .app__nav-name-icon {
-        height: 80px;
-    }
-
-    .app__nav-bars-btn {
-        position: absolute;
-        top: 50%;
-        right: 16px;
-        transform: translateY(-50%);
-        font-size: 32px;
-        padding: 8px;
-        color: var(--white-color);
-        display: block;
-    }
+    
 }
 
 /* Tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
-    .app__title > h1 {
-        font-size: 44px;
-    }
-
-    .app__title > h2 {
-        font-size: 28px;
-    }
-
-    .app__search-item {
-        font-size: 14px;
-    }
-
-    .app__search-item:nth-child(2), .app__search-item:nth-child(3) {
-        width: 88px;
-    }
-
-    .app__search-item > input {
-        width: 200px;
-        font-size: 14px;
-    }
-
-    .app__search-btn {
-        padding: 12px;
-        font-size: 12px;
-    }
-
-    .app__search-item__option {
-        padding: 12px;
-    }
-
-    .app__category-item {
-        margin-bottom: 28px;
-    }
-
     .app__margin-top-28 {
         text-align: center;
     }
@@ -110,132 +58,13 @@
         font-size: 12px;
         display: block;
     }
-
-    .app__footer-contact-input {
-        margin: 16px auto 24px;
-    }
-
-    .app__footer-input > input {
-        width: 225px;
-        font-size: 14px;    
-        padding-left: 8px;
-    }
-
-    .app__footer-btn {
-        padding-right: 8px;
-    }
-
-    .app__footer-copyright {
-        padding-top: 8px;
-        padding-bottom: 20px;
-    }
 }
 
 /* Mobile*/
 @media (max-width: 739px) {
-    .hide-on-mobile {
-        display: none;
-    }
-    
-    .row {
-        margin-right: 0;
-    }
-
-    .app__nav-name-icon {
-        margin-left: 16px;
-    }
-
-    .app__title {
-        padding: 0 16px;
-    }
-
-    .app__title > h1 {
-        font-size: 24px;
-    }
-
-    .app__title > h2 {
-        font-size: 16px;
-    }
-
-    .app__search-list {
-        height: 36px;
-        margin-left: 16px;
-        margin-right: 16px;
-    }
-
-    .app__search-item {
-        font-size: 8px;
-    }
-
-    .app__search-item:nth-child(2), .app__search-item:nth-child(3) {
-        width: 56px;
-    }
-
-    .app__search-item > input {
-        width: 100px;
-        font-size: 8px;
-    }
-
-    .app__search-item > input[type=date] {
-        padding-left: 0;
-    }
-
-    .app__search-btn {
-        font-size: 8px;
-        padding: 8px 16px;
-    }
-
-    .app__search-history {
-        top: calc(100% + 8px);
-    }
-
-    .app__search-history-heading {
-        font-size: 8px;
-    }
-
-    .app__search-history-item {
-        height: 16px;
-    }    
-
-    .app__search-history-item > a {
-        font-size: 8px;
-        line-height: 16px;
-    }
-
-    .app__search-item__option {
-        padding: 8px;
-    }
-
-    .option__content {
-        margin-bottom: 8px;
-    }
-
-    .app__search-number {
-        min-width: 52px;
-    }
-
-    .btn-minus-people, 
-    .btn-add-people, 
-    .btn-minus-room, 
-    .btn-add-room {
-        min-width: 16px;
-        min-height: 16px;
-    }
-
-    .btn-selected {
-        font-size: 8px;
-        padding: 4px;
-    }
-
-    .app__content-title, 
-    .app__categories-title,
+    .app__content-title,
     .app__destinations-title {
         font-size: 24px;
-    }
-
-    .app__category-item-icon {
-        font-size: 24px;
-        padding-bottom: 8px;
     }
 
     .app__selection-item {
@@ -268,26 +97,6 @@
 
     .app__inspiration-margin {
         justify-content: space-around;
-    }
-
-    .app__footer-contact-title {
-        font-size: 20px;
-    }
-
-    .app__footer-contact-input {
-        width: 350px;
-        justify-content: space-around;
-    }
-
-    .app__footer-input > input {
-        width: 200px;
-        font-size: 14px;
-        padding-left: 0;
-    }
-
-    .app__footer-btn {
-        font-size: 14px;
-        padding-right: 0;
     }
 
     .mobile-offset-4 {

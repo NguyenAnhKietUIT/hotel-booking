@@ -4,14 +4,45 @@
     box-sizing: border-box;
 }
 
-#app {
-    position: relative;
-}
-
 /* Header */
 .app__header {
     background: url(../assets/img/home_page/home_page.png) top center / cover no-repeat;
     display: block;
+}
+
+/* Selection */
+.app__content-title,
+.app__destinations-title {
+    text-align: center;
+    color: var(--black-color);
+    font-size: 32px;
+}
+
+.app__selection-item {
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease-in;
+}
+
+.app__selection-item:hover {
+    transform: scale(1.03);
+}
+
+.app__selection-item-link {
+    text-decoration: none;
+}
+
+.app__selection-item-img {
+    width: 280px;
+    border-radius: 8px;
+}
+
+.app__selection-item-desc {
+    position: absolute;
+    bottom: 20px;
+    left: 28px;
+    color: var(--white-color);
+    font-size: 24px;
 }
 
 /* Content background theme */
@@ -103,80 +134,4 @@
 /* Footer */
 .app__footer {
     background: url(../assets/img/background/Frame_98.png) top center / cover no-repeat;
-}
-
-
-/* Responsive */
-.app__nav-bars-btn {
-    display: none;
-}
-
-.app__nav-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    display: none;
-    animation: fadeIn 0.2s linear;
-}
-
-.app__nav-mobile {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 100;
-    width: 300px;
-    max-width: 100%;
-    background-color: var(--white-color);
-    transform: translateX(100%);
-    opacity: 0;
-    transition: all 0.2s linear;
-}
-
-.app__nav-mobile-list {
-    margin-top: 52px;
-    list-style: none;
-}
-
-.app__nav-mobile-item-link {
-    text-decoration: none;
-    color: var(--black-color);
-    font-size: 20px;
-    display: block;
-    padding: 8px 24px;
-}
-
-.app__nav-mobile-item-link:active {
-    color: red;
-}
-
-.app__nav-mobile-close {
-    position: absolute;
-    top: 8px;
-    right: 24px;
-    font-size: 40px;
-    display: block;
-    padding: 8px 16px;
-    color: var(--black-color);
-}
-
-.app__nav-mobile-input:checked ~ .app__nav-overlay {
-    display: block;
-}
-
-.app__nav-mobile-input:checked ~ .app__nav-mobile {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
