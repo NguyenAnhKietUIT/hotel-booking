@@ -121,7 +121,7 @@ html {
 .app__search-item:hover .app__search-icon,
 .app__search-item:hover .app__status-in,
 .app__search-item:hover .app__status-out,
-.app__search-item:hover .app__search-option-number
+.app__search-item:hover .app__search-quantity
 {
     color: var(--white-color);
 }
@@ -150,9 +150,13 @@ html {
 
 .app__status-in,
 .app__status-out,
-.app__search-option-number {
+.app__search-quantity {
     color: var(--text-color);
     cursor: pointer;
+}
+
+.app__search-quantity {
+    min-width: 140px;
 }
 
 .app__search-item > input[type=date] {
@@ -235,9 +239,9 @@ html {
     white-space: nowrap;
 }
 
-.app__search-item__option {
+.box-quantity {
     position: absolute;
-    width: 140%;
+    width: 120%;
     top: 28px;
     right: 50%;
     transform: translateX(50%);
@@ -247,14 +251,14 @@ html {
     display: none;
 }
 
-.option__content {
+.box-quantity__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
 }
 
-.app__search-number {
+.box-quantity__item div {
     min-width: 100px;
     display: flex;
     justify-content: space-between;
@@ -273,7 +277,7 @@ html {
     padding: 0 8px;
 }
 
-.btn-selected {
+.btn-quantity {
     width: 100%;
     padding: 8px;
     color: blue;
@@ -283,11 +287,11 @@ html {
     border: 1px solid blue;
 }
 
-.btn-selected:hover {
+.btn-quantity:hover {
     background-color: rgba(0, 0, 255, 0.1);
 }
 
-.app__search-option-input:checked ~ .app__search-item__option {
+.app__search-option-input:checked ~ .box-quantity {
     display: block;
 }
 

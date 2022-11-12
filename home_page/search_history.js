@@ -27,3 +27,10 @@ listHistory.addEventListener('click', (events) => {
     inputSearch.value = result
     boxHistory.style.display = 'none'
 })
+
+//click bên ngoài boxHistory thì ẩn đi lịch sử tìm kiếm
+document.addEventListener('mouseup', function(e) {
+    if (!boxHistory.contains(e.target)) {
+        boxHistory.style.display = 'none';
+    }
+});

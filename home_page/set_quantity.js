@@ -1,73 +1,80 @@
 //Xử lý sự kiện chọn số lượng người và số lượng phòng
-const optionNumber = document.querySelector('.app__search-option-number')
-const optionSelected = document.querySelector('.btn-selected')
-const number = document.querySelector('.app__search-item__option')
+const textQuantity = document.querySelector('.app__search-quantity')
+const btnQuantity = document.querySelector('.btn-quantity')
+const boxQuantity = document.querySelector('.box-quantity')
 
-const textRoom = document.querySelector('.option-number-room');
-const innerRoom = document.querySelector('.amount-room')
+const roomQuantity = document.querySelector('.room-quantity');
+const amountRoom = document.querySelector('.amount-room')
 const btnAddRoom = document.querySelector('.btn-add-room')
 const btnMinusRoom = document.querySelector('.btn-minus-room')
 
-const textPeople = document.querySelector('.option-number-people');
-const innerPeople = document.querySelector('.amount-people')
+const peopleQuantity = document.querySelector('.people-quantity');
+const amountPeople = document.querySelector('.amount-people')
 const btnAddPeople = document.querySelector('.btn-add-people')
 const btnMinusPeople = document.querySelector('.btn-minus-people')
 
-optionNumber.addEventListener('click', () => {
-    innerPeople.innerHTML = textPeople.innerHTML
-    innerRoom.innerHTML = textRoom.innerHTML
+textQuantity.addEventListener('click', () => {
+    amountPeople.innerHTML = peopleQuantity.innerHTML
+    amountRoom.innerHTML = roomQuantity.innerHTML
 
-    number.style.display = 'block';
+    boxQuantity.style.display = 'block';
 })
 
-optionSelected.addEventListener('click', () => {
-    textPeople.innerHTML = innerPeople.innerHTML
-    textRoom.innerHTML = innerRoom.innerHTML
-    number.style.display = 'none';
+btnQuantity.addEventListener('click', () => {
+    peopleQuantity.innerHTML = amountPeople.innerHTML
+    roomQuantity.innerHTML = amountRoom.innerHTML
+    boxQuantity.style.display = 'none';
 })
 
 btnAddRoom.addEventListener('click', () => {
-    let numberRoom = parseInt(innerRoom.innerHTML)
+    let numberRoom = parseInt(amountRoom.innerHTML)
     numberRoom++;
 
     if (numberRoom > 1 && btnMinusRoom.hasAttribute('disabled')) {
         btnMinusRoom.removeAttribute('disabled');
     }
 
-    innerRoom.innerHTML = numberRoom;
+    amountRoom.innerHTML = numberRoom;
 })
 
 btnMinusRoom.addEventListener('click', () => {
-    let currentRoom = parseInt(innerRoom.innerHTML)
+    let currentRoom = parseInt(amountRoom.innerHTML)
 
     if (currentRoom <= 1) {
         btnMinusRoom.setAttribute('disabled', true)
     } else {
         let numberRoom = currentRoom
         numberRoom--;
-        innerRoom.innerHTML = numberRoom;
+        amountRoom.innerHTML = numberRoom;
     }
 })
 
 btnAddPeople.addEventListener('click', () => {
-    let numberPeople = parseInt(innerPeople.innerHTML)
+    let numberPeople = parseInt(amountPeople.innerHTML)
     numberPeople++;
 
     if (numberPeople > 1 && btnMinusPeople.hasAttribute('disabled')) {
         btnMinusPeople.removeAttribute('disabled');
     }
 
-    innerPeople.innerHTML = numberPeople;
+    amountPeople.innerHTML = numberPeople;
 })
 
 btnMinusPeople.addEventListener('click', () => {
-    let currentPeople = parseInt(innerPeople.innerHTML)
+    let currentPeople = parseInt(amountPeople.innerHTML)
 
     if (currentPeople <= 1) {
         btnMinusPeople.setAttribute('disabled', true)
     } else {
         let numberPeople = currentPeople
         numberPeople--;
-        innerPeople.innerHTML = numberPeople;
+        amountPeople.innerHTML = numberPeople;
     }
 })
+
+//click bên ngoài ô chọn số lượng thì ẩn đi ô chọn số lượng
+document.addEventListener('mouseup', function(e) {
+    if (!boxQuantity.contains(e.target)) {
+        boxQuantity.style.display = 'none';
+    }
+});
