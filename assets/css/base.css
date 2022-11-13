@@ -1,9 +1,9 @@
 :root {
     --white-color: #fff;
     --black-color: #000;
-    --text-color: #333;
+    --text-color: rgba(0, 0, 0, 0.5);
     --navbar-height: 100px;
-    --text-color: rgba(255, 255, 255, 0.7);
+    --search-color: rgba(255, 255, 255, 0.7);
 }
 
 * {

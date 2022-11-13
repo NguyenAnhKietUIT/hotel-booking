@@ -10,6 +10,10 @@
     display: block;
 }
 
+.app__nav-item:first-child .app__nav-item-link{
+    color: var(--white-color);
+}
+
 /* Selection */
 .app__content-title,
 .app__destinations-title {

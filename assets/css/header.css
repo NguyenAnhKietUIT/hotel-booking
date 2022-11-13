@@ -39,7 +39,7 @@
 .app__nav-item-link {
     font-size: 20px;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--search-color);
 }
 
 .app__nav-item-link:hover {
@@ -99,7 +99,7 @@
 }
 
 .app__search-icon {
-    color: var(--text-color);
+    color: var(--search-color);
 }
 
 .app__search-item > input {
@@ -112,13 +112,13 @@
 }
 
 .app__search-item > input::placeholder {
-    color: var(--text-color);
+    color: var(--search-color);
 }
 
 .app__status-in,
 .app__status-out,
 .app__search-quantity {
-    color: var(--text-color);
+    color: var(--search-color);
     cursor: pointer;
 }
 
@@ -280,7 +280,7 @@
 
 .app__category-item-link {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--search-color);
 }
 
 .app__category-item-link:hover {
