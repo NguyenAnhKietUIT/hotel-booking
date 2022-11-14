@@ -77,7 +77,6 @@
 /* Mobile*/
 @media (max-width: 739px) {
     .row{
-        margin-left: 0;
         margin-right: 0;
     }
 
@@ -138,9 +137,5 @@
 
     .app__inspiration-item-view {
         padding-bottom: 8px;
-    }
-
-    .mobile-offset-4 {
-        margin-left: 33.33333%;
     }
 }

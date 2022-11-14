@@ -157,4 +157,8 @@
         font-size: 8px;
         padding-top: 0;
     }
+
+    .mobile-offset-4 {
+        margin-left: 33.33333%;
+    }
 }
