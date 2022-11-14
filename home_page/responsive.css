@@ -90,7 +90,7 @@
     }
 
     .app__selection-item-img {
-        width: 192px;
+        width: 100%;
     }
 
     .app__selection-item-desc {
@@ -108,11 +108,11 @@
     }
 
     .app__background-theme-title {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .app__background-theme-detail {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .app__inspiration-item__img {

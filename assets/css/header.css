@@ -524,7 +524,7 @@
     }
 
     .app__search-item {
-        font-size: 8px;
+        font-size: 6px;
     }
 
     .app__search-item:nth-child(2), 
@@ -533,17 +533,17 @@
     }
 
     .app__search-item > input {
-        width: 100px;
-        font-size: 8px;
+        width: 80px;
+        font-size: 6px;
     }
 
     .app__search-item > input[type=date] {
         padding-left: 0;
-        font-size: 8px;
+        font-size: 6px;
     }
 
     .app__search-btn {
-        font-size: 8px;
+        font-size: 6px;
         padding: 6px 12px;
     }
 
@@ -552,16 +552,16 @@
     }
 
     .app__search-history-heading {
-        font-size: 8px;
+        font-size: 6px;
     }
 
     .app__search-history-item {
-        height: 16px;
+        height: 12px;
     }    
 
     .app__search-history-item > a {
-        font-size: 8px;
-        line-height: 16px;
+        font-size: 6px;
+        line-height: 12px;
     }
 
     .app__search-quantity {
