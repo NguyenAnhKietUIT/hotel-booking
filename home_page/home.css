@@ -15,11 +15,18 @@
 }
 
 /* Selection */
-.app__content-title,
-.app__destinations-title {
+.app__destinations,
+.app__browse {
+    display: block;
+    margin-top: 48px;
+}
+
+.app__selection-title,
+.app__inspiration-title {
     text-align: center;
-    color: var(--black-color);
     font-size: 32px;
+    color: var(--black-color);
+    margin-bottom: 28px;
 }
 
 .app__selection-item {

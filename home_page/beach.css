@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,9 +16,14 @@
 .app__category-item:first-child .app__category-item-icon,
 .app__category-item:first-child figcaption {
     color: var(--white-color);
-}
+} */
 
 /* Beach content */
+.app__home-location {
+    display: block;
+    margin-top: 48px;
+}
+
 .app__home-location-title {
     font-size: 32px;
     text-align: center;

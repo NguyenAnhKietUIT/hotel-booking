@@ -15,26 +15,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.app__margin-top-48 {
-    margin-top: 48px;
-}
-
-.app__margin-top-28 {
-    margin-top: 28px;
-}
-
-.app__margin-top-16 {
-    margin-top: 16px;
-}
-
-.app__margin-top-8 {
-    margin-top: 8px;
-}
-
-#app__go-home {
-    display: none;
-}
-
 .app__go-home-link {
     text-decoration: none;
     position: fixed;
