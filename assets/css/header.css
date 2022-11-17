@@ -296,6 +296,11 @@
     font-size: 20px;
 }
 
+.app__category--active .app__category-item-icon,
+.app__category--active figcaption {
+    color: var(--white-color);
+}
+
 /* Responsive */
 .app__nav-bars-btn {
     display: none;

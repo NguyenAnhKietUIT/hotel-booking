@@ -13,134 +13,18 @@ const tropicalContainer = document.querySelector('.app__content-tropical')
 const header = document.querySelector('.app__header')
 const footer = document.querySelector('.app__footer')
 
-const beaches = [
-    {
-        img: "../assets/img/beach/mauritius.png",
-        name: "Mauritius",
-        rating: 4.7,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/havelock.jpg",
-        name: "Havelock",
-        rating: 4.9,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/whitsunday_islands.jpg",
-        name: "Whitsunday Islands",
-        rating: 4.5,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/mauritius.png",
-        name: "Mauritius",
-        rating: 4.7,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-]
-
-const beaches2 = [
-    {
-        img: "../assets/img/beach/mauritius.png",
-        name: "Mauritius",
-        rating: 4.7,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/maldives.jpg",
-        name: "Maldives",
-        rating: 4.9,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/whitsunday_islands.jpg",
-        name: "Whitsunday Islands",
-        rating: 4.5,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-]
-
-const beaches3 = [
-    {
-        img: "../assets/img/beach/image_25.png",
-        name: "Havelock",
-        rating: 4.9,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/image_31.png",
-        name: "Whitsunday Islands",
-        rating: 4.5,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/image_32.png",
-        name: "Maldives",
-        rating: 4.9,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-    {
-        img: "../assets/img/beach/whitsunday_islands.jpg",
-        name: "Whitsunday Islands",
-        rating: 4.5,
-        desc: "3Days 4 Nights",
-        schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-        detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-        price: ["₹88,952", "₹88,952"]
-    },
-]
-
-const theme = {
-    img: "../assets/img/beach/summer_bonanza.png",
-    title: "Summer Bonanza!",
-    detail: ["Enjoy confortable transfers in shared coaches", 
-    "Choose from 5 flights per week", 
-    "Get a free Rapid Antigen Test at selected hotels"]
-}
-
 categories.forEach(element => {
     element.addEventListener('click', () => {
-        homeContainer.style.display = 'none'
-        element.style.color = 'var(--white-color)'
+        anonymousComponent()
+        removeActive()
+        
+        element.classList.add('app__category--active')
 
-        if (element.childNodes[3].innerHTML === 'Beaches') {
-            beachContainer.style.display = 'block'
-            header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
+        let categoryItem = element.childNodes[3].innerHTML
 
-            renderBeach()
-            favourite()
-        }
+        changeCategory(categoryItem)
+        
+        favourite()
     })
 })
 
@@ -152,59 +36,386 @@ triviaIcon.addEventListener('click', () => {
     document.location.reload()
 })
 
-function renderBeach() {
+//param: array include 4 urls
+function fetchManual(element) {
+
+    var object
+    
+    if (element === 'Beaches') {
+        object = {
+            obj1 : [
+                {
+                    img: "../assets/img/category/beach/mauritius.png",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/havelock.jpg",
+                    name: "Havelock",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/whitsunday_islands.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/mauritius.png",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            obj2 : [
+                {
+                    img: "../assets/img/category/beach/mauritius.png",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/maldives.jpg",
+                    name: "Maldives",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/whitsunday_islands.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            obj3 : [
+                {
+                    img: "../assets/img/category/beach/image_25.png",
+                    name: "Havelock",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/image_31.png",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/image_32.png",
+                    name: "Maldives",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/beach/whitsunday_islands.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            theme : {
+                img: "../assets/img/category/beach/summer_bonanza.png",
+                title: "Summer Bonanza!",
+                detail: ["Enjoy confortable transfers in shared coaches", 
+                "Choose from 5 flights per week", 
+                "Get a free Rapid Antigen Test at selected hotels"]
+            }
+        }
+    }
+    if (element === 'Mountains') {
+        object = {
+            obj1 : [
+                {
+                    img: "../assets/img/category/mountain/mountain_1.jpg",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/mountain/mountain_2.jpg",
+                    name: "Havelock",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/mountain/mountain_3.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/mountain/mountain_4.jpg",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            obj2 : [
+                {
+                    img: "../assets/img/category/mountain/mountain_3.jpg",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/mountain/mountain_2.jpg",
+                    name: "Maldives",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            obj3 : [
+                {
+                    img: "../assets/img/category/mountain/mountain_2.jpg",
+                    name: "Havelock",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/mountain/mountain_4.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/mountain/mountain_1.jpg",
+                    name: "Maldives",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/mountain/mountain_3.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            theme : {
+                img: "../assets/img/category/beach/summer_bonanza.png",
+                title: "Summer Bonanza!",
+                detail: ["Enjoy confortable transfers in shared coaches", 
+                "Choose from 5 flights per week", 
+                "Get a free Rapid Antigen Test at selected hotels"]
+            }
+        }
+    }
+    if (element === 'Iconic Cities') {
+        object = {
+            obj1 : [
+                {
+                    img: "../assets/img/category/iconic_city/city_1.jpg",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/iconic_city/city_2.jpg",
+                    name: "Havelock",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/iconic_city/city_3.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/iconic_city/city_4.png",
+                    name: "Mauritius",
+                    rating: 4.7,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            obj2 : [
+            ],
+            obj3 : [
+                {
+                    img: "../assets/img/category/iconic_city/city_4.png",
+                    name: "Havelock",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/iconic_city/city_1.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/iconic_city/city_3.jpg",
+                    name: "Maldives",
+                    rating: 4.9,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+                {
+                    img: "../assets/img/category/iconic_city/city_2.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
+            ],
+            theme : {
+                img: "../assets/img/category/beach/summer_bonanza.png",
+                title: "Summer Bonanza!",
+                detail: ["Enjoy confortable transfers in shared coaches", 
+                "Choose from 5 flights per week", 
+                "Get a free Rapid Antigen Test at selected hotels"]
+            }
+        }
+    }
+
+    return object
+}
+
+function renderManual(text, categoryItem) {
+    let fetchAPI = fetchManual(categoryItem)
+    let arr1 = fetchAPI.obj1
+    let arr2 = fetchAPI.obj2
+    let arr3 = fetchAPI.obj3
+    let obj = fetchAPI.theme
+
     let html = `
             <div class="app__home-location">
                 <h3 class="app__home-location-title">
-                    Popular Beach Destinations
+                    Popular ${text} Destinations
                 </h3>
 
                 <div class="row">
             `
 
-    let topBeach = beaches.map(function(beach) {
+    let popularDestination = arr1.map(function(element) {
         return `
             <div class="col l-3 m-6 c-6">
                 <a href="#" class="home-location-item">
-                    <img src="${beach.img}" alt="" class="home-location-item__img">
+                    <img src="${element.img}" alt="" class="home-location-item__img">
                     <i class="home-location-item__favourite fa-regular fa-heart"></i>
                     <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
                     <span class="home-location-item__title">
-                        <h4 class="home-location-item__name">${beach.name}</h4>
+                        <h4 class="home-location-item__name">${element.name}</h4>
                         <span class="home-location-item__rating">
                             <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                                ${beach.rating}
+                                ${element.rating}
                         </span>
                     </span>
-                    <span class="home-location-item__desc">${beach.desc}</span>
+                    <span class="home-location-item__desc">${element.desc}</span>
                     <div class="home-location-item__schedule">
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                            <figcaption>${beach.schedule[0]}</figcaption>
+                            <figcaption>${element.schedule[0]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                            <figcaption>${beach.schedule[1]}</figcaption>
+                            <figcaption>${element.schedule[1]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                            <figcaption>${beach.schedule[2]}</figcaption>
+                            <figcaption>${element.schedule[2]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                            <figcaption>${beach.schedule[3]}</figcaption>
+                            <figcaption>${element.schedule[3]}</figcaption>
                         </span>
                     </div>
                     <div class="home-location-item__detail">
                         <ul>
-                            <li>${beach.detail[0]}</li>
-                            <li>${beach.detail[1]}</li>
-                            <li>${beach.detail[2]}</li>
+                            <li>${element.detail[0]}</li>
+                            <li>${element.detail[1]}</li>
+                            <li>${element.detail[2]}</li>
                         </ul>
                     </div>
                     <div class="home-location-item__price">
-                        <span class="home-location-item__price-old">${beach.price[0]}</span>
-                        <span class="home-location-item__price-current">${beach.price[1]}</span>
+                        <span class="home-location-item__price-old">${element.price[0]}</span>
+                        <span class="home-location-item__price-current">${element.price[1]}</span>
                         <span>Per person</span>
                     </div>
                 </a>
@@ -212,13 +423,11 @@ function renderBeach() {
             `
     })
 
-    html += topBeach.join('')
+    html += popularDestination.join('')
     html += `
                 </div>
             </div>
-            `
-
-    html += `
+            
             <div class="app__home-location">
                 <h3 class="app__home-location-title">
                     Recently Viewed
@@ -227,49 +436,49 @@ function renderBeach() {
                 <div class="row">
             `
 
-    let reviewed = beaches2.map(function(beach) {
+    let reviewed = arr2.map(function(element) {
         return `
             <div class="col l-3 m-6 c-6">
                 <a href="#" class="home-location-item">
-                    <img src="${beach.img}" alt="" class="home-location-item__img">
+                    <img src="${element.img}" alt="" class="home-location-item__img">
                     <i class="home-location-item__favourite fa-regular fa-heart"></i>
                     <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
                     <span class="home-location-item__title">
-                        <h4 class="home-location-item__name">${beach.name}</h4>
+                        <h4 class="home-location-item__name">${element.name}</h4>
                         <span class="home-location-item__rating">
                             <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                            ${beach.rating}
+                            ${element.rating}
                         </span>
                     </span>
-                    <span class="home-location-item__desc">${beach.desc}</span>
+                    <span class="home-location-item__desc">${element.desc}</span>
                     <div class="home-location-item__schedule">
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                            <figcaption>${beach.schedule[0]}</figcaption>
+                            <figcaption>${element.schedule[0]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                            <figcaption>${beach.schedule[1]}</figcaption>
+                            <figcaption>${element.schedule[1]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                            <figcaption>${beach.schedule[2]}</figcaption>
+                            <figcaption>${element.schedule[2]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                            <figcaption>${beach.schedule[3]}</figcaption>
+                            <figcaption>${element.schedule[3]}</figcaption>
                         </span>
                     </div>
                     <div class="home-location-item__detail">
                         <ul>
-                            <li>${beach.detail[0]}</li>
-                            <li>${beach.detail[1]}</li>
-                            <li>${beach.detail[2]}</li>
+                            <li>${element.detail[0]}</li>
+                            <li>${element.detail[1]}</li>
+                            <li>${element.detail[2]}</li>
                         </ul>
                     </div>
                     <div class="home-location-item__price">
-                        <span class="home-location-item__price-old">${beach.price[0]}</span>
-                        <span class="home-location-item__price-current">${beach.price[1]}</span>
+                        <span class="home-location-item__price-old">${element.price[0]}</span>
+                        <span class="home-location-item__price-current">${element.price[1]}</span>
                         <span>Per person</span>
                     </div>
                 </a>
@@ -278,17 +487,16 @@ function renderBeach() {
     })
 
     html += reviewed.join('')
-
     html += `
             <div class="col l-3 m-6 c-6">
                 <a href="#" class="home-viewed">
-                    <img src="${theme.img}" alt="" class="home-viewed__img">
+                    <img src="${obj.img}" alt="" class="home-viewed__img">
                     <div class="home-viewed-info">
-                        <h3 class="home-viewed__title">${theme.title}</h3>
+                        <h3 class="home-viewed__title">${obj.title}</h3>
                         <ul class="home-viewed__list">
-                            <li class="home-viewed-item">${theme.detail[0]}</li>
-                            <li class="home-viewed-item">${theme.detail[1]}</li>
-                            <li class="home-viewed-item">${theme.detail[2]}</li>
+                            <li class="home-viewed-item">${obj.detail[0]}</li>
+                            <li class="home-viewed-item">${obj.detail[1]}</li>
+                            <li class="home-viewed-item">${obj.detail[2]}</li>
                         </ul>
                     </div>
                 </a>
@@ -307,49 +515,49 @@ function renderBeach() {
                 <div class="row">
             `
 
-    let package = beaches3.map(function(beach) {
+    let package = arr3.map(function(element) {
         return `
             <div class="col l-3 m-6 c-6">
                 <a href="#" class="home-location-item">
-                    <img src="${beach.img}" alt="" class="home-location-item__img">
+                    <img src="${element.img}" alt="" class="home-location-item__img">
                     <i class="home-location-item__favourite fa-regular fa-heart"></i>
                     <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
                     <span class="home-location-item__title">
-                        <h4 class="home-location-item__name">${beach.name}</h4>
+                        <h4 class="home-location-item__name">${element.name}</h4>
                         <span class="home-location-item__rating">
                             <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                            ${beach.rating}
+                            ${element.rating}
                         </span>
                     </span>
-                    <span class="home-location-item__desc">${beach.desc}</span>
+                    <span class="home-location-item__desc">${element.desc}</span>
                     <div class="home-location-item__schedule">
                          <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                            <figcaption>${beach.schedule[0]}</figcaption>
+                            <figcaption>${element.schedule[0]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                            <figcaption>${beach.schedule[1]}</figcaption>
+                            <figcaption>${element.schedule[1]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                            <figcaption>${beach.schedule[2]}</figcaption>
+                            <figcaption>${element.schedule[2]}</figcaption>
                         </span>
                         <span class="schedule__item">
                             <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                            <figcaption>${beach.schedule[3]}</figcaption>
+                            <figcaption>${element.schedule[3]}</figcaption>
                         </span>
                     </div>
                     <div class="home-location-item__detail">
                         <ul>
-                            <li>${beach.detail[0]}</li>
-                            <li>${beach.detail[1]}</li>
-                            <li>${beach.detail[2]}</li>
+                            <li>${element.detail[0]}</li>
+                            <li>${element.detail[1]}</li>
+                            <li>${element.detail[2]}</li>
                         </ul>
                     </div>
                     <div class="home-location-item__price">
-                        <span class="home-location-item__price-old">${beach.price[0]}</span>
-                        <span class="home-location-item__price-current">${beach.price[1]}</span>
+                        <span class="home-location-item__price-old">${element.price[0]}</span>
+                        <span class="home-location-item__price-current">${element.price[1]}</span>
                         <span>Per person</span>
                     </div>
                 </a>
@@ -363,7 +571,7 @@ function renderBeach() {
             </div>
         `
 
-    beachContainer.innerHTML = html
+    return html
 }
 
 function favourite() {
@@ -389,4 +597,65 @@ function favourite() {
             element.parentElement.querySelector('.home-location-item__favourite').style.zIndex = 1
         })
     })
+}
+
+function anonymousComponent() {
+    homeContainer.style.display = 'none'
+    beachContainer.style.display = 'none'
+    mountainContainer.style.display = 'none'
+    iconicCityContainer.style.display = 'none'
+    countrysideContainer.style.display = 'none'
+    campingContainer.style.display = 'none'
+    tropicalContainer.style.display = 'none'
+}
+
+function removeActive() {
+    categories.forEach(element => {
+        element.classList.remove('app__category--active')
+    })
+}
+
+function changeCategory(param) {
+    if (param === 'Beaches') {
+        beachContainer.style.display = 'block'
+        header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
+
+        let html = renderManual('Beach', param)
+        beachContainer.innerHTML = html
+    } else if (param === 'Mountains') {
+        mountainContainer.style.display = 'block'
+        header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
+        footer.style.backgroundImage = "url('../assets/img/background/Frame_99.png')"
+
+        let html = renderManual('Mountain', param)
+        mountainContainer.innerHTML = html
+    } else if (param === 'Iconic Cities') {
+        iconicCityContainer.style.display = 'block'
+        header.style.backgroundImage = "url('../assets/img/background/image_1.png')"
+        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
+
+        let html = renderManual('Iconic Cities', param)
+        iconicCityContainer.innerHTML = html
+    } else if (param === 'Countryside') {
+        countrysideContainer.style.display = 'block'
+        header.style.backgroundImage = "url('../assets/img/background/image_33.png')"
+        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
+
+        let html = renderManual('Countryside', param)
+        countrysideContainer.innerHTML = html
+    } else if (param === 'Camping') {
+        campingContainer.style.display = 'block'
+        header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
+        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
+
+        let html = renderManual('Camping', param)
+        campingContainer.innerHTML = html
+    } else if (param === 'Tropical') {
+        tropicalContainer.style.display = 'block'
+        header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
+        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
+
+        let html = renderManual('Tropical', param)
+        tropicalContainer.innerHTML = html
+    }
 }

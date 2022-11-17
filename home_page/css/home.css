@@ -8,6 +8,8 @@
 .app__header {
     background: url(../../assets/img/home_page/home_page.png) top center / cover no-repeat;
     display: block;
+    -webkit-transition: background-image 0.5s ease-in-out;
+    transition: background-image 0.5s ease-in-out;
 }
 
 .app__nav-item:first-child .app__nav-item-link{
