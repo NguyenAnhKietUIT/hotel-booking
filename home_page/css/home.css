@@ -6,7 +6,7 @@
 
 /* Header */
 .app__header {
-    background: url(../assets/img/home_page/home_page.png) top center / cover no-repeat;
+    background: url(../../assets/img/home_page/home_page.png) top center / cover no-repeat;
     display: block;
 }
 
@@ -142,5 +142,5 @@
 
 /* Footer */
 .app__footer {
-    background: url(../assets/img/background/Frame_98.png) top center / cover no-repeat;
+    background: url(../../assets/img/background/Frame_98.png) top center / cover no-repeat;
 }
