@@ -1,5 +1,6 @@
 const homeContainer = document.querySelector('.app__content-home')
 const homeNavigation = document.querySelector('.app__nav-item:first-child')
+const triviaIcon = document.querySelector('.app__nav-name-icon')
 
 const categories = document.querySelectorAll('.app__category-item')
 const beachContainer = document.querySelector('.app__content-beach')
@@ -15,15 +16,19 @@ const footer = document.querySelector('.app__footer')
 categories.forEach(element => {
     element.addEventListener('click', () => {
         homeContainer.style.display = 'none'
+        element.style.color = 'var(--white-color)'
 
         if (element.childNodes[3].innerHTML === 'Beaches') {
             beachContainer.style.display = 'block'
             header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
-            element.style.color = 'white'
         }
     })
 })
 
 homeNavigation.addEventListener('click', () => {
+    document.location.reload()
+})
+
+triviaIcon.addEventListener('click', () => {
     document.location.reload()
 })
