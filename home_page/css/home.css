@@ -14,9 +14,19 @@
     color: var(--white-color);
 }
 
+.app__content-beach,
+.app__content-mountain,
+.app__content-iconic-city,
+.app__content-countryside,
+.app__content-camping,
+.app__content-tropical {
+    display: none;
+}
+
 /* Selection */
 .app__destinations,
-.app__browse {
+.app__browse,
+.app__categories {
     display: block;
     margin-top: 48px;
 }

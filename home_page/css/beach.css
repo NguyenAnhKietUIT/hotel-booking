@@ -21,7 +21,7 @@
 /* Beach content */
 .app__home-location {
     margin-top: 48px;
-    display: none;
+    display: block;
 }
 
 .app__home-location-title {
