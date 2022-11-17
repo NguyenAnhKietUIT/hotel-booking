@@ -154,132 +154,132 @@ triviaIcon.addEventListener('click', () => {
 
 function renderBeach() {
     let html = `
-                <div class="app__home-location">
-                    <h3 class="app__home-location-title">
-                        Popular Beach Destinations
-                    </h3>
+            <div class="app__home-location">
+                <h3 class="app__home-location-title">
+                    Popular Beach Destinations
+                </h3>
 
                 <div class="row">
-                `
+            `
 
-            let topBeach = beaches.map(function(beach) {
-                return `
-                    <div class="col l-3 m-6 c-6">
-                        <a href="#" class="home-location-item">
-                            <img src="${beach.img}" alt="" class="home-location-item__img">
-                            <i class="home-location-item__favourite fa-regular fa-heart"></i>
-                            <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
-                            <span class="home-location-item__title">
-                                <h4 class="home-location-item__name">${beach.name}</h4>
-                                <span class="home-location-item__rating">
-                                    <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                                    ${beach.rating}
-                                </span>
-                            </span>
-                            <span class="home-location-item__desc">${beach.desc}</span>
-                            <div class="home-location-item__schedule">
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                                    <figcaption>${beach.schedule[0]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                                    <figcaption>${beach.schedule[1]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                                    <figcaption>${beach.schedule[2]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                                    <figcaption>${beach.schedule[3]}</figcaption>
-                                </span>
-                            </div>
-                            <div class="home-location-item__detail">
-                                <ul>
-                                    <li>${beach.detail[0]}</li>
-                                    <li>${beach.detail[1]}</li>
-                                    <li>${beach.detail[2]}</li>
-                                </ul>
-                            </div>
-                            <div class="home-location-item__price">
-                                <span class="home-location-item__price-old">${beach.price[0]}</span>
-                                <span class="home-location-item__price-current">${beach.price[1]}</span>
-                                <span>Per person</span>
-                            </div>
-                        </a>
+    let topBeach = beaches.map(function(beach) {
+        return `
+            <div class="col l-3 m-6 c-6">
+                <a href="#" class="home-location-item">
+                    <img src="${beach.img}" alt="" class="home-location-item__img">
+                    <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                    <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+                    <span class="home-location-item__title">
+                        <h4 class="home-location-item__name">${beach.name}</h4>
+                        <span class="home-location-item__rating">
+                            <i class="home-location-item__rating-icon fa-solid fa-star"></i>
+                                ${beach.rating}
+                        </span>
+                    </span>
+                    <span class="home-location-item__desc">${beach.desc}</span>
+                    <div class="home-location-item__schedule">
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-plane-up"></i>
+                            <figcaption>${beach.schedule[0]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-hotel"></i>
+                            <figcaption>${beach.schedule[1]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-car-side"></i>
+                            <figcaption>${beach.schedule[2]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-person-walking"></i>
+                            <figcaption>${beach.schedule[3]}</figcaption>
+                        </span>
                     </div>
-                `
-            })
+                    <div class="home-location-item__detail">
+                        <ul>
+                            <li>${beach.detail[0]}</li>
+                            <li>${beach.detail[1]}</li>
+                            <li>${beach.detail[2]}</li>
+                        </ul>
+                    </div>
+                    <div class="home-location-item__price">
+                        <span class="home-location-item__price-old">${beach.price[0]}</span>
+                        <span class="home-location-item__price-current">${beach.price[1]}</span>
+                        <span>Per person</span>
+                    </div>
+                </a>
+            </div>
+            `
+    })
 
-            html += topBeach.join('')
-            html += `
+    html += topBeach.join('')
+    html += `
                 </div>
             </div>
             `
 
     html += `
-        <div class="app__home-location">
-            <h3 class="app__home-location-title">
-                Recently Viewed
-            </h3>
+            <div class="app__home-location">
+                <h3 class="app__home-location-title">
+                    Recently Viewed
+                </h3>
 
-            <div class="row">
-        `
-
-        let reviewed = beaches2.map(function(beach) {
-            return `
-                <div class="col l-3 m-6 c-6">
-                    <a href="#" class="home-location-item">
-                        <img src="${beach.img}" alt="" class="home-location-item__img">
-                        <i class="home-location-item__favourite fa-regular fa-heart"></i>
-                        <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
-                        <span class="home-location-item__title">
-                            <h4 class="home-location-item__name">${beach.name}</h4>
-                            <span class="home-location-item__rating">
-                                <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                                ${beach.rating}
-                            </span>
-                        </span>
-                        <span class="home-location-item__desc">${beach.desc}</span>
-                        <div class="home-location-item__schedule">
-                            <span class="schedule__item">
-                                <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                                <figcaption>${beach.schedule[0]}</figcaption>
-                            </span>
-                            <span class="schedule__item">
-                                <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                                <figcaption>${beach.schedule[1]}</figcaption>
-                            </span>
-                            <span class="schedule__item">
-                                <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                                <figcaption>${beach.schedule[2]}</figcaption>
-                            </span>
-                            <span class="schedule__item">
-                                <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                                <figcaption>${beach.schedule[3]}</figcaption>
-                            </span>
-                        </div>
-                        <div class="home-location-item__detail">
-                            <ul>
-                                <li>${beach.detail[0]}</li>
-                                <li>${beach.detail[1]}</li>
-                                <li>${beach.detail[2]}</li>
-                            </ul>
-                        </div>
-                        <div class="home-location-item__price">
-                            <span class="home-location-item__price-old">${beach.price[0]}</span>
-                            <span class="home-location-item__price-current">${beach.price[1]}</span>
-                            <span>Per person</span>
-                        </div>
-                    </a>
-                </div>
+                <div class="row">
             `
-        })
 
-        html += reviewed.join('')
+    let reviewed = beaches2.map(function(beach) {
+        return `
+            <div class="col l-3 m-6 c-6">
+                <a href="#" class="home-location-item">
+                    <img src="${beach.img}" alt="" class="home-location-item__img">
+                    <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                    <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+                    <span class="home-location-item__title">
+                        <h4 class="home-location-item__name">${beach.name}</h4>
+                        <span class="home-location-item__rating">
+                            <i class="home-location-item__rating-icon fa-solid fa-star"></i>
+                            ${beach.rating}
+                        </span>
+                    </span>
+                    <span class="home-location-item__desc">${beach.desc}</span>
+                    <div class="home-location-item__schedule">
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-plane-up"></i>
+                            <figcaption>${beach.schedule[0]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-hotel"></i>
+                            <figcaption>${beach.schedule[1]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-car-side"></i>
+                            <figcaption>${beach.schedule[2]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-person-walking"></i>
+                            <figcaption>${beach.schedule[3]}</figcaption>
+                        </span>
+                    </div>
+                    <div class="home-location-item__detail">
+                        <ul>
+                            <li>${beach.detail[0]}</li>
+                            <li>${beach.detail[1]}</li>
+                            <li>${beach.detail[2]}</li>
+                        </ul>
+                    </div>
+                    <div class="home-location-item__price">
+                        <span class="home-location-item__price-old">${beach.price[0]}</span>
+                        <span class="home-location-item__price-current">${beach.price[1]}</span>
+                        <span>Per person</span>
+                    </div>
+                </a>
+            </div>
+        `
+    })
 
-        html += `
+    html += reviewed.join('')
+
+    html += `
             <div class="col l-3 m-6 c-6">
                 <a href="#" class="home-viewed">
                     <img src="${theme.img}" alt="" class="home-viewed__img">
@@ -295,7 +295,7 @@ function renderBeach() {
             </div>
         `
 
-        html += `
+    html += `
                 </div>
             </div>
 
@@ -304,64 +304,64 @@ function renderBeach() {
                     All Inclusive Packages!
                 </h3>
     
-            <div class="row">
+                <div class="row">
             `
 
-            let package = beaches3.map(function(beach) {
-                return `
-                    <div class="col l-3 m-6 c-6">
-                        <a href="#" class="home-location-item">
-                            <img src="${beach.img}" alt="" class="home-location-item__img">
-                            <i class="home-location-item__favourite fa-regular fa-heart"></i>
-                            <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
-                            <span class="home-location-item__title">
-                                <h4 class="home-location-item__name">${beach.name}</h4>
-                                <span class="home-location-item__rating">
-                                    <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                                    ${beach.rating}
-                                </span>
-                            </span>
-                            <span class="home-location-item__desc">${beach.desc}</span>
-                            <div class="home-location-item__schedule">
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                                    <figcaption>${beach.schedule[0]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                                    <figcaption>${beach.schedule[1]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                                    <figcaption>${beach.schedule[2]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                                    <figcaption>${beach.schedule[3]}</figcaption>
-                                </span>
-                            </div>
-                            <div class="home-location-item__detail">
-                                <ul>
-                                    <li>${beach.detail[0]}</li>
-                                    <li>${beach.detail[1]}</li>
-                                    <li>${beach.detail[2]}</li>
-                                </ul>
-                            </div>
-                            <div class="home-location-item__price">
-                                <span class="home-location-item__price-old">${beach.price[0]}</span>
-                                <span class="home-location-item__price-current">${beach.price[1]}</span>
-                                <span>Per person</span>
-                            </div>
-                        </a>
+    let package = beaches3.map(function(beach) {
+        return `
+            <div class="col l-3 m-6 c-6">
+                <a href="#" class="home-location-item">
+                    <img src="${beach.img}" alt="" class="home-location-item__img">
+                    <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                    <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+                    <span class="home-location-item__title">
+                        <h4 class="home-location-item__name">${beach.name}</h4>
+                        <span class="home-location-item__rating">
+                            <i class="home-location-item__rating-icon fa-solid fa-star"></i>
+                            ${beach.rating}
+                        </span>
+                    </span>
+                    <span class="home-location-item__desc">${beach.desc}</span>
+                    <div class="home-location-item__schedule">
+                         <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-plane-up"></i>
+                            <figcaption>${beach.schedule[0]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-hotel"></i>
+                            <figcaption>${beach.schedule[1]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-car-side"></i>
+                            <figcaption>${beach.schedule[2]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-person-walking"></i>
+                            <figcaption>${beach.schedule[3]}</figcaption>
+                        </span>
                     </div>
-                `
-            })
+                    <div class="home-location-item__detail">
+                        <ul>
+                            <li>${beach.detail[0]}</li>
+                            <li>${beach.detail[1]}</li>
+                            <li>${beach.detail[2]}</li>
+                        </ul>
+                    </div>
+                    <div class="home-location-item__price">
+                        <span class="home-location-item__price-old">${beach.price[0]}</span>
+                        <span class="home-location-item__price-current">${beach.price[1]}</span>
+                        <span>Per person</span>
+                    </div>
+                </a>
+            </div>
+        `
+    })
 
-            html += package.join('')
-            html += `
+    html += package.join('')
+    html += `
                 </div>
             </div>
-            `
+        `
 
     beachContainer.innerHTML = html
 }

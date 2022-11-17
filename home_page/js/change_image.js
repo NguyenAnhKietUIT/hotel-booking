@@ -21,7 +21,7 @@ destinations.forEach(element => {
                     if (index >= locations.length) {
                         index = 0
                     }
-                }, 3000)
+                }, 2500)
             }
         })
 
