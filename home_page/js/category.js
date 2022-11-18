@@ -23,7 +23,6 @@ categories.forEach(element => {
         let categoryItem = element.childNodes[3].innerHTML
 
         changeCategory(categoryItem)
-        
         favourite()
     })
 })
@@ -41,7 +40,7 @@ function fetchManual(element) {
 
     var object
     
-    if (element === 'Beaches') {
+    if (element === 'Beach') {
         object = {
             obj1 : [
                 {
@@ -83,35 +82,6 @@ function fetchManual(element) {
             ],
             obj2 : [
                 {
-                    img: "../assets/img/category/beach/mauritius.png",
-                    name: "Mauritius",
-                    rating: 4.7,
-                    desc: "3Days 4 Nights",
-                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-                    price: ["₹88,952", "₹88,952"]
-                },
-                {
-                    img: "../assets/img/category/beach/maldives.jpg",
-                    name: "Maldives",
-                    rating: 4.9,
-                    desc: "3Days 4 Nights",
-                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-                    price: ["₹88,952", "₹88,952"]
-                },
-                {
-                    img: "../assets/img/category/beach/whitsunday_islands.jpg",
-                    name: "Whitsunday Islands",
-                    rating: 4.5,
-                    desc: "3Days 4 Nights",
-                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-                    price: ["₹88,952", "₹88,952"]
-                },
-            ],
-            obj3 : [
-                {
                     img: "../assets/img/category/beach/image_25.png",
                     name: "Havelock",
                     rating: 4.9,
@@ -147,17 +117,19 @@ function fetchManual(element) {
                     detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
                     price: ["₹88,952", "₹88,952"]
                 },
+                {
+                    img: "../assets/img/category/beach/whitsunday_islands.jpg",
+                    name: "Whitsunday Islands",
+                    rating: 4.5,
+                    desc: "3Days 4 Nights",
+                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
+                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
+                    price: ["₹88,952", "₹88,952"]
+                },
             ],
-            theme : {
-                img: "../assets/img/category/beach/summer_bonanza.png",
-                title: "Summer Bonanza!",
-                detail: ["Enjoy confortable transfers in shared coaches", 
-                "Choose from 5 flights per week", 
-                "Get a free Rapid Antigen Test at selected hotels"]
-            }
         }
     }
-    if (element === 'Mountains') {
+    if (element === 'Mountain') {
         object = {
             obj1 : [
                 {
@@ -199,26 +171,6 @@ function fetchManual(element) {
             ],
             obj2 : [
                 {
-                    img: "../assets/img/category/mountain/mountain_3.jpg",
-                    name: "Mauritius",
-                    rating: 4.7,
-                    desc: "3Days 4 Nights",
-                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-                    price: ["₹88,952", "₹88,952"]
-                },
-                {
-                    img: "../assets/img/category/mountain/mountain_2.jpg",
-                    name: "Maldives",
-                    rating: 4.9,
-                    desc: "3Days 4 Nights",
-                    schedule: ["2 Flights", "1 Hotel", "2 Transfers", "4 Activities"],
-                    detail: ["Tour combo with return airport transfer", "City Tour, Curious Corner"],
-                    price: ["₹88,952", "₹88,952"]
-                },
-            ],
-            obj3 : [
-                {
                     img: "../assets/img/category/mountain/mountain_2.jpg",
                     name: "Havelock",
                     rating: 4.9,
@@ -255,13 +207,6 @@ function fetchManual(element) {
                     price: ["₹88,952", "₹88,952"]
                 },
             ],
-            theme : {
-                img: "../assets/img/category/beach/summer_bonanza.png",
-                title: "Summer Bonanza!",
-                detail: ["Enjoy confortable transfers in shared coaches", 
-                "Choose from 5 flights per week", 
-                "Get a free Rapid Antigen Test at selected hotels"]
-            }
         }
     }
     if (element === 'Iconic Cities') {
@@ -305,8 +250,6 @@ function fetchManual(element) {
                 },
             ],
             obj2 : [
-            ],
-            obj3 : [
                 {
                     img: "../assets/img/category/iconic_city/city_4.png",
                     name: "Havelock",
@@ -344,25 +287,16 @@ function fetchManual(element) {
                     price: ["₹88,952", "₹88,952"]
                 },
             ],
-            theme : {
-                img: "../assets/img/category/beach/summer_bonanza.png",
-                title: "Summer Bonanza!",
-                detail: ["Enjoy confortable transfers in shared coaches", 
-                "Choose from 5 flights per week", 
-                "Get a free Rapid Antigen Test at selected hotels"]
-            }
         }
     }
 
     return object
 }
 
-function renderManual(text, categoryItem) {
-    let fetchAPI = fetchManual(categoryItem)
+function renderManual(text) {
+    let fetchAPI = fetchManual(text)
     let arr1 = fetchAPI.obj1
     let arr2 = fetchAPI.obj2
-    let arr3 = fetchAPI.obj3
-    let obj = fetchAPI.theme
 
     let html = `
             <div class="app__home-location">
@@ -373,199 +307,20 @@ function renderManual(text, categoryItem) {
                 <div class="row">
             `
 
-    let popularDestination = arr1.map(function(element) {
-        return `
-            <div class="col l-3 m-6 c-6">
-                <a href="#" class="home-location-item">
-                    <img src="${element.img}" alt="" class="home-location-item__img">
-                    <i class="home-location-item__favourite fa-regular fa-heart"></i>
-                    <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
-                    <span class="home-location-item__title">
-                        <h4 class="home-location-item__name">${element.name}</h4>
-                        <span class="home-location-item__rating">
-                            <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                                ${element.rating}
-                        </span>
-                    </span>
-                    <span class="home-location-item__desc">${element.desc}</span>
-                    <div class="home-location-item__schedule">
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                            <figcaption>${element.schedule[0]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                            <figcaption>${element.schedule[1]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                            <figcaption>${element.schedule[2]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                            <figcaption>${element.schedule[3]}</figcaption>
-                        </span>
-                    </div>
-                    <div class="home-location-item__detail">
-                        <ul>
-                            <li>${element.detail[0]}</li>
-                            <li>${element.detail[1]}</li>
-                            <li>${element.detail[2]}</li>
-                        </ul>
-                    </div>
-                    <div class="home-location-item__price">
-                        <span class="home-location-item__price-old">${element.price[0]}</span>
-                        <span class="home-location-item__price-current">${element.price[1]}</span>
-                        <span>Per person</span>
-                    </div>
-                </a>
-            </div>
-            `
-    })
-
-    html += popularDestination.join('')
+    html += renderItem(arr1).join('')
     html += `
                 </div>
             </div>
-            
+
             <div class="app__home-location">
                 <h3 class="app__home-location-title">
-                    Recently Viewed
-                </h3>
-
-                <div class="row">
-            `
-
-    let reviewed = arr2.map(function(element) {
-        return `
-            <div class="col l-3 m-6 c-6">
-                <a href="#" class="home-location-item">
-                    <img src="${element.img}" alt="" class="home-location-item__img">
-                    <i class="home-location-item__favourite fa-regular fa-heart"></i>
-                    <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
-                    <span class="home-location-item__title">
-                        <h4 class="home-location-item__name">${element.name}</h4>
-                        <span class="home-location-item__rating">
-                            <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                            ${element.rating}
-                        </span>
-                    </span>
-                    <span class="home-location-item__desc">${element.desc}</span>
-                    <div class="home-location-item__schedule">
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                            <figcaption>${element.schedule[0]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                            <figcaption>${element.schedule[1]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                            <figcaption>${element.schedule[2]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                            <figcaption>${element.schedule[3]}</figcaption>
-                        </span>
-                    </div>
-                    <div class="home-location-item__detail">
-                        <ul>
-                            <li>${element.detail[0]}</li>
-                            <li>${element.detail[1]}</li>
-                            <li>${element.detail[2]}</li>
-                        </ul>
-                    </div>
-                    <div class="home-location-item__price">
-                        <span class="home-location-item__price-old">${element.price[0]}</span>
-                        <span class="home-location-item__price-current">${element.price[1]}</span>
-                        <span>Per person</span>
-                    </div>
-                </a>
-            </div>
-        `
-    })
-
-    html += reviewed.join('')
-    html += `
-            <div class="col l-3 m-6 c-6">
-                <a href="#" class="home-viewed">
-                    <img src="${obj.img}" alt="" class="home-viewed__img">
-                    <div class="home-viewed-info">
-                        <h3 class="home-viewed__title">${obj.title}</h3>
-                        <ul class="home-viewed__list">
-                            <li class="home-viewed-item">${obj.detail[0]}</li>
-                            <li class="home-viewed-item">${obj.detail[1]}</li>
-                            <li class="home-viewed-item">${obj.detail[2]}</li>
-                        </ul>
-                    </div>
-                </a>
-            </div>
-        `
-
-    html += `
-                </div>
-            </div>
-
-            <div class="app__home-location">
-                <h3 class="app__home-location-title app__margin-top-48">
                     All Inclusive Packages!
                 </h3>
     
                 <div class="row">
             `
 
-    let package = arr3.map(function(element) {
-        return `
-            <div class="col l-3 m-6 c-6">
-                <a href="#" class="home-location-item">
-                    <img src="${element.img}" alt="" class="home-location-item__img">
-                    <i class="home-location-item__favourite fa-regular fa-heart"></i>
-                    <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
-                    <span class="home-location-item__title">
-                        <h4 class="home-location-item__name">${element.name}</h4>
-                        <span class="home-location-item__rating">
-                            <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                            ${element.rating}
-                        </span>
-                    </span>
-                    <span class="home-location-item__desc">${element.desc}</span>
-                    <div class="home-location-item__schedule">
-                         <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                            <figcaption>${element.schedule[0]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                            <figcaption>${element.schedule[1]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                            <figcaption>${element.schedule[2]}</figcaption>
-                        </span>
-                        <span class="schedule__item">
-                            <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                            <figcaption>${element.schedule[3]}</figcaption>
-                        </span>
-                    </div>
-                    <div class="home-location-item__detail">
-                        <ul>
-                            <li>${element.detail[0]}</li>
-                            <li>${element.detail[1]}</li>
-                            <li>${element.detail[2]}</li>
-                        </ul>
-                    </div>
-                    <div class="home-location-item__price">
-                        <span class="home-location-item__price-old">${element.price[0]}</span>
-                        <span class="home-location-item__price-current">${element.price[1]}</span>
-                        <span>Per person</span>
-                    </div>
-                </a>
-            </div>
-        `
-    })
-
-    html += package.join('')
+    html += renderItem(arr2).join('')
     html += `
                 </div>
             </div>
@@ -620,42 +375,96 @@ function changeCategory(param) {
         beachContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
 
-        let html = renderManual('Beach', param)
+        let html = renderManual('Beach')
         beachContainer.innerHTML = html
     } else if (param === 'Mountains') {
         mountainContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_99.png')"
 
-        let html = renderManual('Mountain', param)
+        let html = renderManual('Mountain')
         mountainContainer.innerHTML = html
     } else if (param === 'Iconic Cities') {
         iconicCityContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_1.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Iconic Cities', param)
+        let html = renderManual('Iconic Cities')
         iconicCityContainer.innerHTML = html
     } else if (param === 'Countryside') {
         countrysideContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_33.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Countryside', param)
+        let html = renderManual('Countryside')
         countrysideContainer.innerHTML = html
     } else if (param === 'Camping') {
         campingContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Camping', param)
+        let html = renderManual('Camping')
         campingContainer.innerHTML = html
     } else if (param === 'Tropical') {
         tropicalContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Tropical', param)
+        let html = renderManual('Tropical')
         tropicalContainer.innerHTML = html
     }
+}
+
+function renderItem(arr) {
+    let result = arr.map(function(element) {
+        return `
+            <div class="col l-3 m-6 c-6">
+                <a href="#" class="home-location-item">
+                    <img src="${element.img}" alt="" class="home-location-item__img">
+                    <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                    <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+                    <span class="home-location-item__title">
+                        <h4 class="home-location-item__name">${element.name}</h4>
+                        <span class="home-location-item__rating">
+                            <i class="home-location-item__rating-icon fa-solid fa-star"></i>
+                                ${element.rating}
+                        </span>
+                    </span>
+                    <span class="home-location-item__desc">${element.desc}</span>
+                    <div class="home-location-item__schedule">
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-plane-up"></i>
+                            <figcaption>${element.schedule[0]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-hotel"></i>
+                            <figcaption>${element.schedule[1]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-car-side"></i>
+                            <figcaption>${element.schedule[2]}</figcaption>
+                        </span>
+                        <span class="schedule__item">
+                            <i class="schedule__item-icon fa-solid fa-person-walking"></i>
+                            <figcaption>${element.schedule[3]}</figcaption>
+                        </span>
+                    </div>
+                    <div class="home-location-item__detail">
+                        <ul>
+                            <li>${element.detail[0]}</li>
+                            <li>${element.detail[1]}</li>
+                            <li>${element.detail[2]}</li>
+                        </ul>
+                    </div>
+                    <div class="home-location-item__price">
+                        <span class="home-location-item__price-old">${element.price[0]}</span>
+                        <span class="home-location-item__price-current">${element.price[1]}</span>
+                        <span>Per person</span>
+                    </div>
+                </a>
+            </div>
+            `
+    })
+
+    return result
 }

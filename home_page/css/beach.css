@@ -4,6 +4,18 @@
     display: block;
 }
 
+.app__home-location .row {
+    align-items: center;
+    flex-flow: row;
+    min-height: 424px;
+    max-width: 1224px;
+    overflow-x: auto;
+}
+
+.app__home-location .row::-webkit-scrollbar { 
+    display: none;
+}
+
 .app__home-location-title {
     font-size: 32px;
     text-align: center;
