@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <title>Trivia - Name Customer</title>
+</head>
+<body>
+    <div id="app">
+        <header class="app__header">
+            <div class="grid wide">
+                <nav class="app__nav">
+                    <a href="#" class="app__nav-name-link">
+                        <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                    </a>
+    
+                    <ul class="app__nav-list hide-on-mobile-tablet">
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Name Customer</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="app__content">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-4">
+                        <ul class="app__sidebar-list">
+                            <li class="app__sidebar-item">Your Account</li>
+                            <li class="app__sidebar-item">View all bookings</li>
+                            <li class="app__sidebar-item">Favourites</li>
+                            <li class="app__sidebar-item">Inbox</li>
+                            <li class="app__sidebar-item">Your Reviews</li>
+                        </ul>
+                    </div>
+                    <div class="col l-8">
+                        <h1 class="app__main-title">User Details</h1>
+                        <img src="../assets/img/avatar.jpg" alt="avatar" class="app__main-img">
+                        <form action="" method="POST" class="form" id="form">
+                            <div class="form-group">
+                                <label for="yourname" class="form-label">Your Name</label>
+                                <input id="yourname" name="yourname" type="text" placeholder="Nguyễn Anh Kiệt" class="form-control">
+                                <span class="form-message"></span>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input id="email" name="email" type="text" placeholder="maytinh27042019@gamil.com" class="form-control">
+                                <span class="form-message"></span>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="country" class="form-label">Country</label>
+                                <input id="country" name="country" type="text" placeholder="VietNam" class="form-control">
+                                <span class="form-message"></span>
+                            </div>
+                
+                            <div class="form-group">
+                                <label for="phonenumber" class="form-label">Phone Number</label>
+                                <input id="phonenumber" name="phonenumber" placeholder="0348630164" type="tel" class="form-control">
+                                <span class="form-message"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
