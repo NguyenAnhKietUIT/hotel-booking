@@ -13,7 +13,9 @@ btnEditDetails.addEventListener('click', (e) => {
 })
 
 btnAccept.addEventListener('click', (e) => {
-    e.preventDefault()
+    information.forEach(element => {
+        element.disabled = true;
+    })
     
     let name = document.getElementById('yourname')
     let email = document.getElementById('email')
@@ -24,10 +26,6 @@ btnAccept.addEventListener('click', (e) => {
     email.value = email.value
     country.value = country.value
     phone.value = phone.value
-
-    information.forEach(element => {
-        element.disabled = true;
-    })
 
     btnEditDetails.style.display = 'block'
     btnAccept.style.display = 'none'

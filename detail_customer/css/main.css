@@ -82,6 +82,7 @@
     font-weight: 600;
 }
 
+/* Your Account */
 .app__main-img {
     width: 200px;
     height: 200px;
@@ -119,7 +120,7 @@
     border-radius: 4px;
     color: var(--black-color);
     border: 1px solid var(--black-color);
-    background-color: #ccc;
+    background-color: #e6e6e6;
 }
 
 .form-group > input::placeholder {
@@ -152,7 +153,7 @@
     font-size: 16px;
     padding: 12px 16px;
     border-radius: 8px;
-    margin: 12px 0;
+    margin-bottom: 12px;
     background-color: #1dbfaf;
 }
 
@@ -162,4 +163,64 @@
 
 .btn-accept {
     display: none;
+}
+
+/* View all bookings */
+.app__view-message {
+    display: block;
+    margin-bottom: 24px;
+    font-size: 28px;
+}
+
+.btn-view {
+    cursor: pointer;
+    padding: 12px 80px;
+    background-color: #08536B;
+}
+
+.btn-view:hover {
+    background-color: #052a37;
+}
+
+.app__view-link {
+    color: var(--white-color);
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.app__view-list {
+
+}
+
+.app__view-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.app__view-item {
+
+}
+
+.app__view-img {
+
+}
+
+.app__view-item-info {
+
+}
+
+.app__view-item-title {
+
+}
+
+.app__view-item-desc {
+
+}
+
+.app__view-item-status {
+
+}
+
+.app__view-item-price {
+
 }
