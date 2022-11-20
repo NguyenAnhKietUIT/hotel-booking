@@ -26,13 +26,13 @@ function viewAllBookings() {
     //         img: "../assets/img/others/mother_home.png",
     //         title: "Mother's Home",
     //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
-    //         price: "S$21",
+    //         price: "$21",
     //     },
     //     {
     //         img: "../assets/img/others/mother_home.png",
     //         title: "Mother's Home",
     //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
-    //         price: "S$21",
+    //         price: "$21",
     //     },
     // ]
     // 
@@ -42,14 +42,14 @@ function viewAllBookings() {
     //         title: "Mother's Home",
     //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
     //         status: "complete",
-    //         price: "S$21",
+    //         price: "$21",
     //     },
     //     {
     //         img: "../assets/img/others/mother_home.png",
     //         title: "Mother's Home",
     //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
     //         status: "canceled",
-    //         price: "S$21",
+    //         price: "$21",
     //     },
     // ]
 
@@ -103,12 +103,9 @@ function viewAllBookings() {
     }
 
     if (!upcomings && !pasts) {
-        sidebarContent.style.height = '68vh'
         html += `
                 <span class="app__view-message">You have no bookings yet.</span>
-                <button class="btn-view">
-                    <a href="../../home_page/home.html" class="app__view-link">Start exploring</a>
-                </button>
+                <a href="../../home_page/home.html" class="app__view-link">Start exploring</a>
                 `
     }
 
@@ -122,28 +119,28 @@ function viewFavorites() {
             title: "Hotel name",
             desc: "Ho Chi Minh City, Vietnam",
             view: "8.9/161 reviews",
-            price: "S$21",
+            price: "$21",
         },
         {
             img: "../assets/img/others/favourite.png",
             title: "Hotel name",
             desc: "Ho Chi Minh City, Vietnam",
             view: "8.9/161 reviews",
-            price: "S$21",
+            price: "$21",
         },
         {
             img: "../assets/img/others/favourite.png",
             title: "Hotel name",
             desc: "Ho Chi Minh City, Vietnam",
             view: "8.9/161 reviews",
-            price: "S$21",
+            price: "$21",
         },
         {
             img: "../assets/img/others/favourite.png",
             title: "Hotel name",
             desc: "Ho Chi Minh City, Vietnam",
             view: "8.9/161 reviews",
-            price: "S$21",
+            price: "$21",
         },
     ]
 
