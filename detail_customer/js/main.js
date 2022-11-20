@@ -33,7 +33,52 @@ options.forEach(element => {
             //             }
             //         });
             
-            
+            html = `
+                <h2 class="app__view-message">Your bookings</h2>
+
+                <div class="app__view-list">
+                    <h3 class="app__view-title">Upcoming</h3>
+                    <a href="#" class="app__view-item">
+                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
+                        <div class="app__view-item-info">
+                            <h4 class="app__view-item-title">Mother's Home</h4>
+                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
+                            <span class="app__view-item-status">Complete</span>
+                        </div>
+                        <h3 class="app__view-item-price">US$21</h3>
+                    </a>
+                    <a href="#" class="app__view-item">
+                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
+                        <div class="app__view-item-info">
+                            <h4 class="app__view-item-title">Mother's Home</h4>
+                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
+                            <span class="app__view-item-status">Complete</span>
+                        </div>
+                        <h3 class="app__view-item-price">US$21</h3>
+                    </a>
+                </div>
+                <div class="app__view-list app__view-list-status">
+                    <h3 class="app__view-title">In the past</h3>
+                    <a href="#" class="app__view-item">
+                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
+                        <div class="app__view-item-info">
+                            <h4 class="app__view-item-title">Mother's Home</h4>
+                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
+                            <span class="app__view-item-status">Complete</span>
+                        </div>
+                        <h3 class="app__view-item-price">US$21</h3>
+                    </a>
+                    <a href="#" class="app__view-item">
+                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
+                        <div class="app__view-item-info">
+                            <h4 class="app__view-item-title">Mother's Home</h4>
+                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
+                            <span class="app__view-item-status app__view-item-status--active">Canceled</span>
+                        </div>
+                        <h3 class="app__view-item-price">US$21</h3>
+                    </a>
+                </div>
+            `
 
             mainContent.innerHTML = html
             sidebarContent.style.height = '68vh'
