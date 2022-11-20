@@ -13,75 +13,174 @@ options.forEach(element => {
         if (element.innerHTML === 'Your Account') {
            document.location.reload()
         } else if (element.innerHTML === 'View all bookings') {
-            let html
-            // let bookingAPI = ""
+            viewAllBookings()
+        } else if (element.innerHTML === 'Favourites') {
+            viewFavorites()
+        }
+    })
+})
 
-            // fetch(bookingAPI)
-            //         .then (function (response) {
-            //             return response.json();
-            //         })
-            //         .then(function (bookings) {
-            //             if (bookings.length === 0) {
-            //                 html = `
-            //                         <span class="app__view-message">You have no bookings yet.</span>
-            //                         <button class="btn-view">
-            //                             <a href="../../home_page/home.html" class="app__view-link">Start exploring</a>
-            //                         </button>
-            //                     `
-            //             } else {
+function viewAllBookings() {
+    // let upcomings = [
+    //     {
+    //         img: "../assets/img/others/mother_home.png",
+    //         title: "Mother's Home",
+    //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
+    //         price: "S$21",
+    //     },
+    //     {
+    //         img: "../assets/img/others/mother_home.png",
+    //         title: "Mother's Home",
+    //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
+    //         price: "S$21",
+    //     },
+    // ]
+    // 
+    // let pasts = [
+    //     {
+    //         img: "../assets/img/others/mother_home.png",
+    //         title: "Mother's Home",
+    //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
+    //         status: "complete",
+    //         price: "S$21",
+    //     },
+    //     {
+    //         img: "../assets/img/others/mother_home.png",
+    //         title: "Mother's Home",
+    //         desc: "6 Aug - 7 Aug • Ho Chi Minh City",
+    //         status: "canceled",
+    //         price: "S$21",
+    //     },
+    // ]
 
-            //             }
-            //         });
-            
-            html = `
+    let upcomings
+    let pasts
+
+    let html = ""
+
+    if (upcomings) {
+        html += `
                 <h2 class="app__view-message">Your bookings</h2>
 
                 <div class="app__view-list">
                     <h3 class="app__view-title">Upcoming</h3>
-                    <a href="#" class="app__view-item">
-                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
-                        <div class="app__view-item-info">
-                            <h4 class="app__view-item-title">Mother's Home</h4>
-                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
-                            <span class="app__view-item-status">Complete</span>
-                        </div>
-                        <h3 class="app__view-item-price">US$21</h3>
-                    </a>
-                    <a href="#" class="app__view-item">
-                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
-                        <div class="app__view-item-info">
-                            <h4 class="app__view-item-title">Mother's Home</h4>
-                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
-                            <span class="app__view-item-status">Complete</span>
-                        </div>
-                        <h3 class="app__view-item-price">US$21</h3>
-                    </a>
-                </div>
+                `
+
+        html += upcomings.map(function(upcoming){
+            return `
+                <a href="#" class="app__view-item">
+                    <img src="${upcoming.img}" alt="Type Room" class="app__view-img">
+                    <div class="app__view-item-info">
+                        <h4 class="app__view-item-title">${upcoming.title}</h4>
+                        <span class="app__view-item-desc">${upcoming.desc}</span>
+                    </div>
+                    <h3 class="app__view-item-price">${upcoming.price}</h3>
+                </a>
+            `
+        }).join('')
+        html += `</div>`
+    }
+            
+    if (pasts) {
+        html += `
                 <div class="app__view-list app__view-list-status">
                     <h3 class="app__view-title">In the past</h3>
-                    <a href="#" class="app__view-item">
-                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
-                        <div class="app__view-item-info">
-                            <h4 class="app__view-item-title">Mother's Home</h4>
-                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
-                            <span class="app__view-item-status">Complete</span>
-                        </div>
-                        <h3 class="app__view-item-price">US$21</h3>
-                    </a>
-                    <a href="#" class="app__view-item">
-                        <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
-                        <div class="app__view-item-info">
-                            <h4 class="app__view-item-title">Mother's Home</h4>
-                            <span class="app__view-item-desc">6 Aug - 7 Aug • Ho Chi Minh City</span>
-                            <span class="app__view-item-status app__view-item-status--active">Canceled</span>
-                        </div>
-                        <h3 class="app__view-item-price">US$21</h3>
-                    </a>
-                </div>
+                `
+        html += pasts.map(function(past) {
+            return `
+                <a href="#" class="app__view-item">
+                    <img src="${past.img}" alt="Type Room" class="app__view-img">
+                    <div class="app__view-item-info">
+                        <h4 class="app__view-item-title">${past.title}</h4>
+                        <span class="app__view-item-desc">${past.desc}</span>
+                        <span class="app__view-item-status ${(past.status === 'canceled') ? "app__view-item-status--active" : ""}">${past.status}</span>
+                    </div>
+                    <h3 class="app__view-item-price">${past.price}</h3>
+                </a>
             `
+        }).join('')
+        html += `</div>`
+    }
 
-            mainContent.innerHTML = html
-            sidebarContent.style.height = '68vh'
-        }
-    })
-})
+    if (!upcomings && !pasts) {
+        sidebarContent.style.height = '68vh'
+        html += `
+                <span class="app__view-message">You have no bookings yet.</span>
+                <button class="btn-view">
+                    <a href="../../home_page/home.html" class="app__view-link">Start exploring</a>
+                </button>
+                `
+    }
+
+    mainContent.innerHTML = html
+}
+
+function viewFavorites() {
+    let favourites = [
+        {
+            img: "../assets/img/others/favourite.png",
+            title: "Hotel name",
+            desc: "Ho Chi Minh City, Vietnam",
+            view: "8.9/161 reviews",
+            price: "S$21",
+        },
+        {
+            img: "../assets/img/others/favourite.png",
+            title: "Hotel name",
+            desc: "Ho Chi Minh City, Vietnam",
+            view: "8.9/161 reviews",
+            price: "S$21",
+        },
+        {
+            img: "../assets/img/others/favourite.png",
+            title: "Hotel name",
+            desc: "Ho Chi Minh City, Vietnam",
+            view: "8.9/161 reviews",
+            price: "S$21",
+        },
+        {
+            img: "../assets/img/others/favourite.png",
+            title: "Hotel name",
+            desc: "Ho Chi Minh City, Vietnam",
+            view: "8.9/161 reviews",
+            price: "S$21",
+        },
+    ]
+
+    // let favourites
+    let html = ""
+
+    if (favourites) {
+        html += `
+                <div class="app__view-list app__view-list-status">
+                    <h3 class="app__view-title">Your favourites</h3>
+                `
+        html += favourites.map(function(favourite) {
+            return `
+                <a href="#" class="app__view-item">
+                    <img src="${favourite.img}" alt="Type Room" class="app__view-img">
+                    <div class="app__view-item-info">
+                        <h4 class="app__view-item-title">${favourite.title}</h4>
+                        <span class="app__view-item-desc">${favourite.desc}</span>
+                        <span class="app__view-item-status">${favourite.view}</span>
+                    </div>
+                    <h3 class="app__view-item-price">${favourite.price}</h3>
+                </a>
+            `
+        }).join('')
+        html += `</div>`
+    } else {
+        html += `
+            <div class="app__favourite-none">
+                <i class="app__favourite-none-icon fa-regular fa-heart"></i>
+                <span class="app__favourite-none-title">Save your favourites</span>
+                <p class="app__favourite-none-desc">
+                    When you find something you like, use the heart to </br> 
+                    save your favourites and you can find it again here.
+                </p>
+            </div>
+        `
+    }
+    
+    mainContent.innerHTML = html
+}

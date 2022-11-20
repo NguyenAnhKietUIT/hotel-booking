@@ -262,21 +262,27 @@
 
 /* Favourites */
 .app__favourite-none {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: #f6f4f3;
 }
 
 .app__favourite-none-icon {
-
+    font-size: 28px;
+    color: #525252;
+    margin-top: 40px;
 }
 
 .app__favourite-none-title {
-
-}
-
-.app__favourite-none-link {
-
+    display: block;
+    font-size: 24px;
+    color: var(--black-color);
+    font-weight: 600;
+    margin: 24px 0 16px;
 }
 
 .app__favourite-none-desc {
-
+    color: var(--text-color);
+    margin-bottom: 20px;
 }
