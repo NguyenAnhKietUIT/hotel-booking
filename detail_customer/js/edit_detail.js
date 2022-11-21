@@ -1,6 +1,8 @@
 const information = document.querySelectorAll('.form-control')
 const btnEditDetails = document.querySelector('.form-edit')
 const btnAccept = document.querySelector('.btn-accept')
+const avatarImg = document.querySelector('.app__main-img')
+const avatarInput = document.getElementById('app__main-input-img')
 
 btnEditDetails.addEventListener('click', (e) => {
     e.preventDefault()
@@ -29,4 +31,9 @@ btnAccept.addEventListener('click', (e) => {
 
     btnEditDetails.style.display = 'block'
     btnAccept.style.display = 'none'
+})
+
+avatarInput.addEventListener('change', () => {
+    console.log(avatarInput.value)
+    avatarImg.src = avatarInput.value
 })

@@ -83,6 +83,10 @@
 }
 
 /* Your Account */
+.app__main-label-img {
+    cursor: pointer;
+}
+
 .app__main-img {
     width: 200px;
     height: 200px;
