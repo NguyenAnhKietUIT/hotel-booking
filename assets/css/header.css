@@ -276,9 +276,6 @@
 
 .app__category-item {
     text-align: center;
-}
-
-.app__category-item {
     cursor: pointer;
     color: var(--search-color);
 }
