@@ -44,6 +44,16 @@
     list-style: none;
 }
 
+.app__footer-list-item-link {
+    text-decoration: none;
+    color: var(--white-color);
+    line-height: 2;
+}
+
+.app__footer-list-item-link:hover {
+    color: rgb(46, 179, 189);
+}
+
 .app__footer-socials-list {
     list-style: none;
     display:flex;
@@ -61,16 +71,6 @@
 .app__footer-socials-item:hover .app__footer-socials-item-icon {
     color: var(--white-color);
     transform: scale(1.1);
-}
-
-.app__footer-list-item-link {
-    text-decoration: none;
-    color: var(--white-color);
-    line-height: 2;
-}
-
-.app__footer-list-item-link:hover {
-    color: rgb(46, 179, 189);
 }
 
 .app__footer-socials-item-link {
