@@ -33,11 +33,6 @@ html {
     color: rgba(0, 136, 16, 0.7);
 }
 
-.app__footer-contact {
-    text-align: center;
-    padding-top: 48px;
-}
-
 .plan-btn {
     text-decoration: none;
     background-color: #6c94b9;

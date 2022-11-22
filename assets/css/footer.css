@@ -1,3 +1,8 @@
+.app__footer-contact {
+    text-align: center;
+    padding-top: 48px;
+}
+
 .app__footer-contact-title {
     font-size: 24px;
     color: var(--white-color);
