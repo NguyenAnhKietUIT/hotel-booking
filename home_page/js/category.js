@@ -3,19 +3,14 @@ const homeNavigation = document.querySelector('.app__nav-item:first-child')
 const triviaIcon = document.querySelector('.app__nav-name-icon')
 
 const categories = document.querySelectorAll('.app__category-item')
-const beachContainer = document.querySelector('.app__content-beach')
-const mountainContainer = document.querySelector('.app__content-mountain')
-const iconicCityContainer = document.querySelector('.app__content-iconic-city')
-const countrysideContainer = document.querySelector('.app__content-countryside')
-const campingContainer = document.querySelector('.app__content-camping')
-const tropicalContainer = document.querySelector('.app__content-tropical')
+const mainContainer = document.querySelector('.app__content-main')
 
 const header = document.querySelector('.app__header')
 const footer = document.querySelector('.app__footer')
 
 categories.forEach(element => {
     element.addEventListener('click', () => {
-        anonymousComponent()
+        homeContainer.style.display = 'none'
         removeActive()
         
         element.classList.add('app__category--active')
@@ -354,16 +349,6 @@ function favourite() {
     })
 }
 
-function anonymousComponent() {
-    homeContainer.style.display = 'none'
-    beachContainer.style.display = 'none'
-    mountainContainer.style.display = 'none'
-    iconicCityContainer.style.display = 'none'
-    countrysideContainer.style.display = 'none'
-    campingContainer.style.display = 'none'
-    tropicalContainer.style.display = 'none'
-}
-
 function removeActive() {
     categories.forEach(element => {
         element.classList.remove('app__category--active')
@@ -371,48 +356,41 @@ function removeActive() {
 }
 
 function changeCategory(param) {
+    mainContainer.style.display = 'block'
+    let html
+
     if (param === 'Beaches') {
-        beachContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
 
-        let html = renderManual('Beach')
-        beachContainer.innerHTML = html
+        html = renderManual('Beach')
     } else if (param === 'Mountains') {
-        mountainContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_99.png')"
 
-        let html = renderManual('Mountain')
-        mountainContainer.innerHTML = html
+        html = renderManual('Mountain')
     } else if (param === 'Iconic Cities') {
-        iconicCityContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_1.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Iconic Cities')
-        iconicCityContainer.innerHTML = html
+        html = renderManual('Iconic Cities')
     } else if (param === 'Countryside') {
-        countrysideContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_33.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Countryside')
-        countrysideContainer.innerHTML = html
+        html = renderManual('Countryside')
     } else if (param === 'Camping') {
-        campingContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Camping')
-        campingContainer.innerHTML = html
+        html = renderManual('Camping')
     } else if (param === 'Tropical') {
-        tropicalContainer.style.display = 'block'
         header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
         footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
 
-        let html = renderManual('Tropical')
-        tropicalContainer.innerHTML = html
+        html = renderManual('Tropical')
     }
+
+    mainContainer.innerHTML = html
 }
 
 function renderItem(arr) {
