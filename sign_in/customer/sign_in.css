@@ -75,6 +75,29 @@
     cursor: pointer;
 }
 
+.login__google {
+    display: flex;
+    border: none;
+    outline: none;
+    padding: 8px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    justify-content: center;
+}
+
+.login__google:hover {
+    background-color: rgb(217, 217, 217);
+}
+
+.login__google-img {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
 .app__nav-mobile {
     display: none;
 }
