@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="google-signin-client_id" content="411740711582-bhlpbufj13vqb314eumrga8mgk9upnkf.apps.googleusercontent.com">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="./sign_in.css">
     <link rel="stylesheet" href="../../assets/css/grid.css">
     <link rel="stylesheet" href="../responsive_sign_in.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <title>Sign in</title>
 </head>
 <body>
@@ -105,7 +108,7 @@
                                 Sign in
                             </button>
 
-                            <button class="login__google">
+                            <button class="login__google" data-onsuccess="onSignIn">
                                 <img src="../../assets/img/google_icon.png" alt="Google" class="login__google-img">
                                 <span>Sign in with Google</span>
                             </button>
@@ -123,7 +126,6 @@
     </div>
 
     <script src="../../validator.js"></script>
-
     <script>
         Validator({
             form: '#form',
@@ -137,7 +139,16 @@
                 // call API
             }
         });
+    </script>
 
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
     </script>
 </body>
 </html>
