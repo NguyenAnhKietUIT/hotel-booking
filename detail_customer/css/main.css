@@ -83,12 +83,38 @@
 }
 
 /* Your Account */
+.form-avatar {
+    width: 200px;
+    position: relative;
+}
+
+.form-avatar__message {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    opacity: 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    transition: all 0.7s;
+    transform: translateY(100%)
+}
+
 .app__main-label-img {
     cursor: pointer;
 }
 
+.form-avatar:hover .app__main-img {
+    filter: brightness(60%) blur(4px);
+}
+
+.form-avatar:hover .form-avatar__message {
+    transform: translateY(-10%);
+    opacity: 1;
+}
+
 .app__main-img {
-    width: 200px;
+    width: 100%;
     height: 200px;
     margin-top: 20px;
     border-radius: 4px;

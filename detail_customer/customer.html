@@ -53,11 +53,19 @@
                     </div>
                     <div class="col l-9">
                         <h1 class="app__main-title">User Details</h1>
-                        <label for="app__main-input-img" class="app__main-label-img">
-                            <img src="../assets/img/avatar.jpg" alt="avatar" class="app__main-img">
-                        </label>
-                        <input type="file" name="app__main-input-img" id="app__main-input-img" hidden>
+                        
                         <form action="" method="POST" class="form-detail" id="form-detail">
+                            <div class="form-avatar">
+                                <label for="app__main-input-img" class="app__main-label-img">
+                                    <img src="../assets/img/others/avatar.png" alt="avatar" class="app__main-img">
+                                </label>
+                                <span class="form-avatar__message">
+                                    <i class="fa-solid fa-camera"></i>
+                                    Change your avatar
+                                </span>
+                                <input type="file" name="app__main-input-img" id="app__main-input-img" hidden disabled>
+                            </div>
+
                             <div class="form-group">
                                 <label for="yourname" class="form-label">Your Name</label>
                                 <input id="yourname" name="yourname" type="text" placeholder="Your Name" disabled

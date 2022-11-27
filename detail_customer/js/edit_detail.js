@@ -9,12 +9,14 @@ btnEditDetails.addEventListener('click', (e) => {
     btnEditDetails.style.display = 'none'
     btnAccept.style.display = 'block'
 
+    avatarInput.disabled = false;
     information.forEach(element => {
         element.disabled = false;
     })
 })
 
 btnAccept.addEventListener('click', (e) => {
+    avatarInput.disabled = true;
     information.forEach(element => {
         element.disabled = true;
     })
@@ -33,7 +35,6 @@ btnAccept.addEventListener('click', (e) => {
     btnAccept.style.display = 'none'
 })
 
-avatarInput.addEventListener('change', () => {
-    console.log(avatarInput.value)
-    avatarImg.src = avatarInput.value
+avatarInput.addEventListener('change', (event) => {
+    avatarImg.src = URL.createObjectURL(event.target.files[0]);
 })
