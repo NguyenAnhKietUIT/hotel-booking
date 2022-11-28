@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login__content {
+    background: url(../../assets/img/background/Property_sign_in.png) top center / cover no-repeat;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+
+/* Navigation */
+.app__nav {
+    height: var(--navbar-height);
+    position: relative;
+}
+
+.app__nav-name-link {
+    text-decoration: none;
+}
+
+.app__nav-name-icon {
+    height: var(--navbar-height);
+}
+
+.app__nav-list {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    list-style: none;
+}
+
+.app__nav-item {
+    transition: all 0.2s linear;
+    padding: 8px;
+}
+
+.app__nav-item + .app__nav-item {
+    margin-left: 20px;
+}
+
+.app__nav-item:last-child {
+    font-weight: 600;
+    margin-right: -8px;
+}
+
+
+.app__nav-item-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--search-color);
+}
+
+.app__nav-item-link:hover {
+    color: var(--white-color);
+}
+
+.login_main-content {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.form-group {
+    margin-top: 16px;
+}
+
+.form-title {
+    font-size: 24px;
+}
+
+.remember {
+    display: flex;
+    padding: 0 0 16px;
+}
+
+.form-remember-text {
+    color: var(--white-color);
+    padding: 4px 8px;
+    cursor: pointer;
+}
