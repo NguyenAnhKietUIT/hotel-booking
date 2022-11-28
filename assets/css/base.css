@@ -15,24 +15,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.app__go-home-link {
-    text-decoration: none;
-    position: fixed;
-    bottom: 36px;
-    right: 28px;
-    z-index: 999;
-}
-
-.app__go-home-icon {
-    font-size: 40px;
-    color: rgba(115, 244, 130, 0.4);
-    padding: 8px;
-}
-
-.app__go-home-icon:hover {
-    color: rgba(0, 136, 16, 0.7);
-}
-
 .plan-btn {
     text-decoration: none;
     background-color: #6c94b9;

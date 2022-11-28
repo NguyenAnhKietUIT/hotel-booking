@@ -88,7 +88,7 @@
                             </h3>
 
                             <div class="form-group">
-                                <input id="full-name" name="full-name" type="text" placeholder="Full Name" class="form-control">
+                                <input id="username" name="username" type="text" placeholder="Username" class="form-control">
                                 <span class="form-message"></span>
                             </div>
     
@@ -153,7 +153,7 @@
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#full-name'),
+                Validator.isRequired('#username'),
                 Validator.minLength('#password', 6),
                 Validator.isEmail('#email'),
                 Validator.isRequired('#confirm-password'),
