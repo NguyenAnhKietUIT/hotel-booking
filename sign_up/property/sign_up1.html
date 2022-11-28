@@ -94,11 +94,8 @@
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isRequired('#phone-number'),
+                Validator.isPhoneNumber('#phone-number'),
             ],
-            // onSubmit: function(data) {
-            //     // call API
-            // }
         });
 
     </script>

@@ -68,6 +68,16 @@
     padding-left: 24px;
 }
 
+.app__content-link {
+    display: inline-block;
+    color: #fff;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #cf7a02;
+}
+
 .app__sidebar-list {
     list-style: none;
     font-size: 20px;
