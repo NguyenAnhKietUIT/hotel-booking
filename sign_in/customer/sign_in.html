@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <meta name="google-signin-client_id" content="411740711582-bhlpbufj13vqb314eumrga8mgk9upnkf.apps.googleusercontent.com">
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../assets/css/header.css">
     <link rel="stylesheet" href="./sign_in.css">
     <link rel="stylesheet" href="../../assets/css/grid.css">
     <link rel="stylesheet" href="../responsive_sign_in.css">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <title>Sign in</title>
 </head>
 <body>
@@ -84,7 +81,7 @@
                     </div>
     
                     <div class="login__main">
-                        <form action="" method="post" class="form" id="form">
+                        <form action="./login.php" method="post" class="form" id="form">
                             <h3 class="form-title">
                                 Sign Into </br> Your Account
                             </h3>
@@ -104,7 +101,7 @@
                                 <label for="form-remember" class="form-remember-text">Remember Me</label>
                             </div>
     
-                            <button class="form-btn">
+                            <button class="form-btn" name="login">
                                 Sign in
                             </button>
 
@@ -126,7 +123,7 @@
     </div>
 
     <script src="../../validator.js"></script>
-    <script>
+    <!-- <script>
         Validator({
             form: '#form',
             formGroupSelector: '.form-group',
@@ -137,18 +134,9 @@
             ],
             onSubmit: function(data) {
                 // call API
+                console.log(data);
             }
         });
-    </script>
-
-    <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        }
-    </script>
+    </script> -->
 </body>
 </html>
