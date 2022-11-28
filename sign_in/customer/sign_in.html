@@ -100,10 +100,8 @@
                                 <input type="checkbox" name="form-remember" id="form-remember" class="input-control">
                                 <label for="form-remember" class="form-remember-text">Remember Me</label>
                             </div>
-    
-                            <button class="form-btn" name="login">
-                                Sign in
-                            </button>
+                            
+                            <input type="submit" class="form-btn" name="login" value="Sign in">
 
                             <button class="login__google" data-onsuccess="onSignIn">
                                 <img src="../../assets/img/google_icon.png" alt="Google" class="login__google-img">
@@ -123,7 +121,7 @@
     </div>
 
     <script src="../../validator.js"></script>
-    <!-- <script>
+    <script>
         Validator({
             form: '#form',
             formGroupSelector: '.form-group',
@@ -137,6 +135,6 @@
                 console.log(data);
             }
         });
-    </script> -->
+    </script>
 </body>
 </html>
