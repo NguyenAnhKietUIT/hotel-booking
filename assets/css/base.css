@@ -15,6 +15,53 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Navigation */
+.app__nav {
+    height: var(--navbar-height);
+    position: relative;
+}
+
+.app__nav-name-link {
+    text-decoration: none;
+}
+
+.app__nav-name-icon {
+    height: var(--navbar-height);
+}
+
+.app__nav-list {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    list-style: none;
+}
+
+.app__nav-item {
+    transition: all 0.2s linear;
+    padding: 8px;
+}
+
+.app__nav-item + .app__nav-item {
+    margin-left: 20px;
+}
+
+.app__nav-item:last-child {
+    font-weight: 600;
+    margin-right: -8px;
+}
+
+.app__nav-item-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--search-color);
+}
+
+.app__nav-item-link:hover {
+    color: var(--white-color);
+}
+
 .plan-btn {
     text-decoration: none;
     background-color: #6c94b9;
