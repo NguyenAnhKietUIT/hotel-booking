@@ -202,21 +202,11 @@ function editDetails() {
         })
     })
 
-    btnAccept.addEventListener('click', (e) => {
+    btnAccept.addEventListener('click', () => {
         avatarInput.disabled = true;
         information.forEach(element => {
             element.disabled = true;
         })
-
-        let name = document.getElementById('yourname')
-        let email = document.getElementById('email')
-        let country = document.getElementById('country')
-        let phone = document.getElementById('phonenumber')
-
-        name.value = name.value
-        email.value = email.value
-        country.value = country.value
-        phone.value = phone.value
 
         btnEditDetails.style.display = 'block'
         btnAccept.style.display = 'none'

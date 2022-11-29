@@ -22,9 +22,7 @@
 }
 
 .app__content-link {
-    display: inline-block;
     color: #fff;
-    margin-top: 12px;
     padding: 12px;
     border-radius: 8px;
     text-decoration: none;
@@ -46,21 +44,26 @@
 }
 
 /* Your Account */
+.form-detail {
+    display: flex;
+    justify-content: space-between;
+}
+
 .form-avatar {
-    width: 200px;
+    width: 320px;
     position: relative;
 }
 
 .form-avatar__message {
     position: absolute;
-    top: 50%;
-    left: 20px;
+    top: 38%;
+    left: 18%;
     opacity: 0;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
     transition: all 0.7s;
-    transform: translateY(100%)
+    -webkit-text-stroke: 1px black;
 }
 
 .app__main-label-img {
@@ -72,13 +75,13 @@
 }
 
 .form-avatar:hover .form-avatar__message {
-    transform: translateY(-10%);
+    transform: translateY(80%);
     opacity: 1;
 }
 
 .app__main-img {
     width: 100%;
-    height: 200px;
+    height: 320px;
     margin-top: 20px;
     border-radius: 4px;
 }
@@ -146,7 +149,6 @@
     font-size: 16px;
     padding: 12px 16px;
     border-radius: 8px;
-    margin-bottom: 12px;
     background-color: #1dbfaf;
 }
 
@@ -156,6 +158,11 @@
 
 .btn-accept {
     display: none;
+}
+
+.buttons-handle {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* View all bookings */
