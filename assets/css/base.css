@@ -150,3 +150,12 @@ html {
 .form-group.invalid .form-message {
     color: #f33a58;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

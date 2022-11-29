@@ -106,7 +106,7 @@ function mainFunction() {
         if (!upcomings && !pasts) {
             html += `
                     <span class="app__view-message">You have no bookings yet.</span>
-                    <a href="../../home_page/home.html" class="app__view-link">Start exploring</a>
+                    <a href="../html/Homepage.html" class="app__view-link">Start exploring</a>
                     `
         }
 

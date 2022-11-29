@@ -661,7 +661,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     animation: fadeIn 0.2s linear;
 }
@@ -714,13 +714,4 @@
 .app__nav-mobile-input:checked ~ .app__nav-mobile {
     transform: translateX(0);
     opacity: 1;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }

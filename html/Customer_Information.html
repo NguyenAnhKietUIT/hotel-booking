@@ -47,7 +47,9 @@
                             <li class="app__sidebar-item app__sidebar-item--active">Your Account</li>
                             <li class="app__sidebar-item">View all bookings</li>
                             <li class="app__sidebar-item">Favourites</li>
-                            <li class="app__sidebar-item">Inbox</li>
+                            <li class="app__sidebar-item">
+                                <label for="app__inbox-input" style="cursor: pointer;">Inbox</label>
+                            </li>
                             <li class="app__sidebar-item">Your Reviews</li>
                         </ul>
                     </div>
@@ -379,6 +381,12 @@
                             </div>
                         </form>
                     </div>
+                </div>
+
+                <input type="checkbox" hidden name="" id="app__inbox-input" class="app__inbox-input">
+                <label for="app__inbox-input" class="app__inbox-overlay"></label>
+                <div class="app__inbox">
+                    
                 </div>
             </div>
         </div>
