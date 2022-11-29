@@ -316,4 +316,43 @@
     transform: translateX(100%);
     opacity: 0;
     transition: all 0.2s linear;
+    display: flex;
+    flex-direction: column;
+}
+
+.app__inbox h2 {
+    padding: 4px 12px;
+}
+
+.box-message {
+    flex: 1;
+    border: 2px solid black;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.box-message ul {
+    list-style: none;
+    max-height: 584px;
+    overflow-y: auto;
+}
+
+.message-item {
+    padding: 8px;
+}
+
+.app__inbox-send-msg {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 8px;
+}
+
+.message-wrapper {
+    font-size: 16px;
+    padding: 8px;
+}
+
+.btn-send-msg {
+    padding: 0 12px;
+    cursor: pointer;
 }
