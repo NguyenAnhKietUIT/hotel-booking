@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register__content {
+    background: url(../../assets/img/background/Property_sign_in.png) top center / cover no-repeat;
+    display: block;
+    height: 100vh;
+    position: relative;
+}
+
+.register_main-content {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.form {
+    padding: 40px;
+}
+
+.form-title {
+    font-size: 24px;
+}
+
+.form-desc {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    color: var(--white-color);
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.remember {
+    display: flex;
+    padding: 0 0 16px;
+}
+
+.form-remember-text {
+    color: var(--white-color);
+    padding: 4px 8px;
+    cursor: pointer;
+}
