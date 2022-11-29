@@ -567,6 +567,7 @@ function handleCategory() {
 
     function changeCategory(param) {
         mainContainer.style.display = 'block'
+        document.querySelector('.app__nav-item:first-child .app__nav-item-link').style.color = 'var(--search-color)'
         let html
 
         if (param === 'Beaches') {
