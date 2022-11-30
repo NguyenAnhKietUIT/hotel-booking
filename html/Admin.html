@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../css/Admin.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Trivia</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__header">
+            <img src="../assets/img/logo.png" alt="Logo" class="nav__header-img">
+
+            <span class="app__header-name">Admin page</span>
+        </div>
+
+        <div class="nav__content">
+            <ul class="nav__content-list">
+                <li class="nav__content-list-item">
+                    <i class="fa-brands fa-unsplash"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav__content-list-item">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Evaluate</span>
+                </li>
+                <li class="nav__content-list-item">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span>Analytics</span>
+                </li>
+                <li class="nav__content-list-item">
+                    <i class="fa-solid fa-message"></i>
+                    <span>Message</span>
+                </li>
+            </ul>
+
+            <form action="" method="POST" class="nav__content-list-item">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <input type="submit" name="sign-out" class="sign-out" value="Sign out">
+            </form>
+        </div>
+    </nav>
+
+    <!--start color switcher-->
+    <div class="right-sidebar">
+        <div class="switcher-icon">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="right-sidebar-content">
+            <p>Galaxy Background</p>
+            <hr>
+
+            <ul class="switcher">
+                <li id="theme1"></li>
+                <li id="theme2"></li>
+                <li id="theme3"></li>
+                <li id="theme4"></li>
+                <li id="theme5"></li>
+                <li id="theme6"></li>
+            </ul>
+
+            <p>Gradient Background</p>
+            <hr>
+
+            <ul class="switcher">
+                <li id="theme7"></li>
+                <li id="theme8"></li>
+                <li id="theme9"></li>
+                <li id="theme10"></li>
+                <li id="theme11"></li>
+                <li id="theme12"></li>
+                <li id="theme13"></li>
+                <li id="theme14"></li>
+                <li id="theme15"></li>
+            </ul>
+        </div>
+    </div>
+    <!--end color switcher-->
+
+    <script src="../js/Admin.js"></script>
+</body>
+
+</html>
