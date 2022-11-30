@@ -57,7 +57,7 @@
                             </h3>
     
                             <div class="form-group">
-                                <input id="email" name="email" type="email" placeholder="Email Address" class="form-control">
+                                <input id="username" name="username" type="text" placeholder="Username" class="form-control">
                                 <span class="form-message"></span>
                             </div>
     
@@ -91,8 +91,8 @@
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
+                Validator.isRequired('#username'),
                 Validator.minLength('#password', 6),
-                Validator.isEmail('#email')
             ],
             // onSubmit: function(data) {
             //     // call API
