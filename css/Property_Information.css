@@ -220,9 +220,165 @@ body {
     font-weight: 600;
 }
 
+h3 {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
 #app__overview {
     margin-top: 20px;
     min-height: 100px;
+}
+
+#app__room,
+#app__review,
+#app__information,
+#app__facility {
+    margin-top: 20px;
+}
+
+.app__room-item {
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
+}
+
+.app__room-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 2px 2px rgb(0 0 0 / 5%);
+}
+
+.app__room-item-img {
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.app__room-item-main {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.app__room-item-type {
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+.app__room-item-request {
+    padding: 4px 0;
+}
+
+.app__room-item-request i {
+    min-width: 24px;
+}
+
+.app__room-item-reserve {
+    padding: 12px;
+}
+
+.app__room-item-price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.app__room-item-reserve span {
+    display: block;
+    font-size: 12px;
+    padding-bottom: 8px;
+    padding-top: 4px;
+}
+
+.app__room-item-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.app__room-item-remain {
+    color: #b22020;
+}
+
+.app__information-item {
+    margin-top: 4px;
+    padding-left: 24px;
+}
+
+.app__information-item > h4 {
+    padding-bottom: 4px;
+}
+
+.app__information-item + .app__information-item > h4 {
+    margin-top: 12px;
+}
+
+#app__facility ul {
+    list-style: none;
+}
+
+#app__facility li {
+    padding-top: 16px;
+}
+
+.map {
+    height: 300px;
+    margin-top: 8px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
+}
+
+.btn-reserve {
+    color: white;
+    font-weight: 700;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 20px;
+    background-color: #156BC1;
+}
+
+.btn-reserve:hover {
+    background-color: #548dc5;
+}
+
+#app__review {
+    margin-bottom: 60px;
+}
+
+#app__review > div {
+    display: flex;
+    height: 160px;
+}
+
+.app__review-info {
+    margin-right: 40px;
+    width: 400px;
+}
+
+.app__review-info-title {
+    color: #2659C3;
+}
+
+.app__review-info-point {
+    font-size: 28px;
+    padding-right: 4px;
+}
+
+.app__review-info-item {
+    padding: 4px 0;
+}
+
+.app__review-comment {
+    width: 100%;
+    display: flex;
+    padding: 12px 16px;
+    border-radius: 4px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(204, 204, 204, 0.3);
+}
+
+.app__review-comment p {
+    flex: 1;
 }
 
 .app__footer {
