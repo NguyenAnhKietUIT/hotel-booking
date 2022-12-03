@@ -140,7 +140,7 @@ Validator.isRequired = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value ? undefined :  message || 'Vui lòng nhập trường này'
+            return value ? undefined :  message || 'Please enter this field';
         }
     };
 }
@@ -150,7 +150,7 @@ Validator.isEmail = function (selector, message) {
         selector: selector,
         test: function (value) {
             var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-            return regex.test(value) ? undefined :  message || 'Trường này phải là email';
+            return regex.test(value) ? undefined :  message || 'This field must be email';
         }
     };
 }
@@ -159,7 +159,7 @@ Validator.minLength = function (selector, min, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value.length >= min ? undefined :  message || `Vui lòng nhập tối thiểu ${min} kí tự`;
+            return value.length >= min ? undefined :  message || `Please enter the minimum ${min} characters`;
         }
     };
 }
@@ -168,7 +168,7 @@ Validator.isConfirmed = function (selector, getConfirmValue, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác';
+            return value === getConfirmValue() ? undefined : message || 'Re-entered password is incorrect';
         }
     }
 }
@@ -178,7 +178,7 @@ Validator.isPhoneNumber = function (selector, message) {
         selector: selector,
         test: function (value) {
             var regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-            return regex.test(value) ? undefined :  message || 'Trường này phải là phonenumber';
+            return regex.test(value) ? undefined :  message || 'This field must be a valid phone number';
         }
     };
 }
