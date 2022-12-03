@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/Property_Information.css">
+    <title>Property Name</title>
+</head>
+
+<body>
+    <div id="app">
+        <header class="app__header">
+            <div class="grid wide">
+                <nav class="app__nav">
+                    <a href="./Homepage.html" class="app__nav-name-link">
+                        <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                    </a>
+
+                    <ul class="app__nav-list">
+                        <li class="app__nav-item">
+                            <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="./Customer_SignUp.html" class="app__nav-item-link">Sign Up</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="grid wide">
+            <div class="app__property-img">
+                <img src="../assets/img/others/Rectangle_9.png" alt="Image Property" class="app__list-img-item">
+
+                <div>
+                    <div>
+                        <img src="../assets/img/others/Rectangle_10.png" alt="Image Property"
+                            class="app__list-img-item">
+                        <img src="../assets/img/others/Rectangle_11.png" alt="Image Property"
+                            class="app__list-img-item">
+                    </div>
+                    <div>
+                        <img src="../assets/img/others/Rectangle_12.png" alt="Image Property"
+                            class="app__list-img-item">
+                        <img src="../assets/img/others/Rectangle_13.png" alt="Image Property"
+                            class="app__list-img-item">
+                    </div>
+                </div>
+            </div>
+
+            <nav class="app__navigation">
+                <a href="#app__overview">Overview</a>
+                <a href="#app__room">Room</a>
+                <a href="#">Information</a>
+                <a href="#">Policies</a>
+                <a href="#">Review</a>
+            </nav>
+
+            <div class="app__title">
+                <h1>Holiday Inn & Suites Saigon Airport, an IHG Hotel</h1>
+                <span>8.8/10 Fabulous</span>
+            </div>
+
+            <div id="app__overview">
+                <h3>Overview</h3>
+                <span>Luxury hotel with 1 outdoor pools, connected to a shopping centre, near Giac Lam Pagoda</span>
+            </div>
+
+            <div class="app__search">
+                <ul class="app__search-list">
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-plane-departure"></i>
+                        </a>
+                        <div class="app__status-in">Check in</div>
+                        <input type="date" id="app__check-in" class="app__check-status" value="2022-11-11"
+                            min="2017-10-14" max="2050-12-31">
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-money-check"></i>
+                        </a>
+                        <div class="app__status-out">Check out</div>
+                        <input type="date" id="app__check-out" class="app__check-status" value="2022-11-11"
+                            min="2017-10-14" max="2050-12-31">
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-icon-link">
+                            <i class="app__search-icon fa-solid fa-people-group"></i>
+                        </a>
+                        <div class="app__search-quantity">
+                            <span class="room-quantity">1</span>
+                            room,
+                            <span class="people-quantity">2</span>
+                            adults
+                        </div>
+
+                        <div class="box-quantity">
+                            <div class="box-quantity__item">
+                                <span>Room</span>
+                                <div>
+                                    <button class="btn-minus-room">-</button>
+                                    <span class="amount-room">1</span>
+                                    <button class="btn-add-room">+</button>
+                                </div>
+                            </div>
+                            <div class="box-quantity__item">
+                                <span>People</span>
+                                <div>
+                                    <button class="btn-minus-people">-</button>
+                                    <span class="amount-people">2</span>
+                                    <button class="btn-add-people">+</button>
+                                </div>
+                            </div>
+                            <button class="btn-quantity">Xong</button>
+                        </div>
+                    </li>
+                    <li class="app__search-item">
+                        <a href="#" class="app__search-btn">Search</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="app__room">
+                <div class="row">
+                    <div class="col l-3">
+                        <a href="#" class="app__room-item">
+                            <img src="../assets/img/others/hotel.jpg" alt="Image Hotel" class="app__room-item-img">
+                            <div class="app__room-item-main">
+                                <p class="app__room-item-type">Type room</p>
+                                <p class="app__room-item-request">
+                                    <i class="fa-regular fa-square"></i>
+                                    <span>35</span>m<sup>2</sup>
+                                </p>
+                                <p class="app__room-item-request">
+                                    <i class="fa-solid fa-user-group"></i>
+                                    <span>Sleeps 2</span>
+                                </p>
+                                <p class="app__room-item-request">
+                                    <i class="fa-solid fa-bed"></i>
+                                    <span>1 King Bed</span>
+                                </p>
+                                <p class="app__room-item-request">
+                                    <i class="fa-solid fa-check"></i>
+                                    <span>Reserve now, pay later</span>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app__footer">
+            <div class="grid wide">
+                <div class="app__footer-contact">
+                    <h3 class="app__footer-contact-title">
+                        Enter your e-mail address and get</br> notified of exclusive offers
+                    </h3>
+
+                    <div class="app__footer-contact-input">
+                        <div class="app__footer-input">
+                            <input type="text" placeholder="Your e-mail address">
+                        </div>
+
+                        <div class="app__footer-btn">
+                            <a href="#" class="app__search-btn btn-footer">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col l-2-4 m-2-4 c-4">
+                        <a href="#" class="app__nav-name-link">
+                            <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                        </a>
+                    </div>
+                    <div class="col l-2-4 m-2-4 c-4">
+                        <ul class="app__footer-list">
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">About us</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Newsletter</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Careers</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-2-4 c-4">
+                        <ul class="app__footer-list">
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Community</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Trivia Community</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-2-4 c-4 mobile-offset-4">
+                        <ul class="app__footer-list">
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Support</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Help Centre</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Safety Information</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col l-2-4 m-2-4 c-4">
+                        <ul class="app__footer-list">
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Hedge Karla</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Mullein abc</a>
+                            </li>
+                            <li class="app__footer-list-item">
+                                <a href="#" class="app__footer-list-item-link">Autumnal Bulgier</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="app__footer-socials">
+                    <ul class="app__footer-socials-list">
+                        <li class="app__footer-socials-item">
+                            <a href="#" class="app__footer-socials-item-link">
+                                <i class="app__footer-socials-item-icon fa-brands fa-square-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="app__footer-socials-item">
+                            <a href="#" class="app__footer-socials-item-link">
+                                <i class="app__footer-socials-item-icon fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="app__footer-socials-item">
+                            <a href="#" class="app__footer-socials-item-link">
+                                <i class="app__footer-socials-item-icon fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li class="app__footer-socials-item">
+                            <a href="#" class="app__footer-socials-item-link">
+                                <i class="app__footer-socials-item-icon fa-brands fa-square-facebook"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="app__footer-copyright">
+                    Copyright &copy; 2022 Alien
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/Homepage.js"></script>
+</body>
+
+</html>
