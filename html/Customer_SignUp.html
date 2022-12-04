@@ -30,7 +30,7 @@
                             <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
                         </li>
                         <li class="app__nav-item">
-                            <a href="./Customer_SignIn.html" class="app__nav-item-link">Sign In</a>
+                            <a href="./SignIn.html" class="app__nav-item-link">Sign In</a>
                         </li>
                     </ul>
                 </nav>
@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="register__agree">
-                                <input type="checkbox" name="register__agree-checkbox" id="register__agree-checkbox" class="register__form-control">
+                                <input type="checkbox" required name="register__agree-checkbox" id="register__agree-checkbox" class="register__form-control">
                                 <label for="register__agree-checkbox" class="register__agree-text">
                                     By clicking Create account, I agree that I have read and accepted the 
                                     <a href="#" class="register__agree-link">Terms of use</a>
@@ -105,7 +105,7 @@
                         </form>
     
                         <div class="register__main-property">
-                            <a href="./Property_SignUp1.html" class="register__property-link">
+                            <a href="./Property_SignUp.html" class="register__property-link">
                                 <b>Sign up</b>
                             </a> for Properties
                         </div>
@@ -129,7 +129,7 @@
                 Validator.isRequired('#confirm-password'),
                 Validator.isConfirmed('#confirm-password', function() {
                     return document.querySelector('#form #password').value;
-                }, 'Mật khẩu nhập lại không chính xác')
+                }, 'Mật khẩu nhập lại không chính xác'),
             ],
             // onSubmit: function(data) {
             //     // call API
