@@ -201,13 +201,45 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.app__navigation.sticky {
+    max-width: 1200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    margin: 0 auto;
+    height: 44px;
+    background-color: #fff;
+}
+
+.app__navigation.sticky ~ #app__overview h3,
+.app__navigation.sticky ~ #app__room h3,
+.app__navigation.sticky ~ #app__information h3,
+.app__navigation.sticky ~ #app__facility h3,
+.app__navigation.sticky ~ #app__review h3 {
+    padding-top: 60px;
+}
+
+.app__navigation.sticky a {
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 .app__navigation a {
     text-decoration: none;
     color: #000;
     font-weight: 600;
-    padding: 8px 12px;
+    padding-bottom: 8px;
+}
+
+.nav-active {
+    border-bottom: 3px solid #000;
 }
 
 .app__title {
@@ -228,13 +260,6 @@ h3 {
 #app__overview {
     margin-top: 20px;
     min-height: 100px;
-}
-
-#app__room,
-#app__review,
-#app__information,
-#app__facility {
-    margin-top: 20px;
 }
 
 .app__room-item {
@@ -375,6 +400,12 @@ h3 {
     flex-direction: column;
     justify-content: space-between;
     background-color: rgba(204, 204, 204, 0.3);
+}
+
+.app__review-comment span:first-child {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 8px;
 }
 
 .app__review-comment p {

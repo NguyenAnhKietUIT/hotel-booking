@@ -81,4 +81,31 @@ function setQuantity() {
     });
 }
 
+function handleNavigation() {
+    const navMain = document.querySelector('.app__navigation')
+    const navList = document.querySelectorAll('.app__navigation a');
+
+    navList.forEach(function(element) {
+        element.addEventListener('click', () => {
+            navList.forEach(function(element) {
+                element.classList.remove('nav-active')
+                element.style.color = 'black'
+                element.style.borderColor = 'black'
+            })
+            element.classList.add('nav-active')
+            element.style.color = 'red'
+            element.style.borderColor = 'red'
+        })
+    })
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            navMain.classList.add('sticky')
+        } else {
+            navMain.classList.remove('sticky')
+        }
+    })
+}
+
 setQuantity()
+handleNavigation()
