@@ -93,6 +93,31 @@ function setBetween2Days() {
 
         inputsCheckIn.style.display = 'block';
 
+        // Lấy ra ngày hiện tại
+        let date = new Date();
+        let today;
+        if (date.getMonth() + 1 < 10) {
+            today = date.getFullYear() + '-0' + (date.getMonth() + 1);
+            
+            if (date.getDate() < 10) {
+                today += '-0' +  date.getDate();
+            } else {
+                today += '-' +  date.getDate();
+            }
+        } else {
+            today = date.getFullYear() + '-' + (date.getMonth() + 1);
+
+            if (date.getDate() < 10) {
+                today += '-0' +  date.getDate();
+            } else {
+                today += '-' +  date.getDate();
+            }
+        }
+
+        // Set value và min value cho ngày check in
+        inputsCheckIn.value = today;
+        inputsCheckIn.min = today;
+
         if (inputsCheckOut.style.display === 'block') {
             let checkOut = inputsCheckOut.value;
 

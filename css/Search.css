@@ -302,6 +302,10 @@ body {
     border-color: transparent transparent #fff transparent;
 }
 
+.app__main-content {
+    margin-bottom: 40px;
+}
+
 .map {
     border-radius: 16px;
     overflow: hidden;
