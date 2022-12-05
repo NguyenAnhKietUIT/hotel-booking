@@ -55,6 +55,7 @@
 
 .table {
     margin-bottom: 0;
+    max-height: 1200px;
 }
 
 .table tr:hover {
@@ -68,10 +69,6 @@
 .message-icon-active {
     display: none;
     color: yellow;
-}
-
-.table {
-    max-height: 1200px;
 }
 
 .table tr td:nth-child(1),
