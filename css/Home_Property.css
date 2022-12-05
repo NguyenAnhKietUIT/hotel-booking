@@ -50,11 +50,6 @@
     color: #000;
 }
 
-.app__content-nav-item:first-child {
-    color: black;
-    border-bottom: 4px solid #000;
-}
-
 .app__content-nav-item i {
     font-size: 32px;
 }
