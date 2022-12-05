@@ -82,6 +82,11 @@
     text-align: left;
     min-width: 250px;
     max-width: 250px;
+    max-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
 }
 
 .table tr td:nth-child(4) {
