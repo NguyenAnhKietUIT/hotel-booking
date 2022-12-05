@@ -53,3 +53,46 @@
 .app__content-nav-item i {
     font-size: 32px;
 }
+
+.app__content-main {
+    margin-top: 40px;
+}
+
+.app__overview {
+    border-bottom: 1px solid #000;
+}
+
+.app__overview-title,
+.app__analytic-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.app__overview-content-item {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.app__overview-content-item + .app__overview-content-item {
+    margin-left: 40px;
+}
+
+.app__overview-content-item:last-child {
+    flex: 1;
+}
+
+.app__overview div:last-child {
+    height: 30px;
+}
+
+.app__overview-link {
+    color: #08536B;
+    font-size: 20px;
+    font-weight: 600;
+}
