@@ -541,20 +541,7 @@ function handleCategory() {
         html += `
                     </div>
                 </div>
-
-                <div class="app__home-location">
-                    <h3 class="app__home-location-title">
-                        All Inclusive Packages!
-                    </h3>
-
-                    <div class="row">
                 `
-
-        html += renderItem(arr2).join('')
-        html += `
-                    </div>
-                </div>
-            `
 
         return html
     }

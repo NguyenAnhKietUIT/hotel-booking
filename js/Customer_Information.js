@@ -185,7 +185,7 @@ function mainFunction() {
 }
 
 function editDetails() {
-    const information = document.querySelectorAll('.form-control')
+    const information = document.querySelectorAll('.form-control.edit-active')
     const btnEditDetails = document.querySelector('.form-edit')
     const btnAccept = document.querySelector('.btn-accept')
     const avatarImg = document.querySelector('.app__main-img')
