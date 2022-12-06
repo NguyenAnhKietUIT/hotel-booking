@@ -1,4 +1,4 @@
-.app__content-nav-item:nth-child(4) {
+.app__content-nav-last {
     color: black;
     border-bottom: 4px solid #000;
 }

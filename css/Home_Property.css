@@ -129,3 +129,40 @@ p, ul {
     font-size: 20px;
     font-weight: 600;
 }
+
+/* Inbox */
+.app__inbox-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    animation: fadeIn 0.3s linear;
+}
+
+#app__inbox-input:checked ~ .app__inbox-overlay {
+    display: block;
+}
+
+#app__inbox-input:checked ~ .app__inbox {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.app__inbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 1100px;
+    max-width: 100%;
+    background-color: var(--white-color);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+}

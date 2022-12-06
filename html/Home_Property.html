@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/grid.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
@@ -67,12 +68,16 @@
                             <div class="app__content-edit-box position-absolute text-dark">
                                 <ul class="list-unstyled">
                                     <li class="p-2">
-                                        <a href="./Property_Information.html" class="text-decoration-none text-dark">Update Information</a>
+                                        <a href="./Property_Information.html"
+                                            class="text-decoration-none text-dark">Update Information</a>
                                     </li>
                                     <li class="p-2">
-                                        <a href="./Property_Review.html" class="text-decoration-none text-dark">Guest reviews</a>
+                                        <a href="./Property_Review.html" class="text-decoration-none text-dark">Guest
+                                            reviews</a>
                                     </li>
-                                    <li class="p-2">Inbox</li>
+                                    <li class="p-2">
+                                        <label for="app__inbox-input" style="width: 100%;cursor: pointer;">Inbox</label>
+                                    </li>
                                     <li class="p-2">Log out</li>
                                 </ul>
                             </div>
@@ -119,6 +124,11 @@
                         <p class="app__analytic-title">Analytics</p>
                     </div>
                 </div>
+            </div>
+
+            <input type="checkbox"hidden name="app__inbox-input" id="app__inbox-input">
+            <label for="app__inbox-input" class="app__inbox-overlay"></label>
+            <div class="app__inbox">
             </div>
         </div>
     </div>
