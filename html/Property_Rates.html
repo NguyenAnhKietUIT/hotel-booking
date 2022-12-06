@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="../css/Property_Rates.css">
     <title>Trivia</title>
 </head>
+
 <body>
     <div id="app">
         <header class="app__header">
@@ -29,7 +31,8 @@
 
                     <div class="app__nav-search">
                         <i class="px-2 py-3 fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="app__nav-search-input" name="app__nav-search-input" placeholder="Search for reservation">
+                        <input type="text" id="app__nav-search-input" name="app__nav-search-input"
+                            placeholder="Search for reservation">
                     </div>
                 </nav>
             </div>
@@ -85,11 +88,47 @@
 
             <div class="app__content-main"></div>
 
-            <input type="checkbox"hidden name="app__inbox-input" id="app__inbox-input">
+            <input type="checkbox" hidden name="app__inbox-input" id="app__inbox-input">
             <label for="app__inbox-input" class="app__inbox-overlay"></label>
             <div class="app__inbox">
+                <div class="row m-0 h-100 overflow-auto">
+                    <div class="col-4" style="border-right: 1px solid #ccc;">
+                        <ul class="list-unstyled">
+                            <li class="app__inbox-item pb-2">
+                                <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 1</h6>
+                                <span class="ps-2 pe-2 app__inbox-item-content">
+                                    Chào các bạn
+                                    Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
+                                    Thời gian trong 4 ngày 5/12/2022 - 8/12/2022
+                                    - Buổi sáng: 9h00-11h30
+                                    - Buổi chiều: 14h00-16h30
+                                    Sau thời gian trên bạn nào chưa nhận xem như từ chối quà tặng.
+                                    Quà tặng:
+                                    + Mũ báo hiểm cho khóa 2019-2021 (Theo danh sách tại forum)
+                                    + Balo cho khóa 2022
+                                    + Thuốc xịt mũi Viraleze dành cho Thầy Cô, Sinh viên có nhu cầu (Lưu ý số lượng có
+                                    hạn, phát đến khi hết quà)
+                                    Khi nhận quà vui lòng mang theo thẻ sinh viên.
+                                    Mọi thắc mắc sinh viên trao đổi tại forum:
+                                    https://forum.uit.edu.vn/node/559392
+                                </span>
+                            </li>
+                            <li class="app__inbox-item pb-2">
+                                <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 2</h6>
+                                <span class="ps-2 pe-2 app__inbox-item-content">
+                                    Chào các bạn
+                                    Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-8 app__inbox-message"></div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="../js/Inbox.js"></script>
 </body>
+
 </html>

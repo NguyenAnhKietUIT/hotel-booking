@@ -166,3 +166,71 @@ p, ul {
     display: flex;
     flex-direction: column;
 }
+
+.row > * {
+    padding: 0;
+}
+
+.app__inbox-item {
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app__inbox-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.app__inbox-item-content {
+    color: var(--text-color);
+    text-align: justify;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.app__inbox-message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.app__inbox-message-reply {
+    border: none;
+    outline: none;
+    height: 36px;
+    color: #fff;
+    border-radius: 12px;
+    background-color: blue;
+}
+
+.app__inbox-message-reply:hover {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.app__inbox-message-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.app__inbox-message-main {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.app__inbox-message-send {
+    display: none;
+}
+
+#app__inbox-message-textarea {
+    flex: 1;
+    padding: 8px;
+}
+
+.app__inbox-message-input {
+    margin-left: 16px;
+    height: 40px;
+}

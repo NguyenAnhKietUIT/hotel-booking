@@ -8,8 +8,11 @@
     <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/base.css">
     <link rel="stylesheet" href="../assets/css/grid.css">
-    <link rel="stylesheet" href="../css/Customer_Information.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/Customer_Information.css">
     <title>Trivia - Name Customer</title>
 </head>
 
@@ -43,7 +46,7 @@
         <div class="app__content">
             <div class="grid wide">
                 <div class="row">
-                    <div class="col l-3">
+                    <div class="col-3">
                         <ul class="app__sidebar-list">
                             <li class="app__sidebar-item app__sidebar-item--active">Your Account</li>
                             <li class="app__sidebar-item">View all bookings</li>
@@ -55,9 +58,9 @@
                             <li class="app__sidebar-item">Sign out</li>
                         </ul>
                     </div>
-                    <div class="col l-9">
+                    <div class="col-9">
                         <h1 class="app__main-title">User Details</h1>
-                        
+
                         <form action="" method="POST" class="form-detail" id="form-detail">
                             <div class="form-avatar">
                                 <label for="app__main-input-img" class="app__main-label-img">
@@ -77,14 +80,14 @@
                                         class="form-control">
                                     <span class="form-message"></span>
                                 </div>
-    
+
                                 <div class="form-group">
                                     <label for="email" class="form-label">Your Email</label>
                                     <input id="email" name="email" type="text" placeholder="Your Email" disabled
                                         class="form-control">
                                     <span class="form-message"></span>
                                 </div>
-    
+
                                 <div class="form-group">
                                     <label for="country" class="form-label">Country</label>
                                     <select id="country" name="country" class="form-control" disabled>
@@ -118,7 +121,8 @@
                                         <option value="['Bhutan','BT']">Bhutan</option>
                                         <option value="['Bolivia, Plurinational State of','BO']">Bolivia, Plurinational
                                             State of"</option>
-                                        <option value="['Bonaire, Sint Eustatius and Saba','BQ']">Bonaire, Sint Eustatius
+                                        <option value="['Bonaire, Sint Eustatius and Saba','BQ']">Bonaire, Sint
+                                            Eustatius
                                             and Saba"</option>
                                         <option value="['Bosnia and Herzegovina','BA']">Bosnia and Herzegovina</option>
                                         <option value="['Botswana','BW']">Botswana</option>
@@ -135,16 +139,19 @@
                                         <option value="['Canada','CA']">Canada</option>
                                         <option value="['Cape Verde','CV']">Cape Verde</option>
                                         <option value="['Cayman Islands','KY']">Cayman Islands</option>
-                                        <option value="['Central African Republic','CF']">Central African Republic</option>
+                                        <option value="['Central African Republic','CF']">Central African Republic
+                                        </option>
                                         <option value="['Chad','TD']">Chad</option>
                                         <option value="['Chile','CL']">Chile</option>
                                         <option value="['China','CN']">China</option>
                                         <option value="['Christmas Island','CX']">Christmas Island</option>
-                                        <option value="['Cocos (Keeling) Islands','CC']">Cocos (Keeling) Islands</option>
+                                        <option value="['Cocos (Keeling) Islands','CC']">Cocos (Keeling) Islands
+                                        </option>
                                         <option value="['Colombia','CO']">Colombia</option>
                                         <option value="['Comoros','KM']">Comoros</option>
                                         <option value="['Congo','CG']">Congo</option>
-                                        <option value="['Congo, the Democratic Republic of the','CD']">Congo, the Democratic
+                                        <option value="['Congo, the Democratic Republic of the','CD']">Congo, the
+                                            Democratic
                                             Republic of the"</option>
                                         <option value="['Cook Islands','CK']">Cook Islands</option>
                                         <option value="['Costa Rica','CR']">Costa Rica</option>
@@ -192,9 +199,11 @@
                                         <option value="['Guinea-Bissau','GW']">Guinea-Bissau</option>
                                         <option value="['Guyana','GY']">Guyana</option>
                                         <option value="['Haiti','HT']">Haiti</option>
-                                        <option value="['Heard Island and McDonald Islands','HM']">Heard Island and McDonald
+                                        <option value="['Heard Island and McDonald Islands','HM']">Heard Island and
+                                            McDonald
                                             Islands</option>
-                                        <option value="['Holy See (Vatican City State)','VA']">Holy See (Vatican City State)
+                                        <option value="['Holy See (Vatican City State)','VA']">Holy See (Vatican City
+                                            State)
                                         </option>
                                         <option value="['Honduras','HN']">Honduras</option>
                                         <option value="['Hong Kong','HK']">Hong Kong</option>
@@ -216,12 +225,14 @@
                                         <option value="['Kazakhstan','KZ']">Kazakhstan</option>
                                         <option value="['Kenya','KE']">Kenya</option>
                                         <option value="['Kiribati','KI']">Kiribati</option>
-                                        <option value="['Korea, Democratic People's Republic of','KP']">Korea, Democratic
+                                        <option value="['Korea, Democratic People's Republic of','KP']">Korea,
+                                            Democratic
                                             People's Republic of"</option>
                                         <option value="['Korea, Republic of','KR']">Korea, Republic of"</option>
                                         <option value="['Kuwait','KW']">Kuwait</option>
                                         <option value="[Kyrgyzstan','KG']">yrgyzstan</option>
-                                        <option value="['Lao People`s Democratic Republic','LA']">Lao People's Democratic
+                                        <option value="['Lao People`s Democratic Republic','LA']">Lao People's
+                                            Democratic
                                             Republic</option>
                                         <option value="['Latvia','LV']">Latvia</option>
                                         <option value="['Lebanon','LB']">Lebanon</option>
@@ -232,7 +243,8 @@
                                         <option value="['Lithuania','LT']">Lithuania</option>
                                         <option value="['Luxembourg','LU']">Luxembourg</option>
                                         <option value="['Macao','MO']">Macao</option>
-                                        <option value="['Macedonia, the Former Yugoslav Republic of','MK']">Macedonia, the
+                                        <option value="['Macedonia, the Former Yugoslav Republic of','MK']">Macedonia,
+                                            the
                                             Former Yugoslav Republic of"</option>
                                         <option value="['Madagascar','MG']">Madagascar</option>
                                         <option value="['Malawi','MW']">Malawi</option>
@@ -266,7 +278,8 @@
                                         <option value="['Niger','NE']">Niger</option>
                                         <option value="['Niue','NU']">Niue</option>
                                         <option value="['Norfolk Island','NF']">Norfolk Island</option>
-                                        <option value="['Northern Mariana Islands','MP']">Northern Mariana Islands</option>
+                                        <option value="['Northern Mariana Islands','MP']">Northern Mariana Islands
+                                        </option>
                                         <option value="['Norway','NO']">Norway</option>
                                         <option value="['Oman','OM']">Oman</option>
                                         <option value="['Pakistan','PK']">Pakistan</option>
@@ -287,7 +300,8 @@
                                         <option value="['Russian Federation','RU']">Russian Federation</option>
                                         <option value="['Rwanda','RW']">Rwanda</option>
                                         <option value="['Saint BarthÃƒÂ©lemy','BL']">Saint BarthÃƒÂ©lemy</option>
-                                        <option value="['Saint Helena','Ascension and Tristan da Cunha','SH']">Saint Helena,
+                                        <option value="['Saint Helena','Ascension and Tristan da Cunha','SH']">Saint
+                                            Helena,
                                             Ascension and Tristan da Cunha"</option>
                                         <option value="['Saint Kitts and Nevis','KN']">Saint Kitts and Nevis</option>
                                         <option value="['Saint Lucia','LC']">Saint Lucia</option>
@@ -313,7 +327,8 @@
                                         <option value="['Solomon Islands','SB']">Solomon Islands</option>
                                         <option value="['Somalia','SO']">Somalia</option>
                                         <option value="['South Africa','ZA']">South Africa</option>
-                                        <option value="['South Georgia and the South Sandwich Islands','GS']">South Georgia
+                                        <option value="['South Georgia and the South Sandwich Islands','GS']">South
+                                            Georgia
                                             and the South Sandwich Islands</option>
                                         <option value="['South Sudan','SS']">South Sudan</option>
                                         <option value="['Spain','ES']">Spain</option>
@@ -328,7 +343,8 @@
                                         <option value="['Taiwan, Province of China','TW']">Taiwan, Province of China"
                                         </option>
                                         <option value="['Tajikistan','TJ']">Tajikistan</option>
-                                        <option value="['Tanzania, United Republic of','TZ']">Tanzania, United Republic of"
+                                        <option value="['Tanzania, United Republic of','TZ']">Tanzania, United Republic
+                                            of"
                                         </option>
                                         <option value="['Thailand','TH']">Thailand</option>
                                         <option value="['Timor-Leste','TL']">Timor-Leste</option>
@@ -339,14 +355,16 @@
                                         <option value="['Tunisia','TN']">Tunisia</option>
                                         <option value="['Turkey','TR']">Turkey</option>
                                         <option value="['Turkmenistan','TM']">Turkmenistan</option>
-                                        <option value="['Turks and Caicos Islands','TC']">Turks and Caicos Islands</option>
+                                        <option value="['Turks and Caicos Islands','TC']">Turks and Caicos Islands
+                                        </option>
                                         <option value="['Tuvalu','TV']">Tuvalu</option>
                                         <option value="['Uganda','UG']">Uganda</option>
                                         <option value="['Ukraine','UA']">Ukraine</option>
                                         <option value="['United Arab Emirates','AE']">United Arab Emirates</option>
                                         <option value="['United Kingdom','GB']">United Kingdom</option>
                                         <option value="['United States','US']">United States</option>
-                                        <option value="['United States Minor Outlying Islands','UM']">United States Minor
+                                        <option value="['United States Minor Outlying Islands','UM']">United States
+                                            Minor
                                             Outlying Islands</option>
                                         <option value="['Uruguay','UY']">Uruguay</option>
                                         <option value="['Uzbekistan','UZ']">Uzbekistan</option>
@@ -354,7 +372,8 @@
                                         <option value="['Venezuela, Bolivarian Republic of','VE']">Venezuela, Bolivarian
                                             Republic of</option>
                                         <option value="['Viet Nam','VN']">Viet Nam</option>
-                                        <option value="['Virgin Islands, British','VG']">Virgin Islands, British</option>
+                                        <option value="['Virgin Islands, British','VG']">Virgin Islands, British
+                                        </option>
                                         <option value="['Virgin Islands, U.S.','VI']">Virgin Islands, U.S."</option>
                                         <option value="['Wallis and Futuna','WF']">Wallis and Futuna</option>
                                         <option value="['Western Sahara','EH']">Western Sahara</option>
@@ -364,14 +383,14 @@
                                     </select>
                                     <span class="form-message"></span>
                                 </div>
-    
+
                                 <div class="form-group">
                                     <label for="phonenumber" class="form-label">Phone Number</label>
                                     <input id="phonenumber" name="phonenumber" placeholder="Phone number" disabled
                                         type="text" class="form-control">
                                     <span class="form-message"></span>
                                 </div>
-    
+
                                 <div class="buttons-handle">
                                     <div>
                                         <button class="form-edit">Edit details</button>
@@ -385,20 +404,42 @@
                     </div>
                 </div>
 
-                <input type="checkbox" hidden name="" id="app__inbox-input" class="app__inbox-input">
+                <input type="checkbox" hidden name="app__inbox-input" id="app__inbox-input">
                 <label for="app__inbox-input" class="app__inbox-overlay"></label>
                 <div class="app__inbox">
-                    <h2>Inbox with admin</h2>
-                    <div class="box-message">
-                        <ul>
-                            <li class="message-item"><span>Me:</span>&nbsp;Hello!!!</li>
-                            <li class="message-item"><span>Admin:</span>&nbsp;Hello Kiet</li>
-                            <li class="message-item"><span>Me:</span>&nbsp;I have some questions</li>
-                        </ul>
-                    </div>
-                    <div class="app__inbox-send-msg">
-                        <textarea name="message-wrapper" class="message-wrapper" id="message-wrapper" cols="30" rows="2" placeholder="Enter message..."></textarea>
-                        <button class="btn-send-msg">Send</button>
+                    <div class="row m-0 h-100 overflow-auto">
+                        <div class="col-4" style="border-right: 1px solid #ccc;">
+                            <ul class="list-unstyled">
+                                <li class="app__inbox-item pb-2">
+                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 1</h6>
+                                    <span class="ps-2 pe-2 app__inbox-item-content">
+                                        Chào các bạn
+                                        Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
+                                        Thời gian trong 4 ngày 5/12/2022 - 8/12/2022
+                                        - Buổi sáng: 9h00-11h30
+                                        - Buổi chiều: 14h00-16h30
+                                        Sau thời gian trên bạn nào chưa nhận xem như từ chối quà tặng.
+                                        Quà tặng:
+                                        + Mũ báo hiểm cho khóa 2019-2021 (Theo danh sách tại forum)
+                                        + Balo cho khóa 2022
+                                        + Thuốc xịt mũi Viraleze dành cho Thầy Cô, Sinh viên có nhu cầu (Lưu ý số lượng
+                                        có
+                                        hạn, phát đến khi hết quà)
+                                        Khi nhận quà vui lòng mang theo thẻ sinh viên.
+                                        Mọi thắc mắc sinh viên trao đổi tại forum:
+                                        https://forum.uit.edu.vn/node/559392
+                                    </span>
+                                </li>
+                                <li class="app__inbox-item pb-2">
+                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 2</h6>
+                                    <span class="ps-2 pe-2 app__inbox-item-content">
+                                        Chào các bạn
+                                        Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-8 app__inbox-message"></div>
                     </div>
                 </div>
             </div>
@@ -407,6 +448,7 @@
 
     <script src="../assets/js/validator.js"></script>
     <script src="../js/Customer_Information.js"></script>
+    <script src="../js/Inbox.js"></script>
     <script>
         Validator({
             form: '#form-detail',
