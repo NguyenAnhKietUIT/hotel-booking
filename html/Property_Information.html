@@ -86,7 +86,121 @@
                 </div>
             </div>
 
-            <div class="app__content-main"></div>
+            <div class="mt-3 mb-5 grid wide">
+                <p class="app__analytic-title">Update information</p>
+
+                <form action="" method="POST" class="form" id="form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Property name</label>
+                        <input id="name" name="name" type="text" class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="overview" class="form-label">Overview</label>
+                        <textarea name="overview" id="overview" cols="30" rows="4" class="form-control"></textarea>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phonenumber" class="form-label">Phone numbers</label>
+                        <input id="phonenumber" name="phonenumber" type="text" class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gmail" class="form-label">Gmail</label>
+                        <input id="gmail" name="gmail" type="text" class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location" class="form-label">Location</label>
+                        <textarea name="location" id="location" cols="30" rows="2" class="form-control"></textarea>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="check-in" class="form-label">
+                            Check-in time
+                            <i class="fa-regular fa-clock"></i>
+                        </label>
+                        <input id="check-in" name="check-in" type="time" class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="check-out" class="form-label">
+                            Check-out time
+                            <i class="fa-regular fa-clock"></i>
+                        </label>
+                        <input id="check-out" name="check-out" type="time" class="form-control">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Types of property</label>
+                        <div class="d-flex flex-column">
+                            <div>
+                                <input type="radio" name="property" id="hotel">
+                                <label for="hotel">Hotel</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="property" id="resort">
+                                <label for="resort">Resort</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="property" id="apartment">
+                                <label for="apartment">Apartment</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="property" id="homestay">
+                                <label for="homestay">Homestay</label>
+                            </div>
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Types of category</label>
+                        <div class="d-flex flex-column">
+                            <div>
+                                <input type="checkbox" name="category" id="beach">
+                                <label for="beach">Beaches</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="category" id="mountain">
+                                <label for="mountain">Mountain</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="category" id="iconic-city">
+                                <label for="iconic-city">Iconic cities</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="category" id="countryside">
+                                <label for="countryside">Countryside</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="category" id="camping">
+                                <label for="camping">Camping</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" name="category" id="tropical">
+                                <label for="tropical">Tropical</label>
+                            </div>
+                        </div>
+                        <span class="form-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image" class="form-label">Location</label>
+                        <input type="file" name="image" id="image">
+                        <span class="form-message"></span>
+                    </div>
+
+                    <input type="submit" class="form-btn" value="Save">
+                </form>
+            </div>
 
             <input type="checkbox" hidden name="app__inbox-input" id="app__inbox-input">
             <label for="app__inbox-input" class="app__inbox-overlay"></label>
@@ -129,6 +243,29 @@
     </div>
 
     <script src="../js/Inbox.js"></script>
+    <script src="../assets/js/validator.js"></script>
+
+    <script>
+        Validator({
+            form: '#form',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#name'),
+                Validator.isRequired('#overview'),
+                Validator.isRequired('#phonenumber'),
+                Validator.isPhoneNumber('#phonenumber'),
+                Validator.isRequired('#gmail'),
+                Validator.isEmail('#gmail'),
+                Validator.isRequired('#location'),
+                Validator.isRequired('#check-in'),
+                Validator.isRequired('#check-out'),
+                Validator.isRequired('input[name="property"]'),
+                Validator.isRequired('input[name="category"]'),
+                Validator.isRequired('#image'),
+            ],
+        });
+    </script>
 </body>
 
 </html>
