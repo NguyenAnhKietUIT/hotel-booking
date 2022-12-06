@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="../css/Home_Property.css">
     <title>Trivia</title>
 </head>
+
 <body>
     <div id="app">
         <header class="app__header">
@@ -27,7 +29,8 @@
 
                     <div class="app__nav-search">
                         <i class="px-2 py-3 fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="app__nav-search-input" name="app__nav-search-input" placeholder="Search for reservation">
+                        <input type="text" id="app__nav-search-input" name="app__nav-search-input"
+                            placeholder="Search for reservation">
                     </div>
                 </nav>
             </div>
@@ -37,22 +40,43 @@
             <div class="app__content-nav">
                 <div class="grid wide">
                     <nav class="d-flex justify-content-between align-items-center">
-                        <a href="./Home_Property.html" class="text-decoration-none app__content-nav-item p-3 text-center" style="color: black;border-bottom: 4px solid #000;">
+                        <a href="./Home_Property.html"
+                            class="text-decoration-none app__content-nav-item p-3 text-center"
+                            style="color: black;border-bottom: 4px solid #000;">
                             <i class="pb-1 fa-solid fa-house"></i>
                             <figcaption>Home</figcaption>
                         </a>
-                        <a href="./Property_Rates.html" class="text-decoration-none app__content-nav-item p-3 text-center">
+                        <a href="./Property_Rates.html"
+                            class="text-decoration-none app__content-nav-item p-3 text-center">
                             <i class="pb-1 fa-solid fa-calendar-days"></i>
                             <figcaption>Rates & availability</figcaption>
                         </a>
-                        <a href="./Property_Reservation.html" class="text-decoration-none app__content-nav-item p-3 text-center">
+                        <a href="./Property_Reservation.html"
+                            class="text-decoration-none app__content-nav-item p-3 text-center">
                             <i class="pb-1 fa-solid fa-check-to-slot"></i>
                             <figcaption>Reservations</figcaption>
                         </a>
-                        <a href="./Property_Edit.html" class="text-decoration-none app__content-nav-item p-3 text-center">
-                            <i class="pb-1 fa-solid fa-pen-to-square"></i>
-                            <figcaption>Property</figcaption>
-                        </a>
+                        <div class="position-relative">
+                            <label for="app__content-nav-input"
+                                class="text-decoration-none app__content-nav-item p-3 text-center">
+                                <i class="pb-1 fa-solid fa-pen-to-square"></i>
+                                <figcaption>Property</figcaption>
+                            </label>
+                            <input type="checkbox" hidden name="app__content-nav-input" id="app__content-nav-input">
+
+                            <div class="app__content-edit-box position-absolute text-dark">
+                                <ul class="list-unstyled">
+                                    <li class="p-2">
+                                        <a href="./Property_Information.html" class="text-decoration-none text-dark">Update Information</a>
+                                    </li>
+                                    <li class="p-2">
+                                        <a href="./Property_Review.html" class="text-decoration-none text-dark">Guest reviews</a>
+                                    </li>
+                                    <li class="p-2">Inbox</li>
+                                    <li class="p-2">Log out</li>
+                                </ul>
+                            </div>
+                        </div>
                     </nav>
                 </div>
             </div>
@@ -86,7 +110,8 @@
                         </div>
 
                         <div>
-                            <a href="./Property_Reservation.html" class="app__overview-link float-end text-decoration-none">View all reservation</a>
+                            <a href="./Property_Reservation.html"
+                                class="app__overview-link float-end text-decoration-none">View all reservation</a>
                         </div>
                     </div>
 
@@ -98,4 +123,5 @@
         </div>
     </div>
 </body>
+
 </html>
