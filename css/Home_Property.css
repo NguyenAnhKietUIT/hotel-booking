@@ -91,10 +91,6 @@
     margin-top: 16px;
 }
 
-.app__overview {
-    border-bottom: 1px solid #000;
-}
-
 .app__overview-title,
 .app__analytic-title {
     font-size: 32px;
@@ -128,6 +124,28 @@ p, ul {
     color: #08536B;
     font-size: 20px;
     font-weight: 600;
+}
+
+.app__form-filter label {
+    font-weight: 600;
+}
+
+.app__form-filter select,
+.app__form-filter input {
+    height: 32px;
+    padding-left: 8px;
+}
+
+.app__form-filter > input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+.app__form-filter + .app__form-filter {
+    margin-left: 16px;
 }
 
 /* Inbox */
