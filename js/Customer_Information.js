@@ -1,6 +1,5 @@
 function mainFunction() {
-    const mainContent = document.querySelector('.app__content .col.l-9')
-    const sidebarContent = document.querySelector('.app__content .col.l-3')
+    const mainContent = document.querySelector('.app__content .col-9')
     const options = document.querySelectorAll('.app__sidebar-item')
 
     options.forEach(element => {
@@ -36,7 +35,7 @@ function mainFunction() {
         //         price: "$21",
         //     },
         // ]
-        // 
+        
         // let pasts = [
         //     {
         //         img: "../assets/img/others/mother_home.png",
