@@ -86,7 +86,59 @@
                 </div>
             </div>
 
-            <div class="app__content-main"></div>
+            <div class="app__content-main">
+                <div class="grid wide">
+                    <div class="mt-5 d-flex justify-content-between">
+                        <select name="select-room" id="select-room">
+                            <option value="">Types of room</option>
+                            <option value="standard">Standard</option>
+                            <option value="supervisor">Supervisor</option>
+                            <option value="deluxe">Deluxe</option>
+                        </select>
+
+                        <select name="select-status" id="select-status" class="ms-3">
+                            <option value="">Room status</option>
+                            <option value="booked">Booked</option>
+                            <option value="checked-in">Checked in</option>
+                            <option value="checked-out">Checked out</option>
+                            <option value="canceled">Canceled</option>
+                            <option value="no-show">No show</option>
+                        </select>
+
+                        <input type="date" name="input-date" id="input-date" class="ms-3">
+
+                        <button class="ms-3 btn-clear">Clear filters</button>
+                        <div style="flex: 1;"></div>
+                    </div>
+
+                    <table class="table mt-5">
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Room types</th>
+                            <th>Standard rates</th>
+                            <th>Room status</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Standard</td>
+                            <td>320000 VND</td>
+                            <td>Booked</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Supervisor</td>
+                            <td>320000 VND</td>
+                            <td>Checked in</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Deluxe</td>
+                            <td>320000 VND</td>
+                            <td>No show</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
             <input type="checkbox" hidden name="app__inbox-input" id="app__inbox-input">
             <label for="app__inbox-input" class="app__inbox-overlay"></label>
@@ -129,6 +181,7 @@
     </div>
 
     <script src="../js/Inbox.js"></script>
+    <script src="../js/Property_Rates.js"></script>
 </body>
 
 </html>
