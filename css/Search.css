@@ -449,17 +449,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     display: none;
 }
 
-.btn-update-search {
-    border: none;
-    color: white;
-    background-color: #0071c2;
-    border-radius: 2px;
-}
-
-.btn-update-search:hover {
-    background-color: #2c83c1;
-}
-
 .result-item {
     display: flex;
     cursor: pointer;
