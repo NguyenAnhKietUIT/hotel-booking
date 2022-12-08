@@ -114,15 +114,7 @@ function handleHeader() {
                 $("html, body").animate({ scrollTop: 0 }, 200); 
                 return false; 
             }); 
-        });	   
-
-        $(function () {
-          $('[data-toggle="popover"]').popover()
-        })
-
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip()
-        })
+        });
 
         $('.right-nav-link .nav-item:last-child').on('click', function() {
             $('.dropdown-menu').toggleClass('show');
@@ -148,7 +140,5 @@ function activeAccount() {
 }
 
 changeBackground()
-
 handleHeader()
-
 activeAccount()
