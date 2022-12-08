@@ -107,6 +107,19 @@
     filter: invert(1); 
 }
 
+.toast-message-in,
+.toast-message-out {
+    left: 50%;
+    top: 72px;
+    width: 200%;
+    color: red;
+    display: none;
+    font-size: 10px;
+    border-radius: 8px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
 .app__check-status {
     display: none;
 }
@@ -541,7 +554,7 @@
 }
 
 .app__inspiration .col.large .app__inspiration-item__img {
-    height: 546px;
+    height: 550px;
 }
 
 .app__inspiration .col:last-child a:first-child .app__inspiration-item__img {
