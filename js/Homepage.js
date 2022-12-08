@@ -126,6 +126,8 @@ divCheckIn.addEventListener('click', () => {
 
 // Event onchange of check in
 inputCheckIn.addEventListener('change', () => {
+    toastMessageCheckOut.style.display = 'none';
+
     if (inputCheckOut.style.display === 'block') {
         let checkIn = inputCheckIn.value;
 
@@ -160,6 +162,8 @@ divCheckOut.addEventListener('click', () => {
 
 // Event onchange of check out
 inputCheckOut.addEventListener('change' , () => {
+    toastMessageCheckIn.style.display = 'none'
+
     if (inputCheckIn.style.display === 'block') {
         let checkOut = inputCheckOut.value;
 
