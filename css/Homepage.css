@@ -158,6 +158,8 @@
 }
 
 .app__search-history-item {
+    cursor: pointer;
+    line-height: 32px;
     height: 32px;
     padding: 0 12px;
 }
