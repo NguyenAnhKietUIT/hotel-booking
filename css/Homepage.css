@@ -215,7 +215,7 @@
     padding: 0 8px;
 }
 
-.btn-quantity {
+.btn-accept {
     width: 100%;
     padding: 8px;
     color: blue;
@@ -225,7 +225,7 @@
     border: 1px solid blue;
 }
 
-.btn-quantity:hover {
+.btn-accept:hover {
     background-color: rgba(0, 0, 255, 0.1);
 }
 
