@@ -1,11 +1,11 @@
-// Elements search room and people
+// Elements search bed and people
 const searchQuantity = document.querySelector('.app__search-quantity')
 const btnQuantity = document.querySelector('.btn-accept')
 const boxQuantity = document.querySelector('.box-quantity')
-const roomQuantity = document.querySelector('.app__search-quantity span:first-child');
-const amountRoom = document.querySelector('.amount-room')
-const btnAddRoom = document.querySelector('.btn-add-room')
-const btnMinusRoom = document.querySelector('.btn-minus-room')
+const bedQuantity = document.querySelector('.app__search-quantity span:first-child');
+const amountBed = document.querySelector('.amount-bed')
+const btnAddBed = document.querySelector('.btn-add-bed')
+const btnMinusBed = document.querySelector('.btn-minus-bed')
 const peopleQuantity = document.querySelector('.app__search-quantity span:last-child');
 const amountPeople = document.querySelector('.amount-people')
 const btnAddPeople = document.querySelector('.btn-add-people')
@@ -36,7 +36,7 @@ const footer = document.querySelector('.app__footer')
 // Show box quantity
 searchQuantity.addEventListener('click', () => {
     amountPeople.innerHTML = peopleQuantity.innerHTML
-    amountRoom.innerHTML = roomQuantity.innerHTML
+    amountBed.innerHTML = bedQuantity.innerHTML
 
     boxQuantity.style.display = 'block';
 })
@@ -48,35 +48,35 @@ document.addEventListener('mouseup', function(e) {
     }
 });
 
-// Set value for room and people
+// Set value for bed and people
 btnQuantity.addEventListener('click', () => {
     peopleQuantity.innerHTML = amountPeople.innerHTML
-    roomQuantity.innerHTML = amountRoom.innerHTML
+    bedQuantity.innerHTML = amountBed.innerHTML
     boxQuantity.style.display = 'none';
 })
 
-// Add one room
-btnAddRoom.addEventListener('click', () => {
-    let numberRoom = parseInt(amountRoom.innerHTML)
-    numberRoom++;
+// Add one bed
+btnAddBed.addEventListener('click', () => {
+    let numberBed = parseInt(amountBed.innerHTML)
+    numberBed++;
 
-    if (numberRoom > 1 && btnMinusRoom.hasAttribute('disabled')) {
-        btnMinusRoom.removeAttribute('disabled');
+    if (numberBed > 1 && btnMinusBed.hasAttribute('disabled')) {
+        btnMinusBed.removeAttribute('disabled');
     }
 
-    amountRoom.innerHTML = numberRoom;
+    amountBed.innerHTML = numberBed;
 })
 
-// Minus one room
-btnMinusRoom.addEventListener('click', () => {
-    let currentRoom = parseInt(amountRoom.innerHTML)
+// Minus one bed
+btnMinusBed.addEventListener('click', () => {
+    let currentBed = parseInt(amountBed.innerHTML)
 
-    if (currentRoom <= 1) {
-        btnMinusRoom.setAttribute('disabled', true)
+    if (currentBed <= 1) {
+        btnMinusBed.setAttribute('disabled', true)
     } else {
-        let numberRoom = currentRoom
-        numberRoom--;
-        amountRoom.innerHTML = numberRoom;
+        let numberBed = currentBed
+        numberBed--;
+        amountBed.innerHTML = numberBed;
     }
 })
 
@@ -158,6 +158,31 @@ divCheckOut.addEventListener('click', () => {
     divCheckOut.remove()
 
     inputCheckOut.style.display = 'block';
+
+    // Get current date
+    let date = new Date();
+    let today;
+    if (date.getMonth() + 1 < 10) {
+        today = date.getFullYear() + '-0' + (date.getMonth() + 1);
+            
+        if (date.getDate() < 10) {
+            today += '-0' +  date.getDate();
+        } else {
+            today += '-' +  date.getDate();
+        }
+    } else {
+        today = date.getFullYear() + '-' + (date.getMonth() + 1);
+
+        if (date.getDate() < 10) {
+            today += '-0' +  date.getDate();
+        } else {
+            today += '-' +  date.getDate();
+        }
+    }
+
+    // Set min value for check out date
+    inputCheckOut.value = today;
+    inputCheckOut.min = today;
 
     if (inputCheckIn.style.display === 'block') {
         let checkIn = inputCheckIn.value;

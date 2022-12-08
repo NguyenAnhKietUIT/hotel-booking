@@ -206,14 +206,14 @@
 }
 
 .btn-minus-people, .btn-add-people,
-.btn-minus-room, .btn-add-room{
+.btn-minus-bed, .btn-add-bed{
     cursor: pointer;
     min-width: 32px;
     min-height: 32px;
     outline: none;
 }
 
-.amount-people, .amount-room {
+.amount-people, .amount-bed {
     padding: 0 8px;
 }
 

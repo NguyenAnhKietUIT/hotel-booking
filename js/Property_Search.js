@@ -1,85 +1,190 @@
-function setQuantity() {
-    //Xử lý sự kiện chọn số lượng người và số lượng phòng
-    const textQuantity = document.querySelector('.app__search-quantity')
-    const btnQuantity = document.querySelector('.btn-quantity')
-    const boxQuantity = document.querySelector('.box-quantity')
+// Elements search bed and people
+const searchQuantity = document.querySelector('.app__search-quantity')
+const btnQuantity = document.querySelector('.btn-accept')
+const boxQuantity = document.querySelector('.box-quantity')
+const bedQuantity = document.querySelector('.app__search-quantity span:first-child');
+const amountBed = document.querySelector('.amount-bed')
+const btnAddBed = document.querySelector('.btn-add-bed')
+const btnMinusBed = document.querySelector('.btn-minus-bed')
+const peopleQuantity = document.querySelector('.app__search-quantity span:last-child');
+const amountPeople = document.querySelector('.amount-people')
+const btnAddPeople = document.querySelector('.btn-add-people')
+const btnMinusPeople = document.querySelector('.btn-minus-people')
+const buttonSearch = document.querySelector('.app__search-btn')
 
-    const roomQuantity = document.querySelector('.room-quantity');
-    const amountRoom = document.querySelector('.amount-room')
-    const btnAddRoom = document.querySelector('.btn-add-room')
-    const btnMinusRoom = document.querySelector('.btn-minus-room')
+// Elements search dates
+const divCheckIn = document.querySelector('.app__status-in')
+const inputCheckIn = document.getElementById('app__check-in')
+const divCheckOut = document.querySelector('.app__status-out')
+const inputCheckOut = document.getElementById('app__check-out')
 
-    const peopleQuantity = document.querySelector('.people-quantity');
-    const amountPeople = document.querySelector('.amount-people')
-    const btnAddPeople = document.querySelector('.btn-add-people')
-    const btnMinusPeople = document.querySelector('.btn-minus-people')
+// Show box quantity
+searchQuantity.addEventListener('click', () => {
+    amountPeople.innerHTML = peopleQuantity.innerHTML
+    amountBed.innerHTML = bedQuantity.innerHTML
 
-    textQuantity.addEventListener('click', () => {
-        amountPeople.innerHTML = peopleQuantity.innerHTML
-        amountRoom.innerHTML = roomQuantity.innerHTML
+    boxQuantity.style.display = 'block';
+})
 
-        boxQuantity.style.display = 'block';
-    })
-
-    btnQuantity.addEventListener('click', () => {
-        peopleQuantity.innerHTML = amountPeople.innerHTML
-        roomQuantity.innerHTML = amountRoom.innerHTML
+// hide box quantity
+document.addEventListener('mouseup', function(e) {
+    if (!boxQuantity.contains(e.target)) {
         boxQuantity.style.display = 'none';
-    })
+    }
+});
 
-    btnAddRoom.addEventListener('click', () => {
-        let numberRoom = parseInt(amountRoom.innerHTML)
-        numberRoom++;
+// Set value for bed and people
+btnQuantity.addEventListener('click', () => {
+    peopleQuantity.innerHTML = amountPeople.innerHTML
+    bedQuantity.innerHTML = amountBed.innerHTML
+    boxQuantity.style.display = 'none';
+})
 
-        if (numberRoom > 1 && btnMinusRoom.hasAttribute('disabled')) {
-            btnMinusRoom.removeAttribute('disabled');
-        }
+// Add one bed
+btnAddBed.addEventListener('click', () => {
+    let numberBed = parseInt(amountBed.innerHTML)
+    numberBed++;
 
-        amountRoom.innerHTML = numberRoom;
-    })
+    if (numberBed > 1 && btnMinusBed.hasAttribute('disabled')) {
+        btnMinusBed.removeAttribute('disabled');
+    }
 
-    btnMinusRoom.addEventListener('click', () => {
-        let currentRoom = parseInt(amountRoom.innerHTML)
+    amountBed.innerHTML = numberBed;
+})
 
-        if (currentRoom <= 1) {
-            btnMinusRoom.setAttribute('disabled', true)
-        } else {
-            let numberRoom = currentRoom
-            numberRoom--;
-            amountRoom.innerHTML = numberRoom;
-        }
-    })
+// Minus one bed
+btnMinusBed.addEventListener('click', () => {
+    let currentBed = parseInt(amountBed.innerHTML)
 
-    btnAddPeople.addEventListener('click', () => {
-        let numberPeople = parseInt(amountPeople.innerHTML)
-        numberPeople++;
+    if (currentBed <= 1) {
+        btnMinusBed.setAttribute('disabled', true)
+    } else {
+        let numberBed = currentBed
+        numberBed--;
+        amountBed.innerHTML = numberBed;
+    }
+})
 
-        if (numberPeople > 1 && btnMinusPeople.hasAttribute('disabled')) {
-            btnMinusPeople.removeAttribute('disabled');
-        }
+// Add one people
+btnAddPeople.addEventListener('click', () => {
+    let numberPeople = parseInt(amountPeople.innerHTML)
+    numberPeople++;
 
+    if (numberPeople > 1 && btnMinusPeople.hasAttribute('disabled')) {
+        btnMinusPeople.removeAttribute('disabled');
+    }
+
+    amountPeople.innerHTML = numberPeople;
+})
+
+// Minus one people
+btnMinusPeople.addEventListener('click', () => {
+    let currentPeople = parseInt(amountPeople.innerHTML)
+
+    if (currentPeople <= 1) {
+        btnMinusPeople.setAttribute('disabled', true)
+    } else {
+        let numberPeople = currentPeople
+        numberPeople--;
         amountPeople.innerHTML = numberPeople;
-    })
+    }
+})
 
-    btnMinusPeople.addEventListener('click', () => {
-        let currentPeople = parseInt(amountPeople.innerHTML)
+// handle element search date check in
+divCheckIn.addEventListener('click', () => {
+    divCheckIn.remove()
 
-        if (currentPeople <= 1) {
-            btnMinusPeople.setAttribute('disabled', true)
+    inputCheckIn.style.display = 'block';
+
+    // Get current date
+    let date = new Date();
+    let today;
+    if (date.getMonth() + 1 < 10) {
+        today = date.getFullYear() + '-0' + (date.getMonth() + 1);
+            
+        if (date.getDate() < 10) {
+            today += '-0' +  date.getDate();
         } else {
-            let numberPeople = currentPeople
-            numberPeople--;
-            amountPeople.innerHTML = numberPeople;
+            today += '-' +  date.getDate();
         }
-    })
+    } else {
+        today = date.getFullYear() + '-' + (date.getMonth() + 1);
 
-    //click bên ngoài ô chọn số lượng thì ẩn đi ô chọn số lượng
-    document.addEventListener('mouseup', function(e) {
-        if (!boxQuantity.contains(e.target)) {
-            boxQuantity.style.display = 'none';
+        if (date.getDate() < 10) {
+            today += '-0' +  date.getDate();
+        } else {
+            today += '-' +  date.getDate();
         }
-    });
-}
+    }
+
+    // Set min value for check in date
+    inputCheckIn.value = today;
+    inputCheckIn.min = today;
+
+    if (inputCheckOut.style.display === 'block') {
+        let checkOut = inputCheckOut.value;
+
+        inputCheckIn.max = checkOut;
+    }
+})
+
+// Event onchange of check in
+inputCheckIn.addEventListener('change', () => {
+    if (inputCheckOut.style.display === 'block') {
+        let checkIn = inputCheckIn.value;
+
+        inputCheckOut.value = checkIn;
+        inputCheckOut.min = checkIn;
+    }
+})
+
+// handle element search date check out
+divCheckOut.addEventListener('click', () => {
+    divCheckOut.remove()
+
+    inputCheckOut.style.display = 'block';
+
+    // Get current date
+    let date = new Date();
+    let today;
+    if (date.getMonth() + 1 < 10) {
+        today = date.getFullYear() + '-0' + (date.getMonth() + 1);
+            
+        if (date.getDate() < 10) {
+            today += '-0' +  date.getDate();
+        } else {
+            today += '-' +  date.getDate();
+        }
+    } else {
+        today = date.getFullYear() + '-' + (date.getMonth() + 1);
+
+        if (date.getDate() < 10) {
+            today += '-0' +  date.getDate();
+        } else {
+            today += '-' +  date.getDate();
+        }
+    }
+
+    // Set min value for check out date
+    inputCheckOut.value = today;
+    inputCheckOut.min = today;
+
+    if (inputCheckIn.style.display === 'block') {
+        let checkIn = inputCheckIn.value;
+
+        inputCheckOut.value = checkIn;
+        inputCheckOut.min = checkIn;
+    }
+})
+
+// Event onchange of check out
+inputCheckOut.addEventListener('change' , () => {
+    if (inputCheckIn.style.display === 'block') {
+        let checkOut = inputCheckOut.value;
+
+        inputCheckIn.max = checkOut;
+    }
+})
 
 function handleNavigation() {
     const navMain = document.querySelector('.app__navigation')
@@ -107,5 +212,4 @@ function handleNavigation() {
     })
 }
 
-setQuantity()
 handleNavigation()

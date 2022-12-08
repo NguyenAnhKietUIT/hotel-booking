@@ -1,4 +1,4 @@
-* {
+*, p {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -134,18 +134,18 @@ body {
 }
 
 .btn-minus-people, .btn-add-people,
-.btn-minus-room, .btn-add-room{
+.btn-minus-bed, .btn-add-bed{
     cursor: pointer;
     min-width: 32px;
     min-height: 32px;
     outline: none;
 }
 
-.amount-people, .amount-room {
+.amount-people, .amount-bed {
     padding: 0 8px;
 }
 
-.btn-quantity {
+.btn-accept {
     width: 100%;
     padding: 8px;
     color: blue;
@@ -155,7 +155,7 @@ body {
     border: 1px solid blue;
 }
 
-.btn-quantity:hover {
+.btn-accept:hover {
     background-color: rgba(0, 0, 255, 0.1);
 }
 
@@ -319,10 +319,6 @@ h3 {
     align-items: center;
 }
 
-.app__room-item-remain {
-    color: #b22020;
-}
-
 .app__information-item {
     margin-top: 4px;
     padding-left: 24px;
@@ -355,7 +351,7 @@ h3 {
 .btn-reserve {
     color: white;
     font-weight: 700;
-    padding: 12px 16px;
+    padding: 10px 16px;
     text-decoration: none;
     border-radius: 20px;
     background-color: #156BC1;
