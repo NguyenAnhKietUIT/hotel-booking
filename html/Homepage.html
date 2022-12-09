@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../assets/css/base.css">
-    <link rel="stylesheet" href="../assets/css/grid.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -20,7 +19,7 @@
 <body>
     <div id="app">
         <header class="app__header">
-            <div class="grid wide">
+            <div style="max-width: 1200px;margin: 0 auto;">
                 <nav class="app__nav">
                     <a href="./Homepage.html" class="app__nav-name-link">
                         <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
@@ -99,7 +98,8 @@
                         <div class="app__status-in">Check in</div>
                         <input type="date" id="app__check-in" class="app__check-status" value="2022-11-11"
                             min="2017-10-14" max="2050-12-31">
-                        <p class="position-absolute toast-message-in p-1 text-center">The maximum interval between two days is thirty</p>
+                        <p class="position-absolute toast-message-in p-1 text-center">The maximum interval between two
+                            days is thirty</p>
                     </li>
                     <li class="app__search-item position-relative">
                         <a href="#" class="app__search-icon-link">
@@ -108,7 +108,8 @@
                         <div class="app__status-out">Check out</div>
                         <input type="date" id="app__check-out" class="app__check-status" value="2022-11-11"
                             min="2017-10-14" max="2050-12-31">
-                        <p class="position-absolute toast-message-out p-1 text-center">The maximum interval between two days is thirty</p>
+                        <p class="position-absolute toast-message-out p-1 text-center">The maximum interval between two
+                            days is thirty</p>
                     </li>
                     <li class="app__search-item">
                         <a href="#" class="app__search-icon-link">
@@ -146,67 +147,68 @@
                     </li>
                 </ul>
 
-                <div class="app__categories">
+                <div class="mt-5">
                     <h3 class="app__categories-title">Top Categories</h3>
 
-                    <div class="app__category-list row">
-                        <div class="app__category-item col l-2 m-4 c-4">
+                    <div class="pb-5 mt-4 row">
+                        <a href="#beach" class="app__category-item text-decoration-none col">
                             <i class="app__category-item-icon fa-sharp fa-solid fa-umbrella-beach"></i>
                             <figcaption>Beaches</figcaption>
-                        </div>
-                        <div class="app__category-item col l-2 m-4 c-4">
+                        </a>
+                        <a href="#mountain" class="app__category-item text-decoration-none col">
                             <i class="app__category-item-icon fa-solid fa-mountain-sun"></i>
                             <figcaption>Mountains</figcaption>
-                        </div>
-                        <div class="app__category-item col l-2 m-4 c-4">
+                        </a>
+                        <a href="#iconic-city" class="app__category-item text-decoration-none col">
                             <i class="app__category-item-icon fa-solid fa-city"></i>
                             <figcaption>Iconic Cities</figcaption>
-                        </div>
-                        <div class="app__category-item col l-2 m-4 c-4">
+                        </a>
+                        <a href="#countryside" class="app__category-item text-decoration-none col">
                             <i class="app__category-item-icon fa-solid fa-seedling"></i>
                             <figcaption>Countryside</figcaption>
-                        </div>
-                        <div class="app__category-item col l-2 m-4 c-4">
+                        </a>
+                        <a href="#camping" class="app__category-item text-decoration-none col">
                             <i class="app__category-item-icon fa-solid fa-fire-flame-curved"></i>
                             <figcaption>Camping</figcaption>
-                        </div>
-                        <div class="app__category-item col l-2 m-4 c-4">
+                        </a>
+                        <a href="#tropical" class="app__category-item text-decoration-none col">
                             <i class="app__category-item-icon fa-solid fa-cloud-sun-rain"></i>
                             <figcaption>Tropical</figcaption>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </header>
 
-        <div class="app__content grid wide">
+        <div class="app__content" style="max-width: 1200px;margin: 0 auto;">
             <div class="app__content-home">
-                <div class="app__destinations">
+                <div class="mt-5">
                     <h3 class="app__selection-title">Top Destinations</h3>
-    
+
                     <div class="row">
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
-                                <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An" class="app__selection-item-img">
+                            <a href="./Search.html" class="app__selection-item-link">
+                                <img src="../assets/img/home_page/hoi_an.png" alt="Hoi An"
+                                    class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Hoi An</span>
                             </a>
                         </div>
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
+                            <a href="./Search.html" class="app__selection-item-link">
                                 <img src="../assets/img/home_page/ha_giang.png" alt="Ha Giang"
                                     class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Ha Giang</span>
                             </a>
                         </div>
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
+                            <a href="./Search.html" class="app__selection-item-link">
                                 <img src="../assets/img/home_page/nha_trang.png" alt="Nha Trang"
                                     class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Nha Trang</span>
                             </a>
                         </div>
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
+                            <a href="./Search.html" class="app__selection-item-link">
                                 <img src="../assets/img/home_page/ho_chi_minh.png" alt="Ho Chi Minh"
                                     class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Ho Chi Minh</span>
@@ -214,33 +216,34 @@
                         </div>
                     </div>
                 </div>
-    
-                <div class="app__browse">
+
+                <div class="mt-5">
                     <h3 class="app__selection-title">Browse by property type</h3>
-    
+
                     <div class="row">
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
-                                <img src="../assets/img/home_page/hotels.png" alt="Hotels" class="app__selection-item-img">
+                            <a href="./Search.html" class="app__selection-item-link">
+                                <img src="../assets/img/home_page/hotels.png" alt="Hotels"
+                                    class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Hotels</span>
                             </a>
                         </div>
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
+                            <a href="./Search.html" class="app__selection-item-link">
                                 <img src="../assets/img/home_page/apartments.png" alt="Apartments"
                                     class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Apartments</span>
                             </a>
                         </div>
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
+                            <a href="./Search.html" class="app__selection-item-link">
                                 <img src="../assets/img/home_page/resorts.png" alt="Resorts"
                                     class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Resorts</span>
                             </a>
                         </div>
                         <div class="app__selection-item col">
-                            <a href="#" class="app__selection-item-link">
+                            <a href="./Search.html" class="app__selection-item-link">
                                 <img src="../assets/img/home_page/homestay.png" alt="Homestay"
                                     class="app__selection-item-img">
                                 <span class="app__selection-item-desc">Homestay</span>
@@ -248,7 +251,793 @@
                         </div>
                     </div>
                 </div>
-    
+
+                <div id="beach" class="mt-5">
+                    <h3 class="text-center mb-4" style="font-size: 32px;">Popular Beach Destinations</h3>
+
+                    <div class="row">
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mountain" class="mt-5">
+                    <h3 class="text-center mb-4" style="font-size: 32px;">Popular Mountain Destinations</h3>
+
+                    <div class="row">
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/mountain/mountain_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/mountain/mountain_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/mountain/mountain_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/mountain/mountain_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="iconic-city" class="mt-5">
+                    <h3 class="text-center mb-4" style="font-size: 32px;">Popular Iconic City Destinations</h3>
+
+                    <div class="row">
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/iconic_city/city_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/iconic_city/city_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/iconic_city/city_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/iconic_city/city_1.jpg" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="countryside" class="mt-5">
+                    <h3 class="text-center mb-4" style="font-size: 32px;">Popular Countryside Destinations</h3>
+
+                    <div class="row">
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="camping" class="mt-5">
+                    <h3 class="text-center mb-4" style="font-size: 32px;">Popular Camping Destinations</h3>
+
+                    <div class="row">
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tropical" class="mt-5">
+                    <h3 class="text-center mb-4" style="font-size: 32px;">Popular Tropical Destinations</h3>
+
+                    <div class="row">
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="./Search.html" class="home-location-item pb-3">
+                                <img src="../assets/img/category/beach/mauritius.png" alt=""
+                                    class="home-location-item__img">
+
+                                <i class="home-location-item__favourite fa-regular fa-heart"></i>
+                                <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
+
+                                <h4 class="ms-3 mb-0 text-dark">Mauritius</h4>
+
+                                <div class="d-flex mt-3 mx-3 justify-content-between text-center"
+                                    style="color: var(--text-color);">
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-plane-up" style="font-size: 18px;"></i>
+                                        <figcaption>2 Hotels</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-hotel" style="font-size: 18px;"></i>
+                                        <figcaption>1 Apartments</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-car-side" style="font-size: 18px;"></i>
+                                        <figcaption>2 Homestays</figcaption>
+                                    </span>
+                                    <span>
+                                        <i class="pb-2 fa-solid fa-person-walking" style="font-size: 18px;"></i>
+                                        <figcaption>4 Resorts</figcaption>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="app__background-theme">
                     <a href="#" class="app__background-theme-link">
                         <img src="../assets/img/home_page/backgroud_theme.png" alt="" class="app__background-theme-img">
@@ -259,62 +1048,60 @@
                         </div>
                     </a>
                 </div>
-            </div>
 
-            <div class="app__content-main"></div>
+                <div class="app__inspiration">
+                    <h3 class="app__inspiration-title">Get inspiration for your next trip</h3>
 
-            <div class="app__inspiration">
-                <h3 class="app__inspiration-title">Get inspiration for your next trip</h3>
+                    <div class="row">
+                        <div class="col large">
+                            <a href="#" class="app__inspiration-item">
+                                <img src="../assets/img/inspiration/india.jpg" alt="Inspiration"
+                                    class="app__inspiration-item__img">
 
-                <div class="row">
-                    <div class="col large">
-                        <a href="#" class="app__inspiration-item">
-                            <img src="../assets/img/inspiration/india.jpg" alt="Inspiration"
-                                class="app__inspiration-item__img">
+                                <div class="app__inspiration-item-info">
+                                    <span class="app__inspiration-item-title">India</span>
+                                    <span class="app__inspiration-item-desc">Travel community</span>
+                                    <span class="app__inspiration-item-view">155,073 travelers</span>
+                                </div>
+                            </a>
+                        </div>
 
-                            <div class="app__inspiration-item-info">
-                                <span class="app__inspiration-item-title">India</span>
-                                <span class="app__inspiration-item-desc">Travel community</span>
-                                <span class="app__inspiration-item-view">155,073 travelers</span>
-                            </div>
-                        </a>
-                    </div>
+                        <div class="col large">
+                            <a href="#" class="app__inspiration-item">
+                                <img src="../assets/img/inspiration/mountain.jpg" alt="Inspiration"
+                                    class="app__inspiration-item__img">
 
-                    <div class="col large">
-                        <a href="#" class="app__inspiration-item">
-                            <img src="../assets/img/inspiration/mountain.jpg" alt="Inspiration"
-                                class="app__inspiration-item__img">
+                                <div class="app__inspiration-item-info">
+                                    <span class="app__inspiration-item-title">Mountains</span>
+                                    <span class="app__inspiration-item-desc">Travel community</span>
+                                    <span class="app__inspiration-item-view">155,073 travelers</span>
+                                </div>
+                            </a>
+                            <div class="row">
+                                <div class="col">
+                                    <a href="#" class="app__inspiration-item">
+                                        <img src="../assets/img/inspiration/beach_1.jpg" alt="Inspiration"
+                                            class="app__inspiration-item__img">
 
-                            <div class="app__inspiration-item-info">
-                                <span class="app__inspiration-item-title">Mountains</span>
-                                <span class="app__inspiration-item-desc">Travel community</span>
-                                <span class="app__inspiration-item-view">155,073 travelers</span>
-                            </div>
-                        </a>
-                        <div class="row">
-                            <div class="col">
-                                <a href="#" class="app__inspiration-item">
-                                    <img src="../assets/img/inspiration/beach_1.jpg" alt="Inspiration"
-                                        class="app__inspiration-item__img">
-        
-                                    <div class="app__inspiration-item-info">
-                                        <span class="app__inspiration-item-title">Beach</span>
-                                        <span class="app__inspiration-item-desc">Travel community</span>
-                                        <span class="app__inspiration-item-view">155,073 travelers</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a href="#" class="app__inspiration-item">
-                                    <img src="../assets/img/inspiration/beach_2.jpg" alt="Inspiration"
-                                        class="app__inspiration-item__img">
-        
-                                    <div class="app__inspiration-item-info">
-                                        <span class="app__inspiration-item-title">India</span>
-                                        <span class="app__inspiration-item-desc">Travel community</span>
-                                        <span class="app__inspiration-item-view">155,073 travelers</span>
-                                    </div>
-                                </a>
+                                        <div class="app__inspiration-item-info">
+                                            <span class="app__inspiration-item-title">Beach</span>
+                                            <span class="app__inspiration-item-desc">Travel community</span>
+                                            <span class="app__inspiration-item-view">155,073 travelers</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="app__inspiration-item">
+                                        <img src="../assets/img/inspiration/beach_2.jpg" alt="Inspiration"
+                                            class="app__inspiration-item__img">
+
+                                        <div class="app__inspiration-item-info">
+                                            <span class="app__inspiration-item-title">India</span>
+                                            <span class="app__inspiration-item-desc">Travel community</span>
+                                            <span class="app__inspiration-item-view">155,073 travelers</span>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -322,8 +1109,14 @@
             </div>
         </div>
 
+        <!--Start Back To Top Button-->
+        <a href="javaScript:void();" class="back-to-top">
+            <i class="fa-solid fa-angles-up"></i>
+        </a>
+        <!--End Back To Top Button-->
+
         <footer class="app__footer">
-            <div class="grid wide">
+            <div style="max-width: 1200px;margin: 0 auto;">
                 <div class="app__footer-contact">
                     <h3 class="app__footer-contact-title">
                         Enter your e-mail address and get</br> notified of exclusive offers
@@ -432,6 +1225,22 @@
         </footer>
 
         <script src="../js/Homepage.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(window).on("scroll", function () {
+                    if ($(this).scrollTop() > 300) {
+                        $('.back-to-top').fadeIn();
+                    } else {
+                        $('.back-to-top').fadeOut();
+                    }
+                });
+
+                $('.back-to-top').on("click", function () {
+                    $("html, body").animate({ scrollTop: 0 }, 200);
+                    return false;
+                });
+            });
+        </script>
     </div>
 </body>
 

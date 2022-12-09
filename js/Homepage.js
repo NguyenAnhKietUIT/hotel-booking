@@ -26,15 +26,6 @@ const boxHistory = document.querySelector('.app__search-history')
 const listHistory = document.querySelector('.app__search-history-list')
 const itemHistory = document.querySelectorAll('.app__search-history-item')
 
-// Element Home page
-const homeContainer = document.querySelector('.app__content-home')
-const homeNavigation = document.querySelector('.app__nav-item:first-child')
-const triviaIcon = document.querySelector('.app__nav-name-icon')
-const categories = document.querySelectorAll('.app__category-item')
-const mainContainer = document.querySelector('.app__content-main')
-const header = document.querySelector('.app__header')
-const footer = document.querySelector('.app__footer')
-
 // Show box quantity
 searchQuantity.addEventListener('click', () => {
     amountPeople.innerHTML = peopleQuantity.innerHTML
@@ -211,73 +202,6 @@ listHistory.addEventListener('click', (events) => {
     boxHistory.style.display = 'none'
 })
 
-// Event onclick of category
-categories.forEach(element => {
-    element.addEventListener('click', () => {
-        homeContainer.style.display = 'none'
-        removeActive()
-
-        element.classList.add('app__category--active')
-
-        let categoryItem = element.childNodes[3].innerHTML
-
-        changeCategory(categoryItem)
-        reloadHomePage()
-        favourite()
-    })
-})
-
-// Function load category
-function changeCategory(param) {
-    mainContainer.style.display = 'block'
-    document.querySelector('.app__nav-item:first-child .app__nav-item-link').style.color = 'var(--search-color)'
-    let html
-
-    if (param === 'Beaches') {
-        header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
-
-        html = renderDestinations('Beach')
-    } else if (param === 'Mountains') {
-        header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
-        footer.style.backgroundImage = "url('../assets/img/background/Frame_99.png')"
-
-        html = renderDestinations('Mountain')
-    } else if (param === 'Iconic Cities') {
-        header.style.backgroundImage = "url('../assets/img/background/image_1.png')"
-        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
-
-        html = renderDestinations('Iconic Cities')
-    } else if (param === 'Countryside') {
-        header.style.backgroundImage = "url('../assets/img/background/image_33.png')"
-        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
-
-        html = renderDestinations('Countryside')
-    } else if (param === 'Camping') {
-        header.style.backgroundImage = "url('../assets/img/background/image_3.png')"
-        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
-
-        html = renderDestinations('Camping')
-    } else if (param === 'Tropical') {
-        header.style.backgroundImage = "url('../assets/img/background/image_4.png')"
-        footer.style.backgroundImage = "url('../assets/img/background/Frame_100.png')"
-
-        html = renderDestinations('Tropical')
-    }
-
-    mainContainer.innerHTML = html
-}
-
-// Reload page when click on button Home and logo Trivia
-function reloadHomePage() {
-    homeNavigation.addEventListener('click', () => {
-        document.location.reload()
-    })
-
-    triviaIcon.addEventListener('click', () => {
-        document.location.reload()
-    })
-}
-
 // Event favourite destinations
 function favourite() {
     const heart = document.querySelectorAll('.home-location-item__favourite')
@@ -302,108 +226,6 @@ function favourite() {
             element.parentElement.querySelector('.home-location-item__favourite').style.zIndex = 1
         })
     })
-}
-
-// Function remove element active
-function removeActive() {
-    categories.forEach(element => {
-        element.classList.remove('app__category--active')
-    })
-}
-
-// function return url to category
-function urlCategory(element) {
-    if (element === 'Beach') {
-        return beachURL;
-    } else if (element === 'Mountain') {
-        return mountainURL;
-    } else if (element === 'Iconic Cities') {
-        return iconicCityURL;
-    } else if (element === 'Countryside') {
-        return countrysideURL;
-    } else if (element === 'Camping') {
-        return campingURL;
-    } else if (element === 'Tropical') {
-        return tropicalURL;
-    }
-}
-
-// Render top 4 destinations
-function renderDestinations(text) {
-    let html = `
-            <div class="app__home-location">
-                <h3 class="app__home-location-title">
-                    Popular ${text} Destinations
-                </h3>
-
-                <div class="row">
-            `;
-
-    fetch (urlCategory(text))
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(destinations){
-            html += destinations.map(function(element) {
-                return `
-                    <div class="col l-3 m-6 c-6">
-                        <a href="#" class="home-location-item">
-                            <img src="${element.img}" alt="" class="home-location-item__img">
-                            <i class="home-location-item__favourite fa-regular fa-heart"></i>
-                            <i class="home-location-item__favourite--active fa-solid fa-heart"></i>
-                            <span class="home-location-item__title">
-                                <h4 class="home-location-item__name">${element.name}</h4>
-                                <span class="home-location-item__rating">
-                                    <i class="home-location-item__rating-icon fa-solid fa-star"></i>
-                                        ${element.rating}
-                                </span>
-                            </span>
-                            <span class="home-location-item__desc">${element.desc}</span>
-                            <div class="home-location-item__schedule">
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-plane-up"></i>
-                                    <figcaption>${element.schedule[0]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-hotel"></i>
-                                    <figcaption>${element.schedule[1]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-car-side"></i>
-                                    <figcaption>${element.schedule[2]}</figcaption>
-                                </span>
-                                <span class="schedule__item">
-                                    <i class="schedule__item-icon fa-solid fa-person-walking"></i>
-                                    <figcaption>${element.schedule[3]}</figcaption>
-                                </span>
-                            </div>
-                            <div class="home-location-item__detail">
-                                <ul>
-                                    <li>${element.detail[0]}</li>
-                                    <li>${element.detail[1]}</li>
-                                    <li>${element.detail[2]}</li>
-                                </ul>
-                            </div>
-                            <div class="home-location-item__price">
-                                <span class="home-location-item__price-old">${element.price[0]}</span>
-                                <span class="home-location-item__price-current">${element.price[1]}</span>
-                                <span>Per person</span>
-                            </div>
-                        </a>
-                    </div>
-                `;
-            });
-        })
-        .catch(function (err) {
-            alert(err.message);
-        });
-
-    html.join('')
-    html += `
-                </div>
-            </div>
-            `
-    return html
 }
 
 function daysDifference(firstDate, secondDate) {
@@ -439,6 +261,8 @@ function getCurrentDate() {
     }
     return today;
 }
+
+favourite();
 
 function imageInterval() {
     let locations = [
