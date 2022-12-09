@@ -186,14 +186,14 @@ body {
 }
 
 .btn-minus-people, .btn-add-people,
-.btn-minus-room, .btn-add-room{
+.btn-minus-bed, .btn-add-bed{
     cursor: pointer;
     min-width: 32px;
     min-height: 32px;
     outline: none;
 }
 
-.amount-people, .amount-room {
+.amount-people, .amount-bed {
     padding: 0 8px;
 }
 
@@ -209,6 +209,20 @@ body {
 
 .btn-accept:hover {
     background-color: rgba(0, 0, 255, 0.1);
+}
+
+.toast-message-in,
+.toast-message-out {
+    left: 50%;
+    top: 72px;
+    width: 200%;
+    color: red;
+    display: none;
+    font-size: 12px;
+    border-radius: 8px;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 1px 5px rgb(189, 189, 189);
 }
 
 .app__search-option-input:checked ~ .box-quantity {
@@ -254,9 +268,14 @@ body {
     box-shadow: 0 0 2px 2px rgb(0 0 0 / 5%);
 }
 
+ul {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
 .box-sort {
     position: absolute;
-    top: 72px;
+    top: 80px;
     right: 0;
     width: 160px;
     background-color: #fff;
