@@ -39,3 +39,9 @@
 .form-group div label {
     cursor: pointer;
 }
+
+input[type="submit"]:disabled,
+button:disabled,
+button:disabled:hover {
+    background: #ccc;
+}

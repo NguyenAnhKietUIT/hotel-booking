@@ -91,32 +91,32 @@
 
                 <form action="" method="POST" class="form" id="form">
                     <div class="form-group">
-                        <label for="name" class="form-label">Property name</label>
-                        <input id="name" name="name" type="text" class="form-control">
+                        <label for="name" class="form-label">Property name<span style="color: red;">*</span></label>
+                        <input id="name" name="name" type="text" class="form-control edit-active" disabled>
                         <span class="form-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="overview" class="form-label">Overview</label>
-                        <textarea name="overview" id="overview" cols="30" rows="4" class="form-control"></textarea>
+                        <label for="overview" class="form-label">Overview<span style="color: red;">*</span></label>
+                        <textarea name="overview" id="overview" cols="30" rows="4" class="form-control edit-active" disabled></textarea>
                         <span class="form-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="phonenumber" class="form-label">Phone numbers</label>
-                        <input id="phonenumber" name="phonenumber" type="text" class="form-control">
+                        <label for="phonenumber" class="form-label">Phone numbers<span style="color: red;">*</span></label>
+                        <input id="phonenumber" name="phonenumber" type="text" class="form-control edit-active" disabled>
                         <span class="form-message"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="gmail" class="form-label">Gmail</label>
-                        <input id="gmail" name="gmail" type="text" class="form-control">
+                        <input id="gmail" name="gmail" type="text" class="form-control" disabled>
                         <span class="form-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="location" class="form-label">Location</label>
-                        <textarea name="location" id="location" cols="30" rows="2" class="form-control"></textarea>
+                        <label for="location" class="form-label">Location<span style="color: red;">*</span></label>
+                        <textarea name="location" id="location" cols="30" rows="2" class="form-control edit-active" disabled></textarea>
                         <span class="form-message"></span>
                     </div>
 
@@ -124,8 +124,9 @@
                         <label for="check-in" class="form-label">
                             Check-in time
                             <i class="fa-regular fa-clock"></i>
+                            <span style="color: red;">*</span>
                         </label>
-                        <input id="check-in" name="check-in" type="time" class="form-control">
+                        <input id="check-in" name="check-in" type="time" class="form-control edit-active" disabled>
                         <span class="form-message"></span>
                     </div>
 
@@ -133,28 +134,29 @@
                         <label for="check-out" class="form-label">
                             Check-out time
                             <i class="fa-regular fa-clock"></i>
+                            <span style="color: red;">*</span>
                         </label>
-                        <input id="check-out" name="check-out" type="time" class="form-control">
+                        <input id="check-out" name="check-out" type="time" class="form-control edit-active" disabled>
                         <span class="form-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Types of property</label>
+                        <label class="form-label">Types of property<span style="color: red;">*</span></label>
                         <div class="d-flex flex-column">
                             <div>
-                                <input type="radio" name="property" id="hotel">
+                                <input type="radio" name="property" id="hotel" class="edit-active" disabled>
                                 <label for="hotel">Hotel</label>
                             </div>
                             <div>
-                                <input type="radio" name="property" id="resort">
+                                <input type="radio" name="property" id="resort" class="edit-active" disabled>
                                 <label for="resort">Resort</label>
                             </div>
                             <div>
-                                <input type="radio" name="property" id="apartment">
+                                <input type="radio" name="property" id="apartment" class="edit-active" disabled>
                                 <label for="apartment">Apartment</label>
                             </div>
                             <div>
-                                <input type="radio" name="property" id="homestay">
+                                <input type="radio" name="property" id="homestay" class="edit-active" disabled>
                                 <label for="homestay">Homestay</label>
                             </div>
                         </div>
@@ -162,57 +164,85 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">Types of category</label>
+                        <label class="form-label">Types of category<span style="color: red;">*</span></label>
                         <div class="d-flex flex-column">
                             <div>
-                                <input type="checkbox" name="category" id="beach">
+                                <input type="checkbox" name="category" id="beach" class="edit-active" disabled>
                                 <label for="beach">Beaches</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="category" id="mountain">
+                                <input type="checkbox" name="category" id="mountain" class="edit-active" disabled>
                                 <label for="mountain">Mountain</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="category" id="iconic-city">
+                                <input type="checkbox" name="category" id="iconic-city" class="edit-active" disabled>
                                 <label for="iconic-city">Iconic cities</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="category" id="countryside">
+                                <input type="checkbox" name="category" id="countryside" class="edit-active" disabled>
                                 <label for="countryside">Countryside</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="category" id="camping">
+                                <input type="checkbox" name="category" id="camping" class="edit-active" disabled>
                                 <label for="camping">Camping</label>
                             </div>
                             <div>
-                                <input type="checkbox" name="category" id="tropical">
+                                <input type="checkbox" name="category" id="tropical" class="edit-active" disabled>
                                 <label for="tropical">Tropical</label>
                             </div>
                         </div>
                         <span class="form-message"></span>
                     </div>
-
+                    
                     <div class="form-group">
-                        <label for="image" class="form-label">Upload Image</label>
-                        <input type="file" name="image" id="image" onchange="readURL(this);">
+                        <label class="form-label">Available services</label>
+                        <div class="row ms-0 me-0">
+                            <div class="col">
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        <input type="checkbox" name="service" id="gym" class="edit-active" disabled>
+                                        <label for="gym">Gym</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="service" id="massage" class="edit-active" disabled>
+                                        <label for="massage">Massage</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="service" id="laundry" class="edit-active" disabled>
+                                        <label for="laundry">Laundry</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="service" id="billiard" class="edit-active" disabled>
+                                        <label for="billiard">Billiard</label>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" name="service" id="terrace" class="edit-active" disabled>
+                                        <label for="terrace">Terrace</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ms-5 mt-3 d-flex flex-column">
+                            <label class="form-label">Add one service</label>
+                            <input type="text" placeholder="Enter your service..." style="outline: none;border: none;" class="px-2 py-1 border-bottom edit-active" disabled>
+                        </div>
+    
                         <span class="form-message"></span>
                     </div>
                     
                     <div class="form-group">
-                        <label for="select-service" class="form-label">Available services</label>
-                        <select name="select-service" id="select-service" style="width: 300px;" multiple>
-                            <option value="Gym">Gym</option>
-                            <option value="BBQ">BBQ</option>
-                            <option value="Cleaning Service">Cleaning Service</option>
-                            <option value="Pool">Pool</option>
-                            <option value="Terrace">Terrace</option>
-                        </select>
+                        <label for="image" class="form-label">Upload Image<span style="color: red;">*</span></label>
+                        <input type="file" name="image" id="image" onchange="readURL(this);" class="edit-active" disabled>
                         <span class="form-message"></span>
                     </div>
 
                     <img src="" alt="Image Property" id="img-property" hidden class="mt-2">
 
-                    <input type="submit" class="form-btn" value="Save">
+                    <div class="d-flex">
+                        <button class="form-btn">Update</button>
+                        <input type="submit" class="form-btn  ms-5" value="Save" disabled>
+                    </div>
                 </form>
             </div>
 

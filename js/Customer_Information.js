@@ -159,30 +159,19 @@ function mainFunction() {
 
 function editDetails() {
     const information = document.querySelectorAll('.form-control.edit-active')
-    const btnEditDetails = document.querySelector('.form-edit')
-    const btnAccept = document.querySelector('.btn-accept')
+    const buttonEdit = document.querySelector('.button-handle button')
+    const buttonAccept = document.querySelector('.button-handle input[type="submit"]')
     const avatarImg = document.querySelector('.app__main-img')
     const avatarInput = document.getElementById('app__main-input-img')
 
-    btnEditDetails.addEventListener('click', (e) => {
-        e.preventDefault()
-        btnEditDetails.style.display = 'none'
-        btnAccept.style.display = 'block'
+    buttonEdit.addEventListener('click', (e) => {
+        buttonEdit.disabled = true;
+        buttonAccept.disabled = false;
 
         avatarInput.disabled = false;
         information.forEach(element => {
             element.disabled = false;
         })
-    })
-
-    btnAccept.addEventListener('click', () => {
-        avatarInput.disabled = true;
-        information.forEach(element => {
-            element.disabled = true;
-        })
-
-        btnEditDetails.style.display = 'block'
-        btnAccept.style.display = 'none'
     })
 
     avatarInput.addEventListener('change', (event) => {

@@ -25,14 +25,6 @@ select {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.app__content-link {
-    color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    background-color: #cf7a02;
-}
-
 .app__sidebar-list {
     list-style: none;
     font-size: 20px;
@@ -145,7 +137,7 @@ select {
     padding: 4px 0 0;
 }
 
-.form-edit, .btn-accept {
+.form-edit {
     border: none;
     outline: none;
     color: #fff;
@@ -156,17 +148,19 @@ select {
     background-color: #1dbfaf;
 }
 
-.form-edit:hover, .btn-accept:hover {
+.form-edit:hover {
     background-color: #1ac7b6;
 }
 
-.btn-accept {
-    display: none;
-}
-
-.buttons-handle {
+.button-handle {
     display: flex;
     justify-content: space-between;
+}
+
+input[type="submit"]:disabled,
+button:disabled,
+button:disabled:hover {
+    background: #ccc;
 }
 
 /* View all bookings */
