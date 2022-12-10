@@ -179,7 +179,8 @@ button:disabled:hover {
 }
 
 .app__view-link:hover {
-    background-color: #052a37;
+    background-color: #0f617e;
+    color: white;
 }
 
 .app__view-list + .app__view-list {
@@ -210,29 +211,15 @@ button:disabled:hover {
 }
 
 .app__view-img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 8px;
-    margin: 16px;
+    margin: 12px;
     box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
 }
 
-.app__view-item-info {
-    flex: 1;
-    display: flex;
-    color: var(--black-color);
-    flex-direction: column;
-    margin: 16px 0;
-}
-
-.app__view-item-title {
-    font-size: 20px;
-}
-
-.app__view-item-desc {
-    display: block;
-    padding: 8px 0;
-    flex: 1;
+h4, p {
+    margin-bottom: 0;
 }
 
 .app__view-item-status {
@@ -244,9 +231,9 @@ button:disabled:hover {
 }
 
 .app__view-item-price {
-    margin: 52px 48px;
-    font-size: 28px;
-    line-height: 28px;
+    margin: 52px 20px;
+    font-size: 24px;
+    line-height: 24px;
     color: var(--black-color);
 }
 

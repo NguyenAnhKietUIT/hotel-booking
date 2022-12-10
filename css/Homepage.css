@@ -324,25 +324,6 @@
     padding: 16px;
 }
 
-.home-location-item__favourite {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    padding: 8px;
-    font-size: 20px;
-    color: var(--white-color);
-}
-
-.home-location-item__favourite--active {
-    z-index: -1;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    padding: 8px;
-    color: red;
-    font-size: 20px;
-}
-
 .home-location-item__schedule {
     display: flex;
     margin: 20px 12px;
