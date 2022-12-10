@@ -1,0 +1,26 @@
+.app__content-nav-item:nth-child(2) {
+    color: black;
+    border-bottom: 4px solid #000;
+}
+
+.btn-clear {
+    border-color: #c1c1c1;
+    padding: 4px 8px;
+}
+
+.btn-clear:hover {
+    background-color: #c8c8c8;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.table>:not(caption)>*> th {
+    color: white;
+    background-color: #08536B;
+}
+
+tr:nth-child(n + 2) {
+    border-width: 1px;
+}

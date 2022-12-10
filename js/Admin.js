@@ -111,18 +111,10 @@ function handleHeader() {
             }); 
         
             $('.back-to-top').on("click", function(){ 
-                $("html, body").animate({ scrollTop: 0 }, 600); 
+                $("html, body").animate({ scrollTop: 0 }, 200); 
                 return false; 
             }); 
-        });	   
-
-        $(function () {
-          $('[data-toggle="popover"]').popover()
-        })
-
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip()
-        })
+        });
 
         $('.right-nav-link .nav-item:last-child').on('click', function() {
             $('.dropdown-menu').toggleClass('show');
@@ -134,6 +126,19 @@ function handleHeader() {
     })
 }
 
-changeBackground()
+function activeAccount() {
+  $(document).ready(function() {
+    $(".btn.btn-info:not('.inactive')").prop('disabled', true);
 
+    $('.inactive').click(function() {
+      $(this).removeClass('.inactive');
+
+      $(this).parent().parent().find("td").eq(3).text("Active");
+      $(this).attr('disabled', true);
+    })
+  })
+}
+
+changeBackground()
 handleHeader()
+activeAccount()

@@ -1,0 +1,51 @@
+.app__content-nav-last {
+    color: black;
+    border-bottom: 4px solid #000;
+}
+
+.app__content-main {
+    background-color: #eff2f7;
+    margin-bottom: 16px;
+    max-height: 1000px;
+    overflow-y: auto;
+}
+
+.app__content-header-action {
+    width: 200px;
+    border-radius: 16px;
+    background-color: #fff;
+}
+
+select {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: orange;
+    background-color: transparent;
+}
+
+.table {
+    color: #9da5ac;
+}
+
+.table th {
+    font-size: 12px;
+}
+
+.table-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.review-info p:last-child {
+    color: #91b4dc;
+}
+
+.table tr th:last-child,
+.table tr td:last-child {
+    max-width: 600px;
+    text-align: justify;
+}
+
+/* 7b7e85 91b4dc */

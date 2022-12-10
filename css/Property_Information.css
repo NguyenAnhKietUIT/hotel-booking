@@ -1,0 +1,47 @@
+.app__content-nav-last {
+    color: black;
+    border-bottom: 4px solid #000;
+}
+
+.form {
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.form-label,
+.form-message {
+    text-align: left;
+}
+
+.form-label {
+    font-weight: 700;
+}
+
+.form-group + .form-group {
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.form-group input[type="text"],
+.form-group input[type="time"],
+.form-group select {
+    width: 350px;
+}
+
+.form-btn {
+    width: 100px;
+    margin-top: 24px;
+}
+
+.form-group div label {
+    cursor: pointer;
+}
+
+input[type="submit"]:disabled,
+button:disabled,
+button:disabled:hover {
+    background: #ccc;
+}

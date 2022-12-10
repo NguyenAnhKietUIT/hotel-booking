@@ -1,0 +1,233 @@
+.content-wrapper {
+    min-height: 712px;
+}
+
+.nav-message {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-message div:nth-child(2) {
+    flex: 1;
+    color: #fff;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.nav-message label:hover,
+.nav-message > div:hover,
+.nav-paging:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.content-wrapper .table input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.nav-message label {
+    cursor: pointer;
+    color: #fff;
+}
+
+.nav-message div:last-child {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.nav-paging {
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.nav-message div:last-child i {
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.nav-message div:last-child i:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+}
+
+.table {
+    margin-bottom: 0;
+    max-height: 1200px;
+}
+
+.table tr:hover {
+    color: var(--white-color);
+}
+
+.message-icon {
+    display: block;
+}
+
+.message-icon-active {
+    display: none;
+    color: yellow;
+}
+
+.table tr td:nth-child(1),
+.table tr td:nth-child(2),
+.table tr td:nth-child(5) {
+    width: 52px;
+    text-align: center;
+}
+
+.table tr td:nth-child(3) {
+    text-align: left;
+    min-width: 250px;
+    max-width: 250px;
+    max-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+}
+
+.table tr td:nth-child(4) {
+    min-width: 800px;
+    max-width: 800px;
+    text-align: left;
+    max-height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+}
+
+.table tr td:nth-child(5) {
+    padding: 0;
+}
+
+.message-trash {
+    border: none;
+    padding: 8px 16px;
+    background-color: transparent;
+}
+
+.message-trash:hover i {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.message-trash i {
+    color: white;
+}
+
+.message-home {
+    color: #fff;
+}
+
+.message-home__nav span:first-child {
+    padding: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 16px;
+}
+
+.message-home__nav span:first-child:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.message-home__nav span:last-child {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.message-home__main {
+    text-align: justify;
+}
+
+.message-home__main span {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.message-home__main p {
+    line-height: 1.5;
+}
+
+.message-home__reply {
+    position: relative;
+}
+
+.btn-reply {
+    color: #fff;
+    outline: none;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+.btn-reply:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.message-home__form {
+    width: 400px;
+    position: absolute;
+    top: 0;
+    left: 140px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    display: none;
+}
+
+#message-form p {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+#message-home__subject {
+    display: block;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+}
+
+input[name="message-home__subject"],
+textarea {
+    width: 100%;
+}
+
+textarea {
+    color: #fff;
+    padding: 4px 8px;
+    margin-bottom: 8px;
+}
+
+.message-home__action {
+    display: flex;
+    justify-content: space-between;
+}
+
+#message-home__submit {
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #0b57d0;
+}
+
+#message-home__submit:hover {
+    background-color: #0b57d0ce;
+}
+
+.message-home__delete {
+    padding: 8px;
+    color: black;
+    cursor: pointer;
+}
+
+.message-home__delete:hover {
+    color: rgba(0, 0, 0, 0.6);
+}

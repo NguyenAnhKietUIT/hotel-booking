@@ -10,23 +10,19 @@
 }
 
 .app__content {
-    margin: 60px auto;
+    margin: 20px auto;
 }
 
-.app__content .col.l-3 {
+.app__content .col-3 {
     border-right: 1px solid #000;
 }
 
-.app__content .col.l-9 {
+.app__content .col-9 {
     padding-left: 24px;
 }
 
-.app__content-link {
-    color: #fff;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    background-color: #cf7a02;
+select {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .app__sidebar-list {
@@ -141,7 +137,7 @@
     padding: 4px 0 0;
 }
 
-.form-edit, .btn-accept {
+.form-edit {
     border: none;
     outline: none;
     color: #fff;
@@ -152,17 +148,19 @@
     background-color: #1dbfaf;
 }
 
-.form-edit:hover, .btn-accept:hover {
+.form-edit:hover {
     background-color: #1ac7b6;
 }
 
-.btn-accept {
-    display: none;
-}
-
-.buttons-handle {
+.button-handle {
     display: flex;
     justify-content: space-between;
+}
+
+input[type="submit"]:disabled,
+button:disabled,
+button:disabled:hover {
+    background: #ccc;
 }
 
 /* View all bookings */
@@ -181,7 +179,8 @@
 }
 
 .app__view-link:hover {
-    background-color: #052a37;
+    background-color: #0f617e;
+    color: white;
 }
 
 .app__view-list + .app__view-list {
@@ -212,29 +211,15 @@
 }
 
 .app__view-img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border-radius: 8px;
-    margin: 16px;
+    margin: 12px;
     box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
 }
 
-.app__view-item-info {
-    flex: 1;
-    display: flex;
-    color: var(--black-color);
-    flex-direction: column;
-    margin: 16px 0;
-}
-
-.app__view-item-title {
-    font-size: 20px;
-}
-
-.app__view-item-desc {
-    display: block;
-    padding: 8px 0;
-    flex: 1;
+h4, p {
+    margin-bottom: 0;
 }
 
 .app__view-item-status {
@@ -246,9 +231,9 @@
 }
 
 .app__view-item-price {
-    margin: 52px 48px;
-    font-size: 28px;
-    line-height: 28px;
+    margin: 52px 20px;
+    font-size: 24px;
+    line-height: 24px;
     color: var(--black-color);
 }
 
@@ -295,11 +280,11 @@
     animation: fadeIn 0.2s linear;
 }
 
-.app__inbox-input:checked ~ .app__inbox-overlay {
+#app__inbox-input:checked ~ .app__inbox-overlay {
     display: block;
 }
 
-.app__inbox-input:checked ~ .app__inbox {
+#app__inbox-input:checked ~ .app__inbox {
     transform: translateX(0);
     opacity: 1;
 }
@@ -310,7 +295,7 @@
     right: 0;
     bottom: 0;
     z-index: 100;
-    width: 400px;
+    width: 1100px;
     max-width: 100%;
     background-color: var(--white-color);
     transform: translateX(100%);
@@ -320,39 +305,70 @@
     flex-direction: column;
 }
 
-.app__inbox h2 {
-    padding: 4px 12px;
+.row > * {
+    padding: 0;
 }
 
-.box-message {
-    flex: 1;
-    border: 2px solid black;
-    padding: 8px;
-    margin-bottom: 8px;
-}
-
-.box-message ul {
-    list-style: none;
-    max-height: 584px;
-    overflow-y: auto;
-}
-
-.message-item {
-    padding: 8px;
-}
-
-.app__inbox-send-msg {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 8px;
-}
-
-.message-wrapper {
-    font-size: 16px;
-    padding: 8px;
-}
-
-.btn-send-msg {
-    padding: 0 12px;
+.app__inbox-item {
     cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app__inbox-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.app__inbox-item-content {
+    color: var(--text-color);
+    text-align: justify;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.app__inbox-message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.app__inbox-message-reply {
+    border: none;
+    outline: none;
+    height: 36px;
+    color: #fff;
+    border-radius: 12px;
+    background-color: blue;
+}
+
+.app__inbox-message-reply:hover {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.app__inbox-message-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.app__inbox-message-main {
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.app__inbox-message-send {
+    display: none;
+}
+
+#app__inbox-message-textarea {
+    flex: 1;
+    padding: 8px;
+}
+
+.app__inbox-message-input {
+    margin-left: 16px;
+    height: 40px;
 }

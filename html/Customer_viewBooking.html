@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/Customer_Information.css">
+    <title>Trivia - Name Customer</title>
+</head>
+
+<body>
+    <div id="app">
+        <header class="app__header">
+            <div class="grid wide">
+                <nav class="app__nav">
+                    <a href="./Homepage.html" class="app__nav-name-link">
+                        <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
+                    </a>
+
+                    <ul class="app__nav-list hide-on-mobile-tablet">
+                        <li class="app__nav-item">
+                            <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Manage Your Stay</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
+                        </li>
+                        <li class="app__nav-item">
+                            <a href="#" class="app__nav-item-link">Name Customer</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="app__content">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col-3">
+                        <ul class="app__sidebar-list">
+                            <li class="app__sidebar-item">Your Account</li>
+                            <li class="app__sidebar-item app__sidebar-item--active">
+                                <a href="./Customer_viewBooking.html" class="text-decoration-none text-dark">View all bookings</a>
+                            </li>
+                            <li class="app__sidebar-item">
+                                <label for="app__inbox-input" style="cursor: pointer;">Inbox</label>
+                            </li>
+                            <li class="app__sidebar-item">Your Reviews</li>
+                            <li>
+                                <a href="./Edit_Password.html" class="text-decoration-none text-dark">Edit your password</a>
+                            </li>
+                            <li class="app__sidebar-item">Sign out</li>
+                        </ul>
+                    </div>
+                    <div class="col-9">
+                        <!-- <span class="app__view-message">You have no bookings yet.</span>
+                        <a href="../html/Homepage.html" class="app__view-link">Start exploring</a> -->
+
+                        <h2 class="app__view-message">Your bookings</h2>
+
+                        <div class="app__view-list">
+                            <h3 class="app__view-title">Upcoming</h3>
+                            
+                            <div>
+                                <a href="#" class="app__view-item">
+                                    <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
+                                    <div class="d-flex flex-column my-3 mx-0 text-dark" style="flex: 1;">
+                                        <h4>Hotel name</h4>
+                                        <span>Room type</span>
+                                    </div>
+                                    <h3 class="app__view-item-price">420000 VND</h3>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="app__view-list app__view-list-status">
+                            <h3 class="app__view-title">In the past</h3>
+
+                            <div>
+                                <a href="#" class="app__view-item">
+                                    <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
+                                    <div class="d-flex flex-column my-3 mx-0 text-dark" style="flex: 1;">
+                                        <div style="flex: 1;">
+                                            <h4>Hotel name</h4>
+                                            <span>Room type</span>
+                                        </div>
+                                        <span class="app__view-item-status">Stayed</span>
+                                    </div>
+                                    <h3 class="app__view-item-price">420000 VND</h3>
+                                </a>
+    
+                                <a href="#" class="app__view-item">
+                                    <img src="../assets/img/others/mother_home.png" alt="Type Room" class="app__view-img">
+                                    <div class="d-flex flex-column my-3 mx-0 text-dark" style="flex: 1;">
+                                        <div style="flex: 1;">
+                                            <h4>Hotel name</h4>
+                                            <span>Room type</span>
+                                        </div>
+                                        <span class="app__view-item-status app__view-item-status--active">Canceled</span>
+                                    </div>
+                                    <h3 class="app__view-item-price">420000 VND</h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="checkbox" hidden name="app__inbox-input" id="app__inbox-input">
+                <label for="app__inbox-input" class="app__inbox-overlay"></label>
+                <div class="app__inbox">
+                    <div class="row m-0 h-100 overflow-auto">
+                        <div class="col-4" style="border-right: 1px solid #ccc;">
+                            <ul class="list-unstyled">
+                                <li class="app__inbox-item pb-2">
+                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 1</h6>
+                                    <span class="ps-2 pe-2 app__inbox-item-content">
+                                        Chào các bạn
+                                        Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
+                                        Thời gian trong 4 ngày 5/12/2022 - 8/12/2022
+                                        - Buổi sáng: 9h00-11h30
+                                        - Buổi chiều: 14h00-16h30
+                                        Sau thời gian trên bạn nào chưa nhận xem như từ chối quà tặng.
+                                        Quà tặng:
+                                        + Mũ báo hiểm cho khóa 2019-2021 (Theo danh sách tại forum)
+                                        + Balo cho khóa 2022
+                                        + Thuốc xịt mũi Viraleze dành cho Thầy Cô, Sinh viên có nhu cầu (Lưu ý số lượng
+                                        có
+                                        hạn, phát đến khi hết quà)
+                                        Khi nhận quà vui lòng mang theo thẻ sinh viên.
+                                        Mọi thắc mắc sinh viên trao đổi tại forum:
+                                        https://forum.uit.edu.vn/node/559392
+                                    </span>
+                                </li>
+                                <li class="app__inbox-item pb-2">
+                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 2</h6>
+                                    <span class="ps-2 pe-2 app__inbox-item-content">
+                                        Chào các bạn
+                                        Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-8 app__inbox-message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/Inbox.js"></script>
+</body>
+
+</html>

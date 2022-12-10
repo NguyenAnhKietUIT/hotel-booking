@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app__header {
+    background-color: #08536B;
+}
+
+p, h6 {
+    margin-bottom: 0;
+}
+
+.property-img {
+    width: 200px;
+    height: 150px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+}
+
+.form-group input {
+    border: 1px solid #ccc;
+    width: 350px;
+}
+
+.form-group {
+    margin-top: 16px;
+}
+
+.form-group +.form-group {
+    margin-bottom: 0;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: #08536B;
+}
+
+button:hover {
+    background-color: #3f7b90;
+}

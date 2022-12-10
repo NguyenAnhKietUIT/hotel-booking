@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/img/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="../../assets/css/base.css">
     <link rel="stylesheet" href="../../assets/css/grid.css">
     <link rel="stylesheet" href="../css/Property_SignUp.css">
@@ -27,7 +28,7 @@
                             <a href="#" class="app__nav-item-link">Manage Your Stay</a>
                         </li>
                         <li class="app__nav-item">
-                            <a href="#" class="app__nav-item-link">Contacts</a>
+                            <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
                         </li>
                         <li class="app__nav-item">
                             <a href="./Customer_SignIn.html" class="app__nav-item-link">Sign In</a>
@@ -45,11 +46,26 @@
                         <span class="form-desc">Create an account to manage your property.</span>
 
                         <div class="form-group">
-                            <input id="phone-number" name="phone-number" type="tel" placeholder="Phone Number" class="form-control">
+                            <input id="full-name" name="full-name" type="text" placeholder="Full Name" class="form-control">
                             <span class="form-message"></span>
                         </div>
 
-                        <input type="submit" class="form-btn" value="Next">
+                        <div class="form-group">
+                            <input id="email" name="email" type="email" placeholder="Email Address" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="password" name="password" type="password" placeholder="Password" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirm Password" class="form-control">
+                            <span class="form-message"></span>
+                        </div>
+                        
+                        <input type="submit" class="form-btn" value="create account">
                     </form>
                 </div>
             </div>
@@ -64,10 +80,18 @@
             formGroupSelector: '.form-group',
             errorSelector: '.form-message',
             rules: [
-                Validator.isPhoneNumber('#phone-number'),
+                Validator.isRequired('#full-name'),
+                Validator.minLength('#password', 6),
+                Validator.isEmail('#email'),
+                Validator.isRequired('#confirm-password'),
+                Validator.isConfirmed('#confirm-password', function() {
+                    return document.querySelector('#form #password').value;
+                }, 'Mật khẩu nhập lại không chính xác')
             ],
+            // onSubmit: function(data) {
+            //     // call API
+            // }
         });
-
     </script>
 </body>
 </html>

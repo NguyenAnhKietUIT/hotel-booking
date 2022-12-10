@@ -1,0 +1,20 @@
+.content-wrapper {
+    min-height: 712px;
+}
+
+.analytic-item {
+    border: 1px solid #999;
+}
+
+h5 {
+    color: var(--search-color);
+}
+
+.analytic-item-title {
+    font-size: 14px;
+    color: var(--search-color);
+}
+
+.analytic-item-value {
+    font-size: 24px;
+}

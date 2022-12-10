@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app__header {
+    background-color: #08536B;
+}
+
+.app__nav-img {
+    height: var(--navbar-height);
+}
+
+.app__nav-detail {
+    top: 68px;
+    right: -16px;
+    font-size: 8px;
+}
+
+.app__nav-search {
+    width: 350px;
+    border-radius: 16px;
+    color: var(--text-color);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.app__nav-search i {
+    cursor: pointer;
+}
+
+#app__nav-search-input {
+    border: none;
+    outline: none;
+    padding: 8px 16px 8px 4px;
+    width: calc(100% - 40px);
+}
+
+.app__content-nav {
+    background: rgba(8, 83, 107, 0.24);
+}
+
+.app__content-nav-item {
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.app__content-nav-item:hover {
+    color: #000;
+}
+
+.app__content-nav-item i {
+    font-size: 32px;
+}
+
+.app__content-edit-box {
+    z-index: 1;
+    top: 84px;
+    right: 24px;
+    width: 200%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
+    display: none;
+}
+
+#app__content-nav-input:checked ~ .app__content-edit-box {
+    display: block;
+}
+
+.app__content-edit-box > ul li {
+    cursor: pointer;
+}
+
+.app__content-edit-box > ul li:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.app__content-edit-box > ul li:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.app__content-edit-box > ul li:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.app__content-main {
+    margin-top: 16px;
+}
+
+.app__overview-title,
+.app__analytic-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+p, ul {
+    margin-bottom: 0;
+}
+
+.app__overview-content-item {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.app__overview-content-item + .app__overview-content-item {
+    margin-left: 40px;
+}
+
+.app__overview-content-item:last-child {
+    flex: 1;
+}
+
+.app__overview div:last-child {
+    height: 30px;
+}
+
+.app__overview-link {
+    color: #08536B;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.app__form-filter label {
+    font-weight: 600;
+}
+
+.app__form-filter select,
+.app__form-filter input {
+    height: 32px;
+    padding-left: 8px;
+}
+
+.app__form-filter > input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+input[type=search]::-webkit-search-cancel-button {
+    cursor: pointer;
+}
+
+.app__form-filter + .app__form-filter {
+    margin-left: 16px;
+}
+
+/* Inbox */
+.app__inbox-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    animation: fadeIn 0.3s linear;
+}
+
+#app__inbox-input:checked ~ .app__inbox-overlay {
+    display: block;
+}
+
+#app__inbox-input:checked ~ .app__inbox {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.app__inbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    width: 1100px;
+    max-width: 100%;
+    background-color: var(--white-color);
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.3s linear;
+    display: flex;
+    flex-direction: column;
+}
+
+.row > * {
+    padding: 0;
+}
+
+.app__inbox-item {
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app__inbox-item:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.app__inbox-item-content {
+    color: var(--text-color);
+    text-align: justify;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.app__inbox-message-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.app__inbox-message-reply {
+    border: none;
+    outline: none;
+    height: 36px;
+    color: #fff;
+    border-radius: 12px;
+    background-color: blue;
+}
+
+.app__inbox-message-reply:hover {
+    background-color: rgba(0, 0, 255, 0.7);
+}
+
+.app__inbox-message-title {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.app__inbox-message-main {
+    height: 416px;
+    overflow-y: auto;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.app__inbox-message-send {
+    display: none;
+}
+
+#app__inbox-message-textarea {
+    flex: 1;
+    padding: 8px;
+}
+
+.app__inbox-message-input {
+    margin-left: 16px;
+    height: 40px;
+}
