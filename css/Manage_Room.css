@@ -29,7 +29,9 @@
 
 input, select {
     width: 200px;
+    height: 32px;
     margin-top: 4px;
+    padding: 2px 4px;
 }
 
 .bed-num-message,
