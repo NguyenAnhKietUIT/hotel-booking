@@ -3,6 +3,10 @@
     border-bottom: 4px solid #000;
 }
 
+.app__content-nav-last i {
+    color: black;
+}
+
 .app__content-main {
     background-color: #eff2f7;
     margin-bottom: 16px;

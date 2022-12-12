@@ -17,6 +17,14 @@
     border-right: 1px solid #000;
 }
 
+.btn-sign-out {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+}
+
 .app__content .col-9 {
     padding-left: 24px;
 }

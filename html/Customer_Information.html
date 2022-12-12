@@ -52,11 +52,15 @@
                             <li class="app__sidebar-item">
                                 <label for="app__inbox-input" style="cursor: pointer;">Inbox</label>
                             </li>
-                            <li class="app__sidebar-item">Your Reviews</li>
+                            <li class="app__sidebar-item">
+                                <a href="#" class="text-decoration-none text-dark">Your Reviews</a>
+                            </li>
                             <li>
                                 <a href="./Edit_Password.html" class="text-decoration-none text-dark">Edit your password</a>
                             </li>
-                            <li class="app__sidebar-item">Sign out</li>
+                            <li class="app__sidebar-item">
+                                <button class="btn-sign-out">Sign out</button>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-9">
@@ -409,12 +413,8 @@
                 Validator.isRequired('#yourname'),
                 Validator.isRequired('#country'),
                 Validator.isRequired('#phonenumber'),
-            ],
-            // onSubmit: function (data) {
-            //     // call API
-            // }
+            ]
         });
-
     </script>
 </body>
 

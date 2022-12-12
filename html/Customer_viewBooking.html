@@ -45,18 +45,24 @@
                 <div class="row">
                     <div class="col-3">
                         <ul class="app__sidebar-list">
-                            <li class="app__sidebar-item">Your Account</li>
+                            <li class="app__sidebar-item">
+                                <a href="./Customer_Information.html" class="text-decoration-none text-dark">Your Account</a>
+                            </li>
                             <li class="app__sidebar-item app__sidebar-item--active">
                                 <a href="./Customer_viewBooking.html" class="text-decoration-none text-dark">View all bookings</a>
                             </li>
                             <li class="app__sidebar-item">
                                 <label for="app__inbox-input" style="cursor: pointer;">Inbox</label>
                             </li>
-                            <li class="app__sidebar-item">Your Reviews</li>
+                            <li class="app__sidebar-item">
+                                <a href="#" class="text-decoration-none text-dark">Your Reviews</a>
+                            </li>
                             <li>
                                 <a href="./Edit_Password.html" class="text-decoration-none text-dark">Edit your password</a>
                             </li>
-                            <li class="app__sidebar-item">Sign out</li>
+                            <li class="app__sidebar-item">
+                                <button class="btn-sign-out">Sign out</button>
+                            </li>
                         </ul>
                     </div>
                     <div class="col-9">
@@ -156,6 +162,19 @@
     </div>
 
     <script src="../js/Inbox.js"></script>
+
+    <script>
+        const options = document.querySelectorAll('.app__sidebar-item')
+
+    options.forEach(element => {
+        element.addEventListener('click', () => {
+            options.forEach(element => {
+                element.classList.remove('app__sidebar-item--active')
+            })
+            element.classList.add('app__sidebar-item--active')
+        })
+    })
+    </script>
 </body>
 
 </html>
