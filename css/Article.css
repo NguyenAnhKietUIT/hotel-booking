@@ -1,0 +1,115 @@
+.app__header {
+    background-color: #08536B;
+}
+
+.app__content img {
+    width: 100%;
+    height: 550px;
+    margin-top: 12px;
+}
+
+.app__content p {
+    margin-top: 16px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.app__footer {
+    background: url(../../assets/img/background/Frame_98.png) top center / cover no-repeat;
+}
+
+.app__footer-contact {
+    text-align: center;
+    padding-top: 48px;
+}
+
+.app__footer-contact-title {
+    font-size: 24px;
+    color: var(--white-color);
+}
+
+.app__footer-contact-input {
+    width: 500px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 24px auto 48px; 
+}
+
+.app__footer-input > input {
+    width: 300px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 24px;
+    background-color: transparent;
+}
+
+.app__footer-input > input::placeholder {
+    color: var(--black-color);
+}
+
+.app__footer-btn {
+    padding-right: 24px;
+}
+
+.app__footer-btn > a .app__search-btn {
+    border: none;
+    font-weight: 550;
+    color: #2659C3;
+    padding: 12px 20px;
+    border-radius: 24px;
+    background-color: #fff;
+}
+
+.app__footer-list {
+    list-style: none;
+}
+
+.app__footer-list-item-link {
+    text-decoration: none;
+    color: var(--white-color);
+    line-height: 2;
+}
+
+.app__footer-list-item-link:hover {
+    color: rgb(46, 179, 189);
+}
+
+.app__footer-socials-list {
+    list-style: none;
+    display:flex;
+    flex-direction: row-reverse;
+    margin-right: 32px;
+}
+
+.app__footer-socials-item {
+    font-size: 24px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.app__footer-socials-item:hover .app__footer-socials-item-icon {
+    color: var(--white-color);
+    transform: scale(1.1);
+}
+
+.app__footer-socials-item-link {
+    text-decoration: none;
+}
+
+.app__footer-socials-item-icon {
+    color: var(--search-color);
+}
+
+.app__footer-copyright {
+    text-align: center;
+    font-size: 16px;
+    color: var(--search-color);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
