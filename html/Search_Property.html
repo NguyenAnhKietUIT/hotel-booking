@@ -77,66 +77,75 @@
                 <span>Luxury hotel with 1 outdoor pools, connected to a shopping centre, near Giac Lam Pagoda</span>
             </div>
 
-            <div class="app__search">
-                <ul class="app__search-list">
-                    <li class="app__search-item position-relative">
-                        <a href="#" class="app__search-icon-link">
-                            <i class="app__search-icon fa-solid fa-plane-departure"></i>
-                        </a>
-                        <div class="app__status-in">Check in</div>
-                        <input type="date" id="app__check-in" class="app__check-status" value="2022-11-11"
-                            min="2017-10-14" max="2050-12-31">
-                        <p class="position-absolute toast-message-in p-1 text-center">The maximum interval between two days is thirty</p>
-                    </li>
-                    <li class="app__search-item position-relative">
-                        <a href="#" class="app__search-icon-link">
-                            <i class="app__search-icon fa-solid fa-money-check"></i>
-                        </a>
-                        <div class="app__status-out">Check out</div>
-                        <input type="date" id="app__check-out" class="app__check-status" value="2022-11-11"
-                            min="2017-10-14" max="2050-12-31">
-                        <p class="position-absolute toast-message-out p-1 text-center">The maximum interval between two days is thirty</p>
-                    </li>
-                    <li class="app__search-item">
-                        <a href="#" class="app__search-icon-link">
-                            <i class="app__search-icon fa-solid fa-people-group"></i>
-                        </a>
-                        <div class="app__search-quantity">
-                            <span class="bed-quantity">1</span>
-                            bed,
-                            <span class="people-quantity">2</span>
-                            adults
+            <form action="" method="" 
+                    class="d-flex justify-content-between align-items-center"
+                    style="height: 60px;
+                    margin-top: 64px;
+                    border-radius: 12px;
+                    background-color: white;
+                    box-shadow: 0 0 2px 2px rgb(0 0 0 / 5%);"
+                >
+                    <div class="ms-3 py-1 position-relative" style="width: 140px;">
+                        <div class="d-flex align-items-center">
+                            <i class="pe-2 fa-solid fa-plane-departure"></i>
+                            <div class="app__status-in">Check in</div>
+                            <input type="date" name="check-in-date" id="app__check-in"
+                                min="2017-10-14" max="2050-12-31">
+                        </div>
+                        <p class="position-absolute toast-message-in p-1 text-center">The maximum interval between two
+                            days is thirty</p>
+                    </div>
+                    <div class="py-1 position-relative" style="width: 140px;">
+                        <div class="d-flex align-items-center">
+                            <i class="pe-2 fa-solid fa-money-check"></i>
+                            <div class="app__status-out">Check out</div>
+                            <input type="date" name="check-out-date" id="app__check-out"
+                                min="2017-10-14" max="2050-12-31">
+                        </div>
+                        <p class="position-absolute toast-message-out p-1 text-center">The maximum interval between two
+                            days is thirty</p>
+                    </div>
+                    <div class="d-flex py-1 position-relative">
+                        <div class="d-flex align-items-center">
+                            <i class="pe-2 fa-solid fa-people-group"></i>
+                            <div class="app__search-quantity">
+                                <span>1</span>
+                                bed,
+                                <span>2</span>
+                                adults
+                            </div>
                         </div>
 
                         <div class="box-quantity">
-                            <div class="box-quantity__item">
-                                <span>Bed</span>
-                                <div>
-                                    <button class="btn-minus-bed">-</button>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <input type="range" name="bed-num" id="bed-num" min="1" max="30" step="1" value="1">
+                                <div class="">
+                                    <label for="bed-num">Beds</label>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center" style="width: 110px;">
+                                    <button type="button" class="btn-minus-bed">-</button>
                                     <span class="amount-bed">1</span>
-                                    <button class="btn-add-bed">+</button>
+                                    <button type="button" class="btn-add-bed">+</button>
                                 </div>
                             </div>
-                            <div class="box-quantity__item">
-                                <span>People</span>
-                                <div>
-                                    <button class="btn-minus-people">-</button>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <input type="range" name="per-num" id="per-num" min="1" step="1" value="1">
+                                <div class="">
+                                    <label for="per-num">Adults</label>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center" style="width: 110px;">
+                                    <button type="button" class="btn-minus-people">-</button>
                                     <span class="amount-people">2</span>
-                                    <button class="btn-add-people">+</button>
+                                    <button type="button" class="btn-add-people">+</button>
                                 </div>
                             </div>
-                            <button class="btn-accept">Accept</button>
+                            <button type="button" class="btn-accept">Accept</button>
                         </div>
-                    </li>
-                    <li class="app__search-item">
-                        <a href="#">
-                            <button class="app__search-btn">
-                                Search
-                            </button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                    </div>
+                    <div class="d-flex py-1 me-3">
+                        <button class="app__search-btn">Search</button>
+                    </div>
+            </form>
 
             <div id="app__room">
                 <h3>Room</h3>
