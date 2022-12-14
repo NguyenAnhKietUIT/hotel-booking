@@ -169,7 +169,8 @@ input[type="range"] {
     color: var(--search-color);
 }
 
-.app__category-item:hover {
+.app__category-item:hover,
+.app__category-item:hover i {
     color: var(--white-color);
 }
 
