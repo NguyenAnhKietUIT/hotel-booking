@@ -1,14 +1,15 @@
 const information = document.querySelectorAll('.edit-active');
-const buttonUpdate = document.querySelector('button');
+const buttonUpdate = document.querySelector('button[type="button"]');
 const buttonSave = document.querySelector('input[type="submit"]');
 
 buttonUpdate.addEventListener('click', () =>{
-    buttonUpdate.disabled = true;
-    buttonSave.disabled = false;
-
     information.forEach(element => {
+        console.log(element)
         element.disabled = false;
     })
+
+    buttonUpdate.disabled = true;
+    buttonSave.disabled = false;
 });
 
 function readURL(input) {
