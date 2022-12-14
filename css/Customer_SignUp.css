@@ -151,7 +151,3 @@
 .register__form-group.invalid .register__form-message {
     color: #f33a58;
 }
-
-.app__nav-mobile {
-    display: none;
-}
