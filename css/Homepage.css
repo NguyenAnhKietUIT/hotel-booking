@@ -306,6 +306,7 @@ h3, p {
 
 .app__selection-item-img {
     width: 280px;
+    height: 200px;
     border-radius: 8px;
     box-shadow: 0 0 2px 2px rgb(0 0 0 / 10%);
 }
