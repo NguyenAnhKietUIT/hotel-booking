@@ -658,26 +658,3 @@ tbody, td, tfoot, th, thead, tr {
 .back-to-top i {
     line-height: 40px;
 }
-
-div.pager {
-    text-align: center;
-    margin: 1em 0;
-}
-
-div.pager span {
-    display: inline-block;
-    color: #fff;
-    width: 1.8em;
-    height: 1.8em;
-    cursor: pointer;
-    line-height: 1.8;
-    text-align: center;
-    margin-right: 0.5em;
-    background: transparent;
-}
-
-div.pager span:hover,
-div.pager span.active {
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.2);
-}

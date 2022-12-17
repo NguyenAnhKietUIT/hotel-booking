@@ -162,7 +162,7 @@
                     <div class="card ms-3 me-3">
                         <div class="card-header">Account Details</div>
                         <div class="card-content">
-                            <table class="table mb-2">
+                            <table class="table mb-2" id="table-account">
                                 <tr>
                                     <th>Username</th>
                                     <th>Email</th>
@@ -201,7 +201,7 @@
                     <div class="card ms-3 me-3">
                         <div class="card-header">Customer Details</div>
                         <div class="card-content">
-                            <table id="table-customer" class="table mb-2">
+                            <table class="table mb-2" id="table-customer">
                                 <tr>
                                     <th>Customer Name</th>
                                     <th>Phone</th>
@@ -340,6 +340,12 @@
     </div>
 
     <script src="../js/Admin.js"></script>
+    <script src="../js/Pagination.js"></script>
+    <script>
+        paginationTable('account')
+        paginationTable('customer')
+        paginationTable('property')
+    </script>
 </body>
 
 </html>
