@@ -90,14 +90,8 @@ select {
     border-radius: 4px;
 }
 
-.form-detail {
-    margin-top: 20px;
-}
-
-.form-group {
-    display: flex;
-    margin-bottom: 16px;
-    flex-direction: column;
+.form-group + .form-group {
+    margin-bottom: 0;
 }
 
 .form-label,
@@ -106,7 +100,6 @@ select {
 }
 
 .form-label {
-    padding-bottom: 4px;
     line-height: 1.5;
     font-size: 20px;
 }
@@ -161,6 +154,7 @@ select {
 }
 
 .button-handle {
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
 }
