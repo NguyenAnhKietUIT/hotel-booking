@@ -1,3 +1,37 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['accID1'])) {
+    header('Location: ./SignIn.php');
+} else {
+
+    include "./connect.php";
+
+    include "./HandleSelectAdmin.php";
+
+    include "./HandleAnother.php";
+
+    // Lấy số lượng property
+    $number_pro = soLuongProperty($connect);
+
+    // Lấy số lượng customer
+    $number_cus = soLuongCustomer($connect);
+
+    // Lấy ra số lượng đặt phòng
+    $number_res = soLuongReservation($connect);
+
+    // Lấy danh sách Customer Detail
+    $result1 = danhsachCus($connect);
+
+    // Lấy danh sách Account Detail
+    $result = danhsachAccount($connect);
+
+    // Lấy danh sách các Property
+    $result2 = danhsachProperty($connect);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,14 +108,12 @@
 
                 <ul class="navbar-nav align-items-center right-nav-link">
                     <li class="nav-item dropdown-lg">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown"
-                            href="javascript:void();">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
                             <i class="fa-solid fa-envelope-open"></i>
                         </a>
                     </li>
                     <li class="nav-item dropdown-lg">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown"
-                            href="javascript:void();">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
                             <i class="fa-regular fa-bell"></i>
                         </a>
                     </li>
@@ -96,8 +128,7 @@
                                 <a href="javaScript:void();">
                                     <div class="media">
                                         <div class="avatar">
-                                            <img class="align-self-start me-3" src="../assets/img/others/anhkiet.jpg"
-                                                alt="user avatar">
+                                            <img class="align-self-start me-3" src="../assets/img/others/anhkiet.jpg" alt="user avatar">
                                         </div>
                                         <div class="media-body">
                                             <h6 class="mt-2 user-title">Nguyen Anh Kiet</h6>
@@ -142,20 +173,20 @@
                     <div class="row m-0">
                         <div class="col col-xl-4 pt-2 pb-2 d-flex flex-column justify-content-around align-items-center text-white">
                             <span class="card-box-title">Total Customer</span>
-                            <span class="card-box-quantity">5000+</span>
+                            <span class="card-box-quantity"><?php echo $number_cus; ?></span>
                         </div>
                         <div class="col col-xl-4 pt-2 pb-2 d-flex flex-column justify-content-around align-items-center text-white">
                             <span class="card-box-title">Total Property</span>
-                            <span class="card-box-quantity">234+</span>
+                            <span class="card-box-quantity"><?php echo $number_pro; ?></span>
                         </div>
                         <div class="col col-xl-4 pt-2 pb-2 d-flex flex-column justify-content-around align-items-center text-white">
                             <span class="card-box-title">Total Reservation</span>
-                            <span class="card-box-quantity">1440+</span>
+                            <span class="card-box-quantity"><?php echo $number_res; ?></span>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-12 col-lg-12">
                     <!-- Account -->
@@ -168,31 +199,27 @@
                                     <th>Email</th>
                                     <th>Type</th>
                                 </tr>
-                                <tr>
-                                    <td>anhkiet</td>
-                                    <td>anhkiet@gmail.com</td>
-                                    <td>Customer</td>
-                                </tr>
-                                <tr>
-                                    <td>mynhung</td>
-                                    <td>mynhung@gmail.com</td>
-                                    <td>Customer</td>
-                                </tr>
-                                <tr>
-                                    <td>thaohong</td>
-                                    <td>thaohong@gmail.com</td>
-                                    <td>Customer</td>
-                                </tr>
-                                <tr>
-                                    <td>thanhphat</td>
-                                    <td>thanhphat@gmail.com</td>
-                                    <td>Property</td>
-                                </tr>
-                                <tr>
-                                    <td>hoailinh</td>
-                                    <td>hoailinh@gmail.com</td>
-                                    <td>Property</td>
-                                </tr>
+                                <?php
+                                while ($row = mysqli_fetch_row($result)) {
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $row[0]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row[1]; ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if ($row[2] == "2") {
+                                                echo "Property";
+                                            } else if ($row[2] == "3") {
+                                                echo "Customer";
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </table>
                         </div>
                     </div>
@@ -201,6 +228,7 @@
                     <div class="card ms-3 me-3">
                         <div class="card-header">Customer Details</div>
                         <div class="card-content">
+                        <form action="./HandleUpdateAdmin.php?Update=1" method="POST">
                             <table class="table mb-2" id="table-customer">
                                 <tr>
                                     <th>Customer Name</th>
@@ -210,43 +238,51 @@
                                     <th>Avatar</th>
                                     <th>Action</th>
                                 </tr>
-                                <tr>
-                                    <td>Nguyen Anh Kiet</td>
-                                    <td>0348630164</td>
-                                    <td>Male</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <img src="../assets/img/others/anhkiet.jpg" alt="Avatar">
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-info inactive">Active account</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Tran Thi My Nhung</td>
-                                    <td>0368909827</td>
-                                    <td>Female</td>
-                                    <td>Active</td>
-                                    <td>
-                                        <img src="../assets/img/others/anhkiet.jpg" alt="Avatar">
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-info">Active account</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Nguyen Thi Tuyet Ngan</td>
-                                    <td>0777842792</td>
-                                    <td>Female</td>
-                                    <td>Inactive</td>
-                                    <td>
-                                        <img src="../assets/img/others/anhkiet.jpg" alt="Avatar">
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-info inactive">Active account</button>
-                                    </td>
-                                </tr>
+                                <?php
+                                while ($row1 = mysqli_fetch_row($result1)) {
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $row1[0]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row1[1]; ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row1[2] == 0) {
+                                                echo "Male";
+                                            } else {
+                                                echo "Female";
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($row1[3] == 0) {
+                                                echo "Inactive";
+                                            } else {
+                                                echo "Active";
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            $array_img = findImage($row1[4]);
+                                            ?>
+                                            <?php
+                                            if ($array_img[0] === 'IMG') {
+                                            ?>
+                                                <img src="../assets/img/upload/<?php echo $row1[4]; ?>" alt="Avatar">
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <img src="<?php echo $row1[4]; ?>" alt="Avatar">
+                                            <?php } ?>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-info inactive" type="submit" onclick="findInform(this)" name="btnActivate">Active account</button>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </table>
+                        </form>
                         </div>
                     </div>
 
@@ -262,24 +298,38 @@
                                     <th>Type</th>
                                     <th>Avatar</th>
                                 </tr>
-                                <tr>
-                                    <td>Sao Mai</td>
-                                    <td>Dong Thap</td>
-                                    <td>0874516335</td>
-                                    <td>Hotel</td>
-                                    <td>
-                                        <img src="../assets/img/category/iconic_city/city_1.jpg" alt="Avatar">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Rosewood</td>
-                                    <td>Tuscan</td>
-                                    <td>0874516335</td>
-                                    <td>Resort</td>
-                                    <td>
-                                        <img src="../assets/img/category/iconic_city/city_1.jpg" alt="Avatar">
-                                    </td>
-                                </tr>
+                                <?php
+                                while ($row2 = mysqli_fetch_row($result2)) {
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $row2[0]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row2[1]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row2[2]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row2[5]; ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            $array_img = findImage($row2[4]);
+                                            ?>
+                                            <?php
+                                            if ($array_img[0] === 'IMG') {
+                                            ?>
+                                                <img src="../assets/img/upload/<?php echo $row2[4]; ?>" alt="Avatar">
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <img src="<?php echo $row2[4]; ?>" alt="Avatar">
+                                            <?php } ?>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
                             </table>
                         </div>
                     </div>
@@ -345,6 +395,23 @@
         paginationTable('account')
         paginationTable('customer')
         paginationTable('property')
+    </script>
+    <script>
+        function findInform(button) {
+            function find_pos(row, x) {
+                var updateTableCells = document.querySelector("#table-customer").rows[row].cells;
+                var updateTableRows = document.querySelector("#table-customer").rows;
+                for (let i = 0; i < updateTableRows.length; i++) {
+                    if (updateTableRows[i] === x.parentElement.parentElement) {
+                        document.cookie = "Status" + "=" + updateTableCells[3].innerText;
+                        document.cookie = "CusName" + "=" + updateTableCells[0].innerText;
+                        break;
+                    }
+                }
+                return false;
+            }
+            find_pos((button.parentElement).parentElement.rowIndex, button);
+        }
     </script>
 </body>
 

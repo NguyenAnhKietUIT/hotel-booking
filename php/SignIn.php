@@ -49,7 +49,7 @@
                     </div>
     
                     <div class="login__main">
-                        <form action="./login.php" method="post" class="form" id="form">
+                        <form action="./HandleSignIn.php" method="post" class="form" id="form">
                             <h3 class="form-title">
                                 Sign Into </br> Your Account
                             </h3>

@@ -576,7 +576,7 @@ body.bg-theme15 {
 }
 
 .card-content {
-    max-height: 360px;
+    max-height: 380px;
     overflow-y: auto;
 }
 
