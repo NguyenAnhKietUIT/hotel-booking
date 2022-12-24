@@ -1,3 +1,19 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['accID1'])) {
+    header('Location: ./SignIn.php');
+} else {
+    include "./connect.php";
+
+    include "./HandleSelectAdmin.php";
+
+    $result = showMessage($connect);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,26 +44,26 @@
             <div class="nav__content">
                 <ul class="nav__content-list">
                     <li>
-                        <a href="./Admin_Dashboard.html" class="nav__content-list-item">
+                        <a href="./Admin_Dashboard.php" class="nav__content-list-item">
                             <i class="fa-brands fa-unsplash"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./Admin_Analytics.html" class="nav__content-list-item">
+                        <a href="./Admin_Analytics.php" class="nav__content-list-item">
                             <i class="fa-solid fa-chart-pie"></i>
                             <span>Analytics</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./Admin_Message.html" class="nav__content-list-item active">
+                        <a href="./Admin_Message.php" class="nav__content-list-item active">
                             <i class="fa-solid fa-message"></i>
                             <span>Message</span>
                         </a>
                     </li>
                 </ul>
 
-                <form action="" method="POST" class="nav__content-list-item">
+                <form action="./logout.php" method="POST" class="nav__content-list-item">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <input type="submit" name="sign-out" class="sign-out" value="Sign out">
                 </form>
@@ -75,14 +91,12 @@
 
                 <ul class="navbar-nav align-items-center right-nav-link">
                     <li class="nav-item dropdown-lg">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown"
-                            href="javascript:void();">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
                             <i class="fa-solid fa-envelope-open"></i>
                         </a>
                     </li>
                     <li class="nav-item dropdown-lg">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown"
-                            href="javascript:void();">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
                             <i class="fa-regular fa-bell"></i>
                         </a>
                     </li>
@@ -97,8 +111,7 @@
                                 <a href="javaScript:void();">
                                     <div class="media">
                                         <div class="avatar">
-                                            <img class="align-self-start me-3" src="../assets/img/others/anhkiet.jpg"
-                                                alt="user avatar">
+                                            <img class="align-self-start me-3" src="../assets/img/others/anhkiet.jpg" alt="user avatar">
                                         </div>
                                         <div class="media-body">
                                             <h6 class="mt-2 user-title">Nguyen Anh Kiet</h6>
@@ -149,113 +162,39 @@
                         <i class="fa-solid fa-trash"></i>
                         <span>Delete</span>
                     </div>
-
-                    <div>
-                        <span class="nav-paging">1-50 of 569</span>
-                        <div>
-                            <i class="nav-message-icon-left nav-message-icon-active fa-solid fa-angle-left"></i>
-                            <i class="nav-message-icon-right fa-solid fa-angle-right"></i>
-                        </div>
-                    </div>
                 </nav>
 
                 <div class="row">
                     <div class="col-12 col-lg-12">
                         <div class="card ms-3 me-3">
-                            <table class="table">
-                                <tr>
-                                    <td><input type="checkbox" class="message-select"></td>
-                                    <td>
-                                        <i class="message-icon fa-regular fa-star"></i>
-                                        <i class="message-icon-active fa-solid fa-star"></i>
-                                    </td>
-                                    <td>Name 1</td>
-                                    <td>
-                                        <span class="message-title">Thông báo về việc phát quà tặng Mũ bảo hiểm,
-                                            Balo</span>
-                                        -
-                                        <span class="message-content">Chào các bạn
-                                            Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
-                                            Thời gian trong 4 ngày 5/12/2022 - 8/12/2022
-                                            - Buổi sáng: 9h00-11h30
-                                            - Buổi chiều: 14h00-16h30
-                                            Sau thời gian trên bạn nào chưa nhận xem như từ chối quà tặng.
-                                            Quà tặng:
-                                            + Mũ báo hiểm cho khóa 2019-2021 (Theo danh sách tại forum)
-                                            + Balo cho khóa 2022
-                                            + Thuốc xịt mũi Viraleze dành cho Thầy Cô, Sinh viên có nhu cầu (Lưu ý số
-                                            lượng có hạn, phát đến khi hết quà)
-                                            Khi nhận quà vui lòng mang theo thẻ sinh viên.
-                                            Mọi thắc mắc sinh viên trao đổi tại forum:
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <button class="message-trash">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="message-select"></td>
-                                    <td>
-                                        <i class="message-icon fa-regular fa-star"></i>
-                                        <i class="message-icon-active fa-solid fa-star"></i>
-                                    </td>
-                                    <td>Name 2</td>
-                                    <td>
-                                        <span class="message-title">Thông báo về việc phát quà tặng Mũ bảo hiểm,
-                                            Balo</span>
-                                        -
-                                        <span class="message-content">Chào các bạn Ngày mai UIT Store sẽ mở phát quà trở
-                                            lại (đợt cuối cùng)</span>
-                                    </td>
-                                    <td>
-                                        <button class="message-trash">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="message-select"></td>
-                                    <td>
-                                        <i class="message-icon fa-regular fa-star"></i>
-                                        <i class="message-icon-active fa-solid fa-star"></i>
-                                    </td>
-                                    <td>Name 3</td>
-                                    <td>
-                                        <span class="message-title">Thông báo về việc phát quà tặng Mũ bảo hiểm,
-                                            Balo</span>
-                                        -
-                                        <span class="message-content">Chào các bạn Ngày mai UIT Store sẽ mở phát quà trở
-                                            lại (đợt cuối cùng)</span>
-                                    </td>
-                                    <td>
-                                        <button class="message-trash">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox" class="message-select"></td>
-                                    <td>
-                                        <i class="message-icon fa-regular fa-star"></i>
-                                        <i class="message-icon-active fa-solid fa-star"></i>
-                                    </td>
-                                    <td>Name 4</td>
-                                    <td>
-                                        <span class="message-title">Thông báo về việc phát quà tặng Mũ bảo hiểm,
-                                            Balo</span>
-                                        -
-                                        <span class="message-content">Chào các bạn Ngày mai UIT Store sẽ mở phát quà trở
-                                            lại (đợt cuối cùng)</span>
-                                    </td>
-                                    <td>
-                                        <button class="message-trash">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                            </table>
+                            <form action="./HandleDeleteAdmin.php?Delete=1" method="POST">
+                                <table class="table" id="table-message">
+                                    <?php
+                                    while ($row = mysqli_fetch_row($result)) {
+                                    ?>
+
+                                        <tr>
+                                            <td><input type="checkbox" class="message-select"></td>
+                                            <td>
+                                                <i class="message-icon fa-regular fa-star"></i>
+                                                <i class="message-icon-active fa-solid fa-star"></i>
+                                            </td>
+                                            <td><?php echo $row[5]; ?></td>
+                                            <td>
+                                                <span class="message-title"><?php echo $row[4]; ?></span>
+                                                -
+                                                <span class="message-content"><?php echo $row[7]; ?></span>
+                                            </td>
+                                            <td>
+                                                <button class="message-trash" name="btnDelete" type="submit" onclick="findInform(this)">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </button>
+                                            </td>
+                                            <td class="d-none"><?php echo $row[0]; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -316,6 +255,26 @@
 
     <script src="../js/Admin.js"></script>
     <script src="../js/Admin_Message.js"></script>
+    <script src="../js/Pagination.js"></script>
+    <script>
+        paginationTable('message', 10);
+
+        function findInform(button) {
+            function find_pos(row, x) {
+                var updateTableCells = document.querySelector("#table-message").rows[row].cells; // lấy ra các cell của 1 row
+                var updateTableRows = document.querySelector("#table-message").rows;
+                for (let i = 0; i < updateTableRows.length; i++) {
+                    if (updateTableRows[i] === x.parentElement.parentElement) {
+                        document.cookie = "contactID" + "=" + updateTableCells[5].innerText;
+                        break;
+                    }
+                }
+                return false;
+            }
+            find_pos((button.parentElement).parentElement.rowIndex, button);
+            // console.log((button.parentElement).parentElement.parentElement);
+        }
+    </script>
 </body>
 
 </html>

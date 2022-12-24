@@ -1,3 +1,51 @@
+<?php
+
+session_start();
+
+
+if(!isset($_SESSION['accID1'])){
+   header('Location: ./SignIn.php');  
+}
+
+
+else {
+    // include các file cần thiết
+    include "./connect.php";
+
+    include "./HandleSelectAdmin.php";
+    // Thống kê chữ
+        // Favourite Type
+        $fType = favouriteType($connect);
+        // Monthly Booking
+        $mBooking = monthlyBooking($connect);
+        // Hotel most Booking
+        $hBooking = hotelMostBooking($connect);
+        // Hotel Highest Point
+        $hPoint = hotelHighestPoint($connect);
+
+    // Đồ thị Real estate statistíc by category
+    $query = thongkeCategoryBooking($connect);
+
+    foreach($query as $data)
+    {
+        $Category[] = $data['Category'];
+        $amount[] = $data['amount'];
+    }
+
+    // Đồ thị Statistics of bookings in the year
+    $query1 = thongkeBookingYear($connect);
+
+    foreach($query1 as $data1)
+    {
+        $month[] = $data1['month'];
+        $soluong[] = $data1['soluong'];
+    }
+    // Số lượng Reservation 
+    $reservationMax = soLuongReservation($connect);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,26 +77,26 @@
             <div class="nav__content">
                 <ul class="nav__content-list">
                     <li>
-                        <a href="./Admin_Dashboard.html" class="nav__content-list-item">
+                        <a href="./Admin_Dashboard.php" class="nav__content-list-item">
                             <i class="fa-brands fa-unsplash"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./Admin_Analytics.html" class="nav__content-list-item active">
+                        <a href="./Admin_Analytics.php" class="nav__content-list-item active">
                             <i class="fa-solid fa-chart-pie"></i>
                             <span>Analytics</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./Admin_Message.html" class="nav__content-list-item">
+                        <a href="./Admin_Message.php" class="nav__content-list-item">
                             <i class="fa-solid fa-message"></i>
                             <span>Message</span>
                         </a>
                     </li>
                 </ul>
 
-                <form action="" method="POST" class="nav__content-list-item">
+                <form action="./logout.php" method="POST" class="nav__content-list-item">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <input type="submit" name="sign-out" class="sign-out" value="Sign out">
                 </form>
@@ -146,11 +194,11 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="ms-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Name</span>
-                                <span class="p-2 analytic-item-value">Beach</span>
+                                <span class="p-2 analytic-item-value"><?php echo $fType[0]; ?></span>
                             </div>
                             <div class="me-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Booking Quantity</span>
-                                <span class="p-2 analytic-item-value">9999</span>
+                                <span class="p-2 analytic-item-value"><?php echo $fType[1]; ?></span>
                             </div>
                         </div>
                     </div>
@@ -159,11 +207,11 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="ms-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Month</span>
-                                <span class="p-2 analytic-item-value">12</span>
+                                <span class="p-2 analytic-item-value"><?php echo $mBooking[0]; ?></span>
                             </div>
                             <div class="me-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Booking Quantity</span>
-                                <span class="p-2 analytic-item-value">9999</span>
+                                <span class="p-2 analytic-item-value"><?php echo $mBooking[1]; ?></span>
                             </div>
                         </div>
                     </div>
@@ -172,11 +220,11 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="ms-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Hotel Name</span>
-                                <span class="p-2 analytic-item-value">Hotel</span>
+                                <span class="p-2 analytic-item-value"><?php echo $hBooking[1]; ?></span>
                             </div>
                             <div class="me-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Booking Quantity</span>
-                                <span class="p-2 analytic-item-value">9999</span>
+                                <span class="p-2 analytic-item-value"><?php echo $hBooking[2]; ?></span>
                             </div>
                         </div>
                     </div>
@@ -185,11 +233,11 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="ms-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Hotel Name</span>
-                                <span class="p-2 analytic-item-value">Hotel</span>
+                                <span class="p-2 analytic-item-value"><?php echo $hPoint[1]; ?></span>
                             </div>
                             <div class="me-3 d-flex flex-column align-items-center">
                                 <span class="analytic-item-title">Average Score</span>
-                                <span class="p-2 analytic-item-value">9999</span>
+                                <span class="p-2 analytic-item-value"><?php echo round($hPoint[2], 2); ?></span>
                             </div>
                         </div>
                     </div>
@@ -258,6 +306,18 @@
 
     <script src="../js/Admin.js"></script>
     <script src="../js/Admin_Analytics.js"></script>
+    <script>
+        // Vẽ CategoryBooking
+        typecate = <?php echo json_encode( $Category) ?>;
+        phpvalues1 = <?php echo json_encode($amount) ?>;
+        drawPieChart(typecate, phpvalues1);
+
+        // Vẽ YearBooking
+        month = <?php echo json_encode($month) ?>;
+        phpvalues2 = <?php echo json_encode($soluong) ?>;
+        maxValue = <?php echo json_encode($reservationMax) ?>;
+        drawLineChart(month, phpvalues2, maxValue);
+    </script>
 </body>
 
 </html>

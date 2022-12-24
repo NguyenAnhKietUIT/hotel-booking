@@ -60,7 +60,7 @@ select {
 
 .form-avatar__message {
     position: absolute;
-    top: 38%;
+    top: 32%;
     left: 18%;
     opacity: 0;
     cursor: pointer;

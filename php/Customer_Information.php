@@ -1,3 +1,36 @@
+<!-- Xử lý lấy thông tin từ database -->
+<?php
+
+include './connect.php';
+
+session_start();
+
+$accID = 0;
+
+if (!isset($_SESSION['accID3'])) {
+    header('Location: ./SignIn.php');
+} else {
+    // Gọi lấy ra thông tin tài khoản
+    include "./getInformationCus.php";
+
+    include "./HandleSelectCus.php";
+
+    include "./HandleAnother.php";
+
+    $accID = $_SESSION['accID3'];
+
+    $array_img = findImage($Image_Customer);
+
+    // Tìm username bằng accID
+    $usernameReceive = findUsernameCus($connect, $accID);
+    // Kiểm tra
+    //echo $usernameReceive[0];
+
+    $showInbox = showInbox($connect, $usernameReceive[0]);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +46,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../css/Customer_Information.css">
-    <title>Trivia - Name Customer</title>
+    <?php echo "<title>Trivia - $user_name</title>"; ?>
 </head>
 
 <body>
@@ -21,19 +54,19 @@
         <header class="app__header">
             <div class="grid wide">
                 <nav class="app__nav">
-                    <a href="./Homepage.html" class="app__nav-name-link">
+                    <a href="./Homepage.php" class="app__nav-name-link">
                         <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                     </a>
 
                     <ul class="app__nav-list hide-on-mobile-tablet">
                         <li class="app__nav-item">
-                            <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                            <a href="./Homepage.php" class="app__nav-item-link">Home</a>
                         </li>
                         <li class="app__nav-item">
-                            <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
+                            <a href="./Contact.php" class="app__nav-item-link">Contacts</a>
                         </li>
                         <li class="app__nav-item">
-                            <a href="#" class="app__nav-item-link">Name Customer</a>
+                            <?php echo "<a href='./Customer_Information.php' class='app__nav-item-link' style='cursor: pointer;'>" . $user_name . "</a>"; ?>
                         </li>
                     </ul>
                 </nav>
@@ -47,56 +80,83 @@
                         <ul class="app__sidebar-list">
                             <li class="app__sidebar-item app__sidebar-item--active">Your Account</li>
                             <li class="app__sidebar-item">
-                                <a href="./Customer_viewBooking.html" class="text-decoration-none text-dark">View all bookings</a>
+                                <a href="./Customer_viewBooking.php" class="text-decoration-none text-dark">View all bookings</a>
                             </li>
                             <li class="app__sidebar-item">
                                 <label for="app__inbox-input" style="cursor: pointer;">Inbox</label>
                             </li>
                             <li class="app__sidebar-item">
-                                <a href="./Customer's_Review.html" class="text-decoration-none text-dark">Your Reviews</a>
+                                <a href="./Customer's_Review.php" class="text-decoration-none text-dark">Your Reviews</a>
                             </li>
                             <li>
-                                <a href="./Edit_Password.html" class="text-decoration-none text-dark">Edit your password</a>
+                                <a href="./Edit_Password.php?this_id=<?php echo $accID; ?>" class="text-decoration-none text-dark">Edit your password</a>
                             </li>
                             <li class="app__sidebar-item">
-                                <button class="btn-sign-out">Sign out</button>
+                                <form action="./logout.php" method="post"><button class="btn-sign-out" name="logout_Cus">Sign out</button></form>
                             </li>
                         </ul>
                     </div>
                     <div class="col-9">
                         <h1 class="app__main-title">User Details</h1>
 
-                        <form action="" method="POST" class="form-detail" id="form-detail">
+                        <form action="./HandleUpdateCus.php?Update=1" method="post" class="form-detail" id="form-detail" enctype="multipart/form-data">
                             <div class="form-avatar">
-                                <label for="app__main-input-img" class="app__main-label-img">
-                                    <img src="../assets/img/others/avatar.png" alt="avatar" class="app__main-img">
+                                <label for="app__main-input-img" class="app__main-label-img" style="width: 100%;">
+                                    <?php
+                                    if ($array_img[0] === 'IMG') {
+                                    ?>
+                                        <img src="../assets/img/upload/<?php echo $Image_Customer; ?>" alt="avatar" class="app__main-img">
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <img src="<?php echo $Image_Customer; ?>" alt="avatar" class="app__main-img">
+                                    <?php } ?>
                                 </label>
                                 <span class="form-avatar__message">
                                     <i class="fa-solid fa-camera"></i>
                                     Change your avatar
                                 </span>
+                                <?php
+                                if (isset($_GET['flag'])) {
+                                    $flag = $_GET['flag'];
+                                    if ($flag == "2") {
+
+                                ?>
+                                        <script>alert('You cannot upload file with this type')</script>
+                                    <?php
+                                    } else if ($flag == "1") {
+                                    ?>
+                                        <script>alert('Your size of file is too big')</script>
+                                <?php
+                                    }
+                                }
+                                ?>
                                 <input type="file" name="app__main-input-img" id="app__main-input-img" hidden disabled>
                             </div>
 
                             <div class="form-info">
                                 <div class="form-group">
                                     <label for="yourname" class="form-label">Your Name<span style="color: red;">*</span></label>
-                                    <input id="yourname" name="yourname" type="text" placeholder="Your Name" disabled
-                                        class="form-control edit-active">
+                                    <input id="yourname" name="yourname" type="text" value="<?php echo $cus_name; ?>" disabled class="form-control edit-active">
                                     <span class="form-message"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email" class="form-label">Your Email</label>
-                                    <input id="email" name="email" type="text" placeholder="Your Email" disabled
-                                        class="form-control">
+                                    <input id="email" name="email" type="text" value="<?php echo $Gmail; ?>" disabled class="form-control">
                                     <span class="form-message"></span>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="country" class="form-label">Country<span style="color: red;">*</span></label>
-                                    <select id="country" name="country" class="form-control edit-active" disabled style="font-size: 14px;">
+                                    <label for="country" class="form-label">Country</label>
+                                    <select id="country" name="country" class="form-control edit-active" disabled>
                                         <option value="">--- Select Country ---</option>
+                                        <?php
+                                        if (strlen($country) != 0) {
+                                            echo "<option value='$country' selected>$country</option>";
+                                        }
+                                        ?>
+
                                         <option value="Afghanistan">Afghanistan</option>
                                         <option value="Albania">Albania</option>
                                         <option value="Algeria">Algeria</option>
@@ -104,7 +164,7 @@
                                         <option value="Andorra">Andorra</option>
                                         <option value="Angola">Angola</option>
                                         <option value="Anguilla">Anguilla</option>
-                                        <option value="Antarctica">Antarctica</option>
+                                        <option value="Antartica">Antarctica</option>
                                         <option value="Antigua and Barbuda">Antigua and Barbuda</option>
                                         <option value="Argentina">Argentina</option>
                                         <option value="Armenia">Armenia</option>
@@ -127,8 +187,7 @@
                                         <option value="Botswana">Botswana</option>
                                         <option value="Bouvet Island">Bouvet Island</option>
                                         <option value="Brazil">Brazil</option>
-                                        <option value="British Indian Ocean Territory">British Indian Ocean Territory
-                                        </option>
+                                        <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
                                         <option value="Brunei Darussalam">Brunei Darussalam</option>
                                         <option value="Bulgaria">Bulgaria</option>
                                         <option value="Burkina Faso">Burkina Faso</option>
@@ -211,8 +270,7 @@
                                         <option value="Kazakhstan">Kazakhstan</option>
                                         <option value="Kenya">Kenya</option>
                                         <option value="Kiribati">Kiribati</option>
-                                        <option value="Democratic People's Republic of Korea">Korea, Democratic People's
-                                            Republic of</option>
+                                        <option value="Democratic People's Republic of Korea">Korea, Democratic People's Republic of</option>
                                         <option value="Korea">Korea, Republic of</option>
                                         <option value="Kuwait">Kuwait</option>
                                         <option value="Kyrgyzstan">Kyrgyzstan</option>
@@ -294,8 +352,7 @@
                                         <option value="Solomon Islands">Solomon Islands</option>
                                         <option value="Somalia">Somalia</option>
                                         <option value="South Africa">South Africa</option>
-                                        <option value="South Georgia">South Georgia and the South Sandwich Islands
-                                        </option>
+                                        <option value="South Georgia">South Georgia and the South Sandwich Islands</option>
                                         <option value="Span">Spain</option>
                                         <option value="SriLanka">Sri Lanka</option>
                                         <option value="St. Helena">St. Helena</option>
@@ -325,8 +382,7 @@
                                         <option value="United Arab Emirates">United Arab Emirates</option>
                                         <option value="United Kingdom">United Kingdom</option>
                                         <option value="United States">United States</option>
-                                        <option value="United States Minor Outlying Islands">United States Minor
-                                            Outlying Islands</option>
+                                        <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
                                         <option value="Uruguay">Uruguay</option>
                                         <option value="Uzbekistan">Uzbekistan</option>
                                         <option value="Vanuatu">Vanuatu</option>
@@ -338,7 +394,8 @@
                                         <option value="Western Sahara">Western Sahara</option>
                                         <option value="Yemen">Yemen</option>
                                         <option value="Serbia">Serbia</option>
-
+                                        <option value="Zambia">Zambia</option>
+                                        <option value="Zimbabwe">Zimbabwe</option>
                                     </select>
                                     <span class="form-message"></span>
                                 </div>
@@ -347,16 +404,19 @@
                                     <label for="sex" class="form-label">Your Sex<span style="color: red;">*</span></label>
                                     <select id="sex" name="sex" class="form-control edit-active" disabled style="font-size: 14px;">
                                         <option value="">--- Select your sex ---</option>
-                                        <option value="0">Nam</option>
-                                        <option value="1">Nữ</option>
+                                        <option value="0" <?php if ($sex == 0) {
+                                                                echo "selected='selected'";
+                                                            } ?>>Male</option>
+                                        <option value="1" <?php if ($sex == 1) {
+                                                                echo "selected='selected'";
+                                                            } ?>>Female</option>
                                     </select>
                                     <span class="form-message"></span>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phonenumber" class="form-label">Phone Number<span style="color: red;">*</span></label>
-                                    <input id="phonenumber" name="phonenumber" placeholder="Phone number" disabled
-                                        type="text" class="form-control edit-active">
+                                    <input id="phonenumber" name="phonenumber" value="<?php echo $phone; ?>" disabled type="text" class="form-control edit-active">
                                     <span class="form-message"></span>
                                 </div>
 
@@ -375,33 +435,16 @@
                     <div class="row m-0 h-100 overflow-auto">
                         <div class="col-4" style="border-right: 1px solid #ccc;">
                             <ul class="list-unstyled">
-                                <li class="app__inbox-item pb-2">
-                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 1</h6>
-                                    <span class="ps-2 pe-2 app__inbox-item-content">
-                                        Chào các bạn
-                                        Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
-                                        Thời gian trong 4 ngày 5/12/2022 - 8/12/2022
-                                        - Buổi sáng: 9h00-11h30
-                                        - Buổi chiều: 14h00-16h30
-                                        Sau thời gian trên bạn nào chưa nhận xem như từ chối quà tặng.
-                                        Quà tặng:
-                                        + Mũ báo hiểm cho khóa 2019-2021 (Theo danh sách tại forum)
-                                        + Balo cho khóa 2022
-                                        + Thuốc xịt mũi Viraleze dành cho Thầy Cô, Sinh viên có nhu cầu (Lưu ý số lượng
-                                        có
-                                        hạn, phát đến khi hết quà)
-                                        Khi nhận quà vui lòng mang theo thẻ sinh viên.
-                                        Mọi thắc mắc sinh viên trao đổi tại forum:
-                                        https://forum.uit.edu.vn/node/559392
-                                    </span>
-                                </li>
-                                <li class="app__inbox-item pb-2">
-                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title">Ten hoac ma 2</h6>
-                                    <span class="ps-2 pe-2 app__inbox-item-content">
-                                        Chào các bạn
-                                        Ngày mai UIT Store sẽ mở phát quà trở lại (đợt cuối cùng)
-                                    </span>
-                                </li>
+                                <?php
+                                while ($inbox = mysqli_fetch_row($showInbox)) {
+                                ?>
+                                    <li class="app__inbox-item pb-2">
+                                        <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0] ?></h6>
+                                        <span class="ps-2 pe-2 app__inbox-item-content">
+                                            <?php echo $inbox[1] ?>
+                                        </span>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                         <div class="col-8 app__inbox-message"></div>

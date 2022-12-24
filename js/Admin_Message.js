@@ -196,7 +196,6 @@ function backAdminMessage() {
 }
 
 selectAll()
-deleteMessage()
 starMessage()
 selectMessage()
 deleteMessageChecked()

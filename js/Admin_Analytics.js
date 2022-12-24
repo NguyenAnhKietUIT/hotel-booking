@@ -1,6 +1,6 @@
-function drawPieChart() {
-    const xValues = ["Beach", "Mountain", "Iconic City", "Countryside", "Camping", "Tropical"];
-    const yValues = [92, 168, 36, 45, 60, 84];
+function drawPieChart(typeCategory, amountBooking) {
+    const xValues = typeCategory;
+    const yValues = amountBooking;
     const barColors = [ "#B1DFAE", " #CAEBBA", "#E6F2D3", "#B0E3F5", "#92C7F0", "#78AEE3"];
     const barColorsHover = ["rgb(177 223 174 / 0.6)", "rgb(202 235 186 / 0.6)", "rgb(230 242 211 / 0.6)",
                         "rgb(176 227 245 / 0.6)", "rgb(146 199 240 / 0.6)", "rgb(120 174 227 / 0.6)"]
@@ -26,10 +26,10 @@ function drawPieChart() {
     });
 }
 
-function drawLineChart() {
-    const xMonths = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+function drawLineChart(monthValues, amountBooking, maxValue) {
+    const xMonths = monthValues;
 
-    const yValues = [10, 40, 50, 100, 60, 70, 80, 20, 30, 90, 12, 20]
+    const yValues = amountBooking;
 
     new Chart("booking-year", {
         type: "line",
@@ -59,7 +59,7 @@ function drawLineChart() {
                     ticks: {
                         fontColor: "white",
                         min: 0, 
-                        max: 100,
+                        max: maxValue * 1.5,
                         beginAtZero: true,
                     },
                 }
@@ -75,6 +75,3 @@ function drawLineChart() {
       }
     });
 }
-
-drawPieChart();
-drawLineChart();

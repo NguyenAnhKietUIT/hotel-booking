@@ -61,26 +61,26 @@ if (!isset($_SESSION['accID1'])) {
             <div class="nav__content">
                 <ul class="nav__content-list">
                     <li>
-                        <a href="./Admin_Dashboard.html" class="nav__content-list-item active">
+                        <a href="./Admin_Dashboard.php" class="nav__content-list-item active">
                             <i class="fa-brands fa-unsplash"></i>
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./Admin_Analytics.html" class="nav__content-list-item">
+                        <a href="./Admin_Analytics.php" class="nav__content-list-item">
                             <i class="fa-solid fa-chart-pie"></i>
                             <span>Analytics</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./Admin_Message.html" class="nav__content-list-item">
+                        <a href="./Admin_Message.php" class="nav__content-list-item">
                             <i class="fa-solid fa-message"></i>
                             <span>Message</span>
                         </a>
                     </li>
                 </ul>
 
-                <form action="" method="POST" class="nav__content-list-item">
+                <form action="./logout.php" method="POST" class="nav__content-list-item">
                     <i class="fa-solid fa-right-from-bracket"></i>
                     <input type="submit" name="sign-out" class="sign-out" value="Sign out">
                 </form>
@@ -228,62 +228,69 @@ if (!isset($_SESSION['accID1'])) {
                     <div class="card ms-3 me-3">
                         <div class="card-header">Customer Details</div>
                         <div class="card-content">
-                        <form action="./HandleUpdateAdmin.php?Update=1" method="POST">
-                            <table class="table mb-2" id="table-customer">
-                                <tr>
-                                    <th>Customer Name</th>
-                                    <th>Phone</th>
-                                    <th>Sex</th>
-                                    <th>Status</th>
-                                    <th>Avatar</th>
-                                    <th>Action</th>
-                                </tr>
-                                <?php
-                                while ($row1 = mysqli_fetch_row($result1)) {
-                                ?>
+                            <form action="./HandleUpdateAdmin.php?Update=1" method="POST">
+                                <table class="table mb-2" id="table-customer">
                                     <tr>
-                                        <td>
-                                            <?php echo $row1[0]; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $row1[1]; ?>
-                                        </td>
-                                        <td>
-                                            <?php if ($row1[2] == 0) {
-                                                echo "Male";
-                                            } else {
-                                                echo "Female";
-                                            } ?>
-                                        </td>
-                                        <td>
-                                            <?php if ($row1[3] == 0) {
-                                                echo "Inactive";
-                                            } else {
-                                                echo "Active";
-                                            } ?>
-                                        </td>
-                                        <td>
-                                            <?php
-                                            $array_img = findImage($row1[4]);
-                                            ?>
-                                            <?php
-                                            if ($array_img[0] === 'IMG') {
-                                            ?>
-                                                <img src="../assets/img/upload/<?php echo $row1[4]; ?>" alt="Avatar">
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <img src="<?php echo $row1[4]; ?>" alt="Avatar">
-                                            <?php } ?>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-info inactive" type="submit" onclick="findInform(this)" name="btnActivate">Active account</button>
-                                        </td>
-                                        <td hidden><?php echo $row1[5]; ?></td>
+                                        <th>Customer Name</th>
+                                        <th>Phone</th>
+                                        <th>Sex</th>
+                                        <th>Status</th>
+                                        <th>Avatar</th>
+                                        <th>Action</th>
                                     </tr>
-                                <?php } ?>
-                            </table>
-                        </form>
+                                    <?php
+                                    while ($row1 = mysqli_fetch_row($result1)) {
+                                    ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $row1[0]; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row1[1]; ?>
+                                            </td>
+                                            <td>
+                                                <?php if ($row1[2] == 0) {
+                                                    echo "Male";
+                                                } else {
+                                                    echo "Female";
+                                                } ?>
+                                            </td>
+                                            <td>
+                                                <?php if ($row1[3] == 0) {
+                                                    echo "Inactive";
+                                                } else {
+                                                    echo "Active";
+                                                } ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                $array_img = findImage($row1[4]);
+                                                ?>
+                                                <?php
+                                                if ($array_img[0] === 'IMG') {
+                                                ?>
+                                                    <img src="../assets/img/upload/<?php echo $row1[4]; ?>" alt="Avatar">
+                                                <?php
+                                                } else {
+                                                ?>
+                                                    <img src="<?php echo $row1[4]; ?>" alt="Avatar">
+                                                <?php } ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                if ($row1[3] == 1) {
+                                                ?>
+                                                    <button class="btn btn-info" type="submit" name="btnActivate" disabled>Active account</button>
+                                                <?php } else {
+                                                ?>
+                                                    <button class="btn btn-info inactive" type="submit" onclick="findInform(this)" name="btnActivate">Active account</button>
+                                                <?php } ?>
+                                            </td>
+                                            <td hidden><?php echo $row1[5]; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                </table>
+                            </form>
                         </div>
                     </div>
 
