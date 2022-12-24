@@ -122,11 +122,15 @@ if (!isset($_SESSION['accID3'])) {
                                     if ($flag == "2") {
 
                                 ?>
-                                        <script>alert('You cannot upload file with this type')</script>
+                                        <script>
+                                            alert('You cannot upload file with this type')
+                                        </script>
                                     <?php
                                     } else if ($flag == "1") {
                                     ?>
-                                        <script>alert('Your size of file is too big')</script>
+                                        <script>
+                                            alert('Your size of file is too big')
+                                        </script>
                                 <?php
                                     }
                                 }
@@ -440,6 +444,9 @@ if (!isset($_SESSION['accID3'])) {
                                 ?>
                                     <li class="app__inbox-item pb-2">
                                         <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0] ?></h6>
+                                        <script>
+                                            usernameSend = <?php echo json_encode($row[0]) ?>
+                                        </script>
                                         <span class="ps-2 pe-2 app__inbox-item-content">
                                             <?php echo $inbox[1] ?>
                                         </span>
@@ -458,6 +465,8 @@ if (!isset($_SESSION['accID3'])) {
     <script src="../js/Customer_Information.js"></script>
     <script src="../js/Inbox.js"></script>
     <script>
+        loadMessage(usernameSend);
+
         Validator({
             form: '#form-detail',
             formGroupSelector: '.form-group',

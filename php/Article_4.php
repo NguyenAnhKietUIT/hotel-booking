@@ -15,19 +15,19 @@
     <div id="app">
         <header class="app__header">
             <nav class="app__nav" style="max-width: 1200px;margin: 0 auto;">
-                <a href="./Homepage.html" class="app__nav-name-link">
+                <a href="./Homepage.php" class="app__nav-name-link">
                     <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                 </a>
 
                 <ul class="app__nav-list hide-on-mobile-tablet">
                     <li class="app__nav-item">
-                        <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                        <a href="./Homepage.php" class="app__nav-item-link">Home</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
+                        <a href="./Contact.php" class="app__nav-item-link">Contacts</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Customer_SignUp.html" class="app__nav-item-link">Sign Up</a>
+                        <a href="./Customer_SignUp.php" class="app__nav-item-link">Sign Up</a>
                     </li>
                 </ul>
             </nav>
@@ -36,36 +36,37 @@
         <div class="mt-5 app__content" style="max-width: 1200px;margin: 0 auto;">
             <h5>Trivia Blog</h5>
 
-            <h2 class="mt-4">Paragliding over million-year-old dormant volcano in Central Highlands</h2>
+            <h2 class="mt-4">2 treks for discovering Vietnam’s rural heartlands</h2>
 
             <p>
-                Visitors have flocked to Gia Lai Province in the Central Highlands to paraglide over Chu Dang Ya volcano, 
-                active millions of years ago.
+                Jungle-cloaked hills that once shook with the sound of combat are now the serene setting for adventurous hikes 
+                to remote villages, lofty lookouts, tumbling waterfalls and the summit of Indochina’s highest mountain. 
+                With plenty of local guides and trekking agencies on hand to help you to the top of the trails, all you really need 
+                to do is pick a route – and set out.
             </p>
-            <img src="../assets/img/inspiration/image_7.png" alt="">
+            <img src="../assets/img/inspiration/image_14.png" alt="">
 
             <p>
-                During an annual flower festival from Nov. 11-17, authorities in Gia Lai have introduced paragliding trips 
-                around Chu Dang Ya volcano in Chu Pan District.
+                Many of Vietnam’s top hikes are best attempted with local support. The tropical terrain can be challenging, 
+                the weather can be unpredictable and you’ll need someone who speaks the local languages to make arrangements for meals 
+                and accommodation in hill-tribe communities. If you combine a trek with a village homestay – which we heartily recommend – 
+                it’s possible to escape the crowds and find the hospitality and captivating culture that first put Vietnam on the travel map.
             </p>
-            <img src="../assets/img/inspiration/image_8.png" alt="">
-
             <p>
-                Athletes from four paragliding clubs in Da Nang, Ho Chi Minh City, Hanoi and Nha Trang brought to Chu Dang Ya 
-                45 parachutes, including doubles and singles.
+                With its towering topography, the mountainous north of the country offers the best trekking opportunities, 
+                but there are routes all over the country, from the Chinese border to the lowland jungles near Ho Chi Minh City. 
+                Here’s our pick of the top treks in Vietnam.
             </p>
-            <img src="../assets/img/inspiration/image_9.png" alt="">
 
-            <p>Visitors camp overnight at a tea hill, around two kilometers from the volcano.</p>
-            <img src="../assets/img/inspiration/image_10.png" alt="">
+            <h5>1. Cultural treks from Sapa</h5>
+            <p class="mb-0">Easiest hikes for beginners</p>
+            <p class="mt-0">Distances vary, 1–2 days, easy</p>
+            <img src="../assets/img/inspiration/Rectangle_39.png" alt="">
 
-            <p>
-                In the J’rai ethnic minority language, Chu Dang Ya means "wild ginger root." It lies in Ploi Lagri Village in Gia Lai's 
-                Chu Pah District, home to the Jarai ethnic minority.
-                The Chu Dang Ya volcano has been dormant for millions of years, offering fertile land for cultivation.
-                The volcano, 30 kilometers northeast of the province's capital town Pleiku and 20 kilometers from Bien Ho (Sea Lake), 
-                is a popular tourist destination.
-            </p>
+            <h5 class="mt-3">2. Mai Chau villages</h5>
+            <p class="mb-0">Best easy hikes near Hanoi</p>
+            <p class="mt-0">5–18km (3–11 miles), 1–2 days, easy</p>
+            <img src="../assets/img/inspiration/image_15.png" alt="" class="mb-5">
         </div>
 
         <footer class="app__footer">

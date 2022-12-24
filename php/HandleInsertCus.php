@@ -6,8 +6,9 @@ session_start();
 // Xử lý các biến get
     // Insert = 1 -> function signUp
     // Insert = 2 -> function sendMessage
-    // Inser5 = 3 -> function reservation
+    // Insert = 3 -> function reservation
     // Insert = 4 -> function writeReview
+    // Insert = 5 -> function sendContact
 
 
 // Tạo biến đón các insẻt
@@ -252,10 +253,16 @@ function writeReview(){
         $sql = "INSERT INTO `evaluate_property`(`evaHotelID`, `CustomerID`, `PropertyID`, `Point`, `Comment`, `timeComment`) 
                  VALUES (NULL,'$cusID[0]','$proID[0]','$rating','$review', '$currentDate')";
 
-        $result = mysqli_query($connect, $sql);
+        mysqli_query($connect, $sql);
 
         header("Location: ./Customer's_Review.php");
     }
+}
+
+function sendContact() {
+    echo $_POST['app__inbox-message-textarea'];
+    echo $_POST['usernameSend'];
+    echo $_POST['usernameReceive'];
 }
 
 
@@ -279,6 +286,9 @@ switch ($insert) {
         break; 
     case 4:
         writeReview();
+        break;
+    case 5:
+        sendContact();
         break;
     default:
         break;

@@ -15,19 +15,19 @@
     <div id="app">
         <header class="app__header">
             <nav class="app__nav" style="max-width: 1200px;margin: 0 auto;">
-                <a href="./Homepage.html" class="app__nav-name-link">
+                <a href="./Homepage.php" class="app__nav-name-link">
                     <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                 </a>
 
                 <ul class="app__nav-list hide-on-mobile-tablet">
                     <li class="app__nav-item">
-                        <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                        <a href="./Homepage.php" class="app__nav-item-link">Home</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
+                        <a href="./Contact.php" class="app__nav-item-link">Contacts</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Customer_SignUp.html" class="app__nav-item-link">Sign Up</a>
+                        <a href="./Customer_SignUp.php" class="app__nav-item-link">Sign Up</a>
                     </li>
                 </ul>
             </nav>
@@ -36,37 +36,67 @@
         <div class="mt-5 app__content" style="max-width: 1200px;margin: 0 auto;">
             <h5>Trivia Blog</h5>
 
-            <h2 class="mt-4">2 treks for discovering Vietnam’s rural heartlands</h2>
-
+            <h2 class="mt-4">Exploring Vung Tau Beach City</h2>
+            <img src="../assets/img/inspiration/image_1.png" alt="">
             <p>
-                Jungle-cloaked hills that once shook with the sound of combat are now the serene setting for adventurous hikes 
-                to remote villages, lofty lookouts, tumbling waterfalls and the summit of Indochina’s highest mountain. 
-                With plenty of local guides and trekking agencies on hand to help you to the top of the trails, all you really need 
-                to do is pick a route – and set out.
-            </p>
-            <img src="../assets/img/inspiration/image_14.png" alt="">
-
-            <p>
-                Many of Vietnam’s top hikes are best attempted with local support. The tropical terrain can be challenging, 
-                the weather can be unpredictable and you’ll need someone who speaks the local languages to make arrangements for meals 
-                and accommodation in hill-tribe communities. If you combine a trek with a village homestay – which we heartily recommend – 
-                it’s possible to escape the crowds and find the hospitality and captivating culture that first put Vietnam on the travel map.
-            </p>
-            <p>
-                With its towering topography, the mountainous north of the country offers the best trekking opportunities, 
-                but there are routes all over the country, from the Chinese border to the lowland jungles near Ho Chi Minh City. 
-                Here’s our pick of the top treks in Vietnam.
+                Vung Tau – A coastal city is always an attractive destination for tourists. 
+                However, there are many people who do not have much time for a multi-day trip to Vung Tau 
+                but only 1 day to stay in the coastal city. So in a short day in Vung Tau, where should I go? What to do? 
+                Do not panic because the 1 day Vung Tau tour below can help you enjoy the short but experience completely Vung Tau trip!
             </p>
 
-            <h5>1. Cultural treks from Sapa</h5>
-            <p class="mb-0">Easiest hikes for beginners</p>
-            <p class="mt-0">Distances vary, 1–2 days, easy</p>
-            <img src="../assets/img/inspiration/Rectangle_39.png" alt="">
+            <img src="../assets/img/inspiration/image_2.png" alt="">
+            <p>
+                The most appropriate time is Vung Tau dry season which lasts from November to the end of April next year. 
+                This is the time when Vung Tau rarely rains, the sea is clearer, the sky is higher and greener, 
+                so it is also convenient for a trip to the sea.
+            </p>
 
-            <h5 class="mt-3">2. Mai Chau villages</h5>
-            <p class="mb-0">Best easy hikes near Hanoi</p>
-            <p class="mt-0">5–18km (3–11 miles), 1–2 days, easy</p>
-            <img src="../assets/img/inspiration/image_15.png" alt="" class="mb-5">
+            <h3 class="mt-5">Transportation to Vung Tau</h3>
+            <img src="../assets/img/inspiration/image_3.png" alt="">
+            <p>
+                Vung Tau is far from Saigon – City. Ho Chi Minh City is about 100km to the East. 
+                This is not too close nor too far away, so you have many choices of means of transport to get to Vung Tau 1 day.
+            </p>
+            <p>
+                You can choose from 3 transportation options: Move by private means (motorbike, car), travel by bus, travel by speedboat.
+            </p>
+            <ul>
+                <li>Transportation by private vehicle</li>
+            </ul>
+            <p>
+                Many tourists from neighboring provinces choose to travel by private means for a one-day trip to Vung Tau. 
+                Motorbikes are the means that young people often choose while cars are suitable for households with the elderly 
+                and young children. With a distance of nearly 100km from the city. From Ho Chi Minh to Vung Tau, 
+                you will take about 2h30 minutes to travel.
+            </p>
+
+            <img src="../assets/img/inspiration/image_4.png" alt="">
+            <p>
+                Traveling by private vehicle will save you money, take the initiative in your trip time and schedule. 
+                If you choose to travel by motorbike, pay attention to the health and maintenance of your car before your journey!
+            </p>
+            <ul>
+                <li>Transportation by Coach</li>
+            </ul>
+            <p>
+                Coaches are the means of transport that many people choose to come to Vung Tau 1 day because the time on the car 
+                you will have a rest to prepare for the journey to discover Vung Tau during the day. This is also a safe vehicle 
+                for those who are not used to driving long distances but are not familiar with the road. You should choose the 
+                reputable garage to go.
+            </p>
+
+            <img src="../assets/img/inspiration/image_5.png" alt="">
+            <ul class="mt-3">
+                <li>Travel by speedboat</li>
+            </ul>
+            <p>
+                High speed trains are the fastest way to travel to Vung Tau. 
+                You only take about 1 hour or more on board to reach Vung Tau. 
+                This is the most time-saving means you can choose to get to Vung Tau for a day.
+            </p>
+
+            <img src="../assets/img/inspiration/image_6.png" alt="" class="mb-5">
         </div>
 
         <footer class="app__footer">

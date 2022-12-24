@@ -13,6 +13,11 @@ if(isset($_POST['logOut_Pro'])){
 else if(isset($_POST['logout_Cus'])){
     if(isset($_SESSION['accID3'])){
         unset($_SESSION['accID3']);
+        unset($_SESSION['id']);
+        unset($_SESSION['check-in-date']);
+        unset($_SESSION['check-out-date']);
+        unset($_SESSION['bed-num']);
+        unset($_SESSION['hotel']);
         header("Location: ./Homepage.php");
     }
 }

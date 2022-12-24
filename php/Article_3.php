@@ -15,19 +15,19 @@
     <div id="app">
         <header class="app__header">
             <nav class="app__nav" style="max-width: 1200px;margin: 0 auto;">
-                <a href="./Homepage.html" class="app__nav-name-link">
+                <a href="./Homepage.php" class="app__nav-name-link">
                     <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                 </a>
 
                 <ul class="app__nav-list hide-on-mobile-tablet">
                     <li class="app__nav-item">
-                        <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                        <a href="./Homepage.php" class="app__nav-item-link">Home</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
+                        <a href="./Contact.php" class="app__nav-item-link">Contacts</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Customer_SignUp.html" class="app__nav-item-link">Sign Up</a>
+                        <a href="./Customer_SignUp.php" class="app__nav-item-link">Sign Up</a>
                     </li>
                 </ul>
             </nav>
@@ -36,67 +36,35 @@
         <div class="mt-5 app__content" style="max-width: 1200px;margin: 0 auto;">
             <h5>Trivia Blog</h5>
 
-            <h2 class="mt-4">Exploring Vung Tau Beach City</h2>
-            <img src="../assets/img/inspiration/image_1.png" alt="">
+            <h2 class="mt-4">Camping by Central Highlands lake Ta Dung</h2>
+
             <p>
-                Vung Tau – A coastal city is always an attractive destination for tourists. 
-                However, there are many people who do not have much time for a multi-day trip to Vung Tau 
-                but only 1 day to stay in the coastal city. So in a short day in Vung Tau, where should I go? What to do? 
-                Do not panic because the 1 day Vung Tau tour below can help you enjoy the short but experience completely Vung Tau trip!
+                Ta Dung Lake in Vietnam's Central Highlands offers mesmerizing camping given its charming emerald hue, 
+                dotted with forest-green islands.
+            </p>
+            <img src="../assets/img/inspiration/image_11.png" alt="">
+
+            <p>
+                Ta Dung Lake is situated in Ta Dung National Park of Dak P’lao and Dak Som communes in Dak G’long District. 
+                With a 20,000 ha water surface and more than 36 islands, the lake and its surrounding park serves as the natural 
+                habitat of many species of birds.
+            </p>
+            <p>
+                Given its islands, the lake is called "a miniature Ha Long Bay in Central Highlands". Ha Long Bay is a UNESCO heritage 
+                site in the northern province of Quang Ninh.
+            </p>
+            <p>
+                Ta Dung Lake is part of the UNESCO-recognized Dak Nong geopark. The 4,760 sq.km geopark is located in the districts 
+                of Krong No, Cu Jut, Dak Mil, Dak Song, and Dak G'long along the Krong No River.
             </p>
 
-            <img src="../assets/img/inspiration/image_2.png" alt="">
-            <p>
-                The most appropriate time is Vung Tau dry season which lasts from November to the end of April next year. 
-                This is the time when Vung Tau rarely rains, the sea is clearer, the sky is higher and greener, 
-                so it is also convenient for a trip to the sea.
-            </p>
+            <img src="../assets/img/inspiration/image_12.png" alt="">
 
-            <h3 class="mt-5">Transportation to Vung Tau</h3>
-            <img src="../assets/img/inspiration/image_3.png" alt="">
-            <p>
-                Vung Tau is far from Saigon – City. Ho Chi Minh City is about 100km to the East. 
-                This is not too close nor too far away, so you have many choices of means of transport to get to Vung Tau 1 day.
-            </p>
-            <p>
-                You can choose from 3 transportation options: Move by private means (motorbike, car), travel by bus, travel by speedboat.
-            </p>
-            <ul>
-                <li>Transportation by private vehicle</li>
-            </ul>
-            <p>
-                Many tourists from neighboring provinces choose to travel by private means for a one-day trip to Vung Tau. 
-                Motorbikes are the means that young people often choose while cars are suitable for households with the elderly 
-                and young children. With a distance of nearly 100km from the city. From Ho Chi Minh to Vung Tau, 
-                you will take about 2h30 minutes to travel.
-            </p>
+            <p>A quiet sunset before their dinner.</p>
 
-            <img src="../assets/img/inspiration/image_4.png" alt="">
-            <p>
-                Traveling by private vehicle will save you money, take the initiative in your trip time and schedule. 
-                If you choose to travel by motorbike, pay attention to the health and maintenance of your car before your journey!
-            </p>
-            <ul>
-                <li>Transportation by Coach</li>
-            </ul>
-            <p>
-                Coaches are the means of transport that many people choose to come to Vung Tau 1 day because the time on the car 
-                you will have a rest to prepare for the journey to discover Vung Tau during the day. This is also a safe vehicle 
-                for those who are not used to driving long distances but are not familiar with the road. You should choose the 
-                reputable garage to go.
-            </p>
+            <img src="../assets/img/inspiration/image_13.png" alt="">
 
-            <img src="../assets/img/inspiration/image_5.png" alt="">
-            <ul class="mt-3">
-                <li>Travel by speedboat</li>
-            </ul>
-            <p>
-                High speed trains are the fastest way to travel to Vung Tau. 
-                You only take about 1 hour or more on board to reach Vung Tau. 
-                This is the most time-saving means you can choose to get to Vung Tau for a day.
-            </p>
-
-            <img src="../assets/img/inspiration/image_6.png" alt="" class="mb-5">
+            <p>Strung up lights help create a cozy outdoor atmosphere.</p>
         </div>
 
         <footer class="app__footer">
