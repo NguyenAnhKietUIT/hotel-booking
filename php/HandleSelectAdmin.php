@@ -60,7 +60,7 @@
     */
     function danhsachCus($con){
         
-        $sql= "SELECT C.CustomerName, Phone, Sex, Status_Account, Image_Customer
+        $sql= "SELECT C.CustomerName, Phone, Sex, Status_Account, Image_Customer, CustomerID
                FROM CUSTOMER C";
 
         $result = mysqli_query($con, $sql);

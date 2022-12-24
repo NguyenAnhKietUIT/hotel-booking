@@ -279,6 +279,7 @@ if (!isset($_SESSION['accID1'])) {
                                         <td>
                                             <button class="btn btn-info inactive" type="submit" onclick="findInform(this)" name="btnActivate">Active account</button>
                                         </td>
+                                        <td hidden><?php echo $row1[5]; ?></td>
                                     </tr>
                                 <?php } ?>
                             </table>
@@ -404,7 +405,7 @@ if (!isset($_SESSION['accID1'])) {
                 for (let i = 0; i < updateTableRows.length; i++) {
                     if (updateTableRows[i] === x.parentElement.parentElement) {
                         document.cookie = "Status" + "=" + updateTableCells[3].innerText;
-                        document.cookie = "CusName" + "=" + updateTableCells[0].innerText;
+                        document.cookie = "CusID" + "=" + updateTableCells[6].innerText;
                         break;
                     }
                 }

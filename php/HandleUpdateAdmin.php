@@ -14,18 +14,18 @@ function UpdateActivate(){
 
     if(isset($_POST['btnActivate'])){
 
-        if(isset($_COOKIE['Status']) && isset($_COOKIE['CusName'])){
+        if(isset($_COOKIE['Status']) && isset($_COOKIE['CusID'])){
     
             include "./connect.php";
     
             $status = $_COOKIE['Status'];
     
-            $Cus_name = $_COOKIE['CusName'];
+            $Cus_ID = $_COOKIE['CusID'];
     
             if($status === "Inactive"){
                 $sql = "UPDATE Customer 
                 SET Status_Account = 1
-                WHERE  CustomerName = '".$Cus_name."'";
+                WHERE  CustomerID = '".$Cus_ID."'";
     
                 mysqli_query($connect, $sql);
     

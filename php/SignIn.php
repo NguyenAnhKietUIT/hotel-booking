@@ -92,10 +92,6 @@
                 Validator.isRequired('#username'),
                 Validator.minLength('#password', 6),
             ],
-            // onSubmit: function(data) {
-            //     // call API
-            //     console.log(data);
-            // }
         });
     </script>
 </body>
