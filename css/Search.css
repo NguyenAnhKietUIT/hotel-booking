@@ -33,7 +33,6 @@ input[type=date] {
     width: 120px;
     border: none;
     outline: none;
-    display: none;
     padding-left: 8px;
     color: var(--text-color);
     background-color: transparent;
@@ -230,6 +229,7 @@ ul {
 
 .app__main-content {
     margin-bottom: 40px;
+    width: 1224px;
 }
 
 .map {
@@ -428,6 +428,11 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 .result-item-info-address {
     font-size: 14px;
+    height: 42px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .result-item-info-price {
@@ -439,7 +444,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .result-item-info-price span {
     float: right;
     align-items: center;
-    line-height: 70px;
+    line-height: 36px;
 }
 
 .result-item-info-desc {

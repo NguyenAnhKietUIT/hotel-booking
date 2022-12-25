@@ -1,3 +1,25 @@
+<?php
+
+session_start();
+
+$accountid = "";
+
+$user = "";
+
+$name_cus = "";
+
+$flag = 0;
+
+if(isset($_SESSION['accID3'])){
+    include "./getInformationCus.php";
+
+    $accountid = $_SESSION['accID3'];
+
+    $user = $user_name;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +54,7 @@
                         <li class="app__nav-item">
                             <?php
                             if (isset($_SESSION['accID3'])) {
-                                echo "<a href='./Customer_Information.php' class='app__nav-item-link' style='cursor: pointer;'>" . $name_cus . "</a>";
+                                echo "<a href='./Customer_Information.php' class='app__nav-item-link' style='cursor: pointer;'>" . $user . "</a>";
                             } else {
                                 echo "<a href='./Customer_SignUp.php' class='app__nav-item-link'>Sign Up</a>";
                             }
@@ -87,9 +109,9 @@
                             <label for="">TOPIC</label>
                             <select name="topic" id="form__topic" required>
                                 <option value="">Select topic</option>
-                                <option value="contact">Contact</option>
-                                <option value="complain">Complain</option>
-                                <option value="others">Others</option>
+                                <option value="Contact">Contact</option>
+                                <option value="Complain">Complain</option>
+                                <option value="Others">Others</option>
                             </select>
                         </div>
                         <div class="col l-6">
@@ -116,6 +138,14 @@
 
                     <div class="btn-send">
                         <input type="submit" value="SEND">
+                        <?php
+                            if(isset($_GET['flag'])){
+                                $flag = $_GET['flag'];
+                                if($flag == 1){
+                                    echo "<span class='form-message'>Successfully send!!!</span>";
+                                }
+                            }
+                        ?>
                     </div>
                 </form>
             </div>

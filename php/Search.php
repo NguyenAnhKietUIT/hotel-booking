@@ -18,10 +18,10 @@ if (
     !isset($_GET['check-in-date']) && !isset($_GET['check-out-date'])
     && !isset($_GET['bed-num']) && !isset($_GET['search-destination'])
     && !isset($_GET['top-destination']) && !isset($_GET['typePro'])
-    && !isset($_GET['typeCategory']) && !isset($_GET['place'])
+    && !isset($_GET['typeCategory']) && !isset($_GET['place']) && !isset($_GET['per-num'])
 ) {
 
-    header("Location: ./Homepage.php?error=1");
+    header("Location: ./Homepage.php");
 } else {
 
     include "./HandleSelectCus.php";
@@ -34,6 +34,7 @@ if (
     $checkin = "";
     $checkout = "";
     $bednum = "";
+    $perNum = "";
     $result = 0;
 
     // Xét riêng theo Top
@@ -43,6 +44,8 @@ if (
         $currentDate = $date["year"] . "-" . $date["mon"] . "-" . $date["mday"];
         $checkin = $currentDate;
         $checkout = $currentDate;
+        $bednum = 1;
+        $perNum = 2;
         $result = timPhongTheoTopDestination($connect, $place);
     } else if (isset($_GET['typePro'])) {
         $typePro = $_GET['typePro'];
@@ -50,6 +53,8 @@ if (
         $currentDate = $date["year"] . "-" . $date["mon"] . "-" . $date["mday"];
         $checkin = $currentDate;
         $checkout = $currentDate;
+        $bednum = 1;
+        $perNum = 2;
         $result = timPhongTheoTopType($connect, $typePro);
     } else if (isset($_GET['typeCategory']) && isset($_GET['place'])) {
         $typeCateGory = $_GET['typeCategory'];
@@ -58,16 +63,19 @@ if (
         $currentDate = $date["year"] . "-" . $date["mon"] . "-" . $date["mday"];
         $checkin = $currentDate;
         $checkout = $currentDate;
+        $bednum = 1;
+        $perNum = 2;
         $result = timPhongTheoTopCate($connect, $typeCateGory, $place);
     } else if (
         isset($_GET['check-in-date']) && isset($_GET['check-out-date'])
-        && isset($_GET['search-destination']) && isset($_GET['bed-num'])
+        && isset($_GET['search-destination']) && isset($_GET['bed-num']) && isset($_GET['per-num'])
     ) {
 
         $place = $_GET['search-destination'];
         $checkin = $_GET['check-in-date'];
         $checkout = $_GET['check-out-date'];
         $bednum = $_GET['bed-num'];
+        $perNum = $_GET['per-num'];
 
         if ($place == "" && $checkin == "" && $checkout == "") {
             $place = "Hồ Chí Minh";
@@ -224,7 +232,7 @@ if (
         </header>
 
         <div style="max-width: 1200px;margin: 0 auto;">
-            <form action="" method="" class="d-flex justify-content-around align-items-center" style="height: 60px;
+            <form action="" method="GET" class="d-flex justify-content-around align-items-center" style="height: 60px;
                     margin-top: 64px;
                     border-radius: 12px;
                     background-color: white;
@@ -236,7 +244,6 @@ if (
                 <div class="py-1 position-relative" style="width: 140px;">
                     <div class="d-flex align-items-center">
                         <i class="pe-2 fa-solid fa-plane-departure"></i>
-                        <div class="app__status-in">Check in</div>
                         <input type="date" name="check-in-date" id="app__check-in" min="2017-10-14" max="2050-12-31" value="<?php echo $checkin; ?>">
                     </div>
                     <p class="position-absolute toast-message-in p-1 text-center">The maximum interval between two
@@ -245,7 +252,6 @@ if (
                 <div class="py-1 position-relative" style="width: 140px;">
                     <div class="d-flex align-items-center">
                         <i class="pe-2 fa-solid fa-money-check"></i>
-                        <div class="app__status-out">Check out</div>
                         <input type="date" name="check-out-date" id="app__check-out" min="2017-10-14" max="2050-12-31" value="<?php echo $checkout; ?>">
                     </div>
                     <p class="position-absolute toast-message-out p-1 text-center">The maximum interval between two
@@ -257,7 +263,7 @@ if (
                         <div class="app__search-quantity">
                             <span><?php echo $bednum; ?></span>
                             bed,
-                            <span><?php echo $bednum; ?></span>
+                            <span><?php echo $perNum; ?></span>
                             adults
                         </div>
                     </div>
@@ -275,13 +281,13 @@ if (
                             </div>
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <input type="range" name="per-num" id="per-num" min="1" step="1" value="1">
+                            <input type="range" name="per-num" id="per-num" min="1" step="1" Value="<?php echo $perNum; ?>">
                             <div class="">
                                 <label for="per-num">Adults</label>
                             </div>
                             <div class="d-flex justify-content-between align-items-center" style="width: 110px;">
                                 <button type="button" class="btn-minus-people">-</button>
-                                <span class="amount-people">2</span>
+                                <span class="amount-people"><?php echo $perNum; ?></span>
                                 <button type="button" class="btn-add-people">+</button>
                             </div>
                         </div>
@@ -313,6 +319,12 @@ if (
                         </iframe>
                     </div>
 
+                    <form action="" method="GET">
+                    <input hidden type="text" name="search-destination" value="<?php echo $place; ?>" style="width: 320px;">
+                    <input hidden type="date" name="check-in-date" id="app__check-in" min="2017-10-14" max="2050-12-31" value="<?php echo $checkin; ?>">
+                    <input hidden type="date" name="check-out-date" id="app__check-out" min="2017-10-14" max="2050-12-31" value="<?php echo $checkout; ?>">
+                    <input hidden type="range" name="bed-num" id="bed-num" min="1" max="30" step="1" value="<?php echo $bednum; ?>">
+                    <input hidden type="range" name="per-num" id="per-num" min="1" step="1" Value="<?php echo $perNum; ?>">
                     <div div class="filter">
                         <div class="filter-box">
                             <span class="filter__header">Max price</span>
@@ -374,6 +386,8 @@ if (
                             </div>
                         </div>
                     </div>
+                    <button type="submit" class="mt-3 btn btn-secondary">Filter</button>
+                    </form>
                 </div>
                 <div class="col-8">
                     <?php
@@ -415,7 +429,7 @@ if (
                                     <div class="result-item-info-price"><span><?php echo $row[5]; ?> VNĐ</span></div>
                                     <div class="result-item-info-desc">
                                         <span class="result-item-info-type"><?php echo $row[6]; ?></span>
-                                        <a href="./Search_Property.php?id=<?php echo $row[0]; ?>&hotel=<?php echo $row[1]; ?>&check-in-date=<?php echo $checkin; ?>&check-out-date=<?php echo $checkout; ?>&bed-num=<?php echo $bednum; ?>" class="result-item-info-link">See availability</a>
+                                        <a href="./Search_Property.php?id=<?php echo $row[0]; ?>&hotel=<?php echo $row[1]; ?>&check-in-date=<?php echo $checkin; ?>&check-out-date=<?php echo $checkout; ?>&bed-num=<?php echo $bednum; ?>&per-num=<?php echo $perNum; ?>" class="result-item-info-link">See availability</a>
                                     </div>
                                 </div>
                             </div>
@@ -536,7 +550,177 @@ if (
         </footer>
     </div>
 
-    <script src="../js/Homepage.js"></script>
+    <script>
+        // Elements search bed and people
+        const searchQuantity = document.querySelector('.app__search-quantity')
+        const btnAccept = document.querySelector('.btn-accept')
+        const boxQuantity = document.querySelector('.box-quantity')
+        const amountBed = document.querySelector('.amount-bed')
+        const btnAddBed = document.querySelector('.btn-add-bed')
+        const btnMinusBed = document.querySelector('.btn-minus-bed')
+        const amountPeople = document.querySelector('.amount-people')
+        const btnAddPeople = document.querySelector('.btn-add-people')
+        const btnMinusPeople = document.querySelector('.btn-minus-people')
+
+        // Elements search dates
+        const inputCheckIn = document.getElementById('app__check-in')
+        const inputCheckOut = document.getElementById('app__check-out')
+        const toastMessageCheckIn = document.querySelector('.toast-message-in')
+        const toastMessageCheckOut = document.querySelector('.toast-message-out')
+
+        // Show box quantity
+        searchQuantity.addEventListener('click', () => {
+            amountPeople.innerHTML = document.querySelector('.app__search-quantity span:last-child').innerHTML
+            amountBed.innerHTML = document.querySelector('.app__search-quantity span:first-child').innerHTML
+
+            boxQuantity.style.display = 'block';
+        })
+
+        // hide box quantity
+        document.addEventListener('mouseup', function(e) {
+            if (!boxQuantity.contains(e.target)) {
+                boxQuantity.style.display = 'none';
+            }
+        });
+
+        // Set value for bed and people
+        btnAccept.addEventListener('click', () => {
+            document.querySelector('.app__search-quantity span:first-child').innerHTML = amountBed.innerHTML;
+            document.querySelector('.app__search-quantity span:last-child').innerHTML = amountPeople.innerHTML;
+
+            document.getElementById('bed-num').value = parseInt(amountBed.innerHTML);
+            document.getElementById('per-num').value = parseInt(amountPeople.innerHTML);
+            boxQuantity.style.display = 'none';
+        })
+
+        // Add one bed
+        btnAddBed.addEventListener('click', () => {
+            let numberBed = parseInt(amountBed.innerHTML)
+            numberBed++;
+
+            if (numberBed > 1 && btnMinusBed.hasAttribute('disabled')) {
+                btnMinusBed.removeAttribute('disabled');
+            }
+
+            if (numberBed == 30) {
+                btnAddBed.setAttribute('disabled', true);
+            }
+
+            amountBed.innerHTML = numberBed;
+        })
+
+        // Minus one bed
+        btnMinusBed.addEventListener('click', () => {
+            let currentBed = parseInt(amountBed.innerHTML)
+
+            if (currentBed <= 1) {
+                btnMinusBed.setAttribute('disabled', true)
+            } else {
+                let numberBed = currentBed
+                numberBed--;
+                amountBed.innerHTML = numberBed;
+            }
+        })
+
+        // Add one people
+        btnAddPeople.addEventListener('click', () => {
+            let numberPeople = parseInt(amountPeople.innerHTML)
+            numberPeople++;
+
+            if (numberPeople > 1 && btnMinusPeople.hasAttribute('disabled')) {
+                btnMinusPeople.removeAttribute('disabled');
+            }
+
+            if (numberPeople >= (2 * parseInt(amountBed.innerHTML))) {
+                btnAddPeople.setAttribute('disabled', true);
+            }
+
+            amountPeople.innerHTML = numberPeople;
+        })
+
+        // Minus one people
+        btnMinusPeople.addEventListener('click', () => {
+            let currentPeople = parseInt(amountPeople.innerHTML)
+
+            if (currentPeople <= 1) {
+                btnMinusPeople.setAttribute('disabled', true)
+            } else {
+                let numberPeople = currentPeople
+                numberPeople--;
+                amountPeople.innerHTML = numberPeople;
+            }
+        })
+
+        // Event onchange of check in
+        inputCheckIn.addEventListener('change', () => {
+            toastMessageCheckOut.style.display = 'none';
+
+            if (inputCheckOut.style.display === 'block') {
+                let checkIn = inputCheckIn.value;
+
+                if (daysDifference(checkIn, inputCheckOut.value) > 30) {
+                    toastMessageCheckIn.style.display = 'block';
+                    toastMessageCheckIn.style.animation = 'fadeIn linear 0.6s, fadeOut linear 1s 3s forwards';
+
+                    inputCheckIn.value = null;
+                } else {
+                    inputCheckOut.min = checkIn;
+                }
+            }
+        })
+
+        // Event onchange of check out
+        inputCheckOut.addEventListener('change', () => {
+            toastMessageCheckIn.style.display = 'none'
+
+            if (inputCheckIn.style.display === 'block') {
+                let checkOut = inputCheckOut.value;
+
+                if (daysDifference(inputCheckIn.value, checkOut) > 30) {
+                    toastMessageCheckOut.style.display = 'block';
+                    toastMessageCheckOut.style.animation = 'fadeIn linear 0.6s, fadeOut linear 1s 3s forwards';
+
+                    inputCheckOut.value = null;
+                } else {
+                    inputCheckIn.max = checkOut;
+                }
+            }
+        })
+
+        function daysDifference(firstDate, secondDate) {
+            var startDay = new Date(firstDate);
+            var endDay = new Date(secondDate);
+
+            var millisecondBetween = startDay.getTime() - endDay.getTime();
+            var days = millisecondBetween / (1000 * 3600 * 24);
+
+            return Math.round(Math.abs(days));
+        }
+
+        function getCurrentDate() {
+            // Get current date
+            let date = new Date();
+            let today;
+            if (date.getMonth() + 1 < 10) {
+                today = date.getFullYear() + '-0' + (date.getMonth() + 1);
+
+                if (date.getDate() < 10) {
+                    today += '-0' + date.getDate();
+                } else {
+                    today += '-' + date.getDate();
+                }
+            } else {
+                today = date.getFullYear() + '-' + (date.getMonth() + 1);
+
+                if (date.getDate() < 10) {
+                    today += '-0' + date.getDate();
+                } else {
+                    today += '-' + date.getDate();
+                }
+            }
+            return today;
+        }
+    </script>
     <script>
         let actionSeeActive = document.querySelector('.action-see-active');
         let actionSeeUnactive = document.querySelector('.action-see-unactive');

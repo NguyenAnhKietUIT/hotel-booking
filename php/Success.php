@@ -22,7 +22,7 @@
         <p class="mt-3 mb-0" style="font-size: 20px;">Your booking has been confirmed</p>
         <p style="font-size: 20px;">
             Please check your booking in 
-            <a href="../html/Customer_viewBooking.php" class="text-decoration-none text-dark"><b>View all booking</b></a>
+            <a href="./Customer_viewBooking.php" class="text-decoration-none text-dark"><b>View all booking</b></a>
         </p>
     </div>
 </body>

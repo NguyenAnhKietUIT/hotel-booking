@@ -168,7 +168,7 @@ function thongtinProperty($con, $acID){
 */
 function findUsername($con, $accID){
 
-    $sql = "SELECT AccountID
+    $sql = "SELECT Username
             FROM Account
             WHERE AccountID = '".$accID."'
             and roles = 2;";
@@ -309,7 +309,8 @@ function allRoom($con, $proID){
 
     $sql = "SELECT RoomID, RoomName, TypeOfRoom, BedNum, Price, Image_Room
             FROM Room
-            WHERE PropertyID = '".$proID."';";
+            WHERE PropertyID = '".$proID."'
+            ORDER BY RoomID DESC;";
 
     $result = mysqli_query($con, $sql);
 

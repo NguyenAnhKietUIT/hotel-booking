@@ -2,15 +2,15 @@
 
 session_start();
 
-if(!isset($_SESSION['accID3'])){
+if (!isset($_SESSION['accID3'])) {
     header("Location: ./SignIn.php");
-}
-else if(!isset($_GET['proNumber']) && !isset($_GET['RoomName']) 
-                && !isset($_GET['price']) && !isset($_GET['type'])
-                && !isset($_GET['checkin']) && !isset($_GET['checkout'])){
+} else if (
+    !isset($_GET['proNumber']) && !isset($_GET['RoomName'])
+    && !isset($_GET['price']) && !isset($_GET['type'])
+    && !isset($_GET['checkin']) && !isset($_GET['checkout'])
+) {
     header("Location: ./Search.php");
-}
-else {
+} else {
 
     include "./HandleSelectCus.php";
 
@@ -25,31 +25,35 @@ else {
     $name_cus = $user_name;
 
     // Lấy ra các thông tin cần đặt phòng
-        $roomName = $_GET['RoomName'];
+    $roomName = $_GET['RoomName'];
 
-        $proID = $_GET['proNumber'];
+    $proID = $_GET['proNumber'];
 
-        $price = $_GET['price'];
+    $price = $_GET['price'];
 
-        $type = $_GET['type'];
+    $type = $_GET['type'];
 
-        $checkin =  $_GET['checkin'];
+    $checkin =  $_GET['checkin'];
 
-        $checkout =  $_GET['checkout'];
+    $checkout =  $_GET['checkout'];
 
-        $hotel = thongtinKhachSanDatPhong($connect, $proID);
+    $hotel = thongtinKhachSanDatPhong($connect, $proID);
 
-        $array_img = findImage($hotel[5]);
+    $array_img = findImage($hotel[5]);
 
-        //echo $status[0];
+    //echo $status[0];
 
+    $totalMoney = 0;
     // Tổng ngày ở
     $totalDay = totalDay($checkin, $checkout);
+    if ($totalDay == 0) {
+        $totalMoney = $price;
+    } else {
+        // Tổng tiền
+        $totalMoney = totalMoney($price, $totalDay);
+    }
 
-    // Tổng tiền
-    $totalMoney = totalMoney($price, $totalDay);
-
-    $vat = $totalMoney*5/100;
+    $vat = $totalMoney * 5 / 100;
 
     $total = $totalMoney + $vat;
 }
@@ -87,13 +91,12 @@ else {
                         <a href="./Contact.php" class="app__nav-item-link">Contacts</a>
                     </li>
                     <li class="app__nav-item">
-                    <?php
-                            if(isset($_SESSION['accID3'])){
-                                echo "<a href='./Customer_Information.php' class='app__nav-item-link' style='cursor: pointer;'>".$name_cus."</a>";
-                            }
-                            else {
-                                echo "<a href='./Customer_SignUp.php' class='app__nav-item-link'>Sign Up</a>";
-                            }
+                        <?php
+                        if (isset($_SESSION['accID3'])) {
+                            echo "<a href='./Customer_Information.php' class='app__nav-item-link' style='cursor: pointer;'>" . $name_cus . "</a>";
+                        } else {
+                            echo "<a href='./Customer_SignUp.php' class='app__nav-item-link'>Sign Up</a>";
+                        }
                         ?>
                     </li>
                 </ul>
@@ -102,7 +105,7 @@ else {
 
         <div class="app__content mt-5" style="max-width: 1200px;margin: 0 auto;">
             <div class="row">
-            <div class="col-4">
+                <div class="col-4">
                     <div class="border" style="border-radius: 16px;">
                         <div class="m-4 d-flex flex-column justify-content-between">
                             <h5>Your booking details</h5>
@@ -112,7 +115,7 @@ else {
                                     <h6><?php echo $checkin; ?></h6>
                                     <p style="font-size: 12px;"><?php echo $hotel[3]; ?></p>
                                 </div>
-    
+
                                 <div>
                                     <p>Check-out</p>
                                     <h6><?php echo $checkout; ?></h6>
@@ -156,40 +159,39 @@ else {
                 <div class="col-8">
                     <div class="d-flex border" style="border-radius: 16px;">
                         <?php
-                            if($array_img[0] === 'IMG'){
+                        if ($array_img[0] === 'IMG') {
                         ?>
                             <img src="../assets/img/upload/<?php echo $hotel[5]; ?>" alt="Avatar" class="property-img">
-                        <?php 
-                            }
-                            else {
+                        <?php
+                        } else {
                         ?>
                             <img src="<?php echo $hotel[5]; ?>" alt="Avatar" class="property-img">
                         <?php } ?>
                         <div class="d-flex flex-column m-3 flex-1">
                             <h5><?php echo $hotel[0]; ?></h5>
-                            <p class="mb-1"><?php echo $hotel[1]; ?></p>
-                            <p style="flex: 1;"><?php echo round($hotel[2], 2); ?></p>
+                            <p class="mb-1">Address: <?php echo $hotel[1]; ?></p>
+                            <p style="flex: 1;">Average point: <?php echo round($hotel[2], 2); ?></p>
                         </div>
                     </div>
-                    
+
                     <div class="border mt-5" style="border-radius: 16px;">
                         <div class="m-4 d-flex flex-column justify-content-between">
                             <h5>Enter your stay details</h5>
 
                             <form action="./HandleInsertCus.php?Insert=3" method="post" id="form">
                                 <!-- Lấy ra các thông tin cần xử lý DB -->
-                                    <!-- PropertyID -->
-                                    <input type="hidden" name="PropertyID" value="<?php echo $hotel[6]; ?>">
-                                    <!-- RoomName -->
-                                    <input type="hidden" name="RoomName" value="<?php echo $roomName; ?>">
-                                    <!-- UserName -->
-                                    <input type="hidden" name="UserName" value="<?php echo $name_cus; ?>">
-                                    <!-- CheckIn -->
-                                    <input type="hidden" name="CheckIn" value="<?php echo $checkin; ?>">
-                                    <!-- CheckOut -->
-                                    <input type="hidden" name="CheckOut" value="<?php echo $checkout; ?>">
-                                    <!-- TotalPrice -->
-                                    <input type="hidden" name="TotalPrice" value="<?php echo $total; ?>">
+                                <!-- PropertyID -->
+                                <input type="hidden" name="PropertyID" value="<?php echo $hotel[6]; ?>">
+                                <!-- RoomName -->
+                                <input type="hidden" name="RoomName" value="<?php echo $roomName; ?>">
+                                <!-- UserName -->
+                                <input type="hidden" name="UserName" value="<?php echo $name_cus; ?>">
+                                <!-- CheckIn -->
+                                <input type="hidden" name="CheckIn" value="<?php echo $checkin; ?>">
+                                <!-- CheckOut -->
+                                <input type="hidden" name="CheckOut" value="<?php echo $checkout; ?>">
+                                <!-- TotalPrice -->
+                                <input type="hidden" name="TotalPrice" value="<?php echo $total; ?>">
                                 <div class="form-group">
                                     <label for="name"><b>Name</b><span style="color: red;">*</span></label>
                                     <input id="name" name="name" type="text" class="form-control mt-2">
@@ -206,7 +208,7 @@ else {
                                     <a href="./Search_Property.php" class="text-decoration-none">
                                         <button>Cancel</button>
                                     </a>
-                                        <button type="submit">Complete Your Booking</button>
+                                    <button class="ms-3" type="submit">Complete Your Booking</button>
                                 </div>
                             </form>
                         </div>
@@ -225,6 +227,7 @@ else {
             rules: [
                 Validator.isRequired('#name'),
                 Validator.isRequired('#phone-number'),
+                Validator.isPhoneNumber('#phone-number'),
             ]
         });
     </script>

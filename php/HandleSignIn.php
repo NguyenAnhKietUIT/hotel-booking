@@ -41,17 +41,18 @@ if (isset($_POST['username']) && $_POST['password']){
                 else{
                     // Xét tồn tại Session và chuyển sang trang Reservation
                     if(isset($_SESSION['hotel']) && isset($_SESSION['hotel']) && isset($_SESSION['check-in-date'])
-                                    && isset($_SESSION['check-out-date']) && isset($_SESSION['bed-num'])){
+                                    && isset($_SESSION['check-out-date']) && isset($_SESSION['bed-num']) && isset($_SESSION['per-num'])){
 
                         $hotelName = $_SESSION['hotel'];
                         $proID = $_SESSION['id'];
                         $checkin =  $_SESSION['check-in-date'];
                         $checkout =  $_SESSION['check-out-date'];
                         $bednum = $_SESSION['bed-num'];
+                        $perNum = $_SESSION['per-num'];
                         $_SESSION['accID3'] = $row[0];
                         $acc_id = $_SESSION['accID3'];  
 
-                        header("Location: ./Search_Property.php?id=$proID&hotel= $hotelName&check-in-date=$checkin&check-out-date=$checkout&bed-num=$bednum");
+                        header("Location: ./Search_Property.php?id=$proID&hotel= $hotelName&check-in-date=$checkin&check-out-date=$checkout&bed-num=$bednum&per-num=$perNum");
                     }
                     // Tạo session cho accountID của Customer đăng nhập vào Customer_Information
                     else{

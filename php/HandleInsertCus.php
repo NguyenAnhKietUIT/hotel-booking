@@ -71,7 +71,7 @@ function signUp(){
                     $new_accountid = newAccountCus($connect);
 
                     $sql2 = "INSERT INTO `customer`(`CustomerID`, `Sex`, `Status_Account`, `AccountID`) 
-                                VALUES (NULL,'0','0','$new_accountid[0]')";
+                                VALUES (NULL,'0','1','$new_accountid[0]')";
 
                     $result2 = mysqli_query($connect, $sql2);
 
@@ -164,6 +164,8 @@ function reservation(){
 
         include "./HandleSelectCus.php";
 
+        $accID = $_SESSION['accID3'];
+
         $name = $_POST['name'];
 
         $phone = $_POST['phone-number'];
@@ -186,16 +188,16 @@ function reservation(){
         
         $cusID = findcusID($connect, $userName);
 
-        $status = findStatusAccount($connect, $accountid);
+        $status = findStatusAccount($connect, $accID);
         // Kiểm tra
             
             // echo $cusID[0]."<br>".$roomID[0]."<br>";
             // echo $name."<br>".$phone."<br>";
             // echo $checkout."<br>".$checkin."<br>";   
-            // echo $totalPrice."<br>";
+            // echo $totalPrice."<br>".$status[0];
         // Inactive account => Reservation Failed
         if($status[0] == 0){
-            header("Location: ./Contact.php");
+            header("Location: ./Error.php");
         }
         // Active account => Reservation Success
         else{
@@ -205,8 +207,9 @@ function reservation(){
 
             mysqli_query($connect, $sql);
 
-            header("Location: ./Customer_viewBooking.php");
+            header("Location: ./Success.php");
         }
+        
     }
 }
 
@@ -259,13 +262,6 @@ function writeReview(){
     }
 }
 
-function sendContact() {
-    echo $_POST['app__inbox-message-textarea'];
-    echo $_POST['usernameSend'];
-    echo $_POST['usernameReceive'];
-}
-
-
 
 /*
     Gọi hàm bằng biến $insert
@@ -286,9 +282,6 @@ switch ($insert) {
         break; 
     case 4:
         writeReview();
-        break;
-    case 5:
-        sendContact();
         break;
     default:
         break;

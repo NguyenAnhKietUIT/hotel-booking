@@ -17,7 +17,8 @@
             color: hsl(4deg 90% 58%);">
         </i>
         <p class="mt-3 mb-0" style="font-size: 20px;">There is an error with your booking</p>
-        <a href="../html/Reservation.php" class="text-decoration-none text-dark" style="font-size: 20px;"><b>Please try again</b></a>
+        <p style="font-size: 20px;">Looks like your account has been locked. <a href="./Contact.php" class="text-decoration-none">Contact us</a></p>
+        <a href="./Homepage.php" class="text-decoration-none" style="font-size: 20px;"><b>&rarr; Go to Home</b></a>
     </div>
 </body>
 </html>

@@ -70,7 +70,7 @@ if (!isset($_SESSION['accID2'])) {
 
             //echo $month1."<br>".$month2;
 
-            $query3 = analyticsByMonth($connect, $proID[0], $date1, $date2);
+            $query3 = analyticsByDay($connect, $proID[0], $date1, $date2);
 
             foreach ($query3 as $data) {
                 $day[] = $data['day'];
@@ -246,29 +246,22 @@ if (!isset($_SESSION['accID2'])) {
                     <div class="col-4" style="border-right: 1px solid #ccc;">
                         <ul class="list-unstyled">
                             <?php
-                            if (mysqli_num_rows($showInbox) == 0) {
+                            while ($inbox = mysqli_fetch_row($showInbox)) {
                             ?>
                                 <li class="app__inbox-item pb-2">
-                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"></h6>
+                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0]; ?></h6>
+                                    <script>
+                                        usernameSend = <?php echo json_encode($userNameReceive[0]); ?>;
+                                        usernameReceive = <?php echo json_encode($inbox[0]); ?>;
+
+                                        if (usernameSend != "") {
+                                            loadMessage(usernameSend, usernameReceive, 2);
+                                        }
+                                    </script>
                                     <span class="ps-2 pe-2 app__inbox-item-content">
+                                        <?php echo $inbox[1]; ?>
                                     </span>
                                 </li>
-                            <?php } else {
-                            ?>
-                                <?php
-                                while ($inbox = mysqli_fetch_row($showInbox)) {
-                                ?>
-                                    <li class="app__inbox-item pb-2">
-                                        <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0]; ?></h6>
-                                        <span class="ps-2 pe-2 app__inbox-item-content">
-                                            <?php echo $inbox[1]; ?>
-                                            <script>
-                                                usernameSend = <?php echo json_encode($userNameReceive[0]); ?>;
-                                                usernameReceive = <?php echo json_encode($inbox[0]); ?>;
-                                            </script>
-                                        </span>
-                                    </li>
-                                <?php } ?>
                             <?php } ?>
                         </ul>
                     </div>
@@ -281,8 +274,6 @@ if (!isset($_SESSION['accID2'])) {
     <script src="../js/Inbox.js"></script>
 
     <script>
-        loadMessage(usernameSend, usernameReceive, 2);
-
         function drawBarChart(optionalLabel, amountBooking, maxReservation) {
 
             const xValues = optionalLabel;

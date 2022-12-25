@@ -12,7 +12,7 @@ $delete = $_GET['Delete'];
     Ý nghĩa : xóa phòng
 */
 function deleteRoom(){
-    if(isset($_COOKIE['RoomID']) && isset($_COOKIE['RoomName'])){
+    if(isset($_COOKIE['RoomID'])){
 
         include "./connect.php";
 

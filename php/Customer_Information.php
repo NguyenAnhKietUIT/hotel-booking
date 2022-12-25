@@ -107,7 +107,11 @@ if (!isset($_SESSION['accID3'])) {
                                     ?>
                                         <img src="../assets/img/upload/<?php echo $Image_Customer; ?>" alt="avatar" class="app__main-img">
                                     <?php
-                                    } else {
+                                    }
+                                    else if ($array_img[0] === '') {
+                                        echo '<img src="../assets/img/others/avatar.png" alt="avatar" class="app__main-img">';
+                                    }
+                                    else {
                                     ?>
                                         <img src="<?php echo $Image_Customer; ?>" alt="avatar" class="app__main-img">
                                     <?php } ?>

@@ -803,7 +803,7 @@ function reservationUpcoming($con, $accID){
 
             . "                     WHERE A.AccountID = '".$accID."')\n"
 
-            . "AND RE.CheckIn > CURDATE()"
+            . "AND RE.CheckIn >= CURDATE()"
             . "AND Status_Reservation = 1";
 
         $result = mysqli_query($con, $sql);
@@ -839,11 +839,11 @@ function manageBooking($con, $ProName, $accID, $roomName){
     Tham số đầu vào: con, ProName
     File sử dụng: Manage_Booking.php
 */
-function pointPropertyInMangeBooking($con, $ProName){
+function pointPropertyInMangeBooking($con, $ProID){
 
     $sql = "SELECT AVG(E.Point)
             FROM PROPERTY PRO JOIN evaluate_property E ON PRO.PropertyID = E.PropertyID
-            WHERE PropertyName = '".$ProName."';";
+            WHERE PRO.PropertyID = '".$ProID."';";
 
     $result = mysqli_query($con, $sql);
 
