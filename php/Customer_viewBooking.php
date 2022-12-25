@@ -126,7 +126,7 @@ if (!isset($_SESSION['accID3'])) {
                                 while ($reserUpcoming = mysqli_fetch_row($result2)) {
                                 ?>
                                     <div class="mt-3">
-                                        <a href="./Manage_Booking.php?pro=<?php echo $reserUpcoming[1]; ?>&room=<?php echo $reserUpcoming[2]; ?>" class="app__view-item">
+                                        <a href="./Manage_Booking.php?pro=<?php echo $reserUpcoming[1]; ?>&room=<?php echo $reserUpcoming[2]; ?>&resID=<?php echo $reserUpcoming[6]; ?>" class="app__view-item">
                                             <?php
                                             // Gọi hàm xử lý chuỗi
                                             $array_img = findImage($reserUpcoming[0]);
@@ -164,7 +164,7 @@ if (!isset($_SESSION['accID3'])) {
                                 while ($reserPast = mysqli_fetch_row($result1)) {
                                 ?>
                                     <div class="mt-3">
-                                        <a href="./Manage_Booking.php?pro=<?php echo $reserPast[1]; ?>&room=<?php echo $reserPast[2]; ?>" class="app__view-item">
+                                        <a href="./Manage_Booking.php?pro=<?php echo $reserPast[1]; ?>&room=<?php echo $reserPast[2]; ?>&resID=<?php echo $reserPast[6]; ?>" class="app__view-item">
                                             <?php
                                             // Gọi hàm xử lý chuỗi
                                             $array_img = findImage($reserPast[0]);
@@ -229,6 +229,11 @@ if (!isset($_SESSION['accID3'])) {
                                         <script>
                                             usernameSend = <?php echo json_encode($row[0]); ?>;
                                             usernameReceive = <?php echo json_encode($inbox[0]); ?>;
+
+                                            if (usernameSend) {
+                                                loadMessage(usernameSend, usernameReceive, 3);
+
+                                            }
                                         </script>
                                         <span class="ps-2 pe-2 app__inbox-item-content">
                                             <?php echo $inbox[1] ?>
@@ -257,8 +262,6 @@ if (!isset($_SESSION['accID3'])) {
                 element.classList.add('app__sidebar-item--active')
             })
         })
-
-        loadMessage(usernameSend, usernameReceive, 3);
     </script>
 </body>
 

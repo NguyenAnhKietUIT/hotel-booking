@@ -18,7 +18,13 @@ if (!isset($_SESSION['accID3'])) {
 
     include "./HandleSelectCus.php";
 
+    include "./HandleSelectPro.php";
+
     $accID = $_SESSION['accID3'];
+
+    $resID = $_GET['resID'];
+
+    $proID = findProIDByResno($connect, $resID);
 
     $proName = $_GET['pro'];
 
@@ -33,7 +39,7 @@ if (!isset($_SESSION['accID3'])) {
     $array_img = findImage($manageBooking[0]);
 
     //Point_Hotel_Booking
-    $point_Property = pointPropertyInMangeBooking($connect, $proName);
+    $point_Property = pointPropertyInMangeBooking($connect, $proID[0]);
 }
 
 ?>

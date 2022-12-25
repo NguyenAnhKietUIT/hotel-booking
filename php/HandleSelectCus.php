@@ -759,7 +759,7 @@ function imageRoom($con ,$proID){
 */
 function reservationInthepast($con, $accID){
 
-    $sql = "SELECT R.Image_Room, P.PropertyName, R.RoomName, RE.Status_Reservation, re.Total, R.TypeOfRoom\n"
+    $sql = "SELECT R.Image_Room, P.PropertyName, R.RoomName, RE.Status_Reservation, re.Total, R.TypeOfRoom, RE.ReservationID\n"
 
         . "FROM room R JOIN PROPERTY P ON R.PropertyID = P.PropertyID\n"
 
@@ -791,7 +791,7 @@ function reservationInthepast($con, $accID){
 */
 function reservationUpcoming($con, $accID){
 
-    $sql = "SELECT R.Image_Room, P.PropertyName, R.RoomName, P.CheckInTime, RE.CheckIn, re.Total,  R.TypeOfRoom\n"
+    $sql = "SELECT R.Image_Room, P.PropertyName, R.RoomName, P.CheckInTime, RE.CheckIn, re.Total,  R.TypeOfRoom, RE.ReservationID\n"
 
             . "FROM room R JOIN PROPERTY P ON R.PropertyID = P.PropertyID\n"
 
