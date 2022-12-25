@@ -182,7 +182,7 @@ if (!isset($_SESSION['accID2'])) {
                             <th style="width: 20%;">Function</th>
                         </tr>
                         <?php
-                            while($room = mysqli_fetch_row($allRoom)){
+                        while ($room = mysqli_fetch_row($allRoom)) {
                         ?>
                             <tr>
                                 <td class="d-none"><?php echo $room[0]; ?></td>
@@ -191,16 +191,15 @@ if (!isset($_SESSION['accID2'])) {
                                 <td><?php echo $room[3]; ?></td>
                                 <td><?php echo $room[4]; ?> VND</td>
                                 <td>
-                                    <?php 
-                                        $array_img = findImage($room[5]);
+                                    <?php
+                                    $array_img = findImage($room[5]);
                                     ?>
                                     <?php
-                                        if($array_img[0] === 'IMG'){
+                                    if ($array_img[0] === 'IMG') {
                                     ?>
                                         <img src="../assets/img/upload/<?php echo $room[5]; ?>" alt="Image Room">
-                                    <?php 
-                                        }
-                                        else {
+                                    <?php
+                                    } else {
                                     ?>
                                         <img src="<?php echo $room[5]; ?>" alt="Image Room">
                                     <?php } ?>
@@ -221,28 +220,31 @@ if (!isset($_SESSION['accID2'])) {
                 <div class="row m-0 h-100 overflow-auto">
                     <div class="col-4" style="border-right: 1px solid #ccc;">
                         <ul class="list-unstyled">
-                        <?php
-                                    if(mysqli_num_rows($showInbox) == 0){
-                                ?>       
+                            <?php
+                            if (mysqli_num_rows($showInbox) == 0) {
+                            ?>
+                                <li class="app__inbox-item pb-2">
+                                    <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"></h6>
+                                    <span class="ps-2 pe-2 app__inbox-item-content">
+                                    </span>
+                                </li>
+                            <?php } else {
+                            ?>
+                                <?php
+                                while ($inbox = mysqli_fetch_row($showInbox)) {
+                                ?>
                                     <li class="app__inbox-item pb-2">
-                                        <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"></h6>
+                                        <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0]; ?></h6>
                                         <span class="ps-2 pe-2 app__inbox-item-content">
+                                            <?php echo $inbox[1]; ?>
+                                            <script>
+                                                usernameSend = <?php echo json_encode($userNameReceive[0]); ?>;
+                                                usernameReceive = <?php echo json_encode($inbox[0]); ?>;
+                                            </script>
                                         </span>
                                     </li>
-                                <?php } 
-                                    else {
-                                ?>
-                                    <?php
-                                        while($inbox = mysqli_fetch_row($showInbox)){
-                                    ?>
-                                        <li class="app__inbox-item pb-2">
-                                            <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0] ?></h6>
-                                            <span class="ps-2 pe-2 app__inbox-item-content">
-                                                <?php echo $inbox[1] ?>
-                                            </span>
-                                        </li>
-                                    <?php } ?>
                                 <?php } ?>
+                            <?php } ?>
                         </ul>
                     </div>
                     <div class="col-8 app__inbox-message"></div>
@@ -254,21 +256,21 @@ if (!isset($_SESSION['accID2'])) {
     <script src="../js/Inbox.js"></script>
     <script src="../js/Manage_Room.js"></script>
     <script>
+        loadMessage(usernameSend, usernameReceive, 2);
+
         function findInform(button) {
             function find_pos(row, x) {
-                    var updateTableCells = document.querySelector("#table-room").rows[row].cells; // lấy ra các cell của 1 row
-                    var updateTableRows = document.querySelector("#table-room").rows; 
-                    for (let i = 0; i< updateTableRows.length; i++) {
-                        if(updateTableRows[i] === x.parentElement.parentElement){
-                            document.cookie = "RoomID" + "=" + updateTableCells[0].innerText;
-                            //document.cookie = "RoomName" + "=" + updateTableCells[1].innerText;
-                            break;
-                        }
+                var updateTableCells = document.querySelector("#table-room").rows[row].cells;
+                var updateTableRows = document.querySelector("#table-room").rows;
+                for (let i = 0; i < updateTableRows.length; i++) {
+                    if (updateTableRows[i] === x.parentElement.parentElement) {
+                        document.cookie = "RoomID" + "=" + updateTableCells[0].innerText;
+                        break;
                     }
-                    return false;
+                }
+                return false;
             }
             find_pos((button.parentElement).parentElement.rowIndex, button);
-            // console.log((button.parentElement).parentElement.parentElement);
         }
     </script>
 </body>

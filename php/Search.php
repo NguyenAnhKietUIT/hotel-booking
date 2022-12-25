@@ -1,3 +1,183 @@
+<?php
+
+session_start();
+
+$accountid = "";
+
+$name_cus = "";
+
+if (isset($_SESSION['accID3'])) {
+    include "./getInformationCus.php";
+
+    $accountid = $_SESSION['accID3'];
+
+    $name_cus = $user_name;
+}
+
+if (
+    !isset($_GET['check-in-date']) && !isset($_GET['check-out-date'])
+    && !isset($_GET['bed-num']) && !isset($_GET['search-destination'])
+    && !isset($_GET['top-destination']) && !isset($_GET['typePro'])
+    && !isset($_GET['typeCategory']) && !isset($_GET['place'])
+) {
+
+    header("Location: ./Homepage.php?error=1");
+} else {
+
+    include "./HandleSelectCus.php";
+
+    include "./connect.php";
+
+    include "./HandleAnother.php";
+
+    $place = "";
+    $checkin = "";
+    $checkout = "";
+    $bednum = "";
+    $result = 0;
+
+    // Xét riêng theo Top
+    if (isset($_GET['top-destination'])) {
+        $place = $_GET['top-destination'];
+        $date = getdate();
+        $currentDate = $date["year"] . "-" . $date["mon"] . "-" . $date["mday"];
+        $checkin = $currentDate;
+        $checkout = $currentDate;
+        $result = timPhongTheoTopDestination($connect, $place);
+    } else if (isset($_GET['typePro'])) {
+        $typePro = $_GET['typePro'];
+        $date = getdate();
+        $currentDate = $date["year"] . "-" . $date["mon"] . "-" . $date["mday"];
+        $checkin = $currentDate;
+        $checkout = $currentDate;
+        $result = timPhongTheoTopType($connect, $typePro);
+    } else if (isset($_GET['typeCategory']) && isset($_GET['place'])) {
+        $typeCateGory = $_GET['typeCategory'];
+        $place = $_GET['place'];
+        $date = getdate();
+        $currentDate = $date["year"] . "-" . $date["mon"] . "-" . $date["mday"];
+        $checkin = $currentDate;
+        $checkout = $currentDate;
+        $result = timPhongTheoTopCate($connect, $typeCateGory, $place);
+    } else if (
+        isset($_GET['check-in-date']) && isset($_GET['check-out-date'])
+        && isset($_GET['search-destination']) && isset($_GET['bed-num'])
+    ) {
+
+        $place = $_GET['search-destination'];
+        $checkin = $_GET['check-in-date'];
+        $checkout = $_GET['check-out-date'];
+        $bednum = $_GET['bed-num'];
+
+        if ($place == "" && $checkin == "" && $checkout == "") {
+            $place = "Hồ Chí Minh";
+            $date = getdate();
+            $currentDate = $date["year"] . "-" . $date["mon"] . "-" . $date["mday"];
+            $checkin = $currentDate;
+            $checkout = $currentDate;
+            $result = timPhong($connect, $place, $checkin, $checkout, $bednum);
+        } else if ($place != "" && $checkin != "" && $checkout != "") {
+            $result = timPhong($connect, $place, $checkin, $checkout, $bednum);
+        }
+        // Xử lý 1 Radio
+        else if (isset($_GET['filter__main-radio'])) {
+            $priceRoom = $_GET['filter__main-radio'];
+            $result = timPhongTheoGia($connect, $priceRoom, $place, $checkin, $checkout, $bednum);
+        }
+        // Xử lý TypeHotel
+        if (isset($_GET['filter__main-hotel'])) {
+            if (isset($_GET['filter__main-apartment'])) {
+                if (isset($_GET['filter__main-resort'])) {
+                    $type1 = "Hotel";
+                    $type2 = "Apartment";
+                    $type3 = "Resort";
+                    $result = timTheoProperty3($connect, $type1, $type2, $type3, $place, $checkin, $checkout, $bednum);
+                } else if (isset($_GET['filter__main-homestay'])) {
+                    $type1 = "Hotel";
+                    $type2 = "Apartment";
+                    $type3 = "Homestay";
+                    $result = timTheoProperty3($connect, $type1, $type2, $type3, $place, $checkin, $checkout, $bednum);
+                } else {
+                    $type1 = "Hotel";
+                    $type2 = "Apartment";
+                    $result = timTheoProperty2($connect, $type1, $type2, $place, $checkin, $checkout, $bednum);
+                }
+            } else if (isset($_GET['filter__main-resort'])) {
+                if (isset($_GET['filter__main-homestay'])) {
+                    $type1 = "Hotel";
+                    $type2 = "Resort";
+                    $type3 = "Homestay";
+                    $result = timTheoProperty3($connect, $type1, $type2, $type3, $place, $checkin, $checkout, $bednum);
+                } else {
+                    $type1 = "Hotel";
+                    $type2 = "Resort";
+                    $result = timTheoProperty2($connect, $type1, $type2, $place, $checkin, $checkout, $bednum);
+                }
+            } else if (isset($_GET['filter__main-homestay'])) {
+                $type1 = "Hotel";
+                $type2 = "Homestay";
+                $result = timTheoProperty2($connect, $type1, $type2, $place, $checkin, $checkout, $bednum);
+            } else {
+                $typeHotel = "Hotel";
+                $result = timPhongTheoProperty($connect, $typeHotel, $place, $checkin, $checkout, $bednum);
+            }
+        } else if (isset($_GET['filter__main-apartment'])) {
+            if (isset($_GET['filter__main-resort'])) {
+                $type1 = "Apartment";
+                $type2 = "Resort";
+                $result = timTheoProperty2($connect, $type1, $type2, $place, $checkin, $checkout, $bednum);
+            } else if (isset($_GET['filter__main-homestay'])) {
+                $type1 = "Apartment";
+                $type2 = "Homestay";
+                $result = timTheoProperty2($connect, $type1, $type2, $place, $checkin, $checkout, $bednum);
+            } else {
+                $typeHotel = "Apartment";
+                $result = timPhongTheoProperty($connect, $typeHotel, $place, $checkin, $checkout, $bednum);
+            }
+        } else if (isset($_GET['filter__main-resort'])) {
+            if (isset($_GET['filter__main-homestay'])) {
+                $type1 = "Resort";
+                $type2 = "Homestay";
+                $result = timTheoProperty2($connect, $type1, $type2, $place, $checkin, $checkout, $bednum);
+            } else {
+                $typeHotel = "Apartment";
+                $result = timPhongTheoProperty($connect, $typeHotel, $place, $checkin, $checkout, $bednum);
+            }
+        } else if (isset($_GET['filter__main-homestay'])) {
+            $typeHotel = "Homestay";
+            $result = timPhongTheoProperty($connect, $typeHotel, $place, $checkin, $checkout, $bednum);
+        }
+        // Xử lý TypeRoom
+        if (isset($_GET['filter__main-standard'])) {
+            if (isset($_GET['filter__main-deluxe'])) {
+                $typeRoom1 = "Standard";
+                $typeRoom2 = "Deluxe";
+                $result = timPhongtheoTypeRoomV2($connect, $typeRoom1, $typeRoom2, $place, $checkin, $checkout, $bednum);
+            } else if (isset($_GET['filter__main-supervisor'])) {
+                $typeRoom1 = "Standard";
+                $typeRoom2 = "Supervisor";
+                $result = timPhongtheoTypeRoomV2($connect, $typeRoom1, $typeRoom2, $place, $checkin, $checkout, $bednum);
+            } else {
+                $typeRoom = "Standard";
+                $result = timPhongtheoTypeRoom($connect, $typeRoom, $place, $checkin, $checkout, $bednum);
+            }
+        } else if (isset($_GET['filter__main-deluxe'])) {
+            if (isset($_GET['filter__main-supervisor'])) {
+                $typeRoom1 = "Deluxe";
+                $typeRoom2 = "Supervisor";
+                $result = timPhongtheoTypeRoomV2($connect, $typeRoom1, $typeRoom2, $place, $checkin, $checkout, $bednum);
+            } else {
+                $typeRoom = "Deluxe";
+                $result = timPhongtheoTypeRoom($connect, $typeRoom, $place, $checkin, $checkout, $bednum);
+            }
+        } else if (isset($_GET['filter__main-supervisor'])) {
+            $typeRoom = "Supervisor";
+            $result = timPhongtheoTypeRoom($connect, $typeRoom, $place, $checkin, $checkout, $bednum);
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,19 +199,25 @@
     <div id="app">
         <header class="app__header">
             <nav class="app__nav" style="max-width: 1200px;margin: 0 auto;">
-                <a href="./Homepage.html" class="app__nav-name-link">
+                <a href="./Homepage.php" class="app__nav-name-link">
                     <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                 </a>
 
                 <ul class="app__nav-list">
                     <li class="app__nav-item">
-                        <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                        <a href="./Homepage.php" class="app__nav-item-link">Home</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Contact.html" class="app__nav-item-link">Contacts</a>
+                        <a href="./Contact.php" class="app__nav-item-link">Contacts</a>
                     </li>
                     <li class="app__nav-item">
-                        <a href="./Customer_SignUp.html" class="app__nav-item-link">Sign Up</a>
+                        <?php
+                        if (isset($_SESSION['accID3'])) {
+                            echo "<a href='./Customer_Information.php' class='app__nav-item-link' style='cursor: pointer;'>" . $name_cus . "</a>";
+                        } else {
+                            echo "<a href='./Customer_SignUp.php' class='app__nav-item-link'>Sign Up</a>";
+                        }
+                        ?>
                     </li>
                 </ul>
             </nav>
@@ -45,14 +231,13 @@
                     box-shadow: 0 0 2px 2px rgb(0 0 0 / 5%);">
                 <div class="py-1 d-flex align-items-center">
                     <i class="pe-2 fa-solid fa-magnifying-glass"></i>
-                    <input type="text" name="search-destination" placeholder="Search destinations, hotels"
-                        style="width: 320px;">
+                    <input type="text" name="search-destination" value="<?php echo $place; ?>" style="width: 320px;">
                 </div>
                 <div class="py-1 position-relative" style="width: 140px;">
                     <div class="d-flex align-items-center">
                         <i class="pe-2 fa-solid fa-plane-departure"></i>
                         <div class="app__status-in">Check in</div>
-                        <input type="date" name="check-in-date" id="app__check-in" min="2017-10-14" max="2050-12-31">
+                        <input type="date" name="check-in-date" id="app__check-in" min="2017-10-14" max="2050-12-31" value="<?php echo $checkin; ?>">
                     </div>
                     <p class="position-absolute toast-message-in p-1 text-center">The maximum interval between two
                         days is thirty</p>
@@ -61,7 +246,7 @@
                     <div class="d-flex align-items-center">
                         <i class="pe-2 fa-solid fa-money-check"></i>
                         <div class="app__status-out">Check out</div>
-                        <input type="date" name="check-out-date" id="app__check-out" min="2017-10-14" max="2050-12-31">
+                        <input type="date" name="check-out-date" id="app__check-out" min="2017-10-14" max="2050-12-31" value="<?php echo $checkout; ?>">
                     </div>
                     <p class="position-absolute toast-message-out p-1 text-center">The maximum interval between two
                         days is thirty</p>
@@ -70,22 +255,22 @@
                     <div class="d-flex align-items-center">
                         <i class="pe-2 fa-solid fa-people-group"></i>
                         <div class="app__search-quantity">
-                            <span>1</span>
+                            <span><?php echo $bednum; ?></span>
                             bed,
-                            <span>2</span>
+                            <span><?php echo $bednum; ?></span>
                             adults
                         </div>
                     </div>
 
                     <div class="box-quantity">
                         <div class="d-flex justify-content-between align-items-center mb-3">
-                            <input type="range" name="bed-num" id="bed-num" min="1" max="30" step="1" value="1">
+                            <input type="range" name="bed-num" id="bed-num" min="1" max="30" step="1" value="<?php echo $bednum; ?>">
                             <div class="">
                                 <label for="bed-num">Beds</label>
                             </div>
                             <div class="d-flex justify-content-between align-items-center" style="width: 110px;">
                                 <button type="button" class="btn-minus-bed">-</button>
-                                <span class="amount-bed">1</span>
+                                <span class="amount-bed"><?php echo $bednum; ?></span>
                                 <button type="button" class="btn-add-bed">+</button>
                             </div>
                         </div>
@@ -104,9 +289,7 @@
                     </div>
                 </div>
                 <div class="d-flex py-1">
-                    <a href="./Search.html" class="text-decoration-none">
-                        <button class="app__search-btn">Search</button>
-                    </a>
+                    <button type="submit" class="app__search-btn">Search</button>
                 </div>
             </form>
 
@@ -126,10 +309,7 @@
             <div class="app__main-content row">
                 <div class="col-4">
                     <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d502056.6239383943!2d105.2842887631872!3d10.554318626027014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a65b3d50c121f%3A0xdca0c95ead346e40!2zxJDhu5NuZyBUaMOhcCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1670054231946!5m2!1svi!2s"
-                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d502056.6239383943!2d105.2842887631872!3d10.554318626027014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310a65b3d50c121f%3A0xdca0c95ead346e40!2zxJDhu5NuZyBUaMOhcCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1670054231946!5m2!1svi!2s" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
 
@@ -196,29 +376,52 @@
                     </div>
                 </div>
                 <div class="col-8">
-                    <!-- <div class="result-item">
-                        <img src="../assets/img/others/hotel.jpg" alt="" class="result-item-img">
-                        <div class="result-item-info">
-                            <div class="result-item-info-header">
-                                <span class="result-item-info-name">Sao Mai</span>
-                                <span class="result-item-info-point">4.7</span>
-                            </div>
-                            <div class="result-item-info-address">Address</div>
-                            <div class="result-item-info-price"><span>4570000VND</span></div>
-                            <div class="result-item-info-desc">
-                                <span class="result-item-info-type">bed type</span>
-                                <a href="./Search_Property.html" class="result-item-info-link">See availability</a>
-                            </div>
+                    <?php
+                    if (mysqli_num_rows($result) == 0) {
+                    ?>
+                        <div class="text-center">
+                            <p style="font-size: 28px;">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </p>
+                            <p style="font-size: 24px;font-weight: 700;">No properties found in <?php echo $place; ?></p>
+                            <p>There are no matching properties for your search criteria. Try updating your search</p>
+                            <button class="btn btn-primary">Update search</button>
                         </div>
-                    </div> -->
-                    <div class="text-center">
-                        <p style="font-size: 28px;">
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                        </p>
-                        <p style="font-size: 24px;font-weight: 700;">No properties found in "Location Name"</p>
-                        <p>There are no matching properties for your search criteria. Try updating your search</p>
-                        <button class="px-3 py-2 btn btn-primary">Update search</button>
-                    </div>
+                        <?php
+                    } else {
+                        while ($row = mysqli_fetch_row($result)) {
+                        ?>
+                            <div div class="result-item">
+                                <?php
+                                // Gọi hàm xử lý chuỗi
+                                $array_img = findImage($row[2]);
+                                ?>
+                                <?php
+                                if ($array_img[0] === 'IMG') {
+                                ?>
+                                    <img src="../assets/img/upload/<?php echo $row[2]; ?>" alt="" class="result-item-img">
+                                <?php
+                                } else {
+                                ?>
+                                    <img src="<?php echo $row[2]; ?>" alt="" class="result-item-img">
+                                <?php } ?>
+                                <div class="result-item-info">
+                                    <div class="result-item-info-header">
+                                        <span class="result-item-info-name"><?php echo $row[1]; ?></span>
+                                        <span class="result-item-info-point"><?php echo round($row[4], 1); ?></span>
+                                    </div>
+
+                                    <div class="result-item-info-address"><?php echo $row[3]; ?></div>
+                                    <div class="result-item-info-price"><span><?php echo $row[5]; ?> VNĐ</span></div>
+                                    <div class="result-item-info-desc">
+                                        <span class="result-item-info-type"><?php echo $row[6]; ?></span>
+                                        <a href="./Search_Property.php?id=<?php echo $row[0]; ?>&hotel=<?php echo $row[1]; ?>&check-in-date=<?php echo $checkin; ?>&check-out-date=<?php echo $checkout; ?>&bed-num=<?php echo $bednum; ?>" class="result-item-info-link">See availability</a>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php }
+                    }
+                    ?>
                 </div>
             </div>
         </div>

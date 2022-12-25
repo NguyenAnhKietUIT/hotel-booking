@@ -102,30 +102,29 @@ if (!isset($_SESSION['accID3'])) {
                         </ul>
                     </div>
                     <div class="col-9 ps-5">
-                        <?php 
-                            while($row = mysqli_fetch_row($result)) {
+                        <?php
+                        while ($row = mysqli_fetch_row($result)) {
                         ?>
                             <a href="./Detail_Review.php?evaluateNumber=<?php echo $row[5]; ?>" class="text-decoration-none mt-3 d-block" style="color: #303030;">
                                 <div class="d-flex justify-content-between border" style="border-radius: 12px;box-shadow: 0 0 2px 2px rgb(0 0 0 / 4%);">
-                                    <?php 
-                                        // Gọi hàm xử lý chuỗi
-                                        $array_img = findImage($row[0]);
-                                        ?>
-                                        <?php
-                                            if($array_img[0] === 'IMG'){
-                                        ?>
-                                            <img src="../assets/img/upload/<?php echo $row[0]; ?>"  alt="" style="width: 180px;height: 180px; border-radius: 12px;">
-                                        <?php 
-                                            }
-                                            else {
-                                        ?>
-                                            <img src="<?php echo $row[0]; ?>"  alt="" style="width: 180px;height: 180px; border-radius: 12px;">
+                                    <?php
+                                    // Gọi hàm xử lý chuỗi
+                                    $array_img = findImage($row[0]);
+                                    ?>
+                                    <?php
+                                    if ($array_img[0] === 'IMG') {
+                                    ?>
+                                        <img src="../assets/img/upload/<?php echo $row[0]; ?>" alt="" style="width: 180px;height: 180px; border-radius: 12px;">
+                                    <?php
+                                    } else {
+                                    ?>
+                                        <img src="<?php echo $row[0]; ?>" alt="" style="width: 180px;height: 180px; border-radius: 12px;">
                                     <?php } ?>
                                     <div class="py-3 ps-4 d-flex flex-column justify-content-between" style="flex: 1;">
                                         <h4><?php echo $row[1]; ?></h4>
                                         <p>Time review: <?php echo $row[2]; ?></p>
-                                        <p>Your rating:  <?php echo round($row[3], 1); ?></p>
-                                        <p>Your review:  <?php echo $row[4]; ?></p>
+                                        <p>Your rating: <?php echo round($row[3], 1); ?></p>
+                                        <p>Your review: <?php echo $row[4]; ?></p>
                                     </div>
                                 </div>
                             </a>
@@ -139,11 +138,15 @@ if (!isset($_SESSION['accID3'])) {
                     <div class="row m-0 h-100 overflow-auto">
                         <div class="col-4" style="border-right: 1px solid #ccc;">
                             <ul class="list-unstyled">
-                            <?php
-                                    while($inbox = mysqli_fetch_row($showInbox)){
+                                <?php
+                                while ($inbox = mysqli_fetch_row($showInbox)) {
                                 ?>
                                     <li class="app__inbox-item pb-2">
                                         <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0] ?></h6>
+                                        <script>
+                                            usernameSend = <?php echo json_encode($row[0]); ?>;
+                                            usernameReceive = <?php echo json_encode($inbox[0]); ?>;
+                                        </script>
                                         <span class="ps-2 pe-2 app__inbox-item-content">
                                             <?php echo $inbox[1] ?>
                                         </span>
@@ -171,6 +174,8 @@ if (!isset($_SESSION['accID3'])) {
                 element.classList.add('app__sidebar-item--active')
             })
         })
+
+        loadMessage(usernameSend, usernameReceive, 3);
     </script>
 </body>
 

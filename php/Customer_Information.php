@@ -445,7 +445,8 @@ if (!isset($_SESSION['accID3'])) {
                                     <li class="app__inbox-item pb-2">
                                         <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0] ?></h6>
                                         <script>
-                                            usernameSend = <?php echo json_encode($row[0]) ?>
+                                            usernameSend = <?php echo json_encode($row[0]); ?>;
+                                            usernameReceive = <?php echo json_encode($inbox[0]); ?>;
                                         </script>
                                         <span class="ps-2 pe-2 app__inbox-item-content">
                                             <?php echo $inbox[1] ?>
@@ -465,7 +466,7 @@ if (!isset($_SESSION['accID3'])) {
     <script src="../js/Customer_Information.js"></script>
     <script src="../js/Inbox.js"></script>
     <script>
-        loadMessage(usernameSend);
+        loadMessage(usernameSend, usernameReceive, 3);
 
         Validator({
             form: '#form-detail',

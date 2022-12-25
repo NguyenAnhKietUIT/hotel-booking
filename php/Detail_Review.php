@@ -119,16 +119,13 @@ if (!isset($_SESSION['accID3'])) {
                     <div class="col-9 ps-5">
                         <div class="d-flex flex-column">
                             <?php
-                                if($array_img[0] === 'IMG'){
+                            if ($array_img[0] === 'IMG') {
                             ?>
-                                <img src="../assets/img/upload/<?php echo $row[0]; ?>" alt=""
-                                            style="width: 250px;height: 250px;border-radius: 12px;">
-                            <?php 
-                                }
-                                else {
+                                <img src="../assets/img/upload/<?php echo $row[0]; ?>" alt="" style="width: 250px;height: 250px;border-radius: 12px;">
+                            <?php
+                            } else {
                             ?>
-                                <img src="<?php echo $row[0]; ?>" alt=""
-                                            style="width: 250px;height: 250px;border-radius: 12px;">
+                                <img src="<?php echo $row[0]; ?>" alt="" style="width: 250px;height: 250px;border-radius: 12px;">
                             <?php } ?>
                             <div class="pt-4" style="line-height: 2;">
                                 <h4><?php echo $row[1]; ?></h4>
@@ -147,11 +144,15 @@ if (!isset($_SESSION['accID3'])) {
                     <div class="row m-0 h-100 overflow-auto">
                         <div class="col-4" style="border-right: 1px solid #ccc;">
                             <ul class="list-unstyled">
-                            <?php
-                                    while($inbox = mysqli_fetch_row($showInbox)){
+                                <?php
+                                while ($inbox = mysqli_fetch_row($showInbox)) {
                                 ?>
                                     <li class="app__inbox-item pb-2">
                                         <h6 class="ps-2 pe-2 pt-1 app__inbox-item-title"><?php echo $inbox[0] ?></h6>
+                                        <script>
+                                            usernameSend = <?php echo json_encode($row[0]); ?>;
+                                            usernameReceive = <?php echo json_encode($inbox[0]); ?>;
+                                        </script>
                                         <span class="ps-2 pe-2 app__inbox-item-content">
                                             <?php echo $inbox[1] ?>
                                         </span>
@@ -179,6 +180,8 @@ if (!isset($_SESSION['accID3'])) {
                 element.classList.add('app__sidebar-item--active')
             })
         })
+
+        loadMessage(usernameSend, usernameReceive, 3);
     </script>
 </body>
 

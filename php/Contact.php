@@ -18,19 +18,25 @@
         <header class="app__header">
             <div class="grid wide">
                 <nav class="app__nav">
-                    <a href="./Homepage.html" class="app__nav-name-link">
+                    <a href="./Homepage.php" class="app__nav-name-link">
                         <img src="../assets/img/logo.png" alt="Logo" class="app__nav-name-icon">
                     </a>
 
                     <ul class="app__nav-list hide-on-mobile-tablet">
                         <li class="app__nav-item">
-                            <a href="./Homepage.html" class="app__nav-item-link">Home</a>
+                            <a href="./Homepage.php" class="app__nav-item-link">Home</a>
                         </li>
                         <li class="app__nav-item">
                             <a href="#" class="app__nav-item-link">Contacts</a>
                         </li>
                         <li class="app__nav-item">
-                            <a href="./Customer_SignUp.html" class="app__nav-item-link">Sign Up</a>
+                            <?php
+                            if (isset($_SESSION['accID3'])) {
+                                echo "<a href='./Customer_Information.php' class='app__nav-item-link' style='cursor: pointer;'>" . $name_cus . "</a>";
+                            } else {
+                                echo "<a href='./Customer_SignUp.php' class='app__nav-item-link'>Sign Up</a>";
+                            }
+                            ?>
                         </li>
                     </ul>
                 </nav>

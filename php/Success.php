@@ -8,16 +8,22 @@
     <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Error</title>
+    <title>Success</title>
 </head>
 <body class="position-relative text-center" style="height: 100vh;">
     <div class="position-absolute top-50 start-50 translate-middle">
-        <i class="fa-solid fa-circle-xmark" 
-            style="font-size: 60px;
-            color: hsl(4deg 90% 58%);">
+        <i class="fa-solid fa-check" 
+            style="font-size: 40px;
+            background-color: hsl(122deg 37% 84%);
+            padding: 8px 11px;
+            color: hsl(122deg 39% 49%);
+            clip-path: circle(50% at 50% 50%);">
         </i>
-        <p class="mt-3 mb-0" style="font-size: 20px;">There is an error with your booking</p>
-        <a href="../html/Reservation.html" class="text-decoration-none text-dark" style="font-size: 20px;"><b>Please try again</b></a>
+        <p class="mt-3 mb-0" style="font-size: 20px;">Your booking has been confirmed</p>
+        <p style="font-size: 20px;">
+            Please check your booking in 
+            <a href="../html/Customer_viewBooking.php" class="text-decoration-none text-dark"><b>View all booking</b></a>
+        </p>
     </div>
 </body>
 </html>
