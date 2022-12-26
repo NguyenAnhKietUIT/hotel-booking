@@ -576,7 +576,7 @@ body.bg-theme15 {
 }
 
 .card-content {
-    max-height: 360px;
+    max-height: 380px;
     overflow-y: auto;
 }
 
@@ -617,6 +617,16 @@ body.bg-theme15 {
 
 tbody, td, tfoot, th, thead, tr {
     border: none;
+}
+
+#table-property td:nth-child(2) {
+    height: 40px;
+    width: 650px;
+    max-width: 650px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
 }
 
 .footer {

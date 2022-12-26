@@ -126,19 +126,5 @@ function handleHeader() {
     })
 }
 
-function activeAccount() {
-  $(document).ready(function() {
-    $(".btn.btn-info:not('.inactive')").prop('disabled', true);
-
-    $('.inactive').click(function() {
-      $(this).removeClass('.inactive');
-
-      $(this).parent().parent().find("td").eq(3).text("Active");
-      $(this).attr('disabled', true);
-    })
-  })
-}
-
 changeBackground()
 handleHeader()
-activeAccount()

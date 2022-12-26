@@ -1,0 +1,44 @@
+.app__content-nav-last {
+    color: black;
+    border-bottom: 4px solid #000;
+}
+
+.app__content-nav-last i {
+    color: black;
+}
+
+.table th {
+    background-color: #3c6ea7;
+    color: white;
+}
+
+.table tr th:nth-child(n + 3),
+.table tr td:nth-child(n + 3) {
+    text-align: center;
+}
+
+.table tr td {
+    border: 1px solid #ccc;
+}
+
+.table td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+input, select {
+    width: 200px;
+    height: 32px;
+    margin-top: 4px;
+    padding: 2px 4px;
+}
+
+.bed-num-message,
+.price-message {
+    display: none;
+}
+
+input[name="image"] {
+    width: 250px;
+}

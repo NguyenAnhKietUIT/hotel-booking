@@ -11,10 +11,10 @@ h5 {
 }
 
 .analytic-item-title {
-    font-size: 14px;
+    font-size: 12px;
     color: var(--search-color);
 }
 
 .analytic-item-value {
-    font-size: 24px;
+    font-size: 18px;
 }

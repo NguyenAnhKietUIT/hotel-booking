@@ -10,7 +10,7 @@ function showBoxSend() {
     })
 }
 
-function loadMessage() {
+function loadMessage(usernameSend, usernameReceive, role) {
     itemMessages.forEach(element => {
         element.addEventListener('click', () => {
             element.style.backgroundColor = 'white'
@@ -26,10 +26,12 @@ function loadMessage() {
                     <div class="px-3 py-2 d-flex flex-column justify-content-between" style="height: calc(100vh - 56px);">
                         <p class="app__inbox-message-main">${element.querySelector('.app__inbox-item-content').textContent}</p>
 
-                        <div class="justify-content-between app__inbox-message-send">
+                        <form action="../php/HandleAnother.php?Insert=1&role=${role}" method="POST" class="justify-content-between app__inbox-message-send">
+                            <input type="text" hidden value="${usernameSend}" name="usernameSend" >
+                            <input type="text" hidden value="${usernameReceive}" name="usernameReceive" >
                             <textarea name="app__inbox-message-textarea" id="app__inbox-message-textarea" cols="30" rows="8" placeholder="Enter message"></textarea>
                             <input type="submit" value="Send" class="app__inbox-message-input px-3">
-                        </div>
+                        </form>
                     </div>
                     `
 
@@ -40,5 +42,3 @@ function loadMessage() {
         })
     })
 }
-
-loadMessage()

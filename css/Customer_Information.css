@@ -17,6 +17,14 @@
     border-right: 1px solid #000;
 }
 
+.btn-sign-out {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+}
+
 .app__content .col-9 {
     padding-left: 24px;
 }
@@ -52,7 +60,7 @@ select {
 
 .form-avatar__message {
     position: absolute;
-    top: 38%;
+    top: 32%;
     left: 18%;
     opacity: 0;
     cursor: pointer;
@@ -82,14 +90,8 @@ select {
     border-radius: 4px;
 }
 
-.form-detail {
-    margin-top: 20px;
-}
-
-.form-group {
-    display: flex;
-    margin-bottom: 16px;
-    flex-direction: column;
+.form-group + .form-group {
+    margin-bottom: 0;
 }
 
 .form-label,
@@ -98,7 +100,6 @@ select {
 }
 
 .form-label {
-    padding-bottom: 4px;
     line-height: 1.5;
     font-size: 20px;
 }
@@ -153,6 +154,7 @@ select {
 }
 
 .button-handle {
+    margin-top: 16px;
     display: flex;
     justify-content: space-between;
 }
@@ -189,7 +191,6 @@ button:disabled:hover {
 
 .app__view-title {
     font-size: 24px;
-    margin-bottom: 20px;
 }
 
 .app__view-item {

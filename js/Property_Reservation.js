@@ -7,13 +7,11 @@ function enableEdit() {
             btnSuccess.disabled = false;
             element.disabled = true;
 
-            let status = element.parentElement.parentElement.getElementsByTagName("td")[5].querySelector('select[name="select-status"]')
+            let status = element.parentElement.parentElement.getElementsByTagName("td")[4].querySelector('select[name="select-status"]')
             status.disabled = false
 
             btnSuccess.addEventListener('click', () => {
-                btnSuccess.disabled = true;
                 element.disabled = false;
-                status.disabled = true;
             });
         })
     })

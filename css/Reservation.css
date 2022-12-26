@@ -8,8 +8,12 @@
     background-color: #08536B;
 }
 
-p, h6 {
+p, h5, h6 {
     margin-bottom: 0;
+}
+
+.col-8 p {
+    font-size: 14px;
 }
 
 .property-img {

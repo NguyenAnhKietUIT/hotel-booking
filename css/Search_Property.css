@@ -16,74 +16,60 @@ body {
     background-color: #08536B;
 }
 
-.app__search-list {
-    height: 60px;
-    display: flex;
-    margin-top: 40px;
-    list-style: none;
-    padding-left: 20px;
-    padding-right: 20px;
-    align-items: center;
-    border-radius: 12px;
-    background-color: #fff;
-    justify-content: space-between;
-    box-shadow: 0 0 2px 2px rgb(0 0 0 / 5%);
-}
-
-.app__search-item {
-    display: flex;
-    font-size: 16px;
-    padding: 8px 0;
-}
-
-.app__search-item:nth-child(3) {
-    position: relative;
-}
-
-.app__search-item:hover .app__search-icon,
-.app__search-item:hover .app__status-in,
-.app__search-item:hover .app__status-out,
-.app__search-item:hover .app__search-quantity
-{
+/* Header search */
+.fa-solid {
     color: var(--text-color);
 }
 
-.app__search-icon-link {
-    text-decoration: none;
-    padding-right: 4px;
+input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--text-color);
+    background-color: transparent;
 }
 
-.app__search-icon {
-    color: var(--black-color);
+input[type="text"]::placeholder {
+    color: var(--text-color);
+}
+
+input[type=date] {
+    width: 120px;
+    border: none;
+    outline: none;
+    padding-left: 8px;
+    color: var(--text-color);
+    background-color: transparent;
+    font-family: Helvetica, sans-serif;
+}
+
+input[type=date]:hover {
+    color: black;
+    cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+form input[type="range"] {
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .app__status-in,
 .app__status-out,
 .app__search-quantity {
-    color: var(--black-color);
+    color: var(--text-color);
     cursor: pointer;
 }
 
 .app__search-quantity {
     min-width: 140px;
-}
-
-.app__search-item > input[type=date] {
-    width: 120px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    cursor: pointer;
-    padding-left: 8px;
-    font-family: Helvetica, sans-serif;
-}
-
-.app__search-item > input[type="date"]::-webkit-calendar-picker-indicator {
-    cursor: pointer;
-}
-
-.app__check-status {
-    display: none;
 }
 
 .toast-message-in,
@@ -97,54 +83,19 @@ body {
     border-radius: 8px;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 1px 5px rgb(189, 189, 189);
 }
 
-.app__search-btn {
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 16px;
-    font-weight: 550;
-    border: none;
-    padding: 12px 40px;
-    border-radius: 24px;
-}
-
-.app__search-btn:hover {
-    background-color: rgb(0, 0, 0, 0.3);
-}
-
-.app__search-item:nth-child(1),
-.app__search-item:nth-child(4) {
-    position: relative;
-}
-
-/* Search history */
 .box-quantity {
     position: absolute;
-    width: 120%;
+    z-index: 9999;
     top: 28px;
     right: 50%;
-    transform: translateX(50%);
+    width: 120%;
     padding: 16px;
     border-radius: 8px;
+    transform: translateX(50%);
     background-color: var(--white-color);
     display: none;
-}
-
-.box-quantity__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.box-quantity__item div {
-    min-width: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .btn-minus-people, .btn-add-people,
@@ -171,6 +122,21 @@ body {
 
 .btn-accept:hover {
     background-color: rgba(0, 0, 255, 0.1);
+}
+
+.app__search-btn {
+    text-decoration: none;
+    background-color: #999;
+    color: white;
+    font-size: 16px;
+    font-weight: 550;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 24px;
+}
+
+.app__search-btn:hover {
+    background-color: #555;
 }
 
 .app__property-img {
@@ -289,6 +255,7 @@ h3 {
 
 .app__room-item-img {
     width: 100%;
+    height: 172px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
 }
@@ -300,7 +267,6 @@ h3 {
 
 .app__room-item-type {
     font-weight: 600;
-    padding-bottom: 8px;
 }
 
 .app__room-item-request {
@@ -365,7 +331,7 @@ h3 {
 .btn-reserve {
     color: white;
     font-weight: 700;
-    padding: 10px 16px;
+    padding: 8px 16px;
     text-decoration: none;
     border-radius: 20px;
     background-color: #156BC1;

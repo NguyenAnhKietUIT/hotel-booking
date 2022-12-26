@@ -1,16 +1,13 @@
 // Elements search bed and people
 const searchQuantity = document.querySelector('.app__search-quantity')
-const btnQuantity = document.querySelector('.btn-accept')
+const btnAccept = document.querySelector('.btn-accept')
 const boxQuantity = document.querySelector('.box-quantity')
-const bedQuantity = document.querySelector('.app__search-quantity span:first-child');
 const amountBed = document.querySelector('.amount-bed')
 const btnAddBed = document.querySelector('.btn-add-bed')
 const btnMinusBed = document.querySelector('.btn-minus-bed')
-const peopleQuantity = document.querySelector('.app__search-quantity span:last-child');
 const amountPeople = document.querySelector('.amount-people')
 const btnAddPeople = document.querySelector('.btn-add-people')
 const btnMinusPeople = document.querySelector('.btn-minus-people')
-const buttonSearch = document.querySelector('.app__search-btn')
 
 // Elements search dates
 const divCheckIn = document.querySelector('.app__status-in')
@@ -22,8 +19,8 @@ const toastMessageCheckOut = document.querySelector('.toast-message-out')
 
 // Show box quantity
 searchQuantity.addEventListener('click', () => {
-    amountPeople.innerHTML = peopleQuantity.innerHTML
-    amountBed.innerHTML = bedQuantity.innerHTML
+    amountPeople.innerHTML = document.querySelector('.app__search-quantity span:last-child').innerHTML
+    amountBed.innerHTML = document.querySelector('.app__search-quantity span:first-child').innerHTML
 
     boxQuantity.style.display = 'block';
 })
@@ -36,9 +33,12 @@ document.addEventListener('mouseup', function(e) {
 });
 
 // Set value for bed and people
-btnQuantity.addEventListener('click', () => {
-    peopleQuantity.innerHTML = amountPeople.innerHTML
-    bedQuantity.innerHTML = amountBed.innerHTML
+btnAccept.addEventListener('click', () => {
+    document.querySelector('.app__search-quantity span:first-child').innerHTML = amountBed.innerHTML;
+    document.querySelector('.app__search-quantity span:last-child').innerHTML = amountPeople.innerHTML;
+
+    document.getElementById('bed-num').value = parseInt(amountBed.innerHTML);
+    document.getElementById('per-num').value = parseInt(amountPeople.innerHTML);
     boxQuantity.style.display = 'none';
 })
 
@@ -49,6 +49,10 @@ btnAddBed.addEventListener('click', () => {
 
     if (numberBed > 1 && btnMinusBed.hasAttribute('disabled')) {
         btnMinusBed.removeAttribute('disabled');
+    }
+
+    if (numberBed == 30) {
+        btnAddBed.setAttribute('disabled', true);
     }
 
     amountBed.innerHTML = numberBed;
@@ -76,6 +80,10 @@ btnAddPeople.addEventListener('click', () => {
         btnMinusPeople.removeAttribute('disabled');
     }
 
+    if (numberPeople >= (2 * parseInt(amountBed.innerHTML))) {
+        btnAddPeople.setAttribute('disabled', true);
+    }
+
     amountPeople.innerHTML = numberPeople;
 })
 
@@ -89,23 +97,6 @@ btnMinusPeople.addEventListener('click', () => {
         let numberPeople = currentPeople
         numberPeople--;
         amountPeople.innerHTML = numberPeople;
-    }
-})
-
-// handle element search date check in
-divCheckIn.addEventListener('click', () => {
-    divCheckIn.remove()
-
-    inputCheckIn.style.display = 'block';
-
-    // Set min value for check in date
-    inputCheckIn.value = getCurrentDate();
-    inputCheckIn.min = getCurrentDate();
-
-    if (inputCheckOut.style.display === 'block') {
-        let checkOut = inputCheckOut.value;
-
-        inputCheckIn.max = checkOut;
     }
 })
 
@@ -127,23 +118,6 @@ inputCheckIn.addEventListener('change', () => {
     }
 })
 
-// handle element search date check out
-divCheckOut.addEventListener('click', () => {
-    divCheckOut.remove()
-
-    inputCheckOut.style.display = 'block';
-
-    // Set min value for check out date
-    inputCheckOut.value = getCurrentDate();
-    inputCheckOut.min = getCurrentDate();
-
-    if (inputCheckIn.style.display === 'block') {
-        let checkIn = inputCheckIn.value;
-
-        inputCheckOut.value = checkIn;
-        inputCheckOut.min = checkIn;
-    }
-})
 
 // Event onchange of check out
 inputCheckOut.addEventListener('change' , () => {

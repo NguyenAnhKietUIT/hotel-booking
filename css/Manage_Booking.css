@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h4, h5, p {
+    margin-bottom: 0;
+}
+
+.app__header {
+    background-color: #08536B;
+}
+
+.btn {
+    color: white;
+    border-radius: 16px;
+}
+
+.btn-review {
+    background-color: #08536BBF;
+}
+
+.btn-review:hover {
+    color: white;
+    background-color: rgba(8, 83, 107, 0.9);
+}
+
+/* Review */
+.img_hotel {
+    width: 150px;
+    height: 150px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.border {
+    border-radius: 20px;
+}
+
+p {
+    font-size: 14px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+textarea {
+    width: 800px;
+    border-radius: 20px;
+    border-color: #dee2e6;
+    padding: 8px 16px;
+    margin-top: 8px;
+}
+
+input {
+    width: 120px;
+    padding: 0 4px;
+    margin-left: 8px;
+}
+
+.rate-message {
+    display: none;
+}

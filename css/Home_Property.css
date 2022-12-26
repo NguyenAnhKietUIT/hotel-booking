@@ -87,6 +87,14 @@
     border-bottom-right-radius: 8px;
 }
 
+.btn-sign-out {
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    background-color: transparent;
+}
+
 .app__content-main {
     margin-top: 16px;
 }
